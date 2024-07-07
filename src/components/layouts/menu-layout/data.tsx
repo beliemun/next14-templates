@@ -27,8 +27,7 @@ export const introductions: MenuItem[] = [
 export const baseComponents: MenuItem[] = [
   getItem("Components", "C100", <FileOutlined />, [
     getItem("Button", "C101"),
-    getItem("Analytics", "C102"),
-    getItem("Input", "C103"),
+    getItem("Input", "C102"),
   ]),
 ];
 
