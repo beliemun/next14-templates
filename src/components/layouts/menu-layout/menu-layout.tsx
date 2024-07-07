@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Divider, Layout, Menu } from "antd";
 import { MenuLayoutAvatar } from "./components/avatar";
-import { items1, items2, items3 } from "./data";
+import { introductions, baseComponents, pageTemplates } from "./data";
 import { MenuWrapper } from "./components";
 
 const { Sider } = Layout;
@@ -11,15 +11,15 @@ const { Sider } = Layout;
 const menu = [
   {
     title: "Introduction",
-    items: items1,
+    items: introductions,
+  },
+  {
+    title: "Base Components",
+    items: baseComponents,
   },
   {
     title: "Page Templates",
-    items: items2,
-  },
-  {
-    title: "More",
-    items: items3,
+    items: pageTemplates,
   },
 ];
 

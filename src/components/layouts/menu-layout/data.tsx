@@ -18,13 +18,21 @@ function getItem(
   } as MenuItem;
 }
 
-export const items1: MenuItem[] = [
+export const introductions: MenuItem[] = [
   getItem("Introduction", "I100", <FileOutlined />),
   getItem("History", "I200", <FileOutlined />),
   getItem("Skills", "I300", <FileOutlined />),
 ];
 
-export const items2: MenuItem[] = [
+export const baseComponents: MenuItem[] = [
+  getItem("Components", "C100", <FileOutlined />, [
+    getItem("Button", "C101"),
+    getItem("Analytics", "C102"),
+    getItem("Input", "C103"),
+  ]),
+];
+
+export const pageTemplates: MenuItem[] = [
   getItem("Dashboard", "T100", <FileOutlined />, [
     getItem("Main", "T101"),
     getItem("Analytics", "T102"),
@@ -77,13 +85,5 @@ export const items2: MenuItem[] = [
     getItem("FAQs", "T1103"),
     getItem("Empty State", "T1104"),
     getItem("404", "T1105"),
-  ]),
-];
-
-export const items3: MenuItem[] = [
-  getItem("Components", "C100", <FileOutlined />, [
-    getItem("Button", "C101"),
-    getItem("Analytics", "C102"),
-    getItem("Input", "C103"),
   ]),
 ];
