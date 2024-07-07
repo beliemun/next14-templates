@@ -22,6 +22,10 @@
     rgb(var(--background-start-rgb));
 } */
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @layer utilities {
   .col-center {
     @apply flex flex-col justify-center items-center;
