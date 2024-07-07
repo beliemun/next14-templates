@@ -1,4 +1,5 @@
 import { EllipsisOutlined } from "@ant-design/icons";
+import { Divider } from "antd";
 
 interface MenuWrapperProps {
   children: React.ReactNode;
@@ -7,7 +8,7 @@ interface MenuWrapperProps {
 
 export const MenuWrapper = ({ children, title }: MenuWrapperProps) => {
   return (
-    <div>
+    <div className="py-2">
       {title ? (
         <span className="px-4 text-xs text-black/50">{title}</span>
       ) : (

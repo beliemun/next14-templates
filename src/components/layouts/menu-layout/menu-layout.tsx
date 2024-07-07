@@ -47,7 +47,6 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
         <MenuLayoutAvatar collapsed={collapsed} />
         {menu.map(({ title, items }, index) => (
           <div key={index}>
-            <Divider style={{ marginTop: 10, marginBottom: 15 }} />
             <MenuWrapper title={collapsed ? undefined : title}>
               <Menu
                 theme="light"
