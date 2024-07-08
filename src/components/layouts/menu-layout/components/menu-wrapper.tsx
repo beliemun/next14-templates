@@ -1,5 +1,4 @@
 import { EllipsisOutlined } from "@ant-design/icons";
-import { Divider } from "antd";
 
 interface MenuWrapperProps {
   children: React.ReactNode;

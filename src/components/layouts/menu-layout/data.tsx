@@ -1,5 +1,12 @@
 import React from "react";
-import { FileOutlined } from "@ant-design/icons";
+import {
+  FileOutlined,
+  FormatPainterOutlined,
+  HistoryOutlined,
+  LaptopOutlined,
+  SlidersOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -18,16 +25,17 @@ function getItem(
   } as MenuItem;
 }
 
-export const introductions: MenuItem[] = [
-  getItem("Introduction", "I100", <FileOutlined />),
-  getItem("History", "I200", <FileOutlined />),
-  getItem("Skills", "I300", <FileOutlined />),
+export const introduction: MenuItem[] = [
+  getItem("Introduction", "introduction", <SmileOutlined />),
+  getItem("History", "history", <HistoryOutlined />),
+  getItem("Skills", "skills", <LaptopOutlined />),
 ];
 
-export const baseComponents: MenuItem[] = [
-  getItem("Components", "C100", <FileOutlined />, [
-    getItem("Button", "C101"),
-    getItem("Input", "C102"),
+export const base: MenuItem[] = [
+  getItem("Colors", "colors", <FormatPainterOutlined />),
+  getItem("Components", "components", <SlidersOutlined />, [
+    getItem("Button", "button"),
+    getItem("Input", "input"),
   ]),
 ];
 

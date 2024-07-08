@@ -11,7 +11,7 @@ const pulbicOnlyUrls: Routes = {
 
 export const middleware = async (request: NextRequest) => {
   if (request.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/introduction", request.url));
   }
 };
 

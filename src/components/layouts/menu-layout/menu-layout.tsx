@@ -1,32 +1,37 @@
 "use client";
 
 import React, { useState } from "react";
-import { Divider, Layout, Menu } from "antd";
+import { Layout, Menu } from "antd";
 import { MenuLayoutAvatar } from "./components/avatar";
-import { introductions, baseComponents, pageTemplates } from "./data";
+import { introduction, base, pageTemplates } from "./data";
 import { MenuWrapper } from "./components";
+import { useRouter } from "next/navigation";
 
 const { Sider } = Layout;
 
 const menu = [
   {
     title: "Introduction",
-    items: introductions,
+    items: introduction,
   },
   {
-    title: "Base Components",
-    items: baseComponents,
+    title: "Base",
+    items: base,
   },
   {
-    title: "Page Templates",
+    title: "Templates",
     items: pageTemplates,
   },
 ];
 
 export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
+  const router = useRouter();
   const [selectedKey, setSelectedKey] = useState("I100");
   const [collapsed, setCollapsed] = useState(false);
-  const handleClickMenu = ({ key }: { key: string }) => setSelectedKey(key);
+  const handleClickMenu = ({ key }: { key: string }) => {
+    setSelectedKey(key);
+    router.push(`/${key}`);
+  };
 
   return (
     <Layout>
