@@ -30,4 +30,7 @@
   .col-center {
     @apply flex flex-col justify-center items-center;
   }
+  .row-center {
+    @apply flex flex-row justify-center items-center;
+  }
 }

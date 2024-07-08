@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Gothic_A1 } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 
 const gothicA1 = Gothic_A1({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
 

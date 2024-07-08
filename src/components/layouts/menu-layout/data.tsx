@@ -94,3 +94,18 @@ export const pageTemplates: MenuItem[] = [
     getItem("404", "T1105"),
   ]),
 ];
+
+export const menu = [
+  {
+    title: "Introduction",
+    items: introduction,
+  },
+  {
+    title: "Base",
+    items: base,
+  },
+  {
+    title: "Templates",
+    items: pageTemplates,
+  },
+];

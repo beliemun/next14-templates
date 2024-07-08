@@ -1,2 +1,6 @@
-export * from "./avatar";
+"use client";
+
+export * from "./menu-header";
 export * from "./menu-wrapper";
+export * from "./menu-footer";
+export * from "./resizier";
