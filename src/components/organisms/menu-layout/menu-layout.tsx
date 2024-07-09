@@ -14,7 +14,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [isFullWidth, setIsFullWitdh] = useState(false);
   const {
-    token: { colorBgBase, colorBorder },
+    token: { colorBorder },
   } = theme.useToken();
 
   const handleClickMenu = ({ key }: { key: string }) => {
@@ -45,7 +45,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
           trigger={null}
         >
           <MenuHeader collapsed={collapsed} />
-          <Divider style={{ marginTop: 0, marginBottom: 10 }} />
+          <Divider style={{ marginTop: 0, marginBottom: 10, borderColor: colorBorder }} />
           {menu.map(({ title, items }, index) => (
             <MenuWrapper key={index} title={title} collapsed={collapsed}>
               <Menu
@@ -59,10 +59,15 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
               />
             </MenuWrapper>
           ))}
-          <MenuFooter collapsed={collapsed} onCollapse={handleCollapse} onResize={handleResize} />
+          <MenuFooter
+            collapsed={collapsed}
+            isFullWidth={isFullWidth}
+            onCollapse={handleCollapse}
+            onResize={handleResize}
+          />
         </Sider>
         <Layout
-          className="transition-all duration-200 ease-in-out"
+          className="transition-all duration-300 ease-out"
           style={{ marginLeft: collapsed ? 80 : 256, overflow: "auto" }}
         >
           {children}

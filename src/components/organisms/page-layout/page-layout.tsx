@@ -5,7 +5,6 @@ import { cn } from "@/styles";
 import { Layout, theme } from "antd";
 
 export const PageLayout = ({
-  className,
   children,
   title,
 }: {
@@ -17,19 +16,16 @@ export const PageLayout = ({
     token: { colorBgBase, colorText, colorBorder },
   } = theme.useToken();
   return (
-    <Layout className={cn(`h-screen`, className)} style={{ backgroundColor: colorBgBase }}>
-      <Layout
-        className="flex flex-row justify-center items-start bg-blue-400 max-h-20 p-4"
-        style={{
-          backgroundColor: colorBgBase,
-        }}
+    <Layout style={{ backgroundColor: colorBgBase, height: "100%", overflow: "auto" }}>
+      <Title
+        type="h6-semibold"
+        style={{ color: colorText }}
+        className="flex flex-row justify-start items-center h-20 p-8"
       >
-        <Title type="h5-bold" style={{ color: colorText }}>
-          {title}
-        </Title>
-      </Layout>
+        {title}
+      </Title>
       <Layout
-        className="border-t overflow-auto"
+        className="border-t"
         style={{
           maxHeight: "calc(100vh - 80px)",
           backgroundColor: colorBgBase,

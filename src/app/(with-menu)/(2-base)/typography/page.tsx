@@ -1,6 +1,6 @@
-import { Section, Text, Title } from "@/components/atoms";
+import { Divider, Section, Text, Title } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { Card, Divider, Flex } from "antd";
+import { Card, Flex } from "antd";
 
 export default function Typography() {
   return (

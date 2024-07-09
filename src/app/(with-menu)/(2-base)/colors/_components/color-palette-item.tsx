@@ -1,53 +1,32 @@
-import { cn, colors } from "@/styles";
-import { Card } from "antd";
-
-export const paletteColorList = [
-  "primary",
-  "red",
-  "volcano",
-  "orange",
-  "gold",
-  "yellow",
-  "lime",
-  "green",
-  "cyan",
-  "blue",
-  "geekBlue",
-  "purple",
-  "magenta",
-  "slate",
-  "gray",
-];
+import { Text } from "@/components/atoms";
+import { colors } from "@/styles";
+import { ButtonColorType } from "@/components/atoms/button/types";
 
 interface ColorPaletteItemProp {
   color: string;
-  index: number;
 }
 
-export const ColorPaletteItem = ({ color, index }: ColorPaletteItemProp) => {
-  return (
-    <Card
-      key={index}
-      title={`${paletteColorList[index].toUpperCase()}`}
-      className="w-64"
-      type="inner"
-    >
-      {Array.from({ length: 10 }).map((_, index) => (
-        <div
-          key={index}
-          className={`flex flex-row items-center w-full h-4 p-4`}
-          style={{ backgroundColor: colors[`${color}${index + 1}`] }}
-        >
-          <div
-            className={cn("flex flex-row w-full justify-between items-center")}
-            style={{ color: index > 5 ? colors["white"] : colors["black"] }}
-          >
-            <span>{`${color}-${index + 1}`}</span>
-            <span>{colors[`${color}${index + 1}`]}</span>
-          </div>
+export const ColorPaletteItem = ({ color }: ColorPaletteItemProp) => {
+  const renderColorCells = (color: ButtonColorType) => {
+    const colorComponents = [];
+    for (let key in colors[color]) {
+      const value = (colors[color] as any)[key as any];
+      colorComponents.push(
+        <div className="col-center m-1">
+          <div style={{ backgroundColor: value }} className="w-full h-12 rounded-md mb-2" />
+          <Text type="sm-semibold">{key}</Text>
+          <Text type="sm-light">{value}</Text>
         </div>
-      ))}
-      <div className="b"></div>
-    </Card>
+      );
+    }
+    return colorComponents;
+  };
+  return (
+    <>
+      <div className="col-center w-full h-full">
+        <Text>{color}</Text>
+      </div>
+      {renderColorCells(color as ButtonColorType)}
+    </>
   );
 };
