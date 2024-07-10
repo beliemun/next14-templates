@@ -1,53 +1,88 @@
+import { Button, Tooltip } from "@/components/atoms";
 import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
-import { cn } from "@/styles";
+import { cn, colors } from "@/styles";
 import {
   ExpandAltOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   MoonFilled,
   MoonOutlined,
+  ShrinkOutlined,
 } from "@ant-design/icons";
-import { Button, theme } from "antd";
+import { theme } from "antd";
 
 interface MenuFooter {
+  isFullWidth: boolean;
   collapsed: boolean;
   onResize: () => void;
   onCollapse: () => void;
 }
 
-export const MenuFooter = ({ collapsed, onResize, onCollapse }: MenuFooter) => {
+export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: MenuFooter) => {
   const { isDarkMode, setDarkMode } = useDarkMode();
   const {
     token: { colorBgContainer, colorBorder, sizeMD },
   } = theme.useToken();
 
-  const handleDarkMode = () => setDarkMode(!isDarkMode);
+  const handleDarkMode = () => {
+    setDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
     <div
       className={cn(
-        `fixed bottom-0 transition-all duration-200 gap-2 ease-in-out`,
-        collapsed ? "col-center w-20 h-36" : "row-center w-64 h-12"
+        `fixed bottom-0 transition-all duration-200 ease-in-out`,
+        collapsed ? "col-center w-20 h-44" : "row-center w-64 h-20"
       )}
-      style={{ backgroundColor: colorBgContainer, border: `1px solid ${colorBorder}` }}
+      style={{
+        backgroundColor: colorBgContainer,
+        borderTop: `1px solid ${colorBorder}`,
+        borderRight: `1px solid ${colorBorder}`,
+      }}
     >
-      <Button type="dashed" onClick={onCollapse}>
-        {collapsed ? (
-          <MenuUnfoldOutlined style={{ fontSize: sizeMD }} />
-        ) : (
-          <MenuFoldOutlined style={{ fontSize: sizeMD }} />
-        )}
-      </Button>
-      <Button type="dashed" onClick={onResize}>
-        <ExpandAltOutlined style={{ fontSize: sizeMD }} />
-      </Button>
-      <Button type="dashed" onClick={handleDarkMode}>
-        {isDarkMode ? (
-          <MoonFilled style={{ fontSize: sizeMD }} />
-        ) : (
-          <MoonOutlined style={{ fontSize: sizeMD }} />
-        )}
-      </Button>
+      <div className={cn(collapsed ? "col-center" : "row-center")}>
+        <Tooltip
+          title={collapsed ? "메뉴확장" : "메뉴축소"}
+          placement={collapsed ? "right" : "top"}
+        >
+          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={onCollapse}>
+            <MenuUnfoldOutlined
+              style={{
+                fontSize: sizeMD,
+                transform: collapsed ? "rotate(180deg)" : "rotate(0deg)",
+                transition: "all 0.2s ease-in-out",
+              }}
+            />
+          </Button>
+        </Tooltip>
+        <Tooltip
+          title={isFullWidth ? "화면축소" : "화면확장"}
+          style={{ visibility: collapsed ? "hidden" : "visible" }}
+          placement={collapsed ? "right" : "top"}
+        >
+          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={onResize}>
+            {isFullWidth ? (
+              <ShrinkOutlined style={{ fontSize: sizeMD }} />
+            ) : (
+              <ExpandAltOutlined style={{ fontSize: sizeMD }} />
+            )}
+          </Button>
+        </Tooltip>
+        <Tooltip
+          title={isDarkMode ? "일반모드" : "다크모드"}
+          style={{ visibility: collapsed ? "hidden" : "visible" }}
+          placement={collapsed ? "right" : "top"}
+        >
+          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={handleDarkMode}>
+            {isDarkMode ? (
+              <MoonFilled style={{ fontSize: sizeMD, color: colors.primary[500] }} />
+            ) : (
+              <MoonOutlined style={{ fontSize: sizeMD }} />
+            )}
+          </Button>
+        </Tooltip>
+      </div>
     </div>
   );
 };

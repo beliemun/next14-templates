@@ -3,7 +3,7 @@ import { theme } from "antd";
 
 export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
   const {
-    token: { colorTextDisabled },
+    token: { colorBorder },
   } = theme.useToken();
   return (
     <div className={cn("col-center")}>
@@ -12,7 +12,7 @@ export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
           "size-full border border-dashed rounded-full transition-all duration-200",
           collapsed ? "size-12 m-4" : "size-12 m-4"
         )}
-        style={{ borderColor: colorTextDisabled }}
+        style={{ borderColor: colorBorder }}
       />
     </div>
   );

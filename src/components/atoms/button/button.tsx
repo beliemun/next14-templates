@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/styles";
 import { ButtonHTMLAttributes, CSSProperties, ForwardedRef, forwardRef, ReactNode } from "react";
 import { ButtonColorType, ButtonRoundType, ButtonSizeType, ButtonTypeType } from "./types";
@@ -48,8 +46,8 @@ export const Button = forwardRef(
             buttonColor,
             fullWidth,
             disabled,
-          }),
-          ""
+            loading,
+          })
         )}
         ref={ref}
         disabled={disabled || loading}
