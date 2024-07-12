@@ -1,6 +1,7 @@
 import React from "react";
 import {
   FileOutlined,
+  FontSizeOutlined,
   FormatPainterOutlined,
   HistoryOutlined,
   LaptopOutlined,
@@ -33,6 +34,7 @@ export const introduction: MenuItem[] = [
 
 export const base: MenuItem[] = [
   getItem("Colors", "colors", <FormatPainterOutlined />),
+  getItem("Typography", "typography", <FontSizeOutlined />),
   getItem("Components", "components", <SlidersOutlined />, [
     getItem("Button", "button"),
     getItem("Input", "input"),
@@ -97,7 +99,7 @@ export const pageTemplates: MenuItem[] = [
 
 export const menu = [
   {
-    title: "Introduction",
+    title: undefined,
     items: introduction,
   },
   {

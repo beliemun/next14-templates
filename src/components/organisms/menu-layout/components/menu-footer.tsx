@@ -18,7 +18,7 @@ interface MenuFooter {
 export const MenuFooter = ({ collapsed, onResize, onCollapse }: MenuFooter) => {
   const { isDarkMode, setDarkMode } = useDarkMode();
   const {
-    token: { colorBgBase, colorBorder, sizeMD },
+    token: { colorBgContainer, colorBorder, sizeMD },
   } = theme.useToken();
 
   const handleDarkMode = () => setDarkMode(!isDarkMode);
@@ -29,7 +29,7 @@ export const MenuFooter = ({ collapsed, onResize, onCollapse }: MenuFooter) => {
         `fixed bottom-0 transition-all duration-200 gap-2 ease-in-out`,
         collapsed ? "col-center w-20 h-36" : "row-center w-64 h-12"
       )}
-      style={{ backgroundColor: colorBgBase, border: `1px solid ${colorBorder}` }}
+      style={{ backgroundColor: colorBgContainer, border: `1px solid ${colorBorder}` }}
     >
       <Button type="dashed" onClick={onCollapse}>
         {collapsed ? (

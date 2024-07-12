@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Flex, Layout, Menu, theme } from "antd";
+import { Divider, Layout, Menu, theme } from "antd";
 import { MenuHeader } from "./components/menu-header";
-import { menu, introduction, base, pageTemplates } from "./data";
-import { LayoutResizeType, MenuFooter, MenuWrapper, ResizableWapper } from "./components";
+import { menu } from "./data";
+import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
 import { useRouter } from "next/navigation";
 const { Sider } = Layout;
 
@@ -45,8 +45,9 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
           trigger={null}
         >
           <MenuHeader collapsed={collapsed} />
+          <Divider style={{ marginTop: 0, marginBottom: 10 }} />
           {menu.map(({ title, items }, index) => (
-            <MenuWrapper key={index} title={collapsed ? undefined : title}>
+            <MenuWrapper key={index} title={title} collapsed={collapsed}>
               <Menu
                 theme="light"
                 mode="inline"

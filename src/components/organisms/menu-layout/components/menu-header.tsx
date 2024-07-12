@@ -6,11 +6,11 @@ export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
     token: { colorTextDisabled },
   } = theme.useToken();
   return (
-    <div className={cn("col-center p-4")}>
+    <div className={cn("col-center")}>
       <div
         className={cn(
-          "size-full border border-dashed transition-all duration-200",
-          collapsed ? "size-12 rounded-full" : "size-24 rounded-full"
+          "size-full border border-dashed rounded-full transition-all duration-200",
+          collapsed ? "size-12 m-4" : "size-12 m-4"
         )}
         style={{ borderColor: colorTextDisabled }}
       />
