@@ -3,7 +3,7 @@
 import { CSSProperties, ReactNode } from "react";
 import { TitleStyle, TitleType } from "./types";
 import { cn } from "@/styles";
-import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
+import { theme } from "antd";
 
 interface TitleProps {
   children?: ReactNode;
@@ -22,7 +22,9 @@ export const Title = ({
   as,
   ...rest
 }: TitleProps) => {
-  const { isDarkMode } = useDarkMode();
+  const {
+    token: { colorText },
+  } = theme.useToken();
   const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
   let Component: keyof JSX.IntrinsicElements = "h1";
   if (headings.includes(String(type).slice(0, 2))) {
@@ -30,7 +32,7 @@ export const Title = ({
   }
   return (
     <Component
-      style={{ ...style, color: isDarkMode ? "white" : "black" }}
+      style={{ ...style, color: colorText }}
       className={cn(className, TitleStyle[type])}
       {...rest}
     >

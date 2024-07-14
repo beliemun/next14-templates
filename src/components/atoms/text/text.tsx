@@ -3,7 +3,7 @@
 import { CSSProperties, ReactNode } from "react";
 import { TextStyle, TextType } from "./types";
 import { cn } from "@/styles";
-import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
+import { theme } from "antd";
 
 interface TextProps {
   children?: ReactNode;
@@ -14,10 +14,12 @@ interface TextProps {
 }
 
 export const Text = ({ children, style, className, type = "base-normal", ...rest }: TextProps) => {
-  const { isDarkMode } = useDarkMode();
+  const {
+    token: { colorText },
+  } = theme.useToken();
   return (
     <span
-      style={{ ...style, color: isDarkMode ? "white" : "black" }}
+      style={{ ...style, color: colorText }}
       className={cn(className, TextStyle[type])}
       {...rest}
     >
