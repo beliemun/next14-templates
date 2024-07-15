@@ -3,7 +3,6 @@ import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
 import { cn, colors } from "@/styles";
 import {
   ExpandAltOutlined,
-  MenuFoldOutlined,
   MenuUnfoldOutlined,
   MoonFilled,
   MoonOutlined,
@@ -46,11 +45,11 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
           title={collapsed ? "메뉴확장" : "메뉴축소"}
           placement={collapsed ? "right" : "top"}
         >
-          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={onCollapse}>
+          <Button buttonSize="sm" buttonColor="gray" buttonStyle="ghost" onClick={onCollapse}>
             <MenuUnfoldOutlined
               style={{
                 fontSize: sizeMD,
-                transform: collapsed ? "rotate(180deg)" : "rotate(0deg)",
+                transform: collapsed ? "rotate(0deg)" : "rotate(180deg)",
                 transition: "all 0.2s ease-in-out",
               }}
             />
@@ -61,7 +60,7 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
           style={{ visibility: collapsed ? "hidden" : "visible" }}
           placement={collapsed ? "right" : "top"}
         >
-          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={onResize}>
+          <Button buttonSize="sm" buttonColor="gray" buttonStyle="ghost" onClick={onResize}>
             {isFullWidth ? (
               <ShrinkOutlined style={{ fontSize: sizeMD }} />
             ) : (
@@ -74,7 +73,7 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
           style={{ visibility: collapsed ? "hidden" : "visible" }}
           placement={collapsed ? "right" : "top"}
         >
-          <Button buttonSize="sm" buttonColor="gray" buttonType="ghost" onClick={handleDarkMode}>
+          <Button buttonSize="sm" buttonColor="gray" buttonStyle="ghost" onClick={handleDarkMode}>
             {isDarkMode ? (
               <MoonFilled style={{ fontSize: sizeMD, color: colors.primary[500] }} />
             ) : (

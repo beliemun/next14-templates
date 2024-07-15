@@ -1,9 +1,10 @@
-import { Flex, Space } from "antd";
+import { Divider } from "@/components/atoms";
+import { PageLayout } from "@/components/organisms";
 
 export default function () {
   return (
-    <Flex className="w-full min-h-screen" justify="center" align="center">
-      <Space>History</Space>
-    </Flex>
+    <PageLayout title="Button">
+      <Divider orientation="left">history</Divider>
+    </PageLayout>
   );
 }

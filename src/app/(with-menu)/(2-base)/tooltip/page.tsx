@@ -3,8 +3,8 @@ import { PageLayout } from "@/components/organisms";
 
 export default function () {
   return (
-    <PageLayout title="Button">
-      <Divider orientation="left">Introduction</Divider>
+    <PageLayout title="<Tooltip />">
+      <Divider orientation="left">Tooltip</Divider>
     </PageLayout>
   );
 }

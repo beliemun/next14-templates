@@ -1,6 +1,6 @@
-import { cn } from "@/styles";
+import { cn, ColorType } from "@/styles";
 import { ButtonHTMLAttributes, CSSProperties, ForwardedRef, forwardRef, ReactNode } from "react";
-import { ButtonColorType, ButtonRoundType, ButtonSizeType, ButtonTypeType } from "./types";
+import { ButtonRoundType, ButtonSizeType, ButtonStyleType } from "./types";
 import { buttonStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
 
@@ -9,9 +9,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: ReactNode;
   buttonRound?: ButtonRoundType;
-  buttonType?: ButtonTypeType;
+  buttonStyle?: ButtonStyleType;
   buttonSize?: ButtonSizeType;
-  buttonColor?: ButtonColorType;
+  buttonColor?: ColorType;
   fullWidth?: boolean;
   disabled?: boolean;
   loading?: boolean;
@@ -24,7 +24,7 @@ export const Button = forwardRef(
       className,
       children,
       buttonRound = "round",
-      buttonType = "solid",
+      buttonStyle = "solid",
       buttonSize = "default",
       buttonColor = "red",
       fullWidth,
@@ -38,16 +38,16 @@ export const Button = forwardRef(
       <button
         style={{ ...style }}
         className={cn(
-          className,
           buttonStyles({
             buttonRound,
-            buttonType,
+            buttonStyle,
             buttonSize,
             buttonColor,
             fullWidth,
             disabled,
             loading,
-          })
+          }),
+          className
         )}
         ref={ref}
         disabled={disabled || loading}

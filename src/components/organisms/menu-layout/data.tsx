@@ -33,11 +33,13 @@ export const introduction: MenuItem[] = [
 ];
 
 export const base: MenuItem[] = [
-  getItem("Colors", "colors", <FormatPainterOutlined />),
+  getItem("Color", "color", <FormatPainterOutlined />),
   getItem("Typography", "typography", <FontSizeOutlined />),
   getItem("Components", "components", <SlidersOutlined />, [
     getItem("Button", "button"),
     getItem("Input", "input"),
+    getItem("Tag", "tag"),
+    getItem("Tooltip", "tooltip"),
   ]),
 ];
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { Title } from "@/components/atoms";
-import { cn } from "@/styles";
 import { Layout, theme } from "antd";
 
 export const PageLayout = ({
@@ -16,7 +15,7 @@ export const PageLayout = ({
     token: { colorBgBase, colorText, colorBorder },
   } = theme.useToken();
   return (
-    <Layout style={{ backgroundColor: colorBgBase, height: "100%", overflow: "auto" }}>
+    <Layout style={{ backgroundColor: colorBgBase }} className={"col-flex h-screen overflow-auto"}>
       <Title
         type="h6-semibold"
         style={{ color: colorText }}

@@ -1,13 +1,12 @@
 import { Text } from "@/components/atoms";
-import { colors } from "@/styles";
-import { ButtonColorType } from "@/components/atoms/button/types";
+import { colors, ColorType } from "@/styles";
 
 interface ColorPaletteItemProp {
   color: string;
 }
 
 export const ColorPaletteItem = ({ color }: ColorPaletteItemProp) => {
-  const renderColorCells = (color: ButtonColorType) => {
+  const renderColorCells = (color: ColorType) => {
     const colorComponents = [];
     for (let key in colors[color]) {
       const value = (colors[color] as any)[key as any];
@@ -26,7 +25,7 @@ export const ColorPaletteItem = ({ color }: ColorPaletteItemProp) => {
       <div className="col-center w-full h-full">
         <Text>{color}</Text>
       </div>
-      {renderColorCells(color as ButtonColorType)}
+      {renderColorCells(color as ColorType)}
     </>
   );
 };

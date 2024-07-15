@@ -1,5 +1,41 @@
-import { ButtonColorType } from "@/components/atoms/button/types";
 import color from "tailwindcss/colors";
+
+export type ColorType =
+  | "primary"
+  | "slate"
+  | "gray"
+  | "red"
+  | "orange"
+  | "yellow"
+  | "lime"
+  | "green"
+  | "emerald"
+  | "teal"
+  | "cyan"
+  | "blue"
+  | "violet"
+  | "purple"
+  | "pink"
+  | "rose";
+
+export const colorList: ColorType[] = [
+  "primary",
+  "slate",
+  "gray",
+  "red",
+  "orange",
+  "yellow",
+  "lime",
+  "green",
+  "emerald",
+  "teal",
+  "cyan",
+  "blue",
+  "violet",
+  "purple",
+  "pink",
+  "rose",
+];
 
 type ColorKeyType =
   | "50"
@@ -14,7 +50,7 @@ type ColorKeyType =
   | "900"
   | "950";
 
-export const colors: Record<ButtonColorType, Record<ColorKeyType, string>> = {
+export const colors: Record<ColorType, Record<ColorKeyType, string>> = {
   primary: color.teal,
   slate: color.slate,
   gray: color.gray,

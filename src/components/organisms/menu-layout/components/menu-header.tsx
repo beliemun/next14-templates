@@ -1,5 +1,5 @@
 import { cn } from "@/styles";
-import { theme } from "antd";
+import { Divider, theme } from "antd";
 
 export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
   const {
@@ -14,6 +14,7 @@ export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
         )}
         style={{ borderColor: colorBorder }}
       />
+      <Divider style={{ marginTop: 0, marginBottom: 10, borderColor: colorBorder }} />
     </div>
   );
 };

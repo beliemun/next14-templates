@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Divider, Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme } from "antd";
 import { MenuHeader } from "./components/menu-header";
 import { menu } from "./data";
 import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
@@ -37,7 +37,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
           width={256}
           style={{
             overflow: "auto",
-            height: "calc(100vh - 48px)",
+            height: "calc(100vh - 80px)",
             position: "fixed",
             paddingBottom: 48,
             borderRight: `1px solid ${colorBorder}`,
@@ -45,7 +45,6 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
           trigger={null}
         >
           <MenuHeader collapsed={collapsed} />
-          <Divider style={{ marginTop: 0, marginBottom: 10, borderColor: colorBorder }} />
           {menu.map(({ title, items }, index) => (
             <MenuWrapper key={index} title={title} collapsed={collapsed}>
               <Menu
