@@ -1,8 +1,19 @@
-// "use client";
-
-import { Card, Divider, Input, Search, Section, Select, Space } from "@/components/atoms";
+import { Card, Divider, Input, Section, Select, Space, Tooltip } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { SettingOutlined } from "@ant-design/icons";
+import { colors } from "@/styles";
+import {
+  AppleFilled,
+  AudioOutlined,
+  ExclamationCircleOutlined,
+  GithubOutlined,
+  GlobalOutlined,
+  GoogleCircleFilled,
+  GoogleOutlined,
+  InfoCircleOutlined,
+  MailOutlined,
+  SettingOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const selectBefore = (
   <Select
@@ -32,7 +43,7 @@ export default function () {
       <Section className="flex flex-row flex-wrap gap-4">
         <Card title={"Size"}>
           <Space direction="vertical" size={16}>
-            <Input placeholder="small" size="small" />
+            <Input placeholder="small" size="small" autoFocus />
             <Input placeholder="middle" size="middle" />
             <Input placeholder="large" size="large" />
             <Input placeholder="middle disabled" size="middle" disabled />
@@ -56,10 +67,68 @@ export default function () {
         </Card>
         <Card title={"Search"}>
           <Space direction="vertical" size={16}>
-            <Search placeholder="seach" />
-            <Search placeholder="loading" loading />
-            <Search placeholder="loading" enterButton />
-            <Search placeholder="loading" enterButton loading />
+            <Input.Search placeholder="seach" allowClear />
+            <Input.Search placeholder="loading" loading />
+            <Input.Search placeholder="loading" enterButton />
+            <Input.Search
+              addonBefore="https://"
+              placeholder="google"
+              suffix={<AudioOutlined style={{ color: colors.primary[500], fontSize: 16 }} />}
+              enterButton
+              loading
+            />
+          </Space>
+        </Card>
+        <Card title={"Tooltip"}>
+          <Space direction="vertical" size={16}>
+            <Input
+              placeholder="username"
+              prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+              suffix={
+                <Tooltip title="Enter your username.">
+                  <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
+                </Tooltip>
+              }
+            />
+            <Input
+              placeholder="email"
+              prefix={<MailOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+              suffix={
+                <Tooltip title="Enter your email.">
+                  <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
+                </Tooltip>
+              }
+            />
+            <Input
+              placeholder="github"
+              prefix={<GithubOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+              suffix={
+                <Tooltip title="Enter your github id.">
+                  <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
+                </Tooltip>
+              }
+            />
+            <Input
+              placeholder="country"
+              prefix={<GlobalOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+              suffix={
+                <Tooltip title="Enter your country.">
+                  <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
+                </Tooltip>
+              }
+            />
+          </Space>
+        </Card>
+        <Card title={"Password"}>
+          <Space direction="vertical" size={16}>
+            <Input.Password placeholder="password" />
+            <Input.Password value={1234567890} />
+            <Input.Password value={1234567890} status="warning" />
+            <Input.Password
+              prefix={<ExclamationCircleOutlined />}
+              value={1234567890}
+              status="error"
+            />
           </Space>
         </Card>
       </Section>

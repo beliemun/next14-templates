@@ -1,23 +1,14 @@
 "use client";
 
 import { useDarkModeStore } from "@/stores";
-import { cn, colors, hexToRGBA } from "@/styles";
-import { ConfigProvider } from "antd";
-import SearchAtnd from "antd/es/input/Search";
-import { SearchProps as SearchAntdProps } from "antd/lib/input";
-import { CSSProperties } from "react";
-import "./styles.css";
+import { colors, hexToRGBA } from "@/styles";
+import { ConfigProvider as ConfigProviderAntd } from "antd";
+import { ReactNode } from "react";
 
-interface SearchProps extends SearchAntdProps {
-  style?: CSSProperties;
-  className?: string;
-  children?: string;
-}
-
-export const Search = ({ style, className, children, size = "middle", ...rest }: SearchProps) => {
+export const ConfigProvider = ({ children }: { children: ReactNode }) => {
   const { isDarkMode } = useDarkModeStore();
   return (
-    <ConfigProvider
+    <ConfigProviderAntd
       theme={{
         components: {
           Input: {
@@ -48,12 +39,7 @@ export const Search = ({ style, className, children, size = "middle", ...rest }:
         },
       }}
     >
-      <SearchAtnd
-        style={{ ...style }}
-        className={cn(size, className)}
-        size={size}
-        {...rest}
-      ></SearchAtnd>
-    </ConfigProvider>
+      {children}
+    </ConfigProviderAntd>
   );
 };

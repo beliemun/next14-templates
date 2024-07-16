@@ -9,4 +9,3 @@ export * from "./card";
 export * from "./input";
 export * from "./space";
 export * from "./select";
-export * from "./search";
