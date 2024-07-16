@@ -3,8 +3,8 @@ import { PageLayout } from "@/components/organisms";
 
 export default function () {
   return (
-    <PageLayout title="<Tooltip />">
-      <Divider orientation="left">Tooltip</Divider>
+    <PageLayout title="<Radio />">
+      <Divider orientation="left">Radio</Divider>
     </PageLayout>
   );
 }

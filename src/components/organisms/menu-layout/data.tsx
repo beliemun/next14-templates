@@ -35,14 +35,24 @@ export const introduction: MenuItem[] = [
 export const base: MenuItem[] = [
   getItem("Color", "color", <FormatPainterOutlined />),
   getItem("Typography", "typography", <FontSizeOutlined />, [
-    getItem("Title", "title"),
-    getItem("Text", "text"),
+    getItem("Title", "title"), // 완료
+    getItem("Text", "text"), // 완료
   ]),
   getItem("Components", "components", <SlidersOutlined />, [
-    getItem("Button", "button"),
-    getItem("Tag", "tag"),
-    getItem("Input", "input"),
-    getItem("Tooltip", "tooltip"),
+    getItem("Button", "button"), // 완료
+    getItem("Input", "input"), // Textarea
+    getItem("Tag", "tag"), // 완료
+    getItem("Picker", "picker"), // Color, Time, Date
+    getItem("Select", "select"),
+    getItem("Checkbox", "checkbox"),
+    getItem("Radio", "radio"),
+    getItem("Swich", "swich"),
+    getItem("Transfer", "transter"),
+    getItem("Upload", "upload"),
+    getItem("Message", "message"),
+    getItem("Modal", "modal"),
+    getItem("Image", "image"),
+    getItem("QRCode", "qrcode"),
   ]),
 ];
 
