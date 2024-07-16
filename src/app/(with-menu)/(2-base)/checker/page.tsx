@@ -3,8 +3,8 @@ import { PageLayout } from "@/components/organisms";
 
 export default function () {
   return (
-    <PageLayout title="<Radio />">
-      <Divider orientation="left">Radio</Divider>
+    <PageLayout title="<Checkbox />, <Radio />, <Switch />">
+      <Divider orientation="left">Checker</Divider>
     </PageLayout>
   );
 }

@@ -2,13 +2,10 @@ import { Card, Divider, Input, Section, Select, Space, Tooltip } from "@/compone
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/styles";
 import {
-  AppleFilled,
   AudioOutlined,
   ExclamationCircleOutlined,
   GithubOutlined,
   GlobalOutlined,
-  GoogleCircleFilled,
-  GoogleOutlined,
   InfoCircleOutlined,
   MailOutlined,
   SettingOutlined,

@@ -43,10 +43,8 @@ export const base: MenuItem[] = [
     getItem("Input", "input"), // Textarea
     getItem("Tag", "tag"), // 완료
     getItem("Picker", "picker"), // Color, Time, Date
+    getItem("Checker", "checker"), // Checkbox, Radio, Switch
     getItem("Select", "select"),
-    getItem("Checkbox", "checkbox"),
-    getItem("Radio", "radio"),
-    getItem("Swich", "swich"),
     getItem("Transfer", "transter"),
     getItem("Upload", "upload"),
     getItem("Message", "message"),
