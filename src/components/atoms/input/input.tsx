@@ -2,9 +2,8 @@
 
 import { cn, colors, hexToRGBA } from "@/styles";
 import { ConfigProvider, Input as InputAntd, InputProps as InputAntdProps } from "antd";
+import { useDarkModeStore } from "@/stores";
 import { CSSProperties } from "react";
-import { inputStyles } from "../space/styles";
-import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
 
 interface InputProps extends InputAntdProps {
   stlyes?: CSSProperties;
@@ -12,7 +11,7 @@ interface InputProps extends InputAntdProps {
 }
 
 export const Input = ({ style, className, ...rest }: InputProps) => {
-  const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useDarkModeStore();
   return (
     <ConfigProvider
       theme={{
@@ -23,16 +22,20 @@ export const Input = ({ style, className, ...rest }: InputProps) => {
             borderRadiusSM: 8,
             paddingInlineSM: 12,
             paddingBlockSM: 6,
+
             // medium
             inputFontSize: 14,
             borderRadius: 8,
             paddingInline: 14,
             paddingBlock: 10,
+
             // large
             inputFontSizeLG: 16,
             borderRadiusLG: 8,
             paddingInlineLG: 14,
             paddingBlockLG: 12,
+
+            // color
             hoverBorderColor: colors.primary[500],
             activeShadow: isDarkMode
               ? `0 0 0 4px ${hexToRGBA({ hex: colors.primary[100], alpha: 0.3 })}`
@@ -41,7 +44,7 @@ export const Input = ({ style, className, ...rest }: InputProps) => {
         },
       }}
     >
-      <InputAntd style={{ ...style }} className={cn(inputStyles(), className)} {...rest} />
+      <InputAntd style={{ ...style }} className={cn(className)} {...rest} />
     </ConfigProvider>
   );
 };

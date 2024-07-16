@@ -1,9 +1,8 @@
 // "use client";
 
-import { Card, Divider, Input, Section, Select, Space } from "@/components/atoms";
+import { Card, Divider, Input, Search, Section, Select, Space } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { SettingOutlined } from "@ant-design/icons";
-import Search from "antd/es/input/Search";
 
 const selectBefore = (
   <Select
@@ -53,6 +52,14 @@ export default function () {
             <Input placeholder="google" addonBefore="https://" addonAfter=".com" />
             <Input placeholder="google" addonBefore={selectBefore} addonAfter={selectAfter} />
             <Input placeholder="https://google.com" addonAfter={<SettingOutlined />} />
+          </Space>
+        </Card>
+        <Card title={"Search"}>
+          <Space direction="vertical" size={16}>
+            <Search placeholder="seach" />
+            <Search placeholder="loading" loading />
+            <Search placeholder="loading" enterButton />
+            <Search placeholder="loading" enterButton loading />
           </Space>
         </Card>
       </Section>

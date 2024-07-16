@@ -1,13 +1,13 @@
 "use client";
 
-import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
+import { useDarkModeStore } from "@/stores";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider, theme } from "antd";
 import { ReactNode } from "react";
 import colors from "tailwindcss/colors";
 
 export const AntdProvider = ({ children }: { children: ReactNode }) => {
-  const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useDarkModeStore();
   return (
     <AntdRegistry>
       <ConfigProvider

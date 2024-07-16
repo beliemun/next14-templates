@@ -1,5 +1,5 @@
 import { Button, Tooltip } from "@/components/atoms";
-import useDarkMode from "@/stores/useDarkModeStore/useDarkModeStore";
+import { useDarkModeStore } from "@/stores";
 import { cn, colors } from "@/styles";
 import {
   ExpandAltOutlined,
@@ -18,7 +18,7 @@ interface MenuFooter {
 }
 
 export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: MenuFooter) => {
-  const { isDarkMode, setDarkMode } = useDarkMode();
+  const { isDarkMode, setDarkMode } = useDarkModeStore();
   const {
     token: { colorBgContainer, colorBorder, sizeMD },
   } = theme.useToken();
