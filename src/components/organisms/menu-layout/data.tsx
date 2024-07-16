@@ -34,11 +34,14 @@ export const introduction: MenuItem[] = [
 
 export const base: MenuItem[] = [
   getItem("Color", "color", <FormatPainterOutlined />),
-  getItem("Typography", "typography", <FontSizeOutlined />),
+  getItem("Typography", "typography", <FontSizeOutlined />, [
+    getItem("Title", "title"),
+    getItem("Text", "text"),
+  ]),
   getItem("Components", "components", <SlidersOutlined />, [
     getItem("Button", "button"),
-    getItem("Input", "input"),
     getItem("Tag", "tag"),
+    getItem("Input", "input"),
     getItem("Tooltip", "tooltip"),
   ]),
 ];

@@ -1,9 +1,8 @@
-import { Button, Tooltip } from "@/components/atoms";
+import { Button, Divider, Tooltip } from "@/components/atoms";
 import { buttonTypes } from "@/components/atoms/button/types";
 import { PageLayout } from "@/components/organisms";
 import { colorList } from "@/styles";
 import { HomeOutlined } from "@ant-design/icons";
-import { Divider } from "antd";
 
 export default function () {
   return (

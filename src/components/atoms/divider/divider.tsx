@@ -1,15 +1,11 @@
 import { cn } from "@/styles";
-import { Divider as DividerAtnd } from "antd";
+import { Divider as DividerAtnd, DividerProps as DividerAntdProps } from "antd";
 import { CSSProperties, ReactNode } from "react";
 
-interface DividerProps {
+interface DividerProps extends DividerAntdProps {
   style?: CSSProperties | undefined;
   className?: string | undefined;
   children?: ReactNode | undefined;
-  dashed?: boolean | undefined;
-  orientation?: "left" | "right" | "center" | undefined;
-  plain?: boolean | undefined;
-  type?: "horizontal" | "vertical" | undefined;
 }
 
 export const Divider = ({ style, className, children, ...rest }: DividerProps) => {

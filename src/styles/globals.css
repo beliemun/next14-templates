@@ -25,6 +25,14 @@ body {
   display: none;
 }
 
+/* 기본 스타일 뒤에 생성 */
+@layer components {
+  .input {
+    @apply border-red-400 !important;
+  }
+}
+
+/* components 뒤에 생성 */
 @layer utilities {
   .col-center {
     @apply flex flex-col justify-center items-center;

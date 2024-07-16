@@ -1,0 +1,57 @@
+import { Card, Divider, Section, Text, Title } from "@/components/atoms";
+import { PageLayout } from "@/components/organisms";
+
+export default function TextPage() {
+  return (
+    <PageLayout title="<Text />">
+      <Divider orientation="left">Text</Divider>
+      <Section className="flex flex-row flex-wrap gap-4">
+        <Card title={"sm"} className="w-60">
+          <div className="flex flex-col">
+            <Text type="sm-light">sm-light</Text>
+            <Text type="sm-normal">sm-normal</Text>
+            <Text type="sm-regular">sm-regular</Text>
+            <Text type="sm-semibold">sm-semibold</Text>
+            <Text type="sm-bold">sm-bold</Text>
+          </div>
+        </Card>
+        <Card title={"base"} className="w-60">
+          <div className="flex flex-col text-left">
+            <Text type="base-light">base-light</Text>
+            <Text type="base-normal">base-normal</Text>
+            <Text type="base-regular">base-regular</Text>
+            <Text type="base-semibold">base-semibold</Text>
+            <Text type="base-bold">base-bold</Text>
+          </div>
+        </Card>
+        <Card title={"lg"} className="w-60">
+          <div className="flex flex-col text-left">
+            <Text type="lg-light">lg-light</Text>
+            <Text type="lg-normal">lg-normal</Text>
+            <Text type="lg-regular">lg-regular</Text>
+            <Text type="lg-semibold">lg-semibold</Text>
+            <Text type="lg-bold">lg-bold</Text>
+          </div>
+        </Card>
+        <Card title={"xl"} className="w-60">
+          <div className="flex flex-col text-left">
+            <Text type="xl-light">xl-light</Text>
+            <Text type="xl-normal">xl-normal</Text>
+            <Text type="xl-regular">xl-regular</Text>
+            <Text type="xl-semibold">xl-semibold</Text>
+            <Text type="xl-bold">xl-bold</Text>
+          </div>
+        </Card>
+        <Card title={"2xl"} className="w-60">
+          <div className="flex flex-col text-left">
+            <Text type="2xl-light">xl-light</Text>
+            <Text type="2xl-normal">xl-normal</Text>
+            <Text type="2xl-regular">xl-regular</Text>
+            <Text type="2xl-semibold">xl-semibold</Text>
+            <Text type="2xl-bold">xl-bold</Text>
+          </div>
+        </Card>
+      </Section>
+    </PageLayout>
+  );
+}

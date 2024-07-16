@@ -18,7 +18,12 @@ export type TextType =
   | "xl-normal"
   | "xl-regular"
   | "xl-semibold"
-  | "xl-bold";
+  | "xl-bold"
+  | "2xl-light"
+  | "2xl-normal"
+  | "2xl-regular"
+  | "2xl-semibold"
+  | "2xl-bold";
 
 export const TextStyle: Record<TextType, string> = {
   "sm-light": "text-sm font-light",
@@ -41,4 +46,9 @@ export const TextStyle: Record<TextType, string> = {
   "xl-regular": "text-xl font-regular",
   "xl-semibold": "text-xl font-semibold",
   "xl-bold": "text-xl font-bold",
+  "2xl-light": "text-2xl font-light",
+  "2xl-normal": "text-2xl font-normal",
+  "2xl-regular": "text-2xl font-regular",
+  "2xl-semibold": "text-2xl font-semibold",
+  "2xl-bold": "text-2xl font-bold",
 };
