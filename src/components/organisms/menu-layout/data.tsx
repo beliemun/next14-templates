@@ -42,8 +42,8 @@ export const base: MenuItem[] = [
     getItem("Button", "button"), // 완료
     getItem("Input", "input"), // 완료
     getItem("Tag", "tag"), // 완료
-    getItem("Picker", "picker"), // Color, Time, Date
-    getItem("Checker", "checker"), // Checkbox, Radio, Switch
+    getItem("Picker", "picker"), // 완료
+    getItem("Checker", "checker"), // 완료 Switch
     getItem("Select", "select"),
     getItem("Transfer", "transter"),
     getItem("Upload", "upload"),

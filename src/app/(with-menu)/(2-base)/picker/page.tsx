@@ -76,7 +76,7 @@ export default function () {
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="warning" />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="error" />
-            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} disabled />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
           </Space>
         </Card>
       </Section>
@@ -102,7 +102,7 @@ export default function () {
             <DatePicker.RangePicker />
             <DatePicker.RangePicker status={"warning"} />
             <DatePicker.RangePicker status={"error"} />
-            <DatePicker.RangePicker disabled />
+            <DatePicker.RangePicker disabled={[true, true]} allowEmpty={[true, true]} />
           </Space>
         </Card>
       </Section>
