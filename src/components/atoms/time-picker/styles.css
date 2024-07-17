@@ -1,0 +1,37 @@
+/* ConfigProvider로 수정할 수 있는 필드가 존재하지 않아 강제로 CSS 추가 */
+
+.ant-picker-focused {
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.3) !important;
+}
+
+.dark .ant-picker-focused {
+  box-shadow: 0 0 0 4px rgba(204, 251, 241, 0.3) !important;
+}
+
+.ant-picker-status-warning {
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.3) !important;
+}
+
+.dark .ant-picker-status-warning {
+  box-shadow: 0 0 0 4px rgba(254, 246, 195, 0.3) !important;
+}
+
+.ant-picker-status-error {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3) !important;
+}
+
+.dark .ant-picker-status-error {
+  box-shadow: 0 0 0 4px rgba(254, 226, 226, 0.3) !important;
+}
+
+.ant-picker-small {
+  height: 36px !important;
+}
+
+.ant-picker-middle {
+  height: 44px !important;
+}
+
+.ant-picker-large {
+  height: 50px !important;
+}

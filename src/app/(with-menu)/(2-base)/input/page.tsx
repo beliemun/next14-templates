@@ -11,6 +11,7 @@ import {
   SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import TextArea from "antd/es/input/TextArea";
 
 const selectBefore = (
   <Select
@@ -37,7 +38,7 @@ export default function () {
   return (
     <PageLayout title="<Input />">
       <Divider orientation="left">Input</Divider>
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section className="flex flex-row flex-wrap gap-4 pt-2">
         <Card title={"Size"}>
           <Space direction="vertical" size={16}>
             <Input placeholder="small" size="small" autoFocus />
@@ -126,6 +127,19 @@ export default function () {
               value={1234567890}
               status="error"
             />
+          </Space>
+        </Card>
+        <Card title={"TextArea"} className="max-w-xl w-full">
+          <Space direction="vertical" size={16} className="w-full">
+            <Input.TextArea placeholder="max length is 20" style={{ height: 100 }} maxLength={20} />
+            <Input.TextArea placeholder="auto resize textarea" maxLength={20} autoSize />
+          </Space>
+        </Card>
+        <Card title={"Verification Code"}>
+          <Space direction="vertical" size={16} className="w-60">
+            <Input.OTP style={{ width: "100%" }} />
+            <Input.OTP style={{ width: "100%" }} variant="filled" />
+            <Input.OTP style={{ width: "100%" }} mask="✕" />
           </Space>
         </Card>
       </Section>

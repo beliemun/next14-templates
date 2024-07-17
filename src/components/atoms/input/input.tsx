@@ -4,6 +4,9 @@ import { CSSProperties, forwardRef, ForwardRefExoticComponent, RefAttributes } f
 import { ConfigProvider } from "./config";
 import Search, { SearchProps } from "./search";
 import Password, { PasswordProps } from "./password";
+import TextArea, { TextAreaProps } from "./textarea";
+import OTP, { OTPProps } from "./opt";
+import { OTPRef } from "antd/es/input/OTP";
 
 interface InputProps extends InputAntdProps {
   stlyes?: CSSProperties;
@@ -13,6 +16,8 @@ interface InputProps extends InputAntdProps {
 interface InputComponent extends ForwardRefExoticComponent<InputProps & RefAttributes<InputRef>> {
   Search: ForwardRefExoticComponent<SearchProps & RefAttributes<InputRef>>;
   Password: ForwardRefExoticComponent<PasswordProps & RefAttributes<InputRef>>;
+  TextArea: ForwardRefExoticComponent<TextAreaProps & RefAttributes<InputRef>>;
+  OTP: ForwardRefExoticComponent<OTPProps & RefAttributes<OTPRef>>;
 }
 
 const Input = forwardRef<InputRef, InputProps>(({ style, className, ...rest }: InputProps, ref) => {
@@ -25,5 +30,7 @@ const Input = forwardRef<InputRef, InputProps>(({ style, className, ...rest }: I
 
 Input.Search = Search;
 Input.Password = Password;
+Input.TextArea = TextArea;
+Input.OTP = OTP;
 
 export default Input;

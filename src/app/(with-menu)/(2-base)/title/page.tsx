@@ -5,7 +5,7 @@ export default function TitlePage() {
   return (
     <PageLayout title="<TItle />">
       <Divider orientation="left">Title</Divider>
-      <Section className="flex flex-row flex-wrap gap-4 text-xl">
+      <Section className="flex flex-row flex-wrap gap-4 pt-2">
         <Card title={"h1"} type="inner">
           <div className="flex flex-col">
             <Title type="h1-normal">h1-normal</Title>

@@ -5,7 +5,7 @@ export default function TextPage() {
   return (
     <PageLayout title="<Text />">
       <Divider orientation="left">Text</Divider>
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section className="flex flex-row flex-wrap gap-4 pt-2">
         <Card title={"sm"} className="w-60">
           <div className="flex flex-col">
             <Text type="sm-light">sm-light</Text>

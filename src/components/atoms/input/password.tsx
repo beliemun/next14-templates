@@ -2,8 +2,8 @@ import { InputRef, PasswordProps as PasswordAntdProps } from "antd/es/input";
 import { CSSProperties, forwardRef } from "react";
 import { ConfigProvider } from "./config";
 import PasswordAntd from "antd/es/input/Password";
-import "./styles.css";
 import { cn } from "@/styles";
+import "./styles.css";
 
 export interface PasswordProps extends PasswordAntdProps {
   style?: CSSProperties;

@@ -40,7 +40,7 @@ export const base: MenuItem[] = [
   ]),
   getItem("Components", "components", <SlidersOutlined />, [
     getItem("Button", "button"), // 완료
-    getItem("Input", "input"), // Textarea
+    getItem("Input", "input"), // 완료
     getItem("Tag", "tag"), // 완료
     getItem("Picker", "picker"), // Color, Time, Date
     getItem("Checker", "checker"), // Checkbox, Radio, Switch
