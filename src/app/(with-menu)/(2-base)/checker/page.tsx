@@ -11,7 +11,13 @@ import {
   Text,
 } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { CheckboxProps } from "antd";
+import {
+  CheckOutlined,
+  CheckSquareOutlined,
+  CloseCircleOutlined,
+  CloseOutlined,
+} from "@ant-design/icons";
+import { CheckboxProps, Switch } from "antd";
 import { useState } from "react";
 
 const options = ["Option A", "Option B", "Option C"];
@@ -74,6 +80,47 @@ export default function () {
             <Text type="sm-normal">Option D</Text>
           </Radio>
         </Radio.Group>
+      </Section>
+      <Divider orientation="left">Swich</Divider>
+      <Section className="flex flex-row flex-wrap gap-4 px-8 pt-2">
+        <Card title={"Size"}>
+          <Space direction="vertical" gap={16}>
+            <Switch size="small" defaultChecked />
+            <Switch size="default" />
+          </Space>
+        </Card>
+        <Card title={"with Text, Icon"}>
+          <Space direction="vertical" gap={16}>
+            <Switch
+              size="small"
+              checkedChildren={<CheckOutlined />}
+              unCheckedChildren={<CloseOutlined />}
+            />
+            <Switch
+              size="default"
+              defaultChecked
+              checkedChildren={"On"}
+              unCheckedChildren={"Off"}
+            />
+          </Space>
+        </Card>
+        <Card title={"Loading"}>
+          <Space direction="vertical" gap={16}>
+            <Switch
+              size="small"
+              checkedChildren={<CheckOutlined />}
+              unCheckedChildren={<CloseOutlined />}
+              loading
+            />
+            <Switch
+              size="default"
+              defaultChecked
+              checkedChildren={"On"}
+              unCheckedChildren={"Off"}
+              loading
+            />
+          </Space>
+        </Card>
       </Section>
     </PageLayout>
   );
