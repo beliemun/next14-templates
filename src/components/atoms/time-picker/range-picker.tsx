@@ -1,30 +1,19 @@
 "use client";
 
-import { cn } from "@/styles";
-import {
-  ConfigProvider,
-  TimePicker as TimePickerAntd,
-  TimePickerProps as TimePickerAntdProps,
-} from "antd";
+import { RangePickerProps } from "antd/es/date-picker";
 import { CSSProperties } from "react";
+import { cn } from "@/styles";
+import { ConfigProvider, TimePicker } from "antd";
 import { useDarkModeStore } from "@/stores";
-import RangePicker from "./range-picker";
 import "./styles.css";
 
-interface TimePickerProps extends TimePickerAntdProps {
+interface RangePickProps extends RangePickerProps {
   style?: CSSProperties;
   className?: string;
 }
 
-const TimePicker = ({
-  style,
-  className,
-  size = "middle",
-  showNow = false,
-  ...rest
-}: TimePickerProps) => {
+const RangePicker = ({ style, className, size = "middle", ...rest }: RangePickProps) => {
   const { isDarkMode } = useDarkModeStore();
-
   return (
     <ConfigProvider
       theme={{
@@ -48,18 +37,15 @@ const TimePicker = ({
         },
       }}
     >
-      <TimePickerAntd
+      <TimePicker.RangePicker
         style={{ ...style }}
         className={cn(isDarkMode && "dark", className)}
-        showNow={showNow}
         size={size}
-        placeholder="시간 선택"
+        placeholder={["시작 시간", "종료 시간"]}
         {...rest}
       />
     </ConfigProvider>
   );
 };
 
-TimePicker.RangePicker = RangePicker;
-
-export default TimePicker;
+export default RangePicker;

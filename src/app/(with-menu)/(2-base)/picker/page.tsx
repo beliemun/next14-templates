@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, ColorPicker, Divider, Section, Space, Text, TimePicker } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/styles";
@@ -36,56 +38,42 @@ export default function () {
             <TimePicker
               size="small"
               format={"HH:mm a"}
-              showNow={false}
               minuteStep={15}
-              defaultValue={dayjs("12:08:23", "HH:mm:ss a")}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
             />
-            <TimePicker size="middle" format={"HH:mm a"} showNow={false} minuteStep={15} />
-            <TimePicker size="large" format={"HH:mm a"} showNow={false} minuteStep={15} />
+            <TimePicker
+              size="middle"
+              format={"HH:mm a"}
+              minuteStep={15}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
+            />
+            <TimePicker
+              size="large"
+              format={"HH:mm a"}
+              minuteStep={15}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
+            />
           </Space>
         </Card>
         <Card title="Variants">
           <Space direction="vertical" size={16}>
-            <TimePicker
-              size="middle"
-              format={"HH:mm a"}
-              showNow={false}
-              minuteStep={15}
-              variant="outlined"
-            />
-            <TimePicker
-              size="middle"
-              format={"HH:mm a"}
-              showNow={false}
-              minuteStep={15}
-              variant="filled"
-            />
-            <TimePicker
-              size="middle"
-              format={"HH:mm a"}
-              showNow={false}
-              minuteStep={15}
-              variant="borderless"
-            />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="outlined" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="filled" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="borderless" />
           </Space>
         </Card>
         <Card title="Status">
           <Space direction="vertical" size={16}>
-            <TimePicker
-              size="middle"
-              format={"HH:mm a"}
-              showNow={false}
-              minuteStep={15}
-              status="warning"
-            />
-            <TimePicker
-              size="middle"
-              format={"HH:mm a"}
-              showNow={false}
-              minuteStep={15}
-              status="error"
-            />
-            <TimePicker size="middle" format={"HH:mm a"} showNow={false} minuteStep={15} disabled />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} status="warning" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} status="error" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} disabled />
+          </Space>
+        </Card>
+        <Card title="Status">
+          <Space direction="vertical" size={16}>
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="warning" />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="error" />
           </Space>
         </Card>
       </Section>

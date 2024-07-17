@@ -1,7 +1,4 @@
-"use client";
-
 import { Select as SelectAntd, SelectProps as SelectAntdProps } from "antd";
-import { OptionProps as OptionAntdProps } from "antd/lib/select";
 import { CSSProperties, ReactNode } from "react";
 
 interface SelectProps extends SelectAntdProps {

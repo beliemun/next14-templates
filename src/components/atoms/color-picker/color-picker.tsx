@@ -11,12 +11,13 @@ interface ColorPickerProps extends ColorPickerAtndProps {
   className?: string;
 }
 
-export const ColorPicker = ({ style, className, ...rest }: ColorPickerProps) => {
+export const ColorPicker = ({ style, className, size = "middle", ...rest }: ColorPickerProps) => {
   const { isDarkMode } = useDarkModeStore();
   return (
     <ColorPickerAntd
       style={{ ...style }}
       className={cn(isDarkMode && "dark", className)}
+      size={size}
       {...rest}
     />
   );
