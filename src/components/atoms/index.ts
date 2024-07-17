@@ -12,3 +12,4 @@ export * from "./space";
 export * from "./select";
 export * from "./color-picker";
 export * from "./time-picker";
+export * from "./date-picker";

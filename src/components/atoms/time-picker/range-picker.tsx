@@ -5,6 +5,8 @@ import { CSSProperties } from "react";
 import { cn } from "@/styles";
 import { ConfigProvider, TimePicker } from "antd";
 import { useDarkModeStore } from "@/stores";
+import koKR from "antd/es/date-picker/locale/ko_KR";
+import "dayjs/locale/ko";
 import "./styles.css";
 
 interface RangePickProps extends RangePickerProps {
@@ -38,10 +40,10 @@ const RangePicker = ({ style, className, size = "middle", ...rest }: RangePickPr
       }}
     >
       <TimePicker.RangePicker
+        locale={koKR}
         style={{ ...style }}
         className={cn(isDarkMode && "dark", className)}
         size={size}
-        placeholder={["시작 시간", "종료 시간"]}
         {...rest}
       />
     </ConfigProvider>

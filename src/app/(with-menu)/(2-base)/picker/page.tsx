@@ -1,6 +1,15 @@
 "use client";
 
-import { Card, ColorPicker, Divider, Section, Space, Text, TimePicker } from "@/components/atoms";
+import {
+  Card,
+  ColorPicker,
+  DatePicker,
+  Divider,
+  Section,
+  Space,
+  Text,
+  TimePicker,
+} from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/styles";
 import dayjs from "dayjs";
@@ -31,7 +40,7 @@ export default function () {
           <Text>with rgb</Text>
         </Space>
       </Section>
-      <Divider orientation="left">Date Picker</Divider>
+      <Divider orientation="left">Time Picker</Divider>
       <Section className="flex flex-row flex-wrap gap-4 pt-2">
         <Card title="Size">
           <Space direction="vertical" size={16}>
@@ -62,18 +71,38 @@ export default function () {
             <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="borderless" />
           </Space>
         </Card>
-        <Card title="Status">
-          <Space direction="vertical" size={16}>
-            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} status="warning" />
-            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} status="error" />
-            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} disabled />
-          </Space>
-        </Card>
-        <Card title="Status">
+        <Card title="Range">
           <Space direction="vertical" size={16}>
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="warning" />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="error" />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} disabled />
+          </Space>
+        </Card>
+      </Section>
+      <Divider orientation="left">Date Picker</Divider>
+      <Section className="flex flex-row flex-wrap gap-4 pt-2">
+        <Card title="Size">
+          <Space direction="vertical" size={16}>
+            <DatePicker size="small" placeholder="small" />
+            <DatePicker size="middle" placeholder="middle" />
+            <DatePicker size="large" placeholder="large" />
+          </Space>
+        </Card>
+        <Card title="Select">
+          <Space direction="vertical" size={16}>
+            <DatePicker placeholder="일 선택" />
+            <DatePicker placeholder="주 선택" picker="week" />
+            <DatePicker placeholder="달 선택" picker="month" />
+            <DatePicker placeholder="연도 선택" picker="year" />
+          </Space>
+        </Card>
+        <Card title="Range">
+          <Space direction="vertical" size={16}>
+            <DatePicker.RangePicker />
+            <DatePicker.RangePicker status={"warning"} />
+            <DatePicker.RangePicker status={"error"} />
+            <DatePicker.RangePicker disabled />
           </Space>
         </Card>
       </Section>

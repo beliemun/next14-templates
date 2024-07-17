@@ -1,32 +1,21 @@
-"use client";
-
 import { cn } from "@/styles";
 import {
   ConfigProvider,
-  TimePicker as TimePickerAntd,
-  TimePickerProps as TimePickerAntdProps,
+  DatePicker as DatePickerAntd,
+  DatePickerProps as DatePickerAntdProps,
 } from "antd";
 import { CSSProperties } from "react";
-import { useDarkModeStore } from "@/stores";
-import RangePicker from "./range-picker";
 import koKR from "antd/es/date-picker/locale/ko_KR";
 import "dayjs/locale/ko";
-import "./styles.css";
+import "../time-picker/styles.css";
+import RangePicker from "./range-picker";
 
-interface TimePickerProps extends TimePickerAntdProps {
+interface DatePickerProps extends DatePickerAntdProps {
   style?: CSSProperties;
   className?: string;
 }
 
-const TimePicker = ({
-  style,
-  className,
-  size = "middle",
-  showNow = false,
-  ...rest
-}: TimePickerProps) => {
-  const { isDarkMode } = useDarkModeStore();
-
+const DatePicker = ({ style, className, size = "middle", ...rest }: DatePickerProps) => {
   return (
     <ConfigProvider
       theme={{
@@ -50,18 +39,18 @@ const TimePicker = ({
         },
       }}
     >
-      <TimePickerAntd
+      <DatePickerAntd
         locale={koKR}
         style={{ ...style }}
-        className={cn(isDarkMode && "dark", className)}
-        showNow={showNow}
+        className={cn(className)}
         size={size}
+        showNow={false}
         {...rest}
       />
     </ConfigProvider>
   );
 };
 
-TimePicker.RangePicker = RangePicker;
+DatePicker.RangePicker = RangePicker;
 
-export default TimePicker;
+export default DatePicker;
