@@ -7,13 +7,11 @@ interface SpaceProps extends SpaceAntdProps {
   className?: string;
   children?: ReactNode;
   gap?: number;
-  wrap?: boolean;
-  direction?: "vertical" | "horizontal";
 }
 
-export const Space = ({ style, className, children, ...rest }: SpaceProps) => {
+export const Space = ({ style, className, children, gap, ...rest }: SpaceProps) => {
   return (
-    <SpaceAntd style={{ ...style }} className={cn(className)} {...rest}>
+    <SpaceAntd style={{ gap, ...style }} className={cn(className)} {...rest}>
       {children}
     </SpaceAntd>
   );

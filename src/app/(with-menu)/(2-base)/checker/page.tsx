@@ -11,12 +11,7 @@ import {
   Text,
 } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import {
-  CheckOutlined,
-  CheckSquareOutlined,
-  CloseCircleOutlined,
-  CloseOutlined,
-} from "@ant-design/icons";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { CheckboxProps, Switch } from "antd";
 import { useState } from "react";
 

@@ -43,7 +43,7 @@ export const base: MenuItem[] = [
     getItem("Input", "input"), // 완료
     getItem("Tag", "tag"), // 완료
     getItem("Picker", "picker"), // 완료
-    getItem("Checker", "checker"), // 완료 Switch
+    getItem("Checker", "checker"), // 완료
     getItem("Select", "select"),
     getItem("Transfer", "transter"),
     getItem("Upload", "upload"),
