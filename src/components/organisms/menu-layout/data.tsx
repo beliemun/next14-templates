@@ -45,7 +45,7 @@ export const base: MenuItem[] = [
     getItem("Picker", "picker"), // 완료
     getItem("Checker", "checker"), // 완료
     getItem("Select", "select"),
-    getItem("Transfer", "transter"),
+    getItem("Transfer", "transfer"),
     getItem("Upload", "upload"),
     getItem("Message", "message"),
     getItem("Modal", "modal"),
