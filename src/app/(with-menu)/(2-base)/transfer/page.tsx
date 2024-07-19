@@ -6,6 +6,7 @@ import { BaseTransfer, DataType, mockData, TableTransfer, TableTransferProps } f
 import { useState } from "react";
 import { TableColumnsType, TransferProps } from "antd";
 import { ColorType } from "@/styles";
+import { capitalizeFirstLetter } from "@/shared/utils";
 
 export default function () {
   const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>([]);
@@ -29,7 +30,7 @@ export default function () {
       title: "Tag",
       render: (tag: string) => (
         <Tag style={{ marginInlineEnd: 0 }} tagColor={tag as ColorType}>
-          {tag.toUpperCase()}
+          {capitalizeFirstLetter(tag)}
         </Tag>
       ),
     },
