@@ -8,7 +8,7 @@ export default function () {
       <Section className="flex flex-col gap-4 pt-2">
         <Card className="w-full max-w-lg h-64 col-center">
           <div className="grid grid-cols-3 grid-rows-3 gap-4">
-            <Tooltip title="This is Top Left Tooltip" placement="leftTop">
+            <Tooltip title="This is Top Left Tooltip" placement="topLeft">
               <Button buttonSize="sm" buttonStyle="solid">
                 Top Left
               </Button>
