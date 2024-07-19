@@ -16,3 +16,4 @@ export * from "./date-picker";
 export * from "./check-box";
 export * from "./radio";
 export * from "./switch";
+export * from "./upload";

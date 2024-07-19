@@ -26,7 +26,7 @@ export const Button = forwardRef(
       buttonRound = "round",
       buttonStyle = "solid",
       buttonSize = "default",
-      buttonColor = "red",
+      buttonColor = "primary",
       fullWidth,
       disabled,
       loading,
