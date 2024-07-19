@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/organisms";
 import { BaseTransfer, DataType, mockData, TableTransfer, TableTransferProps } from "./_components";
 import { useState } from "react";
 import { TableColumnsType, TransferProps } from "antd";
+import { ColorType } from "@/styles";
 
 export default function () {
   const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>([]);
@@ -27,7 +28,7 @@ export default function () {
       dataIndex: "tag",
       title: "Tag",
       render: (tag: string) => (
-        <Tag style={{ marginInlineEnd: 0 }} tagColor={tag}>
+        <Tag style={{ marginInlineEnd: 0 }} tagColor={tag as ColorType}>
           {tag.toUpperCase()}
         </Tag>
       ),
