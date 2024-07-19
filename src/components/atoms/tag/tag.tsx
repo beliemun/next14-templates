@@ -1,4 +1,6 @@
-import { CSSProperties, ReactNode } from "react";
+"use client";
+
+import { CSSProperties, ReactNode, useState } from "react";
 import { TagSizeType, TagStyleType } from "./types";
 import { cn, ColorType } from "@/styles";
 import { tagStyles } from "./styles";
@@ -11,6 +13,8 @@ export interface TagProps {
   tagSize?: TagSizeType;
   tagColor?: ColorType;
   icon?: ReactNode;
+  closable?: boolean;
+  onClose?: () => void;
 }
 
 export const Tag = ({
@@ -18,21 +22,43 @@ export const Tag = ({
   className,
   children,
   tagStyle = "outline",
-  tagSize = "sm",
+  tagSize = "default",
   tagColor = "gray",
   icon,
+  closable = false,
+  onClose,
+  ...rest
 }: TagProps) => {
+  const [hide, setHide] = useState(false);
+
+  const handleHide = () => {
+    if (onClose) {
+      setHide((prev) => !prev);
+      onClose();
+    }
+  };
+
   return (
-    <span
+    <div
       style={{ ...style }}
-      className={cn(tagStyles({ tagStyle, tagSize, tagColor }), className)}
+      className={cn(
+        tagStyles({ tagStyle, tagSize, tagColor }),
+        { "pr-2": tagSize, hidden: hide },
+        className
+      )}
+      {...rest}
     >
       {icon ? (
-        <span style={{ marginRight: tagSize ? 4 : 6, fontSize: tagSize === "sm" ? 9 : 12 }}>
+        <span style={{ paddingRight: tagSize ? 4 : 6, fontSize: tagSize === "sm" ? 9 : 12 }}>
           {icon}
         </span>
       ) : null}
       {children}
-    </span>
+      {closable ? (
+        <button onClick={handleHide} style={{ fontSize: 11, marginLeft: 4, opacity: 0.5 }}>
+          ✕
+        </button>
+      ) : null}
+    </div>
   );
 };

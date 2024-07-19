@@ -1,3 +1,4 @@
+import { capitalizeFirstLetter } from "@/shared/utils";
 import { cn } from "@/styles";
 import { Divider as DividerAtnd, DividerProps as DividerAntdProps } from "antd";
 import { CSSProperties, ReactNode } from "react";
@@ -11,7 +12,7 @@ interface DividerProps extends DividerAntdProps {
 export const Divider = ({ style, className, children, ...rest }: DividerProps) => {
   return (
     <DividerAtnd style={{ ...style }} className={cn(className)} {...rest}>
-      {children ? String(children).toUpperCase() : null}
+      {children ? capitalizeFirstLetter(String(children)) : null}
     </DividerAtnd>
   );
 };

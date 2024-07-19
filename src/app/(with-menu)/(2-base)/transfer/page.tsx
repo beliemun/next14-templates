@@ -1,20 +1,22 @@
 "use client";
 
 import { Divider, Section } from "@/components/atoms";
+import { Transfer, TransferProps } from "@/components/molecules";
 import { PageLayout } from "@/components/organisms";
-import { Transfer, TransferProps } from "antd";
 import { useState } from "react";
 
 interface RecordType {
   key: number;
   title: string;
   description: string;
+  disabled: boolean;
 }
 
 const mockData = Array.from({ length: 20 }).map<RecordType>((_, i) => ({
   key: i,
   title: `content${i + 1}`,
   description: `description of content${i + 1}`,
+  disabled: i % 3 === 0,
 }));
 
 const initialTargetKeys = mockData.filter(({ key }) => key > 10).map((item) => item.key);
@@ -44,22 +46,28 @@ export default function () {
     console.log("target:", e.target);
   };
 
+  const onSerach: TransferProps["onSearch"] = (direction, value) => {
+    console.log("search:", direction, value);
+  };
+
   return (
     <PageLayout title="<Trasfer />">
       <Divider orientation="left">Base</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
         <Transfer
           dataSource={mockData}
+          showSearch
           titles={["Source", "Target"]}
           targetKeys={targetKeys}
           selectedKeys={selectedKeys}
           onChange={onChange}
           onSelectChange={onSelectChange}
           onScroll={onScroll}
+          onSearch={onSerach}
           render={(item) => item.title}
           listStyle={{
             width: 320,
-            height: 240,
+            height: 320,
           }}
         />
       </Section>

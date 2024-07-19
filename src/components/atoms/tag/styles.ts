@@ -139,9 +139,9 @@ export const tagStyles = ({ tagStyle, tagSize, tagColor }: TagProps) => {
     }
   }
   if (tagSize === "sm") {
-    styles.push("text-xs px-[6px] py-[3px] h-[24px] rounded-md");
+    styles.push("inline-block text-xs px-2 rounded-md");
   } else if (tagSize === "default") {
-    styles.push("text-sm px-[8px] py-[3.5px] h-[28px] rounded-md");
+    styles.push("inline-block text-sm px-2 py-0.5 mx-1 my-0.5 first:ml-0 rounded-md");
   }
   return styles.join(" ");
 };

@@ -6,7 +6,7 @@ import { colorList } from "@/styles";
 import { DownOutlined } from "@ant-design/icons";
 import { DefaultOptionType } from "antd/es/select";
 import { SelectProps } from "antd/lib";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const options1: DefaultOptionType[] = [
   {
@@ -36,6 +36,8 @@ for (let i = 10; i < 36; i++) {
   });
 }
 
+const options3: SelectProps["options"] = colorList.map((color) => ({ value: color }));
+
 export default function () {
   const [value, setValue] = useState<string[]>(["b11"]);
   const suffixIcon = (
@@ -44,6 +46,34 @@ export default function () {
       <DownOutlined />
     </>
   );
+
+  const [selectedTags, setSelectedTags] = useState(["red", "lime", "cyan", "rose"]);
+
+  const handleClose = (removedTag: string) => {
+    const tags = selectedTags.filter((tag) => tag !== removedTag);
+    setSelectedTags(tags);
+  };
+
+  const tagRender: SelectProps["tagRender"] = ({ label, value, closable, onClose }) => {
+    return (
+      <Tag
+        tagColor={value}
+        closable={closable}
+        onClose={() => {
+          console.log("onClose");
+          onClose();
+          handleClose(value);
+        }}
+      >
+        {label}
+      </Tag>
+    );
+  };
+
+  useEffect(() => {
+    console.log(selectedTags);
+  }, [selectedTags]);
+
   return (
     <PageLayout title="<Select />">
       <Divider orientation="left">Size</Divider>
@@ -55,7 +85,7 @@ export default function () {
         </Space>
       </Section>
       <Divider orientation="left">Variants</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="flex flex-col flex-wrap gap-4 pt-2 ">
         <Space direction="horizontal" gap={16}>
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} loading />
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} disabled />
@@ -99,15 +129,16 @@ export default function () {
           onChange={setValue}
           defaultValue={["b11"]}
         />
+      </Section>
+      <Divider orientation="left">With Tags</Divider>
+      <Section className="flex flex-col flex-wrap gap-4 pt-2">
         <Select
           className="max-w-xl w-full"
-          options={options2}
+          options={options3}
           mode="multiple"
-          maxCount={3}
-          suffixIcon={suffixIcon}
-          onChange={setValue}
-          defaultValue={["b11"]}
-          disabled
+          tagRender={tagRender}
+          value={selectedTags}
+          onChange={setSelectedTags}
         />
       </Section>
     </PageLayout>
