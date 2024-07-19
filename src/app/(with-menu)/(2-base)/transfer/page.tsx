@@ -1,74 +1,64 @@
 "use client";
 
-import { Divider, Section } from "@/components/atoms";
-import { Transfer, TransferProps } from "@/components/molecules";
+import { Divider, Section, Tag } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { BaseTransfer, DataType, mockData, TableTransfer, TableTransferProps } from "./_components";
 import { useState } from "react";
-
-interface RecordType {
-  key: number;
-  title: string;
-  description: string;
-  disabled: boolean;
-}
-
-const mockData = Array.from({ length: 20 }).map<RecordType>((_, i) => ({
-  key: i,
-  title: `content${i + 1}`,
-  description: `description of content${i + 1}`,
-  disabled: i % 3 === 0,
-}));
-
-const initialTargetKeys = mockData.filter(({ key }) => key > 10).map((item) => item.key);
+import { TableColumnsType, TransferProps } from "antd";
 
 export default function () {
-  const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>(initialTargetKeys);
-  const [selectedKeys, setSelectedKeys] = useState<TransferProps["targetKeys"]>([]);
+  const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>([]);
+  const [disabled, setDisabled] = useState(false);
 
-  const onChange: TransferProps["onChange"] = (nextTargetKeys, direction, moveKeys) => {
-    console.log("targetKeys:", nextTargetKeys);
-    console.log("direction:", direction);
-    console.log("moveKeys:", moveKeys);
+  const onChange: TableTransferProps["onChange"] = (nextTargetKeys) => {
     setTargetKeys(nextTargetKeys);
   };
 
-  const onSelectChange: TransferProps["onSelectChange"] = (
-    sourceSelectedKeys,
-    targetSelectedKeys
-  ) => {
-    console.log("sourceSelectedKeys:", sourceSelectedKeys);
-    console.log("targetSelectedKeys:", targetSelectedKeys);
-    setSelectedKeys([...sourceSelectedKeys, ...targetSelectedKeys]);
+  const toggleDisabled = (checked: boolean) => {
+    setDisabled(checked);
   };
 
-  const onScroll: TransferProps["onScroll"] = (direction, e) => {
-    console.log("direction:", direction);
-    console.log("target:", e.target);
-  };
+  const columns: TableColumnsType<DataType> = [
+    {
+      dataIndex: "title",
+      title: "Name",
+    },
+    {
+      dataIndex: "tag",
+      title: "Tag",
+      render: (tag: string) => (
+        <Tag style={{ marginInlineEnd: 0 }} tagColor={tag}>
+          {tag.toUpperCase()}
+        </Tag>
+      ),
+    },
+    {
+      dataIndex: "description",
+      title: "Description",
+    },
+  ];
 
-  const onSerach: TransferProps["onSearch"] = (direction, value) => {
-    console.log("search:", direction, value);
-  };
+  const filterOption = (input: string, item: DataType) =>
+    item.title?.includes(input) || item.tag?.includes(input);
 
   return (
     <PageLayout title="<Trasfer />">
-      <Divider orientation="left">Base</Divider>
+      <Divider orientation="left">Base Transfer</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
-        <Transfer
+        <BaseTransfer />
+      </Section>
+      <Divider orientation="left">Table Transfer</Divider>
+      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+        <TableTransfer
           dataSource={mockData}
-          showSearch
-          titles={["Source", "Target"]}
           targetKeys={targetKeys}
-          selectedKeys={selectedKeys}
+          disabled={disabled}
+          showSearch
+          showSelectAll={false}
           onChange={onChange}
-          onSelectChange={onSelectChange}
-          onScroll={onScroll}
-          onSearch={onSerach}
-          render={(item) => item.title}
-          listStyle={{
-            width: 320,
-            height: 320,
-          }}
+          filterOption={filterOption}
+          leftColumns={columns}
+          rightColumns={columns}
         />
       </Section>
     </PageLayout>

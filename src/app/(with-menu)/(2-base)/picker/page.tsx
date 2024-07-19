@@ -19,23 +19,23 @@ export default function () {
     <PageLayout title="<ColorPicker />, <TimePicker />, <DatePicker />">
       <Divider orientation="left">Color Picker</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
-        <Space direction="horizontal" size={8}>
+        <Space direction="horizontal" gap={8}>
           <ColorPicker defaultValue={colors.primary[500]} />
           <Text>base color picker</Text>
         </Space>
-        <Space direction="horizontal" size={8}>
+        <Space direction="horizontal" gap={8}>
           <ColorPicker allowClear />
           <Text>with clear button</Text>
         </Space>
-        <Space direction="horizontal" size={8}>
+        <Space direction="horizontal" gap={8}>
           <ColorPicker defaultValue={colors.red[500]} defaultFormat="hex" showText />
           <Text>with hex</Text>
         </Space>
-        <Space direction="horizontal" size={8}>
+        <Space direction="horizontal" gap={8}>
           <ColorPicker defaultValue={colors.orange[500]} defaultFormat="hsb" showText />
           <Text>with hsb</Text>
         </Space>
-        <Space direction="horizontal" size={8}>
+        <Space direction="horizontal" gap={8}>
           <ColorPicker defaultValue={colors.yellow[500]} defaultFormat="rgb" showText />
           <Text>with rgb</Text>
         </Space>
