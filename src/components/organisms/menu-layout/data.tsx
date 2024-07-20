@@ -47,8 +47,9 @@ export const base: MenuItem[] = [
     getItem("Select", "select"), // 완료
     getItem("Transfer", "transfer"), // 완료
     getItem("Upload", "upload"), // 완료
-    getItem("Tooltip", "tooltip"),
-    getItem("Message", "message"),
+    getItem("Tooltip", "tooltip"), // 완료
+    getItem("Drawer", "drawer"), // 완료
+    getItem("Message", "message"), // 완료
     getItem("Modal", "modal"),
     getItem("Image", "image"),
     getItem("QRCode", "qrcode"),
