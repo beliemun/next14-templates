@@ -21,7 +21,7 @@ export default function () {
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
         <Space direction="horizontal" gap={8}>
           <ColorPicker defaultValue={colors.primary[500]} />
-          <Text>base color picker</Text>
+          <Text>basic color picker</Text>
         </Space>
         <Space direction="horizontal" gap={8}>
           <ColorPicker allowClear />

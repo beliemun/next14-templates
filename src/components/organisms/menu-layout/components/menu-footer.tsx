@@ -1,5 +1,5 @@
 import { Button, Tooltip } from "@/components/atoms";
-import { useDarkModeStore } from "@/stores";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn, colors } from "@/styles";
 import {
   ExpandAltOutlined,

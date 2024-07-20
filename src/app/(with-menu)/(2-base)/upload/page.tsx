@@ -25,7 +25,7 @@ export default function () {
   };
   return (
     <PageLayout title="<Upload />">
-      <Divider orientation="left">Base Upload</Divider>
+      <Divider orientation="left">Basic Upload</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
         <Upload
           button={

@@ -7,7 +7,7 @@ import {
   TimePickerProps as TimePickerAntdProps,
 } from "antd";
 import { CSSProperties } from "react";
-import { useDarkModeStore } from "@/stores";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import RangePicker from "./range-picker";
 import koKR from "antd/es/date-picker/locale/ko_KR";
 import "dayjs/locale/ko";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useDarkModeStore } from "@/stores";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { colors, hexToRGBA } from "@/styles";
 import { ConfigProvider as ConfigProviderAntd } from "antd";
 import { ReactNode } from "react";

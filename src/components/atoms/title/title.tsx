@@ -18,7 +18,7 @@ export const Title = ({
   children,
   style,
   className,
-  type = "h6-bold",
+  type = "h6-semibold",
   as,
   ...rest
 }: TitleProps) => {

@@ -2,7 +2,13 @@
 
 import { Divider, Section, Tag } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { BaseTransfer, DataType, mockData, TableTransfer, TableTransferProps } from "./_components";
+import {
+  BasicTransfer,
+  DataType,
+  mockData,
+  TableTransfer,
+  TableTransferProps,
+} from "./_components";
 import { useState } from "react";
 import { TableColumnsType, TransferProps } from "antd";
 import { ColorType } from "@/styles";
@@ -45,9 +51,9 @@ export default function () {
 
   return (
     <PageLayout title="<Trasfer />">
-      <Divider orientation="left">Base Transfer</Divider>
+      <Divider orientation="left">Basic Transfer</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">
-        <BaseTransfer />
+        <BasicTransfer />
       </Section>
       <Divider orientation="left">Table Transfer</Divider>
       <Section className="flex flex-col flex-wrap gap-4 pt-2">

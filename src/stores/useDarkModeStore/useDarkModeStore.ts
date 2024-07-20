@@ -5,9 +5,9 @@ const initialData: DarkModeProps = {
   isDarkMode: false,
 };
 
-const useDarkMode = create<DarkModeStore>((set) => ({
+const useDarkModeStore = create<DarkModeStore>((set) => ({
   ...initialData,
   setDarkMode: (isDarkMode: boolean) => set({ isDarkMode }),
 }));
 
-export default useDarkMode;
+export default useDarkModeStore;

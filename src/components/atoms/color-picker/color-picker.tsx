@@ -3,8 +3,8 @@
 import { cn } from "@/styles";
 import { ColorPicker as ColorPickerAntd, ColorPickerProps as ColorPickerAtndProps } from "antd";
 import { CSSProperties } from "react";
-import { useDarkModeStore } from "@/stores";
 import "./styles.css";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 
 interface ColorPickerProps extends ColorPickerAtndProps {
   style?: CSSProperties;

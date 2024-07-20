@@ -5,7 +5,7 @@ import { Drawer, DrawerProps } from "@/components/molecules";
 import { RadioChangeEvent } from "antd/lib";
 import { useState } from "react";
 
-export const BaseDrawer = () => {
+export const BasicDrawer = () => {
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("right");
 

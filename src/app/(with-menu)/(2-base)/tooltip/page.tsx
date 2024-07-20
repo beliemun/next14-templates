@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/organisms";
 export default function () {
   return (
     <PageLayout title="<Tooltip />">
-      <Divider orientation="left">Base Tooltip</Divider>
+      <Divider orientation="left">Basic Tooltip</Divider>
       <Section className="flex flex-col gap-4 pt-2">
         <Card className="w-full max-w-lg h-64 col-center">
           <div className="grid grid-cols-3 grid-rows-3 gap-4">

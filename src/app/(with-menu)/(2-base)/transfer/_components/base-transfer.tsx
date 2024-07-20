@@ -20,7 +20,7 @@ const mockData = Array.from({ length: 20 }).map<RecordType>((_, i) => ({
 
 const initialTargetKeys = mockData.filter(({ key }) => key > 10).map((item) => item.key);
 
-export const BaseTransfer = () => {
+export const BasicTransfer = () => {
   const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>(initialTargetKeys);
   const [selectedKeys, setSelectedKeys] = useState<TransferProps["targetKeys"]>([]);
 

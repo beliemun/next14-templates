@@ -1,2 +1,2 @@
-export * from "./base-drawer";
+export * from "./basic-drawer";
 export * from "./inner-drawer";

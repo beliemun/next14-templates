@@ -3,7 +3,7 @@
 import { cn, colors } from "@/styles";
 import { ConfigProvider, Select as SelectAntd, SelectProps as SelectAntdProps } from "antd";
 import { CSSProperties, ReactNode } from "react";
-import { useDarkModeStore } from "@/stores";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import "./styles.css";
 
 interface SelectProps extends SelectAntdProps {
