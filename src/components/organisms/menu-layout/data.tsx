@@ -50,7 +50,7 @@ export const base: MenuItem[] = [
     getItem("Tooltip", "tooltip"), // 완료
     getItem("Drawer", "drawer"), // 완료
     getItem("Message", "message"), // 완료
-    getItem("Modal", "modal"),
+    getItem("Modal", "modal"), // 완료
     getItem("Image", "image"),
     getItem("QRCode", "qrcode"),
   ]),

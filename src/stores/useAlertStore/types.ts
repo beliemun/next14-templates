@@ -1,12 +1,14 @@
 import { ButtonStyleType } from "@/components/atoms/button/types";
+import { ColorType } from "@/styles";
 import { ReactNode } from "react";
 
-export type AlertSize = `480px` | `640px` | `720px` | `1024px`;
+export type AlertSize = 480 | 640 | 720 | 1024;
 export type AlertFooterDirection = "left" | "right";
 
 export interface AlertAction {
   lable: string;
   style?: ButtonStyleType;
+  color?: ColorType;
   onClick?: () => void | undefined;
 }
 
@@ -16,7 +18,7 @@ export interface AlertProps {
   title?: string | undefined;
   message?: string | undefined;
   contents?: ReactNode | undefined;
-  actions?: [AlertAction, AlertAction?] | undefined;
+  actions?: AlertAction[] | undefined;
   footerDirection?: AlertFooterDirection | undefined;
 }
 

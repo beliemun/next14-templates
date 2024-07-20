@@ -68,8 +68,8 @@ export const buttonStyles = ({
     } else if (buttonStyle === "soft") {
       styles.push(
         cn(
-          "text-slate-800 bg-slate-50",
-          "hover:bg-slate-100 active:bg-slate-200",
+          "text-slate-800 bg-slate-100",
+          "hover:bg-slate-200 active:bg-slate-200",
           "dark:text-white/70 dark:bg-slate-400/10 dark:hover:text-white"
         )
       );
@@ -100,8 +100,8 @@ export const buttonStyles = ({
     } else if (buttonStyle === "soft") {
       styles.push(
         cn(
-          "text-gray-800 bg-gray-50",
-          "hover:bg-gray-100 active:bg-gray-200",
+          "text-gray-800 bg-gray-100",
+          "hover:bg-gray-200 active:bg-gray-200",
           "dark:text-white/70 dark:bg-gray-400/10 dark:hover:text-white"
         )
       );

@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export const Alert = () => {
   const {
     visible,
-    size = "480px",
+    size = 480,
     title,
     message,
     contents,
@@ -31,17 +31,16 @@ export const Alert = () => {
           style={{
             backgroundColor: isDarkMode ? "rgba(30, 30, 30, 0.85)" : "rgba(240, 240, 240, 0.85)",
           }}
-          className={cn(
-            "fixed w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto",
-            "col-center"
-          )}
+          className={
+            "fixed col-center w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto"
+          }
         >
           <motion.div
             initial={{ scale: 0.8 }}
             animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
             exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-            style={{ backgroundColor: colorBgBase, boxShadow }}
-            className={cn(`flex flex-col w-[480px]`, "gap-6 p-6 rounded-xl")}
+            style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
+            className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
           >
             <header className="flex flex-row justify-between items-center ">
               <Title>{title}</Title>
@@ -58,7 +57,12 @@ export const Alert = () => {
               )}
             >
               {actions?.map((action, index) => (
-                <Button key={index} buttonStyle={action?.style} onClick={action?.onClick}>
+                <Button
+                  key={index}
+                  buttonStyle={action?.style}
+                  buttonColor={action?.color}
+                  onClick={action?.onClick ?? onDismiss}
+                >
                   {action?.lable}
                 </Button>
               ))}

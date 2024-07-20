@@ -5,7 +5,10 @@ const initialData: AlertProps = {
   visible: false,
   title: undefined,
   message: undefined,
+  contents: undefined,
   actions: [{ lable: "닫기", style: "outline" }],
+  footerDirection: "right",
+  size: 480,
 };
 
 const useAlertStore = create<AlertStore>((set, get) => ({
