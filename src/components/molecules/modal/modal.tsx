@@ -7,10 +7,9 @@ import { CloseOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { ModalProps } from "./types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Modal = ({
-  isOpen,
   title = undefined,
   message = undefined,
   children,
@@ -21,19 +20,15 @@ export const Modal = ({
   size = 480,
   onClose,
 }: ModalProps) => {
-  const [visible, setVisible] = useState(isOpen);
+  const [visible, setVisible] = useState(true);
 
   const { isDarkMode } = useDarkModeStore();
   const { colorBgBase, boxShadow, colorText } = theme.useToken().token;
 
   const handleClose = () => {
     setVisible(false);
-    onClose?.();
+    setTimeout(() => onClose?.(), 500);
   };
-
-  useEffect(() => {
-    setVisible(isOpen);
-  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -60,17 +55,16 @@ export const Modal = ({
             >
               <header className="flex flex-row justify-between items-center">
                 <Skeleton.Input active style={{ width: 200 }} />
-
                 <Button
                   buttonColor="slate"
                   buttonStyle="soft"
                   buttonSize="sm"
                   onClick={handleClose}
+                  className={cn({ hidden: loading })}
                 >
                   <CloseOutlined style={{ color: colorText, fontSize: 10 }} />
                 </Button>
               </header>
-              <Skeleton active />
               <Skeleton active />
               <footer
                 className={cn(

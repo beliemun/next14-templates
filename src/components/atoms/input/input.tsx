@@ -1,6 +1,6 @@
 import { cn } from "@/styles";
 import { Input as InputAntd, InputProps as InputAntdProps, InputRef } from "antd";
-import { CSSProperties, forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
+import { forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
 import { ConfigProvider } from "./config";
 import Search, { SearchProps } from "./search";
 import Password, { PasswordProps } from "./password";
@@ -8,12 +8,10 @@ import TextArea, { TextAreaProps } from "./textarea";
 import OTP, { OTPProps } from "./opt";
 import { OTPRef } from "antd/es/input/OTP";
 
-interface InputProps extends InputAntdProps {
-  stlyes?: CSSProperties;
-  className?: string;
-}
+export interface InputProps extends InputAntdProps {}
 
-interface InputComponent extends ForwardRefExoticComponent<InputProps & RefAttributes<InputRef>> {
+export interface InputComponent
+  extends ForwardRefExoticComponent<InputProps & RefAttributes<InputRef>> {
   Search: ForwardRefExoticComponent<SearchProps & RefAttributes<InputRef>>;
   Password: ForwardRefExoticComponent<PasswordProps & RefAttributes<InputRef>>;
   TextArea: ForwardRefExoticComponent<TextAreaProps & RefAttributes<InputRef>>;

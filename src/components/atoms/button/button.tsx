@@ -25,7 +25,7 @@ export const Button = forwardRef(
       children,
       buttonRound = "round",
       buttonStyle = "solid",
-      buttonSize = "default",
+      buttonSize = "sm",
       buttonColor = "primary",
       fullWidth,
       disabled,

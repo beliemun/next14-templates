@@ -2,26 +2,17 @@ import { cn } from "@/styles";
 import { InputRef } from "antd";
 import SearchAtnd from "antd/es/input/Search";
 import { SearchProps as SearchAntdProps } from "antd/lib/input";
-import { CSSProperties, forwardRef } from "react";
+import { forwardRef } from "react";
 import { ConfigProvider } from "./config";
 import "./styles.css";
 
-export interface SearchProps extends SearchAntdProps {
-  style?: CSSProperties;
-  className?: string;
-}
+export interface SearchProps extends SearchAntdProps {}
 
 const Search = forwardRef<InputRef, SearchProps>(
-  ({ style, className, size = "middle", ...rest }: SearchProps, ref) => {
+  ({ className, size = "middle", ...rest }: SearchProps, ref) => {
     return (
       <ConfigProvider>
-        <SearchAtnd
-          ref={ref}
-          style={{ ...style }}
-          className={cn(size, className)}
-          size={size}
-          {...rest}
-        />
+        <SearchAtnd ref={ref} className={cn(size, className)} size={size} {...rest} />
       </ConfigProvider>
     );
   }

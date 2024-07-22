@@ -1,10 +1,7 @@
 import { cn } from "@/styles";
 import { HTMLAttributes, ReactNode } from "react";
 
-interface SectionProps extends HTMLAttributes<HTMLElement> {
-  className?: string;
-  children?: ReactNode;
-}
+interface SectionProps extends HTMLAttributes<HTMLElement> {}
 
 export const Section = ({ className, children, ...rest }: SectionProps) => {
   return (

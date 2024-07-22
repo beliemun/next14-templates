@@ -1,13 +1,14 @@
 import { cn } from "@/styles";
-import { Checkbox as CheckboxAntd, CheckboxProps as CheckboxAntdProps, ConfigProvider } from "antd";
-import { CSSProperties } from "react";
+import { Checkbox as CheckboxAntd, CheckboxProps as CheckboxAntdProps } from "antd";
 import "./styles.css";
+import { CheckboxGroup } from "./check-box-group";
 
-interface CheckboxProps extends CheckboxAntdProps {
-  style?: CSSProperties;
-  className?: string;
-}
+export interface CheckboxProps extends CheckboxAntdProps {}
 
-export const Checkbox = ({ style, className, ...rest }: CheckboxProps) => {
-  return <CheckboxAntd style={{ ...style }} className={cn(className)} {...rest} />;
+const Checkbox = ({ className, ...rest }: CheckboxProps) => {
+  return <CheckboxAntd className={cn(className)} {...rest} />;
 };
+
+Checkbox.Group = CheckboxGroup;
+
+export { Checkbox };

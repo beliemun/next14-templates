@@ -1,0 +1,51 @@
+"use client";
+
+import { Card, Divider, Section, Space, TimePicker } from "@/components/atoms";
+import { PageLayout } from "@/components/organisms";
+import dayjs from "dayjs";
+
+export default function () {
+  return (
+    <PageLayout title="<TimePicker />">
+      <Section className="flex flex-row flex-wrap gap-4">
+        <Card title="Size">
+          <Space direction="vertical" gap={16}>
+            <TimePicker
+              size="small"
+              format={"HH:mm a"}
+              minuteStep={15}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
+            />
+            <TimePicker
+              size="middle"
+              format={"HH:mm a"}
+              minuteStep={15}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
+            />
+            <TimePicker
+              size="large"
+              format={"HH:mm a"}
+              minuteStep={15}
+              defaultValue={dayjs("08:15 am", "HH:mm a")}
+            />
+          </Space>
+        </Card>
+        <Card title="Variants">
+          <Space direction="vertical" gap={16}>
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="outlined" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="filled" />
+            <TimePicker size="middle" format={"HH:mm a"} minuteStep={15} variant="borderless" />
+          </Space>
+        </Card>
+        <Card title="Range">
+          <Space direction="vertical" gap={16}>
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="warning" />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="error" />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
+          </Space>
+        </Card>
+      </Section>
+    </PageLayout>
+  );
+}

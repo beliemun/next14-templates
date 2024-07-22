@@ -1,11 +1,7 @@
 import { cn } from "@/styles";
-import { CSSProperties, ReactNode } from "react";
 import { Space as SpaceAntd, SpaceProps as SpaceAntdProps } from "antd";
 
-interface SpaceProps extends SpaceAntdProps {
-  style?: CSSProperties;
-  className?: string;
-  children?: ReactNode;
+export interface SpaceProps extends SpaceAntdProps {
   gap?: number;
 }
 

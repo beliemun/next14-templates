@@ -6,25 +6,15 @@ import {
   TimePicker as TimePickerAntd,
   TimePickerProps as TimePickerAntdProps,
 } from "antd";
-import { CSSProperties } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import RangePicker from "./range-picker";
 import koKR from "antd/es/date-picker/locale/ko_KR";
 import "dayjs/locale/ko";
 import "./styles.css";
 
-interface TimePickerProps extends TimePickerAntdProps {
-  style?: CSSProperties;
-  className?: string;
-}
+interface TimePickerProps extends TimePickerAntdProps {}
 
-const TimePicker = ({
-  style,
-  className,
-  size = "middle",
-  showNow = false,
-  ...rest
-}: TimePickerProps) => {
+const TimePicker = ({ className, size = "middle", showNow = false, ...rest }: TimePickerProps) => {
   const { isDarkMode } = useDarkModeStore();
 
   return (
@@ -52,7 +42,6 @@ const TimePicker = ({
     >
       <TimePickerAntd
         locale={koKR}
-        style={{ ...style }}
         className={cn(isDarkMode && "dark", className)}
         showNow={showNow}
         size={size}

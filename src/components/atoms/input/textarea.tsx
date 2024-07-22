@@ -4,16 +4,13 @@ import TextAreaAntd, { TextAreaProps as TextAreaAtndProps } from "antd/es/input/
 import { CSSProperties, forwardRef } from "react";
 import { ConfigProvider } from "./config";
 
-export interface TextAreaProps extends TextAreaAtndProps {
-  style?: CSSProperties;
-  className?: string;
-}
+export interface TextAreaProps extends TextAreaAtndProps {}
 
 const TextArea = forwardRef<InputRef, TextAreaProps>(
-  ({ style, className, ...rest }: TextAreaProps, ref) => {
+  ({ className, ...rest }: TextAreaProps, ref) => {
     return (
       <ConfigProvider>
-        <TextAreaAntd ref={ref} style={{ ...style }} className={cn(className)} {...rest} />
+        <TextAreaAntd ref={ref} className={cn(className)} {...rest} />
       </ConfigProvider>
     );
   }

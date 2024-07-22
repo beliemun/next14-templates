@@ -1,15 +1,13 @@
 import { cn } from "@/styles";
 import { Radio as RadioAntd, RadioProps as RadioAntdProps } from "antd";
-import { CSSProperties } from "react";
 import "./styles.css";
 
-interface RadioProps extends RadioAntdProps {
-  style?: CSSProperties;
+export interface RadioProps extends RadioAntdProps {
   className?: string;
 }
 
-const Radio = ({ style, className, ...rest }: RadioProps) => {
-  return <RadioAntd style={{ ...style }} className={cn(className)} {...rest} />;
+const Radio = ({ className, ...rest }: RadioProps) => {
+  return <RadioAntd className={cn(className)} {...rest} />;
 };
 
 Radio.Group = RadioAntd.Group;
