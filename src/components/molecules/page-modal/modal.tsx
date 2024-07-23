@@ -1,28 +1,40 @@
 "use client";
 
 import { Button, Skeleton, Text, Title } from "@/components/atoms";
-import { useAlertStore } from "@/stores/useAlertStore";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn } from "@/styles";
 import { CloseOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
+import { ModalProps } from "./types";
+import { useEffect, useState } from "react";
 
-export const Alert = () => {
-  const {
-    visible,
-    size = 480,
-    title,
-    message,
-    contents,
-    actions,
-    footerDirection = "right",
-    footerFitable = false,
-    loading = false,
-    onDismiss,
-  } = useAlertStore();
+export const Modal = ({
+  isOpen,
+  title = undefined,
+  message = undefined,
+  children,
+  actions = [{ lable: "Close", style: "solid" }],
+  footerDirection = "right",
+  footerFitable = false,
+  loading = false,
+  size = 480,
+  onClose,
+}: ModalProps) => {
+  const [visible, setVisible] = useState(isOpen);
+
   const { isDarkMode } = useDarkModeStore();
   const { colorBgBase, boxShadow, colorText } = theme.useToken().token;
+
+  const handleClose = () => {
+    setVisible(false);
+    onClose?.();
+  };
+
+  useEffect(() => {
+    setVisible(isOpen);
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {visible ? (
@@ -44,21 +56,29 @@ export const Alert = () => {
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
               style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
               className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
+              layoutId="modal-layout"
             >
               <header className="flex flex-row justify-between items-center">
-                <Skeleton.Node />
-                <Button buttonColor="slate" buttonStyle="soft" buttonSize="sm" onClick={onDismiss}>
+                <Skeleton.Input active style={{ width: 200 }} />
+
+                <Button
+                  buttonColor="slate"
+                  buttonStyle="soft"
+                  buttonSize="sm"
+                  onClick={handleClose}
+                >
                   <CloseOutlined style={{ color: colorText, fontSize: 10 }} />
                 </Button>
               </header>
-              <Skeleton.Input />
+              <Skeleton active />
+              <Skeleton active />
               <footer
                 className={cn(
                   "flex gap-2",
                   footerDirection === "left" ? "flex-row" : "flex-row-reverse"
                 )}
               >
-                <Skeleton.Button />
+                <Skeleton.Input active style={{ width: 200 }} />
               </footer>
             </motion.div>
           ) : (
@@ -68,15 +88,21 @@ export const Alert = () => {
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
               style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
               className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
+              layoutId="modal-layout"
             >
               <header className="flex flex-row justify-between items-center">
                 <Title>{title}</Title>
-                <Button buttonColor="slate" buttonStyle="soft" buttonSize="sm" onClick={onDismiss}>
+                <Button
+                  buttonColor="slate"
+                  buttonStyle="soft"
+                  buttonSize="sm"
+                  onClick={handleClose}
+                >
                   <CloseOutlined style={{ color: colorText, fontSize: 10 }} />
                 </Button>
               </header>
               {message ? <Text>{message}</Text> : null}
-              {contents}
+              {children}
               <footer
                 className={cn(
                   "flex gap-2",
@@ -89,7 +115,7 @@ export const Alert = () => {
                     key={index}
                     buttonStyle={action?.style}
                     buttonColor={action?.color}
-                    onClick={action?.onClick ?? onDismiss}
+                    onClick={action?.onClick ?? handleClose}
                   >
                     {action?.lable}
                   </Button>

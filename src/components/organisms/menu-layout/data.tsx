@@ -35,22 +35,23 @@ export const introduction: MenuItem[] = [
 export const base: MenuItem[] = [
   getItem("Color", "color", <FormatPainterOutlined />),
   getItem("Typography", "typography", <FontSizeOutlined />, [
-    getItem("Title", "title"), // 완료
-    getItem("Text", "text"), // 완료
+    getItem("Title", "title"),
+    getItem("Text", "text"),
   ]),
   getItem("Components", "components", <SlidersOutlined />, [
-    getItem("Button", "button"), // 완료
-    getItem("Input", "input"), // 완료
-    getItem("Tag", "tag"), // 완료
-    getItem("Picker", "picker"), // 완료
-    getItem("Checker", "checker"), // 완료
-    getItem("Select", "select"), // 완료
-    getItem("Transfer", "transfer"), // 완료
-    getItem("Upload", "upload"), // 완료
-    getItem("Tooltip", "tooltip"), // 완료
-    getItem("Drawer", "drawer"), // 완료
-    getItem("Message", "message"), // 완료
-    getItem("Modal", "modal"), // 완료
+    getItem("Button", "button"),
+    getItem("Input", "input"),
+    getItem("Tag", "tag"),
+    getItem("Picker", "picker"),
+    getItem("Checker", "checker"),
+    getItem("Select", "select"),
+    getItem("Transfer", "transfer"),
+    getItem("Upload", "upload"),
+    getItem("Tooltip", "tooltip"),
+    getItem("Drawer", "drawer"),
+    getItem("Message", "message"),
+    getItem("Alert", "alert"),
+    getItem("Modal", "modal"),
     getItem("Image", "image"),
     getItem("QRCode", "qrcode"),
   ]),

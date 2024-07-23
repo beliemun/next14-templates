@@ -11,7 +11,6 @@ import {
   SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import TextArea from "antd/es/input/TextArea";
 
 const selectBefore = (
   <Select
@@ -34,7 +33,7 @@ const selectAfter = (
   />
 );
 
-export default function () {
+export default async function () {
   return (
     <PageLayout title="<Input />">
       <Divider orientation="left">Input</Divider>

@@ -70,10 +70,6 @@ export default function () {
     );
   };
 
-  useEffect(() => {
-    console.log(selectedTags);
-  }, [selectedTags]);
-
   return (
     <PageLayout title="<Select />">
       <Divider orientation="left">Size</Divider>

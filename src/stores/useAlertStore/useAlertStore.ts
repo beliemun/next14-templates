@@ -6,8 +6,10 @@ const initialData: AlertProps = {
   title: undefined,
   message: undefined,
   contents: undefined,
-  actions: [{ lable: "닫기", style: "outline" }],
+  actions: [{ lable: "Close", style: "solid" }],
   footerDirection: "right",
+  footerFitable: false,
+  loading: false,
   size: 480,
 };
 

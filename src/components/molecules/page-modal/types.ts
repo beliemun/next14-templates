@@ -3,28 +3,24 @@ import { ColorType } from "@/styles";
 import { ReactNode } from "react";
 
 export type AlertSize = 480 | 640 | 720 | 1024;
-export type AlertFooterDirection = "left" | "right";
+export type ModalFooterDirection = "left" | "right";
 
-export interface AlertAction {
+export interface ModalAction {
   lable: string;
   style?: ButtonStyleType;
   color?: ColorType;
   onClick?: () => void | undefined;
 }
 
-export interface AlertProps {
-  visible: boolean;
+export interface ModalProps {
+  isOpen: boolean;
   size?: AlertSize | undefined;
   title?: string | undefined;
   message?: string | undefined;
-  contents?: ReactNode | undefined;
-  actions?: AlertAction[] | undefined;
-  footerDirection?: AlertFooterDirection | undefined;
+  children?: ReactNode | undefined;
+  actions?: ModalAction[] | undefined;
+  footerDirection?: ModalFooterDirection | undefined;
   footerFitable?: boolean | undefined;
   loading?: boolean | undefined;
-}
-
-export interface AlertStore extends AlertProps {
-  show: (props: Omit<AlertProps, "visible">) => void;
-  onDismiss: () => void;
+  onClose?: () => void | undefined;
 }

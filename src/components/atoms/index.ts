@@ -18,3 +18,6 @@ export * from "./radio";
 export * from "./switch";
 export * from "./upload";
 export * from "./message";
+export * from "./image";
+export * from "./qrcode";
+export * from "./skeleton";
