@@ -5,7 +5,7 @@ import { TitleStyle, TitleType } from "./types";
 import { cn } from "@/styles";
 import { theme } from "antd";
 
-interface TitleProps {
+export interface TitleProps {
   children?: ReactNode;
   style?: CSSProperties;
   className?: string;

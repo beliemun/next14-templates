@@ -4,18 +4,14 @@ import {
   DatePicker as DatePickerAntd,
   DatePickerProps as DatePickerAntdProps,
 } from "antd";
-import { CSSProperties } from "react";
 import koKR from "antd/es/date-picker/locale/ko_KR";
+import RangePicker from "./range-picker";
 import "dayjs/locale/ko";
 import "../time-picker/styles.css";
-import RangePicker from "./range-picker";
 
-interface DatePickerProps extends DatePickerAntdProps {
-  style?: CSSProperties;
-  className?: string;
-}
+export interface DatePickerProps extends DatePickerAntdProps {}
 
-const DatePicker = ({ style, className, size = "middle", ...rest }: DatePickerProps) => {
+const DatePicker = ({ className, size = "middle", ...rest }: DatePickerProps) => {
   return (
     <ConfigProvider
       theme={{
@@ -41,7 +37,6 @@ const DatePicker = ({ style, className, size = "middle", ...rest }: DatePickerPr
     >
       <DatePickerAntd
         locale={koKR}
-        style={{ ...style }}
         className={cn(className)}
         size={size}
         showNow={false}

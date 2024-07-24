@@ -2,15 +2,10 @@
 
 import { cn, colors } from "@/styles";
 import { ConfigProvider, Select as SelectAntd, SelectProps as SelectAntdProps } from "antd";
-import { CSSProperties, ReactNode } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import "./styles.css";
 
-interface SelectProps extends SelectAntdProps {
-  style?: CSSProperties;
-  className?: string;
-  children?: ReactNode;
-}
+export interface SelectProps extends SelectAntdProps {}
 
 export const Select = ({ style, className, children, size = "middle", ...rest }: SelectProps) => {
   const { isDarkMode } = useDarkModeStore();

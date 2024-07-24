@@ -2,23 +2,12 @@
 
 import { cn } from "@/styles";
 import { ColorPicker as ColorPickerAntd, ColorPickerProps as ColorPickerAtndProps } from "antd";
-import { CSSProperties } from "react";
-import "./styles.css";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
+import "./styles.css";
 
-interface ColorPickerProps extends ColorPickerAtndProps {
-  style?: CSSProperties;
-  className?: string;
-}
+export interface ColorPickerProps extends ColorPickerAtndProps {}
 
-export const ColorPicker = ({ style, className, size = "middle", ...rest }: ColorPickerProps) => {
+export const ColorPicker = ({ className, size = "middle", ...rest }: ColorPickerProps) => {
   const { isDarkMode } = useDarkModeStore();
-  return (
-    <ColorPickerAntd
-      style={{ ...style }}
-      className={cn(isDarkMode && "dark", className)}
-      size={size}
-      {...rest}
-    />
-  );
+  return <ColorPickerAntd className={cn(isDarkMode && "dark", className)} size={size} {...rest} />;
 };

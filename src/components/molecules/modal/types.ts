@@ -2,7 +2,7 @@ import { ButtonStyleType } from "@/components/atoms/button/types";
 import { ColorType } from "@/styles";
 import { ReactNode } from "react";
 
-export type AlertSize = 480 | 640 | 720 | 1024;
+export type ModalSize = 480 | 640 | 720 | 1024;
 export type ModalFooterDirection = "left" | "right";
 
 export interface ModalAction {
@@ -13,8 +13,7 @@ export interface ModalAction {
 }
 
 export interface ModalProps {
-  isOpen: boolean;
-  size?: AlertSize | undefined;
+  size?: ModalSize | undefined;
   title?: string | undefined;
   message?: string | undefined;
   children?: ReactNode | undefined;

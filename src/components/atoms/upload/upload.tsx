@@ -8,11 +8,9 @@ import {
   UploadProps as UploadAntdProps,
   UploadFile,
 } from "antd";
-import { CSSProperties, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 
-interface UploadProps extends UploadAntdProps {
-  style?: CSSProperties;
-  className?: string;
+export interface UploadProps extends UploadAntdProps {
   button?: ReactNode;
 }
 
@@ -27,7 +25,6 @@ const getBase64 = (file: FileType): Promise<string> =>
   });
 
 export const Upload = ({
-  style,
   className,
   action = "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
   button,
@@ -50,7 +47,6 @@ export const Upload = ({
   return (
     <>
       <UploadAntd
-        style={{ ...style }}
         className={cn(className)}
         listType="picture"
         fileList={fileList}

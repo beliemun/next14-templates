@@ -5,7 +5,7 @@ import { TextStyle, TextType } from "./types";
 import { cn } from "@/styles";
 import { theme } from "antd";
 
-interface TextProps {
+export interface TextProps {
   children?: ReactNode;
   style?: CSSProperties;
   className?: string;
