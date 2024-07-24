@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { Layout, Menu, theme } from "antd";
-import { MenuHeader } from "./components/menu-header";
-import { menu } from "./data";
-import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
 import { useRouter } from "next/navigation";
-const { Sider } = Layout;
+import { menu } from "./data";
+import { MenuHeader } from "./components/menu-header";
+import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
+import { theme } from "antd";
+import { Layout, Menu } from "@/components/atoms";
 
 export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -29,7 +29,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Layout>
       <ResizableWapper isFullWidth={isFullWidth}>
-        <Sider
+        <Layout.Sider
           className="hide-scrollbar"
           theme={"light"}
           collapsible
@@ -51,7 +51,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
                 theme="light"
                 mode="inline"
                 items={items}
-                defaultSelectedKeys={["I100"]}
+                defaultSelectedKeys={["alert"]}
                 selectedKeys={[selectedKey]}
                 onClick={handleClickMenu}
                 style={{ border: "none" }}
@@ -64,7 +64,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
             onCollapse={handleCollapse}
             onResize={handleResize}
           />
-        </Sider>
+        </Layout.Sider>
         <Layout
           className="transition-all duration-300 ease-out"
           style={{ marginLeft: collapsed ? 80 : 256, overflow: "auto" }}

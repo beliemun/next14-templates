@@ -17,7 +17,8 @@ export const InnerDrawer = () => {
     <div
       style={{
         position: "relative",
-        height: 360,
+        maxWidth: 1080,
+        height: 480,
         padding: 16,
         overflow: "hidden",
         background: colorFillAlter,

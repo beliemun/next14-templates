@@ -1,8 +1,9 @@
-import { EllipsisOutlined } from "@ant-design/icons";
+import { Tooltip } from "@/components/atoms";
+import { QuestionCircleOutlined } from "@ant-design/icons";
 import { Divider, theme } from "antd";
 
 interface MenuWrapperProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string | undefined;
   collapsed: boolean;
 }
@@ -15,7 +16,9 @@ export const MenuWrapper = ({ children, title, collapsed }: MenuWrapperProps) =>
     <div>
       {collapsed ? (
         <div className="w-full text-center">
-          <EllipsisOutlined style={{ color: colorTextDisabled }} />
+          <Tooltip title={title}>
+            <QuestionCircleOutlined style={{ color: colorTextDisabled, paddingTop: 10 }} />
+          </Tooltip>
         </div>
       ) : (
         <Divider style={{ color: colorTextDescription, fontSize }} orientation="left">

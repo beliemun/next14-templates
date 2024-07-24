@@ -10,7 +10,7 @@ export const buttonStyles = ({
   disabled,
   loading,
 }: ButtonProps): string => {
-  let styles = [];
+  let styles = [""];
   styles.push("transition-all duration-200 ease-in-out");
   // Button Color
   if (buttonColor === "primary") {

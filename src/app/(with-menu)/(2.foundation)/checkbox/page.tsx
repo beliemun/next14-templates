@@ -4,10 +4,10 @@ import { Card, Checkbox, CheckboxProps, Divider, Section, Space, Text } from "@/
 import { PageLayout } from "@/components/organisms";
 import { useState } from "react";
 
-const options = ["Option A", "Option B", "Option C"];
+const options = ["Option A", "Option B", "Option C", "Option D"];
 
 export default function () {
-  const [checkedList, setCheckedList] = useState<string[]>(["Option A", "Option B"]);
+  const [checkedList, setCheckedList] = useState<string[]>(["Option A", "Option C"]);
   const checkAll = checkedList.length === options.length;
   const indeterminate = checkedList.length > 0 && checkedList.length < options.length;
   const onChange = (e: string[]) => setCheckedList(e);
@@ -25,12 +25,28 @@ export default function () {
               <Text type="sm-normal">Base</Text>
             </Space>
             <Space direction="horizontal">
+              <Checkbox indeterminate />
+              <Text type="sm-normal">Indeterminate</Text>
+            </Space>
+            <Space direction="horizontal">
               <Checkbox checked />
-              <Text type="sm-normal">Defautl Checked</Text>
+              <Text type="sm-normal">Default checkd</Text>
+            </Space>
+          </Space>
+        </Card>
+        <Card title={"Disabled"}>
+          <Space direction="vertical" gap={16}>
+            <Space direction="horizontal">
+              <Checkbox disabled />
+              <Text type="sm-normal">Base</Text>
+            </Space>
+            <Space direction="horizontal">
+              <Checkbox indeterminate disabled />
+              <Text type="sm-normal">Indeterminate</Text>
             </Space>
             <Space direction="horizontal">
               <Checkbox checked disabled />
-              <Text type="sm-normal">Disabled</Text>
+              <Text type="sm-normal">Default checkd</Text>
             </Space>
           </Space>
         </Card>

@@ -36,7 +36,7 @@ export const introduction: MenuItem[] = [
 ];
 
 export const base: MenuItem[] = [
-  getItem("Color", "color", <FormatPainterOutlined />),
+  getItem("Color Pallete", "color", <FormatPainterOutlined />),
   getItem("Typography", "typography", <FontSizeOutlined />, [
     getItem("Title", "title"),
     getItem("Text", "text"),
@@ -51,12 +51,13 @@ export const base: MenuItem[] = [
     getItem("Image", "image"),
     getItem("Input", "input"),
     getItem("Message", "message"),
+    getItem("Pagination", "pagination"),
     getItem("Modal", "modal"),
     getItem("QRCode", "qrcode"),
     getItem("Radio", "radio"),
     getItem("Select", "select"),
-    getItem("Skeleton", "skeleton"),
     getItem("Switch", "switch"),
+    getItem("Table", "table"),
     getItem("Tag", "tag"),
     getItem("Picker - Color", "color-picker"),
     getItem("Picker - Time", "time-picker"),
