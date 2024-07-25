@@ -42,7 +42,7 @@ export default function TimePickerPage() {
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="warning" />
             <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} status="error" />
-            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} />
+            <TimePicker.RangePicker format={"HH:mm a"} minuteStep={15} disabled />
           </Space>
         </Card>
       </Section>

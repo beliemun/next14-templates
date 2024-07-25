@@ -16,15 +16,15 @@ export default function ModalPage() {
     <PageLayout title="<Modal />">
       <Divider orientation="left">Basic Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowMoal}>Show</Button>
+        <Button onClick={handleShowMoal}>Show Basic Modal</Button>
       </Section>
       <Divider orientation="left">Page Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowMoal}>Show</Button>
+        <Button onClick={handleShowMoal}>Show Page Modal</Button>
       </Section>
       <Divider orientation="left">Loading Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowLoadingModal}>Show</Button>
+        <Button onClick={handleShowLoadingModal}>Show Loading Modal</Button>
       </Section>
       {isOpenModal ? <ModalComponent onClose={() => setIsOpenModal(false)} /> : null}
       {isOpenLoadingModal ? (

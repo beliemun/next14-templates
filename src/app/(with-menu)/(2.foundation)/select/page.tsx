@@ -59,7 +59,6 @@ export default function SelectPage() {
         tagColor={value}
         closable={closable}
         onClose={() => {
-          console.log("onClose");
           onClose();
           handleClose(value);
         }}
