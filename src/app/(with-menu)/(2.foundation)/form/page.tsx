@@ -1,7 +1,7 @@
 import { Divider, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
-export default function () {
+export default function FormPage() {
   return (
     <PageLayout title="<Form />">
       <Divider orientation="left">Basic Form</Divider>

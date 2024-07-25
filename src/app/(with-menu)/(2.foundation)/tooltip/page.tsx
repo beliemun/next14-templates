@@ -1,7 +1,7 @@
 import { Button, Card, Section, Tooltip } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
-export default function () {
+export default function TooltipPage() {
   return (
     <PageLayout title="<Tooltip />">
       <Section className="flex flex-col gap-4">

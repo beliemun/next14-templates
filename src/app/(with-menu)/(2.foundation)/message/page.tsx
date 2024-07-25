@@ -3,7 +3,7 @@
 import { Button, Divider, Message, Section, Space } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
-export default function () {
+export default function MessagePage() {
   const [messageApi, contextHolder] = Message.useMessage();
   const handleInfo = () => messageApi.info("Hello, this is an info message.");
   const handleSuccess = () => messageApi.success("Hello, this is a success message.");

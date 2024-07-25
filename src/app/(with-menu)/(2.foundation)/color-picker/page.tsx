@@ -2,7 +2,7 @@ import { ColorPicker, Section, Space, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/styles";
 
-export default function () {
+export default function ColoPickerPage() {
   return (
     <PageLayout title="<ColorPicker />">
       <Section className="flex flex-col flex-wrap gap-4">

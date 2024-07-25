@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/organisms";
 
 const URL = "https://cdn.pixabay.com/photo/2023/09/26/17/32/woman-8277925_1280.jpg";
 
-export default function () {
+export default function AvatarPage() {
   return (
     <PageLayout title="<Avatar />">
       <Divider orientation="left">Basic Avatar</Divider>
@@ -52,23 +52,23 @@ export default function () {
           <Space direction="horizontal" size={16}>
             <Avatar.Group
               list={[
-                <Avatar avatarUrl={URL} avatarSize="xs" />,
-                <Avatar avatarUrl={URL} avatarSize="xs" />,
-                <Avatar avatarUrl={URL} avatarSize="xs" />,
+                <Avatar avatarUrl={URL} avatarSize="xs" key={1} />,
+                <Avatar avatarUrl={URL} avatarSize="xs" key={2} />,
+                <Avatar avatarUrl={URL} avatarSize="xs" key={3} />,
               ]}
             />
             <Avatar.Group
               list={[
-                <Avatar avatarUrl={URL} />,
-                <Avatar avatarUrl={URL} />,
-                <Avatar avatarUrl={URL} />,
+                <Avatar avatarUrl={URL} key={1} />,
+                <Avatar avatarUrl={URL} key={2} />,
+                <Avatar avatarUrl={URL} key={3} />,
               ]}
             />
             <Avatar.Group
               list={[
-                <Avatar avatarUrl={URL} avatarSize="default" />,
-                <Avatar avatarUrl={URL} avatarSize="default" />,
-                <Avatar avatarUrl={URL} avatarSize="default" />,
+                <Avatar avatarUrl={URL} avatarSize="default" key={1} />,
+                <Avatar avatarUrl={URL} avatarSize="default" key={2} />,
+                <Avatar avatarUrl={URL} avatarSize="default" key={3} />,
               ]}
             />
           </Space>

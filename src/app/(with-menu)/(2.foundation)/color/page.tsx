@@ -3,7 +3,7 @@ import { Section } from "@/components/atoms";
 import { colorList } from "@/styles";
 import { ColorPaletteItem } from "./_components/color-palette-item";
 
-export default function () {
+export default function ColorPage() {
   return (
     <PageLayout title="Colors">
       <Section>

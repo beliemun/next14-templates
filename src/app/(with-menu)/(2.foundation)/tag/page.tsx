@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/organisms";
 import { colorList } from "@/styles";
 import { SyncOutlined } from "@ant-design/icons";
 
-export default function () {
+export default function TagPage() {
   return (
     <PageLayout title="<Tag />">
       {colorList.map((color, index) => (

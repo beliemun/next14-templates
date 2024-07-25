@@ -14,7 +14,7 @@ import { TableColumnsType, TransferProps } from "antd";
 import { ColorType } from "@/styles";
 import { capitalizeFirstLetter } from "@/shared/utils";
 
-export default function () {
+export default function TransferPage() {
   const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>([]);
   const [disabled, setDisabled] = useState(false);
 

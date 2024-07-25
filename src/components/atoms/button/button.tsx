@@ -17,45 +17,45 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
-export const Button = forwardRef(
-  (
-    {
-      style,
-      className,
-      children,
-      buttonRound = "round",
-      buttonStyle = "solid",
-      buttonSize = "sm",
-      buttonColor = "primary",
-      fullWidth,
-      disabled,
-      loading,
-      ...rest
-    }: ButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>
-  ) => {
-    return (
-      <button
-        style={{ ...style }}
-        className={cn(
-          buttonStyles({
-            buttonRound,
-            buttonStyle,
-            buttonSize,
-            buttonColor,
-            fullWidth,
-            disabled,
-            loading,
-          }),
-          className
-        )}
-        ref={ref}
-        disabled={disabled || loading}
-        {...rest}
-      >
-        {loading ? <LoadingOutlined className="mr-2" /> : null}
-        {children}
-      </button>
-    );
-  }
-);
+const Button = (
+  {
+    style,
+    className,
+    children,
+    buttonRound = "round",
+    buttonStyle = "solid",
+    buttonSize = "sm",
+    buttonColor = "primary",
+    fullWidth,
+    disabled,
+    loading,
+    ...rest
+  }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
+  return (
+    <button
+      style={{ ...style }}
+      className={cn(
+        buttonStyles({
+          buttonRound,
+          buttonStyle,
+          buttonSize,
+          buttonColor,
+          fullWidth,
+          disabled,
+          loading,
+        }),
+        className
+      )}
+      ref={ref}
+      disabled={disabled || loading}
+      {...rest}
+    >
+      {loading ? <LoadingOutlined className="mr-2" /> : null}
+      {children}
+    </button>
+  );
+};
+
+export default forwardRef(Button);

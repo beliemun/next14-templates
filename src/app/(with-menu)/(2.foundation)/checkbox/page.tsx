@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const options = ["Option A", "Option B", "Option C", "Option D"];
 
-export default function () {
+export default function CheckboxPage() {
   const [checkedList, setCheckedList] = useState<string[]>(["Option A", "Option C"]);
   const checkAll = checkedList.length === options.length;
   const indeterminate = checkedList.length > 0 && checkedList.length < options.length;
@@ -53,7 +53,12 @@ export default function () {
         <Card
           title={"Group"}
           actions={[
-            <Checkbox indeterminate={indeterminate} checked={checkAll} onChange={onChangeAll}>
+            <Checkbox
+              indeterminate={indeterminate}
+              checked={checkAll}
+              onChange={onChangeAll}
+              key={1}
+            >
               <Text type="base-semibold">{checkAll ? "Uncheck all" : "Check all"}</Text>
             </Checkbox>,
           ]}

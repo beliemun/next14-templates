@@ -3,7 +3,7 @@
 import { Card, Section, Space, Switch } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
-export default function () {
+export default function SwitchPage() {
   return (
     <PageLayout title="<Switch />">
       <Section className="flex flex-row flex-wrap gap-4 px-8">

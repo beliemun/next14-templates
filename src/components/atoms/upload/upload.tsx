@@ -66,6 +66,7 @@ export const Upload = ({
             afterOpenChange: (visible) => !visible && setPreviewImage(""),
           }}
           src={previewImage}
+          alt={"placeholder"}
         />
       )}
     </>

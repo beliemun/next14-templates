@@ -2,9 +2,8 @@
 
 import { Card, Radio, Section, Space, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { Divider } from "antd";
 
-export default function () {
+export default function RadioPage() {
   return (
     <PageLayout title="<Radio />">
       <Section className="flex flex-row flex-wrap gap-4 px-8">

@@ -8,7 +8,7 @@ import { message, UploadFile } from "antd";
 import { UploadChangeParam } from "antd/lib/upload";
 import { DragEvent } from "react";
 
-export default function () {
+export default function UploadPage() {
   const handleChange = (info: UploadChangeParam<UploadFile<any>>) => {
     const { status } = info.file;
     if (status !== "uploading") {

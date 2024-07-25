@@ -4,7 +4,7 @@ import { Card, Divider, Section, Space, TimePicker } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import dayjs from "dayjs";
 
-export default function () {
+export default function TimePickerPage() {
   return (
     <PageLayout title="<TimePicker />">
       <Section className="flex flex-row flex-wrap gap-4">

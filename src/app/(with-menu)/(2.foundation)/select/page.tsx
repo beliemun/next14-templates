@@ -37,7 +37,7 @@ for (let i = 10; i < 36; i++) {
 
 const options3: SelectProps["options"] = colorList.map((color) => ({ value: color }));
 
-export default function () {
+export default function SelectPage() {
   const [value, setValue] = useState<string[]>(["b11"]);
   const suffixIcon = (
     <>

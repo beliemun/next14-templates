@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/organisms";
 import { colorList } from "@/styles";
 import { HomeOutlined } from "@ant-design/icons";
 
-export default function () {
+export default function ButtonPage() {
   return (
     <PageLayout title="<Button />">
       {colorList.map((color, index) => (

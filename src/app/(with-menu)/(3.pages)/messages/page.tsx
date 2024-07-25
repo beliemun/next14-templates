@@ -1,6 +1,5 @@
 import { PageLayout } from "@/components/organisms";
-import { Divider } from "antd";
 
-export default function () {
+export default function MessagesPage() {
   return <PageLayout title="Messages"></PageLayout>;
 }

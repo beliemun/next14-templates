@@ -1,6 +1,5 @@
 import { PageLayout } from "@/components/organisms";
-import { Divider } from "antd";
 
-export default function () {
+export default function SingInPage() {
   return <PageLayout title="Sing In"></PageLayout>;
 }

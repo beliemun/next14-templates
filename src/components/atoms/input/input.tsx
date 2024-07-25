@@ -1,6 +1,6 @@
 import { cn } from "@/styles";
 import { Input as InputAntd, InputProps as InputAntdProps, InputRef } from "antd";
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
+import { ForwardedRef, forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
 import { ConfigProvider } from "./config-provider";
 import Search, { SearchProps } from "./search";
 import Password, { PasswordProps } from "./password";
@@ -18,17 +18,19 @@ export interface InputComponent
   OTP: ForwardRefExoticComponent<OTPProps & RefAttributes<OTPRef>>;
 }
 
-const Input = forwardRef<InputRef, InputProps>(({ style, className, ...rest }: InputProps, ref) => {
+const Input = ({ style, className, ...rest }: InputProps, ref: ForwardedRef<InputRef>) => {
   return (
     <ConfigProvider>
       <InputAntd ref={ref} style={{ ...style }} className={cn(className)} {...rest} />
     </ConfigProvider>
   );
-}) as InputComponent;
+};
 
-Input.Search = Search;
-Input.Password = Password;
-Input.TextArea = TextArea;
-Input.OTP = OTP;
+const InputComponent = forwardRef<InputRef, InputProps>(Input) as InputComponent;
 
-export default Input;
+InputComponent.Search = Search;
+InputComponent.Password = Password;
+InputComponent.TextArea = TextArea;
+InputComponent.OTP = OTP;
+
+export default InputComponent;

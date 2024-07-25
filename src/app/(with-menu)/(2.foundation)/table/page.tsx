@@ -2,7 +2,7 @@ import { Divider, Section, Table } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { columns, dataSource } from "./data";
 
-export default function () {
+export default function TablePage() {
   return (
     <PageLayout title="<Table />">
       <Divider orientation="left">Basic Table</Divider>

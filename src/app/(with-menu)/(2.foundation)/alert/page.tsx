@@ -4,7 +4,7 @@ import { Button, Divider, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { AlertAction, AlertProps, useAlertStore } from "@/stores/useAlertStore";
 
-export default function () {
+export default function AlertPage() {
   const { show, onDismiss } = useAlertStore();
 
   const handleShow = ({ ...rest }: Omit<AlertProps, "visible">) => {

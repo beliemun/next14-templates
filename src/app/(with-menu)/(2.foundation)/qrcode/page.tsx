@@ -26,7 +26,7 @@ const downloadQRCode = () => {
   }
 };
 
-export default function () {
+export default function QrcodePage() {
   const [text, setText] = useState("https://google.com");
 
   const handleChangeText = (e: ChangeEvent<HTMLInputElement>) => setText(e.target.value);

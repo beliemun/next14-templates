@@ -1,7 +1,7 @@
 import { Divider, Pagination, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
-export default function () {
+export default function PaginationPage() {
   return (
     <PageLayout title="<Pagination />">
       <Divider orientation="left">Basic Pagination</Divider>

@@ -23,7 +23,7 @@ export const LoadingModal = ({
       setVisible(false);
       setTimeout(() => onClose?.(), 500);
     }
-  }, [loading]);
+  }, [loading, onClose]);
 
   return (
     <AnimatePresence>

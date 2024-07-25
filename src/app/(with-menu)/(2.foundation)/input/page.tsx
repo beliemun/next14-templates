@@ -33,7 +33,7 @@ const selectAfter = (
   />
 );
 
-export default async function () {
+export default async function InputPage() {
   return (
     <PageLayout title="<Input />">
       <Section className="flex flex-row flex-wrap gap-4">

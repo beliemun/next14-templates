@@ -3,7 +3,7 @@
 import { Card, DatePicker, Section, Space } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
-export default function () {
+export default function DatePickerPage() {
   return (
     <PageLayout title="<DatePicker />">
       <Section className="flex flex-row flex-wrap gap-4">

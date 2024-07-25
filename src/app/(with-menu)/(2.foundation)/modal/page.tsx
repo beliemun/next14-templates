@@ -5,7 +5,7 @@ import { PageLayout } from "@/components/organisms";
 import { useState } from "react";
 import { LoadingModalComponent, ModalComponent } from "./_components";
 
-export default function () {
+export default function ModalPage() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenLoadingModal, setIsOpenLoadingModal] = useState(false);
 
