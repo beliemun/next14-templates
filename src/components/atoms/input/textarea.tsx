@@ -2,7 +2,7 @@ import { cn } from "@/styles";
 import { InputRef } from "antd";
 import TextAreaAntd, { TextAreaProps as TextAreaAtndProps } from "antd/es/input/TextArea";
 import { CSSProperties, forwardRef } from "react";
-import { ConfigProvider } from "./config";
+import { ConfigProvider } from "./config-provider";
 
 export interface TextAreaProps extends TextAreaAtndProps {}
 

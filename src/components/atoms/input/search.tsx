@@ -3,7 +3,7 @@ import { InputRef } from "antd";
 import SearchAtnd from "antd/es/input/Search";
 import { SearchProps as SearchAntdProps } from "antd/lib/input";
 import { forwardRef } from "react";
-import { ConfigProvider } from "./config";
+import { ConfigProvider } from "./config-provider";
 import "./styles.css";
 
 export interface SearchProps extends SearchAntdProps {}

@@ -3,8 +3,9 @@
 import { RangePickerProps } from "antd/es/date-picker";
 import { CSSProperties } from "react";
 import { cn } from "@/styles";
-import { ConfigProvider, TimePicker } from "antd";
+import { TimePicker } from "antd";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
+import { ConfigProvider } from "./config-provider";
 import koKR from "antd/es/date-picker/locale/ko_KR";
 import "dayjs/locale/ko";
 import "./styles.css";
@@ -17,28 +18,7 @@ interface RangePickProps extends RangePickerProps {
 const RangePicker = ({ style, className, size = "middle", ...rest }: RangePickProps) => {
   const { isDarkMode } = useDarkModeStore();
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          DatePicker: {
-            // small
-            inputFontSizeSM: 14,
-            borderRadiusSM: 8,
-            paddingInlineSM: 12,
-
-            // medium
-            inputFontSize: 14,
-            borderRadius: 8,
-            paddingInline: 14,
-
-            // large
-            inputFontSizeLG: 16,
-            borderRadiusLG: 8,
-            paddingInlineLG: 14,
-          },
-        },
-      }}
-    >
+    <ConfigProvider>
       <TimePicker.RangePicker
         locale={koKR}
         style={{ ...style }}

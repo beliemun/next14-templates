@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, DatePicker, Divider, Section, Space } from "@/components/atoms";
+import { Card, DatePicker, Section, Space } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
 export default function () {

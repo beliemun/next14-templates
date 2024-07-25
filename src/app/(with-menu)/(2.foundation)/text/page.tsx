@@ -1,11 +1,10 @@
-import { Card, Divider, Section, Text, Title } from "@/components/atoms";
+import { Card, Section, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 
 export default function TextPage() {
   return (
     <PageLayout title="<Text />">
-      <Divider orientation="left">Text</Divider>
-      <Section className="flex flex-row flex-wrap gap-4 pt-2">
+      <Section className="flex flex-row flex-wrap gap-4">
         <Card title={"sm"} className="w-60">
           <div className="flex flex-col">
             <Text type="sm-light">sm-light</Text>

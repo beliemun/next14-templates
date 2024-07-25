@@ -1,5 +1,6 @@
 import { cn } from "@/styles";
 import { Pagination as PaginationAntd, PaginationProps as PaginationAntdProps } from "antd";
+import "./styles.css";
 
 interface PaginationProps extends PaginationAntdProps {}
 

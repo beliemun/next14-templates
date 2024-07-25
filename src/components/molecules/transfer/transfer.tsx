@@ -1,7 +1,7 @@
 import { cn } from "@/styles";
 import { Transfer as TransferAntd, TransferProps as TransferAntdProps } from "antd";
 import { CSSProperties } from "react";
-import { ConfigProvider } from "./config";
+import { ConfigProvider } from "./config-provider";
 
 export interface TransferProps extends TransferAntdProps {
   style?: CSSProperties;

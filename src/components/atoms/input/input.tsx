@@ -1,7 +1,7 @@
 import { cn } from "@/styles";
 import { Input as InputAntd, InputProps as InputAntdProps, InputRef } from "antd";
 import { forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
-import { ConfigProvider } from "./config";
+import { ConfigProvider } from "./config-provider";
 import Search, { SearchProps } from "./search";
 import Password, { PasswordProps } from "./password";
 import TextArea, { TextAreaProps } from "./textarea";

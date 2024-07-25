@@ -1,6 +1,6 @@
 import { InputRef, PasswordProps as PasswordAntdProps } from "antd/es/input";
 import { forwardRef } from "react";
-import { ConfigProvider } from "./config";
+import { ConfigProvider } from "./config-provider";
 import PasswordAntd from "antd/es/input/Password";
 import { cn } from "@/styles";
 import "./styles.css";

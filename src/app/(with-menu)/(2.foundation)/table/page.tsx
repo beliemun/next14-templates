@@ -1,11 +1,18 @@
-import { Divider, Section } from "@/components/atoms";
+import { Divider, Section, Table } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { columns, dataSource } from "./data";
 
 export default function () {
   return (
     <PageLayout title="<Table />">
       <Divider orientation="left">Basic Table</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2"></Section>
+      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+        <Table
+          dataSource={dataSource}
+          columns={columns}
+          pagination={{ position: ["bottomCenter"] }}
+        />
+      </Section>
     </PageLayout>
   );
 }
