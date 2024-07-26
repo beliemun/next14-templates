@@ -6,7 +6,6 @@ export * from "./color-picker";
 export * from "./date-picker";
 export * from "./divider";
 export * from "./drawer";
-export * from "./form";
 export * from "./image";
 export * from "./input";
 export * from "./layout";

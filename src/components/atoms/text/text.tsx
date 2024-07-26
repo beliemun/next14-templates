@@ -1,7 +1,7 @@
 "use client";
 
-import { CSSProperties, ReactNode } from "react";
-import { TextStyle, TextType } from "./types";
+import { CSSProperties, forwardRef, LegacyRef, ReactNode } from "react";
+import { TextColor, TextStyle, TextType } from "./types";
 import { cn } from "@/styles";
 import { theme } from "antd";
 
@@ -10,16 +10,29 @@ export interface TextProps {
   style?: CSSProperties;
   className?: string;
   type?: TextType;
+  color?: TextColor;
   onClick?: () => void;
 }
 
-export const Text = ({ children, style, className, type = "base-normal", ...rest }: TextProps) => {
+const Text = (
+  { children, style, className, type = "base-normal", color = "default", ...rest }: TextProps,
+  ref: LegacyRef<HTMLSpanElement>
+) => {
   const {
-    token: { colorText },
+    token: { colorText, colorTextDescription, colorTextDisabled },
   } = theme.useToken();
   return (
     <span
-      style={{ ...style, color: colorText }}
+      ref={ref}
+      style={{
+        color:
+          color === "default"
+            ? colorText
+            : color === "description"
+            ? colorTextDescription
+            : colorTextDisabled,
+        ...style,
+      }}
       className={cn(className, TextStyle[type])}
       {...rest}
     >
@@ -27,3 +40,5 @@ export const Text = ({ children, style, className, type = "base-normal", ...rest
     </span>
   );
 };
+
+export default forwardRef(Text);

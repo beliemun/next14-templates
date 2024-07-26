@@ -1,3 +1,5 @@
+export type TextColor = "default" | "description" | "disabled";
+
 export type TextType =
   | "sm-light"
   | "sm-normal"

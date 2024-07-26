@@ -40,4 +40,7 @@ body {
   .row-center {
     @apply flex flex-row justify-center items-center;
   }
+  .overflow-hidden-text {
+    @apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+  }
 }
