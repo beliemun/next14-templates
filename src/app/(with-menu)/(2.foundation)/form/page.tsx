@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Button,
   Checkbox,
   Input,
   Radio,
@@ -10,7 +9,7 @@ import {
   Select,
   SelectOption,
 } from "@/components/atoms";
-import { Form, FormItem, Test } from "@/components/molecules";
+import { Form, FormItem } from "@/components/molecules";
 import { PageLayout } from "@/components/organisms";
 
 const radioOptions: RadioOption[] = [
@@ -47,7 +46,7 @@ export default function FormPage() {
   return (
     <PageLayout title="<Form />">
       <Section className="flex flex-col flex-wrap gap-4">
-        {/* <Form title="Here is form title" description="Here is a form description">
+        <Form title="Here is form title" description="Here is a form description">
           <FormItem
             label="Label Name"
             tooltipTitle="Please write down here"
@@ -121,8 +120,7 @@ export default function FormPage() {
           >
             <Input.TextArea style={{ minHeight: 100 }} placeholder="placeholder" />
           </FormItem>
-        </Form> */}
-        <Test />
+        </Form>
       </Section>
     </PageLayout>
   );

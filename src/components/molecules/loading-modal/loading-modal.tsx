@@ -5,9 +5,14 @@ import { LoadingModalProps } from "./types";
 import { useEffect, useState } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { Text } from "@/components/atoms";
-import { theme } from "antd";
 import { loadingJson } from "@/assets/lotties";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
+// Lottie는 브라우저에서만 실행되는 웹 워커를 사용하기 때문에 클라이언트 사이드에서만 실행되어야 한다.
+import dynamic from "next/dynamic";
+const DotLottieReact = dynamic(
+  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
 
 export const LoadingModal = ({
   loading = true,

@@ -1,7 +1,6 @@
 "use client";
 
-import { Modal } from "@/components/molecules";
-import { ModalProps } from "@/components/molecules/modal/types";
+import { Modal, ModalProps } from "@/components/molecules";
 import { BasicTransfer } from "../../transfer/_components";
 import { useEffect, useState } from "react";
 

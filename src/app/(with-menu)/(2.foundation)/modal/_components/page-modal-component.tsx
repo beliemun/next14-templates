@@ -1,11 +1,9 @@
 "use client";
 
 import { Checkbox, Input, Radio, RadioOption, Select, SelectOption } from "@/components/atoms";
-import { PageModal } from "@/components/molecules";
+import { Form, FormItem, PageModal } from "@/components/molecules";
 import { PageModalProps } from "@/components/molecules/page-modal/types";
 import { useEffect, useState } from "react";
-import { Form, FormItem } from "@/components/molecules";
-import { BasicTransfer } from "../../transfer/_components";
 
 const radioOptions: RadioOption[] = [
   {

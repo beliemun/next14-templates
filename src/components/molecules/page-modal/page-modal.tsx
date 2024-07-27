@@ -2,41 +2,30 @@
 
 import { useState } from "react";
 import { PageModalProps } from "./types";
-import { AnimatePresence, motion, useAnimate, useAnimation, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { theme } from "antd";
 import { ResizableWapper } from "@/components/organisms/menu-layout/components";
 import { cn } from "@/styles";
 import { Button, Text, Title } from "@/components/atoms";
 import { CloseOutlined, ExpandAltOutlined, ShrinkOutlined } from "@ant-design/icons";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { loadingJson } from "@/assets/lotties";
 
+import dynamic from "next/dynamic";
+const DotLottieReact = dynamic(
+  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
+
 const containerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 const contentsVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 10,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
+  hidden: { opacity: 0, y: 10, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
-const animationProps = {
-  initial: "hidden",
-  animate: "visible",
-  exit: "hidden",
-};
+const animationProps = { initial: "hidden", animate: "visible", exit: "hidden" };
 
 export const PageModal = ({
   title = undefined,
@@ -47,7 +36,6 @@ export const PageModal = ({
   loadingMessage,
   onClose,
 }: PageModalProps) => {
-  const [worker, setWorker] = useState(null);
   const [visible, setVisible] = useState(true);
   const [isFullWidth, setIsFullWitdh] = useState(false);
 
