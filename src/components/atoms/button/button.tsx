@@ -1,21 +1,9 @@
-import { cn, ColorType } from "@/styles";
-import { ButtonHTMLAttributes, CSSProperties, ForwardedRef, forwardRef, ReactNode } from "react";
-import { ButtonRoundType, ButtonSizeType, ButtonStyleType } from "./types";
+import { cn } from "@/styles";
+import { ForwardedRef, forwardRef } from "react";
 import { buttonStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  style?: CSSProperties;
-  className?: string;
-  children?: ReactNode;
-  buttonRound?: ButtonRoundType;
-  buttonStyle?: ButtonStyleType;
-  buttonSize?: ButtonSizeType;
-  buttonColor?: ColorType;
-  fullWidth?: boolean;
-  disabled?: boolean;
-  loading?: boolean;
-}
+import { Tooltip } from "../tooltip";
+import { ButtonProps } from "./types";
 
 const Button = (
   {
@@ -29,32 +17,38 @@ const Button = (
     fullWidth,
     disabled,
     loading,
+    tooltipTitle,
+    tooltipStyle,
+    tooltipPlacement,
+    showCloseButton = true,
     ...rest
   }: ButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
-    <button
-      style={{ ...style }}
-      className={cn(
-        buttonStyles({
-          buttonRound,
-          buttonStyle,
-          buttonSize,
-          buttonColor,
-          fullWidth,
-          disabled,
-          loading,
-        }),
-        className
-      )}
-      ref={ref}
-      disabled={disabled || loading}
-      {...rest}
-    >
-      {loading ? <LoadingOutlined className="mr-2" /> : null}
-      {children}
-    </button>
+    <Tooltip title={tooltipTitle} style={tooltipStyle} placement={tooltipPlacement}>
+      <button
+        style={{ ...style }}
+        className={cn(
+          buttonStyles({
+            buttonRound,
+            buttonStyle,
+            buttonSize,
+            buttonColor,
+            fullWidth,
+            disabled,
+            loading,
+          }),
+          className
+        )}
+        ref={ref}
+        disabled={disabled || loading}
+        {...rest}
+      >
+        {loading ? <LoadingOutlined className="mr-2" /> : null}
+        {children}
+      </button>
+    </Tooltip>
   );
 };
 

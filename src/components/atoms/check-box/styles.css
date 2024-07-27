@@ -3,7 +3,7 @@
   height: 20px !important;
 }
 .ant-checkbox {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
   transition: 0.3s all ease;
 }
 .ant-checkbox-checked {

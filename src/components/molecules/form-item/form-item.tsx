@@ -18,21 +18,23 @@ interface FormItemProps
   tooltipTitle?: string;
   tooltipTrigger?: "click" | "focus" | "hover";
   tooltipPlacement?: TooltipPlacement;
+  extra?: string;
 }
 
-const FormItem = ({
+export const FormItem = ({
   style,
   className,
   htmlFor,
   label,
   labelType = "sm-regular",
-  labelWidth = 120,
+  labelWidth = 150,
   direction = "horizontal",
   required,
   maxWidth = 640,
   tooltipTitle,
   tooltipTrigger = "hover",
   tooltipPlacement = "top",
+  extra,
   children,
   ...rest
 }: FormItemProps) => {
@@ -52,9 +54,12 @@ const FormItem = ({
           </Text>
         </Tooltip>
       </label>
-      {children}
+      <div className="flex flex-col w-full gap-1">
+        {children}
+        <Text type="sm-regular" color="description">
+          {extra}
+        </Text>
+      </div>
     </div>
   );
 };
-
-export default forwardRef(FormItem);

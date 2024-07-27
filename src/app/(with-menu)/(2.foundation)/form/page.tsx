@@ -1,28 +1,128 @@
-import { Input, Section, Select } from "@/components/atoms";
-import { Form, FormItem } from "@/components/molecules";
+"use client";
+
+import {
+  Button,
+  Checkbox,
+  Input,
+  Radio,
+  RadioOption,
+  Section,
+  Select,
+  SelectOption,
+} from "@/components/atoms";
+import { Form, FormItem, Test } from "@/components/molecules";
 import { PageLayout } from "@/components/organisms";
 
-type SignInFeildType = {
-  email?: string;
-  password?: string;
-  remember?: string;
-};
+const radioOptions: RadioOption[] = [
+  {
+    label: "Option1",
+    value: "Option1",
+  },
+  {
+    label: "Option2",
+    value: "Option2",
+  },
+  {
+    label: "Option3",
+    value: "Option3",
+  },
+];
+
+const selectOptions: SelectOption[] = [
+  {
+    label: "Option1",
+    value: "Option1",
+  },
+  {
+    label: "Option2",
+    value: "Option2",
+  },
+  {
+    label: "Option3",
+    value: "Option3",
+  },
+];
 
 export default function FormPage() {
   return (
     <PageLayout title="<Form />">
       <Section className="flex flex-col flex-wrap gap-4">
-        <Form title="Here is form title" description="Here is a form description">
-          <FormItem label="Label" tooltipTitle="Please write down here" required>
+        {/* <Form title="Here is form title" description="Here is a form description">
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
             <Input placeholder="placeholder" />
           </FormItem>
-          <FormItem label="Label" tooltipTitle="Please write down here" required>
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
             <Input placeholder="placeholder" addonBefore="https://" addonAfter=".com" />
           </FormItem>
-          <FormItem label="Label" tooltipTitle="Please write down here" required>
-            <Select style={{ backgroundColor: "red" }} />
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
+            <Select
+              style={{ width: "100%" }}
+              options={selectOptions}
+              defaultValue={selectOptions[0].value}
+            />
           </FormItem>
-        </Form>
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
+            <Select
+              style={{ width: "100%" }}
+              options={selectOptions}
+              defaultValue={selectOptions}
+              mode="multiple"
+            />
+          </FormItem>
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
+            <Radio.Group
+              className="w-full space-x-5"
+              defaultValue={selectOptions[0].value}
+              options={radioOptions}
+            />
+          </FormItem>
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
+            <Checkbox.Group
+              className="w-full space-x-5"
+              defaultValue={[selectOptions[0].value]}
+              options={radioOptions}
+            />
+          </FormItem>
+          <FormItem
+            label="Label Name"
+            tooltipTitle="Please write down here"
+            extra="Here is extra description"
+            required
+          >
+            <Input.TextArea style={{ minHeight: 100 }} placeholder="placeholder" />
+          </FormItem>
+        </Form> */}
+        <Test />
       </Section>
     </PageLayout>
   );

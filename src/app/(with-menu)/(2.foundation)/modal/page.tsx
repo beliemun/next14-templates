@@ -3,30 +3,33 @@
 import { Button, Divider, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { useState } from "react";
-import { LoadingModalComponent, ModalComponent } from "./_components";
+import { LoadingModalComponent, ModalComponent, PageModalComponent } from "./_components";
 
 export default function ModalPage() {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenPageModal, setIsOpenPageModal] = useState(false);
   const [isOpenLoadingModal, setIsOpenLoadingModal] = useState(false);
 
-  const handleShowMoal = () => setIsOpenModal(true);
-  const handleShowLoadingModal = () => setIsOpenLoadingModal(true);
+  const handleOpenMoal = () => setIsOpenModal(true);
+  const handleOpenPageModal = () => setIsOpenPageModal(true);
+  const handleOpenLoadingModal = () => setIsOpenLoadingModal(true);
 
   return (
     <PageLayout title="<Modal />">
       <Divider orientation="left">Basic Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowMoal}>Show Basic Modal</Button>
+        <Button onClick={handleOpenMoal}>Open Basic Modal</Button>
       </Section>
       <Divider orientation="left">Page Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowMoal}>Show Page Modal</Button>
+        <Button onClick={handleOpenPageModal}>Open Page Modal</Button>
       </Section>
       <Divider orientation="left">Loading Modal</Divider>
       <Section className="flex flex-col gap-4 pt-2">
-        <Button onClick={handleShowLoadingModal}>Show Loading Modal</Button>
+        <Button onClick={handleOpenLoadingModal}>Open Loading Modal</Button>
       </Section>
       {isOpenModal ? <ModalComponent onClose={() => setIsOpenModal(false)} /> : null}
+      {isOpenPageModal ? <PageModalComponent onClose={() => setIsOpenPageModal(false)} /> : null}
       {isOpenLoadingModal ? (
         <LoadingModalComponent onClose={() => setIsOpenLoadingModal(false)} />
       ) : null}

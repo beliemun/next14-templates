@@ -1,5 +1,5 @@
 import { cn } from "@/styles";
-import { ButtonProps } from "./button";
+import { ButtonProps } from "./types";
 
 export const buttonStyles = ({
   buttonRound,
@@ -9,7 +9,7 @@ export const buttonStyles = ({
   fullWidth,
   disabled,
   loading,
-}: ButtonProps): string => {
+}: Omit<ButtonProps, "tooltipTitle" | "tooltipStyle" | "tooltipPlacement">): string => {
   let styles = [""];
   styles.push("transition-all duration-200 ease-in-out");
   // Button Color

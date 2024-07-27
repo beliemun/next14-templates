@@ -1,7 +1,22 @@
 "use client";
 
-import { Card, Radio, Section, Space, Text } from "@/components/atoms";
+import { Card, Radio, RadioOption, Section, Space, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+
+const radioOptions: RadioOption[] = [
+  {
+    label: "Option1",
+    value: "Option1",
+  },
+  {
+    label: "Option2",
+    value: "Option2",
+  },
+  {
+    label: "Option3",
+    value: "Option3",
+  },
+];
 
 export default function RadioPage() {
   return (
@@ -21,20 +36,11 @@ export default function RadioPage() {
           </Space>
         </Card>
         <Card title={"Radio Group"}>
-          <Radio.Group className="space-x-4" defaultValue={2}>
-            <Radio value={1}>
-              <Text type="sm-normal">Option A</Text>
-            </Radio>
-            <Radio value={2}>
-              <Text type="sm-normal">Option B</Text>
-            </Radio>
-            <Radio value={3}>
-              <Text type="sm-normal">Option C</Text>
-            </Radio>
-            <Radio value={4}>
-              <Text type="sm-normal">Option D</Text>
-            </Radio>
-          </Radio.Group>
+          <Radio.Group
+            className="space-x-4"
+            options={radioOptions}
+            defaultValue={radioOptions[0]}
+          />
         </Card>
       </Section>
     </PageLayout>

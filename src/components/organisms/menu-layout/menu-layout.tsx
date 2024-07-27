@@ -13,6 +13,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
   const [selectedKey, setSelectedKey] = useState("introduction");
   const [collapsed, setCollapsed] = useState(false);
   const [isFullWidth, setIsFullWitdh] = useState(false);
+
   const {
     token: { colorBorder },
   } = theme.useToken();

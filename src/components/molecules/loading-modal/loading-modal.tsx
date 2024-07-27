@@ -6,17 +6,17 @@ import { useEffect, useState } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { Text } from "@/components/atoms";
 import { theme } from "antd";
-import { LoadingOutlined } from "@ant-design/icons";
+import { loadingJson } from "@/assets/lotties";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
 export const LoadingModal = ({
   loading = true,
   message = undefined,
-  size = 480,
   onClose,
 }: LoadingModalProps) => {
   const [visible, setVisible] = useState(true);
 
   const { isDarkMode } = useDarkModeStore();
-  const { colorText } = theme.useToken().token;
 
   useEffect(() => {
     if (!loading) {
@@ -36,11 +36,15 @@ export const LoadingModal = ({
             backgroundColor: isDarkMode ? "rgba(30, 30, 30, 0.85)" : "rgba(240, 240, 240, 0.85)",
           }}
           className={
-            "fixed row-center w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto gap-4"
+            "fixed col-center w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto gap-4"
           }
         >
-          <LoadingOutlined style={{ color: colorText, opacity: 0.5, fontSize: 18 }} spin />
-          {message ? <Text style={{ color: colorText, opacity: 0.5 }}>{message}</Text> : null}
+          <DotLottieReact className="size-32" data={loadingJson} loop autoplay />
+          {message ? (
+            <Text type="base-semibold" style={{ marginTop: -40 }}>
+              {message}
+            </Text>
+          ) : null}
         </motion.figure>
       ) : null}
     </AnimatePresence>

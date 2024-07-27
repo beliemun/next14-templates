@@ -3,7 +3,7 @@
 import { Button, Skeleton, Text, Title } from "@/components/atoms";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn } from "@/styles";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, LoadingOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { ModalProps } from "./types";
@@ -50,21 +50,16 @@ export const Modal = ({
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
               style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
-              className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
+              className={cn(`flex flex-col justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
               layoutId="modal-layout"
             >
               <header className="flex flex-row justify-between items-center">
-                <Skeleton.Input active style={{ width: 200 }} />
-                <Button
-                  buttonColor="slate"
-                  buttonStyle="soft"
-                  buttonSize="sm"
-                  onClick={handleClose}
-                  className={cn({ hidden: loading })}
-                >
-                  <CloseOutlined style={{ color: colorText, fontSize: 10 }} />
+                <Skeleton.Button active style={{ width: 180, height: 40 }} />
+                <Button buttonColor="slate" buttonStyle="soft" buttonSize="sm">
+                  <LoadingOutlined style={{ color: colorText, fontSize: 10 }} />
                 </Button>
               </header>
+              <Skeleton active />
               <Skeleton active />
               <footer
                 className={cn(
@@ -72,7 +67,8 @@ export const Modal = ({
                   footerDirection === "left" ? "flex-row" : "flex-row-reverse"
                 )}
               >
-                <Skeleton.Input active style={{ width: 200 }} />
+                <Skeleton.Button active style={{ width: 120, height: 40 }} />
+                <Skeleton.Button active style={{ width: 120, height: 40 }} />
               </footer>
             </motion.div>
           ) : (

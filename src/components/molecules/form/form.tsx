@@ -8,15 +8,20 @@ interface FormProps
   className?: string;
   title?: string;
   description?: string;
+  gap?: number;
 }
 
-export const Form = ({ style, className, title, description, children, ...rest }: FormProps) => {
+export const Form = ({
+  style,
+  className,
+  title,
+  description,
+  children,
+  gap = 30,
+  ...rest
+}: FormProps) => {
   return (
-    <form
-      style={{ ...style }}
-      className={cn("flex flex-col w-full h-full gap-4", className)}
-      {...rest}
-    >
+    <form style={{ gap, ...style }} className={cn("flex flex-col w-full", className)} {...rest}>
       <div className={"flex flex-col gap-1 mb-1"}>
         <Title type="h6-semibold">{title}</Title>
         <Text type="sm-regular" color="description">
