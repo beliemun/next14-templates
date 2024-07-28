@@ -15,13 +15,20 @@ export const buttonStyles = ({
   // Button Color
   if (buttonColor === "primary") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-primary-500 hover:bg-primary-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-primary-500",
+          "active:bg-primary-600",
+          "hover:bg-primary-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-primary-500 bg-white border border-primary-500",
-          "active:text-primary-500 active:border-primary-500",
-          "hover:border-primary-800 hover:text-primary-800",
+          "active:text-primary-600 active:border-primary-600",
+          "hover:border-primary-400 hover:text-primary-400",
           "dark:bg-black dark:hover:border-primary-600 dark:hover:text-primary-600"
         )
       );
@@ -29,7 +36,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-primary-500",
-          "active:bg-primary-100 hover:bg-primary-100 hover:text-primary-800",
+          "active:bg-primary-100 active:text-primary-800 hover:bg-primary-100",
+
           "dark:hover:bg-primary-500/30 dark:hover:text-white"
         )
       );
@@ -45,13 +53,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "slate") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-slate-500 hover:bg-slate-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-slate-500",
+          "active:bg-slate-600",
+          "hover:bg-slate-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-slate-500 bg-white border border-slate-500",
-          "active:text-slate-500 active:border-slate-500",
-          "hover:border-slate-800 hover:text-slate-800",
+          "active:text-slate-600 active:border-slate-600",
+          "hover:border-slate-400 hover:text-slate-400",
           "dark:bg-black dark:hover:border-slate-600 dark:hover:text-slate-600"
         )
       );
@@ -59,7 +74,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-slate-500",
-          "active:bg-slate-100 hover:bg-slate-100 hover:text-slate-800",
+          "active:bg-slate-100 active:text-slate-800 hover:bg-slate-100",
+
           "dark:hover:bg-slate-500/30 dark:hover:text-white"
         )
       );
@@ -75,13 +91,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "gray") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-gray-500 hover:bg-gray-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-gray-500", "active:bg-gray-600", "hover:bg-gray-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-gray-500 bg-white border border-gray-500",
-          "active:text-gray-500 active:border-gray-500",
-          "hover:border-gray-800 hover:text-gray-800",
+          "active:text-gray-600 active:border-gray-600",
+          "hover:border-gray-400 hover:text-gray-400",
           "dark:bg-black dark:hover:border-gray-600 dark:hover:text-gray-600"
         )
       );
@@ -89,7 +107,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-gray-500",
-          "active:bg-gray-100 hover:bg-gray-100 hover:text-gray-800",
+          "active:bg-gray-100 active:text-gray-800 hover:bg-gray-100",
+
           "dark:hover:bg-gray-500/30 dark:hover:text-white"
         )
       );
@@ -105,13 +124,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "red") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-red-500 hover:bg-red-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-red-500", "active:bg-red-600", "hover:bg-red-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-red-500 bg-white border border-red-500",
-          "active:text-red-500 active:border-red-500",
-          "hover:border-red-800 hover:text-red-800",
+          "active:text-red-600 active:border-red-600",
+          "hover:border-red-400 hover:text-red-400",
           "dark:bg-black dark:hover:border-red-600 dark:hover:text-red-600"
         )
       );
@@ -119,7 +140,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-red-500",
-          "active:bg-red-100 hover:bg-red-100 hover:text-red-800",
+          "active:bg-red-100 active:text-red-800 hover:bg-red-100",
+
           "dark:hover:bg-red-500/30 dark:hover:text-white"
         )
       );
@@ -135,13 +157,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "orange") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-orange-500 hover:bg-orange-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-orange-500",
+          "active:bg-orange-600",
+          "hover:bg-orange-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-orange-500 bg-white border border-orange-500",
-          "active:text-orange-500 active:border-orange-500",
-          "hover:border-orange-800 hover:text-orange-800",
+          "active:text-orange-600 active:border-orange-600",
+          "hover:border-orange-400 hover:text-orange-400",
           "dark:bg-black dark:hover:border-orange-600 dark:hover:text-orange-600"
         )
       );
@@ -149,7 +178,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-orange-500",
-          "active:bg-orange-100 hover:bg-orange-100 hover:text-orange-800",
+          "active:bg-orange-100 active:text-orange-800 hover:bg-orange-100",
+
           "dark:hover:bg-orange-500/30 dark:hover:text-white"
         )
       );
@@ -165,13 +195,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "yellow") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-yellow-500 hover:bg-yellow-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-yellow-500",
+          "active:bg-yellow-600",
+          "hover:bg-yellow-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-yellow-500 bg-white border border-yellow-500",
-          "active:text-yellow-500 active:border-yellow-500",
-          "hover:border-yellow-800 hover:text-yellow-800",
+          "active:text-yellow-600 active:border-yellow-600",
+          "hover:border-yellow-400 hover:text-yellow-400",
           "dark:bg-black dark:hover:border-yellow-600 dark:hover:text-yellow-600"
         )
       );
@@ -179,7 +216,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-yellow-500",
-          "active:bg-yellow-100 hover:bg-yellow-100 hover:text-yellow-800",
+          "active:bg-yellow-100 active:text-yellow-800 hover:bg-yellow-100",
+
           "dark:hover:bg-yellow-500/30 dark:hover:text-white"
         )
       );
@@ -195,13 +233,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "lime") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-lime-500 hover:bg-lime-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-lime-500", "active:bg-lime-600", "hover:bg-lime-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-lime-500 bg-white border border-lime-500",
-          "active:text-lime-500 active:border-lime-500",
-          "hover:border-lime-800 hover:text-lime-800",
+          "active:text-lime-600 active:border-lime-600",
+          "hover:border-lime-400 hover:text-lime-400",
           "dark:bg-black dark:hover:border-lime-600 dark:hover:text-lime-600"
         )
       );
@@ -209,7 +249,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-lime-500",
-          "active:bg-lime-100 hover:bg-lime-100 hover:text-lime-800",
+          "active:bg-lime-100 active:text-lime-800 hover:bg-lime-100",
+
           "dark:hover:bg-lime-500/30 dark:hover:text-white"
         )
       );
@@ -225,13 +266,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "green") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-green-500 hover:bg-green-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-green-500",
+          "active:bg-green-600",
+          "hover:bg-green-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-green-500 bg-white border border-green-500",
-          "active:text-green-500 active:border-green-500",
-          "hover:border-green-800 hover:text-green-800",
+          "active:text-green-600 active:border-green-600",
+          "hover:border-green-400 hover:text-green-400",
           "dark:bg-black dark:hover:border-green-600 dark:hover:text-green-600"
         )
       );
@@ -239,7 +287,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-green-500",
-          "active:bg-green-100 hover:bg-green-100 hover:text-green-800",
+          "active:bg-green-100 active:text-green-800 hover:bg-green-100",
+
           "dark:hover:bg-green-500/30 dark:hover:text-white"
         )
       );
@@ -255,13 +304,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "emerald") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-emerald-500 hover:bg-emerald-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-emerald-500",
+          "active:bg-emerald-600",
+          "hover:bg-emerald-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-emerald-500 bg-white border border-emerald-500",
-          "active:text-emerald-500 active:border-emerald-500",
-          "hover:border-emerald-800 hover:text-emerald-800",
+          "active:text-emerald-600 active:border-emerald-600",
+          "hover:border-emerald-400 hover:text-emerald-400",
           "dark:bg-black dark:hover:border-emerald-600 dark:hover:text-emerald-600"
         )
       );
@@ -269,7 +325,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-emerald-500",
-          "active:bg-emerald-100 hover:bg-emerald-100 hover:text-emerald-800",
+          "active:bg-emerald-100 active:text-emerald-800 hover:bg-emerald-100",
+
           "dark:hover:bg-emerald-500/30 dark:hover:text-white"
         )
       );
@@ -285,13 +342,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "teal") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-teal-500 hover:bg-teal-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-teal-500", "active:bg-teal-600", "hover:bg-teal-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-teal-500 bg-white border border-teal-500",
-          "active:text-teal-500 active:border-teal-500",
-          "hover:border-teal-800 hover:text-teal-800",
+          "active:text-teal-600 active:border-teal-600",
+          "hover:border-teal-400 hover:text-teal-400",
           "dark:bg-black dark:hover:border-teal-600 dark:hover:text-teal-600"
         )
       );
@@ -299,7 +358,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-teal-500",
-          "active:bg-teal-100 hover:bg-teal-100 hover:text-teal-800",
+          "active:bg-teal-100 active:text-teal-800 hover:bg-teal-100",
+
           "dark:hover:bg-teal-500/30 dark:hover:text-white"
         )
       );
@@ -315,13 +375,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "cyan") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-cyan-500 hover:bg-cyan-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-cyan-500", "active:bg-cyan-600", "hover:bg-cyan-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-cyan-500 bg-white border border-cyan-500",
-          "active:text-cyan-500 active:border-cyan-500",
-          "hover:border-cyan-800 hover:text-cyan-800",
+          "active:text-cyan-600 active:border-cyan-600",
+          "hover:border-cyan-400 hover:text-cyan-400",
           "dark:bg-black dark:hover:border-cyan-600 dark:hover:text-cyan-600"
         )
       );
@@ -329,7 +391,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-cyan-500",
-          "active:bg-cyan-100 hover:bg-cyan-100 hover:text-cyan-800",
+          "active:bg-cyan-100 active:text-cyan-800 hover:bg-cyan-100",
+
           "dark:hover:bg-cyan-500/30 dark:hover:text-white"
         )
       );
@@ -345,13 +408,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "blue") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-blue-500 hover:bg-blue-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-blue-500", "active:bg-blue-600", "hover:bg-blue-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-blue-500 bg-white border border-blue-500",
-          "active:text-blue-500 active:border-blue-500",
-          "hover:border-blue-800 hover:text-blue-800",
+          "active:text-blue-600 active:border-blue-600",
+          "hover:border-blue-400 hover:text-blue-400",
           "dark:bg-black dark:hover:border-blue-600 dark:hover:text-blue-600"
         )
       );
@@ -359,7 +424,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-blue-500",
-          "active:bg-blue-100 hover:bg-blue-100 hover:text-blue-800",
+          "active:bg-blue-100 active:text-blue-800 hover:bg-blue-100",
+
           "dark:hover:bg-blue-500/30 dark:hover:text-white"
         )
       );
@@ -375,13 +441,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "violet") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-violet-500 hover:bg-violet-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-violet-500",
+          "active:bg-violet-600",
+          "hover:bg-violet-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-violet-500 bg-white border border-violet-500",
-          "active:text-violet-500 active:border-violet-500",
-          "hover:border-violet-800 hover:text-violet-800",
+          "active:text-violet-600 active:border-violet-600",
+          "hover:border-violet-400 hover:text-violet-400",
           "dark:bg-black dark:hover:border-violet-600 dark:hover:text-violet-600"
         )
       );
@@ -389,7 +462,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-violet-500",
-          "active:bg-violet-100 hover:bg-violet-100 hover:text-violet-800",
+          "active:bg-violet-100 active:text-violet-800 hover:bg-violet-100",
+
           "dark:hover:bg-violet-500/30 dark:hover:text-white"
         )
       );
@@ -405,13 +479,20 @@ export const buttonStyles = ({
   }
   if (buttonColor === "purple") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-purple-500 hover:bg-purple-600 dark:text-black");
+      styles.push(
+        cn(
+          "text-white bg-purple-500",
+          "active:bg-purple-600",
+          "hover:bg-purple-400",
+          "dark:text-black"
+        )
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-purple-500 bg-white border border-purple-500",
-          "active:text-purple-500 active:border-purple-500",
-          "hover:border-purple-800 hover:text-purple-800",
+          "active:text-purple-600 active:border-purple-600",
+          "hover:border-purple-400 hover:text-purple-400",
           "dark:bg-black dark:hover:border-purple-600 dark:hover:text-purple-600"
         )
       );
@@ -419,7 +500,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-purple-500",
-          "active:bg-purple-100 hover:bg-purple-100 hover:text-purple-800",
+          "active:bg-purple-100 active:text-purple-800 hover:bg-purple-100",
+
           "dark:hover:bg-purple-500/30 dark:hover:text-white"
         )
       );
@@ -435,13 +517,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "pink") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-pink-500 hover:bg-pink-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-pink-500", "active:bg-pink-600", "hover:bg-pink-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-pink-500 bg-white border border-pink-500",
-          "active:text-pink-500 active:border-pink-500",
-          "hover:border-pink-800 hover:text-pink-800",
+          "active:text-pink-600 active:border-pink-600",
+          "hover:border-pink-400 hover:text-pink-400",
           "dark:bg-black dark:hover:border-pink-600 dark:hover:text-pink-600"
         )
       );
@@ -449,7 +533,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-pink-500",
-          "active:bg-pink-100 hover:bg-pink-100 hover:text-pink-800",
+          "active:bg-pink-100 active:text-pink-800 hover:bg-pink-100",
+
           "dark:hover:bg-pink-500/30 dark:hover:text-white"
         )
       );
@@ -465,13 +550,15 @@ export const buttonStyles = ({
   }
   if (buttonColor === "rose") {
     if (buttonStyle === "solid") {
-      styles.push("text-white bg-rose-500 hover:bg-rose-600 dark:text-black");
+      styles.push(
+        cn("text-white bg-rose-500", "active:bg-rose-600", "hover:bg-rose-400", "dark:text-black")
+      );
     } else if (buttonStyle === "outline") {
       styles.push(
         cn(
           "text-rose-500 bg-white border border-rose-500",
-          "active:text-rose-500 active:border-rose-500",
-          "hover:border-rose-800 hover:text-rose-800",
+          "active:text-rose-600 active:border-rose-600",
+          "hover:border-rose-400 hover:text-rose-400",
           "dark:bg-black dark:hover:border-rose-600 dark:hover:text-rose-600"
         )
       );
@@ -479,7 +566,8 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-rose-500",
-          "active:bg-rose-100 hover:bg-rose-100 hover:text-rose-800",
+          "active:bg-rose-100 active:text-rose-800 hover:bg-rose-100",
+
           "dark:hover:bg-rose-500/30 dark:hover:text-white"
         )
       );
@@ -495,19 +583,22 @@ export const buttonStyles = ({
   }
   // Rounded Style
   if (buttonRound === "round") {
-    styles.push("rounded-lg");
+    if (buttonSize === "xs") {
+      styles.push("rounded-md");
+    } else {
+      styles.push("rounded-lg");
+    }
   } else if (buttonRound === "pill") {
     styles.push("rounded-full");
   }
-  // Button Size
   if (buttonSize === "default") {
-    styles.push("text-base px-5 h-12 leading-12");
+    styles.push("text-sm leading-12 h-12");
   } else if (buttonSize === "sm") {
-    styles.push("text-sm px-4 h-10 leading-10");
+    styles.push("text-sm leading-10 h-10");
   } else if (buttonSize === "xs") {
-    styles.push("text-xs px-3 h-6 leading-6");
-    buttonRound === "round" && styles.push("rounded-md");
+    styles.push("text-xs eading-6 h-6");
   }
+
   // Full Width Style
   if (fullWidth) {
     styles.push("flex-1 w-full");
@@ -547,181 +638,174 @@ export const waveStyles = ({
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-primary-500/20 dark:bg-white/20");
+      styles.push("bg-primary-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-primary-500/20 dark:bg-white/10");
+      styles.push("bg-primary-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-primary-500/20 dark:bg-white/10");
+      styles.push("bg-primary-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "slate") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-slate-500/20 dark:bg-white/20");
+      styles.push("bg-slate-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-slate-500/20 dark:bg-white/10");
+      styles.push("bg-slate-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-slate-500/20 dark:bg-white/10");
+      styles.push("bg-slate-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "gray") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-gray-500/20 dark:bg-white/20");
+      styles.push("bg-gray-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-gray-500/20 dark:bg-white/10");
+      styles.push("bg-gray-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-gray-500/20 dark:bg-white/10");
+      styles.push("bg-gray-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "red") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-red-500/20 dark:bg-white/20");
+      styles.push("bg-red-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-red-500/20 dark:bg-white/10");
+      styles.push("bg-red-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-red-500/20 dark:bg-white/10");
+      styles.push("bg-red-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "orange") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-orange-500/20 dark:bg-white/20");
+      styles.push("bg-orange-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-orange-500/20 dark:bg-white/10");
+      styles.push("bg-orange-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-orange-500/20 dark:bg-white/10");
+      styles.push("bg-orange-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "yellow") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-yellow-500/20 dark:bg-white/20");
+      styles.push("bg-yellow-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-yellow-500/20 dark:bg-white/10");
+      styles.push("bg-yellow-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-yellow-500/20 dark:bg-white/10");
+      styles.push("bg-yellow-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "lime") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-lime-500/20 dark:bg-white/20");
+      styles.push("bg-lime-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-lime-500/20 dark:bg-white/10");
+      styles.push("bg-lime-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-lime-500/20 dark:bg-white/10");
+      styles.push("bg-lime-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "green") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-green-500/20 dark:bg-white/20");
+      styles.push("bg-green-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-green-500/20 dark:bg-white/10");
+      styles.push("bg-green-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-green-500/20 dark:bg-white/10");
+      styles.push("bg-green-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "emerald") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-emerald-500/20 dark:bg-white/20");
+      styles.push("bg-emerald-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-emerald-500/20 dark:bg-white/10");
+      styles.push("bg-emerald-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-emerald-500/20 dark:bg-white/10");
+      styles.push("bg-emerald-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "teal") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-teal-500/20 dark:bg-white/20");
+      styles.push("bg-teal-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-teal-500/20 dark:bg-white/10");
+      styles.push("bg-teal-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-teal-500/20 dark:bg-white/10");
+      styles.push("bg-teal-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "cyan") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-cyan-500/20 dark:bg-white/20");
+      styles.push("bg-cyan-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-cyan-500/20 dark:bg-white/10");
+      styles.push("bg-cyan-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-cyan-500/20 dark:bg-white/10");
+      styles.push("bg-cyan-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "blue") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-blue-500/20 dark:bg-white/20");
+      styles.push("bg-blue-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-blue-500/20 dark:bg-white/10");
+      styles.push("bg-blue-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-blue-500/20 dark:bg-white/10");
+      styles.push("bg-blue-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "violet") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-violet-500/20 dark:bg-white/20");
+      styles.push("bg-violet-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-violet-500/20 dark:bg-white/10");
+      styles.push("bg-violet-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-violet-500/20 dark:bg-white/10");
+      styles.push("bg-violet-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "purple") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-purple-500/20 dark:bg-white/20");
+      styles.push("bg-purple-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-purple-500/20 dark:bg-white/10");
+      styles.push("bg-purple-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-purple-500/20 dark:bg-white/10");
+      styles.push("bg-purple-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "pink") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-pink-500/20 dark:bg-white/20");
+      styles.push("bg-pink-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-pink-500/20 dark:bg-white/10");
+      styles.push("bg-pink-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-pink-500/20 dark:bg-white/10");
+      styles.push("bg-pink-500/10 dark:bg-white/10");
     }
   } else if (buttonColor === "rose") {
     if (buttonStyle === "solid") {
       styles.push("bg-white/20");
     } else if (buttonStyle === "outline") {
-      styles.push("bg-rose-500/20 dark:bg-white/20");
+      styles.push("bg-rose-500/10 dark:bg-white/10");
     } else if (buttonStyle === "ghost") {
-      styles.push("bg-rose-500/20 dark:bg-white/10");
+      styles.push("bg-rose-500/10 dark:bg-white/10");
     } else if (buttonStyle === "soft") {
-      styles.push("bg-rose-500/20 dark:bg-white/10");
+      styles.push("bg-rose-500/10 dark:bg-white/10");
     }
   }
   return styles.join(" ");
 };
 
-export const waveRoundStyle = ({
-  buttonRound,
-  buttonSize,
-}: {
-  buttonRound: ButtonRoundType;
-  buttonSize: ButtonSizeType;
-}) => {
+export const buttonPaddingStyle = ({ buttonSize }: { buttonSize: ButtonSizeType }) => {
   const styles = [""];
-  if (buttonRound === "round") {
-    styles.push("rounded-lg");
-  } else if (buttonRound === "pill") {
-    styles.push("rounded-full");
-  }
-  if (buttonSize === "xs") {
-    buttonRound === "round" && styles.push("rounded-md");
+  if (buttonSize === "default") {
+    styles.push("px-5");
+  } else if (buttonSize === "sm") {
+    styles.push("px-4");
+  } else if (buttonSize === "xs") {
+    styles.push("px-3");
   }
   return styles.join(" ");
 };
