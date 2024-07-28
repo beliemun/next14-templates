@@ -76,7 +76,7 @@ const Button = (
   return (
     <motion.div
       className={cn(
-        "relative inline-flex overflow-hidden",
+        "relative self-start overflow-hidden",
         waveRoundStyle({ buttonRound, buttonSize })
       )}
       variants={btnVariants}
@@ -106,7 +106,6 @@ const Button = (
               disabled,
               loading,
             }),
-            "relative col-flex",
             className
           )}
           ref={ref}
