@@ -1,5 +1,5 @@
-import { cn } from "@/styles";
-import { ButtonProps } from "./types";
+import { cn, ColorType } from "@/styles";
+import { ButtonProps, ButtonRoundType, ButtonSizeType, ButtonStyleType } from "./types";
 
 export const buttonStyles = ({
   buttonRound,
@@ -20,7 +20,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-primary-500 bg-white border border-primary-500",
-          "active:bg-primary-500 active:text-white active:border-primary-500",
+          "active:text-primary-500 active:border-primary-500",
           "hover:border-primary-800 hover:text-primary-800",
           "dark:bg-black dark:hover:border-primary-600 dark:hover:text-primary-600"
         )
@@ -42,8 +42,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-primary-500/30");
-    styles.push("dark:active:ring-primary-100/30");
   }
   if (buttonColor === "slate") {
     if (buttonStyle === "solid") {
@@ -52,7 +50,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-slate-500 bg-white border border-slate-500",
-          "active:bg-slate-500 active:text-white active:border-slate-500",
+          "active:text-slate-500 active:border-slate-500",
           "hover:border-slate-800 hover:text-slate-800",
           "dark:bg-black dark:hover:border-slate-600 dark:hover:text-slate-600"
         )
@@ -74,8 +72,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-slate-500/30");
-    styles.push("dark:active:ring-slate-100/30");
   }
   if (buttonColor === "gray") {
     if (buttonStyle === "solid") {
@@ -84,7 +80,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-gray-500 bg-white border border-gray-500",
-          "active:bg-gray-500 active:text-white active:border-gray-500",
+          "active:text-gray-500 active:border-gray-500",
           "hover:border-gray-800 hover:text-gray-800",
           "dark:bg-black dark:hover:border-gray-600 dark:hover:text-gray-600"
         )
@@ -106,8 +102,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-gray-500/30");
-    styles.push("dark:active:ring-gray-100/30");
   }
   if (buttonColor === "red") {
     if (buttonStyle === "solid") {
@@ -116,7 +110,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-red-500 bg-white border border-red-500",
-          "active:bg-red-500 active:text-white active:border-red-500",
+          "active:text-red-500 active:border-red-500",
           "hover:border-red-800 hover:text-red-800",
           "dark:bg-black dark:hover:border-red-600 dark:hover:text-red-600"
         )
@@ -138,8 +132,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-red-500/30");
-    styles.push("dark:active:ring-red-100/30");
   }
   if (buttonColor === "orange") {
     if (buttonStyle === "solid") {
@@ -148,7 +140,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-orange-500 bg-white border border-orange-500",
-          "active:bg-orange-500 active:text-white active:border-orange-500",
+          "active:text-orange-500 active:border-orange-500",
           "hover:border-orange-800 hover:text-orange-800",
           "dark:bg-black dark:hover:border-orange-600 dark:hover:text-orange-600"
         )
@@ -170,8 +162,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-orange-500/30");
-    styles.push("dark:active:ring-orange-100/30");
   }
   if (buttonColor === "yellow") {
     if (buttonStyle === "solid") {
@@ -180,7 +170,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-yellow-500 bg-white border border-yellow-500",
-          "active:bg-yellow-500 active:text-white active:border-yellow-500",
+          "active:text-yellow-500 active:border-yellow-500",
           "hover:border-yellow-800 hover:text-yellow-800",
           "dark:bg-black dark:hover:border-yellow-600 dark:hover:text-yellow-600"
         )
@@ -202,8 +192,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-yellow-500/30");
-    styles.push("dark:active:ring-yellow-100/30");
   }
   if (buttonColor === "lime") {
     if (buttonStyle === "solid") {
@@ -212,7 +200,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-lime-500 bg-white border border-lime-500",
-          "active:bg-lime-500 active:text-white active:border-lime-500",
+          "active:text-lime-500 active:border-lime-500",
           "hover:border-lime-800 hover:text-lime-800",
           "dark:bg-black dark:hover:border-lime-600 dark:hover:text-lime-600"
         )
@@ -234,8 +222,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-lime-500/30");
-    styles.push("dark:active:ring-lime-100/30");
   }
   if (buttonColor === "green") {
     if (buttonStyle === "solid") {
@@ -244,7 +230,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-green-500 bg-white border border-green-500",
-          "active:bg-green-500 active:text-white active:border-green-500",
+          "active:text-green-500 active:border-green-500",
           "hover:border-green-800 hover:text-green-800",
           "dark:bg-black dark:hover:border-green-600 dark:hover:text-green-600"
         )
@@ -266,8 +252,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-green-500/30");
-    styles.push("dark:active:ring-green-100/30");
   }
   if (buttonColor === "emerald") {
     if (buttonStyle === "solid") {
@@ -276,7 +260,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-emerald-500 bg-white border border-emerald-500",
-          "active:bg-emerald-500 active:text-white active:border-emerald-500",
+          "active:text-emerald-500 active:border-emerald-500",
           "hover:border-emerald-800 hover:text-emerald-800",
           "dark:bg-black dark:hover:border-emerald-600 dark:hover:text-emerald-600"
         )
@@ -298,8 +282,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-emerald-500/30");
-    styles.push("dark:active:ring-emerald-100/30");
   }
   if (buttonColor === "teal") {
     if (buttonStyle === "solid") {
@@ -308,7 +290,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-teal-500 bg-white border border-teal-500",
-          "active:bg-teal-500 active:text-white active:border-teal-500",
+          "active:text-teal-500 active:border-teal-500",
           "hover:border-teal-800 hover:text-teal-800",
           "dark:bg-black dark:hover:border-teal-600 dark:hover:text-teal-600"
         )
@@ -330,8 +312,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-teal-500/30");
-    styles.push("dark:active:ring-teal-100/30");
   }
   if (buttonColor === "cyan") {
     if (buttonStyle === "solid") {
@@ -340,7 +320,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-cyan-500 bg-white border border-cyan-500",
-          "active:bg-cyan-500 active:text-white active:border-cyan-500",
+          "active:text-cyan-500 active:border-cyan-500",
           "hover:border-cyan-800 hover:text-cyan-800",
           "dark:bg-black dark:hover:border-cyan-600 dark:hover:text-cyan-600"
         )
@@ -362,8 +342,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-cyan-500/30");
-    styles.push("dark:active:ring-cyan-100/30");
   }
   if (buttonColor === "blue") {
     if (buttonStyle === "solid") {
@@ -372,7 +350,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-blue-500 bg-white border border-blue-500",
-          "active:bg-blue-500 active:text-white active:border-blue-500",
+          "active:text-blue-500 active:border-blue-500",
           "hover:border-blue-800 hover:text-blue-800",
           "dark:bg-black dark:hover:border-blue-600 dark:hover:text-blue-600"
         )
@@ -394,8 +372,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-blue-500/30");
-    styles.push("dark:active:ring-blue-100/30");
   }
   if (buttonColor === "violet") {
     if (buttonStyle === "solid") {
@@ -404,7 +380,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-violet-500 bg-white border border-violet-500",
-          "active:bg-violet-500 active:text-white active:border-violet-500",
+          "active:text-violet-500 active:border-violet-500",
           "hover:border-violet-800 hover:text-violet-800",
           "dark:bg-black dark:hover:border-violet-600 dark:hover:text-violet-600"
         )
@@ -426,8 +402,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-violet-500/30");
-    styles.push("dark:active:ring-violet-100/30");
   }
   if (buttonColor === "purple") {
     if (buttonStyle === "solid") {
@@ -436,7 +410,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-purple-500 bg-white border border-purple-500",
-          "active:bg-purple-500 active:text-white active:border-purple-500",
+          "active:text-purple-500 active:border-purple-500",
           "hover:border-purple-800 hover:text-purple-800",
           "dark:bg-black dark:hover:border-purple-600 dark:hover:text-purple-600"
         )
@@ -458,8 +432,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-purple-500/30");
-    styles.push("dark:active:ring-purple-100/30");
   }
   if (buttonColor === "pink") {
     if (buttonStyle === "solid") {
@@ -468,7 +440,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-pink-500 bg-white border border-pink-500",
-          "active:bg-pink-500 active:text-white active:border-pink-500",
+          "active:text-pink-500 active:border-pink-500",
           "hover:border-pink-800 hover:text-pink-800",
           "dark:bg-black dark:hover:border-pink-600 dark:hover:text-pink-600"
         )
@@ -490,8 +462,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-pink-500/30");
-    styles.push("dark:active:ring-pink-100/30");
   }
   if (buttonColor === "rose") {
     if (buttonStyle === "solid") {
@@ -500,7 +470,7 @@ export const buttonStyles = ({
       styles.push(
         cn(
           "text-rose-500 bg-white border border-rose-500",
-          "active:bg-rose-500 active:text-white active:border-rose-500",
+          "active:text-rose-500 active:border-rose-500",
           "hover:border-rose-800 hover:text-rose-800",
           "dark:bg-black dark:hover:border-rose-600 dark:hover:text-rose-600"
         )
@@ -522,8 +492,6 @@ export const buttonStyles = ({
         )
       );
     }
-    styles.push("active:ring-4 active:ring-rose-500/30");
-    styles.push("dark:active:ring-rose-100/30");
   }
   // Rounded Style
   if (buttonRound === "round") {
@@ -561,6 +529,199 @@ export const buttonStyles = ({
   // Button Loading
   if (loading) {
     styles.push("pointer-events-none select-none");
+  }
+  return styles.join(" ");
+};
+
+export const waveStyles = ({
+  buttonColor,
+  buttonStyle,
+}: {
+  buttonColor: ColorType;
+  buttonStyle: ButtonStyleType;
+  disabled?: boolean;
+  loading?: boolean;
+}) => {
+  const styles = [""];
+  if (buttonColor === "primary") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-primary-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-primary-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-primary-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "slate") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-slate-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-slate-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-slate-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "gray") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-gray-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-gray-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-gray-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "red") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-red-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-red-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-red-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "orange") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-orange-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-orange-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-orange-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "yellow") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-yellow-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-yellow-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-yellow-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "lime") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-lime-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-lime-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-lime-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "green") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-green-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-green-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-green-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "emerald") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-emerald-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-emerald-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-emerald-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "teal") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-teal-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-teal-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-teal-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "cyan") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-cyan-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-cyan-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-cyan-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "blue") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-blue-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-blue-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-blue-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "violet") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-violet-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-violet-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-violet-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "purple") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-purple-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-purple-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-purple-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "pink") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-pink-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-pink-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-pink-500/20 dark:bg-white/10");
+    }
+  } else if (buttonColor === "rose") {
+    if (buttonStyle === "solid") {
+      styles.push("bg-white/20");
+    } else if (buttonStyle === "outline") {
+      styles.push("bg-rose-500/20 dark:bg-white/20");
+    } else if (buttonStyle === "ghost") {
+      styles.push("bg-rose-500/20 dark:bg-white/10");
+    } else if (buttonStyle === "soft") {
+      styles.push("bg-rose-500/20 dark:bg-white/10");
+    }
+  }
+  return styles.join(" ");
+};
+
+export const waveRoundStyle = ({
+  buttonRound,
+  buttonSize,
+}: {
+  buttonRound: ButtonRoundType;
+  buttonSize: ButtonSizeType;
+}) => {
+  const styles = [""];
+  if (buttonRound === "round") {
+    styles.push("rounded-lg");
+  } else if (buttonRound === "pill") {
+    styles.push("rounded-full");
+  }
+  if (buttonSize === "xs") {
+    buttonRound === "round" && styles.push("rounded-md");
   }
   return styles.join(" ");
 };
