@@ -60,10 +60,7 @@ const Button = (
   }, []);
 
   const handleClick = useCallback(() => {
-    if (disabled || loading || isAnimating) {
-      console.log("denined");
-      return;
-    }
+    if (disabled || loading || isAnimating) return;
     setIsAnimating(true);
     console.log("check", disabled, loading, isAnimating);
     waveController

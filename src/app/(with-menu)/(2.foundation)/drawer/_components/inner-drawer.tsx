@@ -26,7 +26,9 @@ export const InnerDrawer = () => {
         borderRadius: borderRadiusLG,
       }}
     >
-      <Button onClick={handleOpen}>Open Drawer</Button>
+      <Button className="w-32" onClick={handleOpen}>
+        Open Drawer
+      </Button>
       <Drawer
         title={"Inner Drawer"}
         placement="right"
