@@ -25,10 +25,10 @@ const waveVariants: Variants = {
   hidden: { opacity: 0, scale: 0, transition: { duration: 0 } },
   click: {
     opacity: 1,
-    scale: 1.5,
-    transition: { duration: 0.5, ease: "easeInOut" },
+    scale: 1.3,
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
-  blur: { opacity: 0, scale: 1.2, transition: { duration: 0.3 } },
+  blur: { opacity: 0, scale: 1.2, transition: { duration: 0.2 } },
 };
 
 const Button = (
@@ -98,6 +98,7 @@ const Button = (
           style={{ ...style }}
           className={cn(
             "relative row-center overflow-hidden",
+            { "pointer-events-none": isAnimating },
             buttonStyles({
               buttonRound,
               buttonStyle,
