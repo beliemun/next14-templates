@@ -2,7 +2,7 @@
 
 import { cn } from "@/styles";
 import { ForwardedRef, forwardRef, useCallback, useEffect, useState } from "react";
-import { buttonStyles, buttonPaddingStyle, waveStyles } from "./styles";
+import { buttonStyles, waveStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
 import { ButtonProps } from "./types";
 import { motion, Variants, useAnimation, MotionProps } from "framer-motion";
@@ -47,6 +47,7 @@ const Button = (
     tooltipStyle,
     tooltipPlacement,
     showCloseButton = true,
+    onClick,
     ...rest
   }: ButtonProps & MotionProps,
   ref: ForwardedRef<HTMLButtonElement>
@@ -59,44 +60,45 @@ const Button = (
     btnController.start(btnVariants.visible);
   }, []);
 
-  const handleClick = useCallback(() => {
+  const startAnimation = useCallback(() => {
     if (disabled || loading || isAnimating) return;
     setIsAnimating(true);
-    console.log("check", disabled, loading, isAnimating);
     waveController
       .start(waveVariants.click)
       .then(() => waveController.start(waveVariants.blur))
       .then(() => waveController.start(waveVariants.hidden))
       .then(() => setIsAnimating(false));
     btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
-  }, [disabled, loading, isAnimating]);
+  }, [disabled, loading, isAnimating, waveController, btnController]);
+
+  const handleClick = () => {
+    startAnimation();
+    onClick?.();
+  };
 
   const btnProps = { initial: "hidden", animate: btnController, exit: "hidden" };
   const waveProps = { initial: "hidden", animate: waveController, exit: "hidden" };
 
   return (
     <Tooltip title={tooltipTitle} style={tooltipStyle} placement={tooltipPlacement}>
-      <div
-        style={{ ...style }}
-        className={cn(
-          "relative overflow-hidden",
-          buttonStyles({
-            buttonRound,
-            buttonStyle,
-            buttonSize,
-            buttonColor,
-            fullWidth,
-            disabled,
-            loading,
-          }),
-          className
-        )}
-      >
+      {/* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */}
+      <motion.div className="inline-flex" variants={btnVariants} {...btnProps}>
         <motion.button
-          variants={btnVariants}
-          {...btnProps}
           ref={ref}
-          className={cn("row-center w-full h-full", buttonPaddingStyle({ buttonSize }))}
+          style={{ ...style }}
+          className={cn(
+            "relative row-center overflow-hidden",
+            buttonStyles({
+              buttonRound,
+              buttonStyle,
+              buttonSize,
+              buttonColor,
+              fullWidth,
+              disabled,
+              loading,
+            }),
+            className
+          )}
           disabled={disabled || loading}
           onClick={handleClick}
           {...rest}
@@ -112,7 +114,7 @@ const Button = (
           {loading ? <LoadingOutlined className="mr-2" /> : null}
           <div className={cn("select-none")}>{children}</div>
         </motion.button>
-      </div>
+      </motion.div>
     </Tooltip>
   );
 };

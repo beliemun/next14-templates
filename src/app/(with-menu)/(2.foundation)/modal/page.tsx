@@ -17,15 +17,15 @@ export default function ModalPage() {
   return (
     <PageLayout title="<Modal />">
       <Divider orientation="left">Basic Modal</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Button onClick={handleOpenMoal}>Open Basic Modal</Button>
       </Section>
       <Divider orientation="left">Page Modal</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Button onClick={handleOpenPageModal}>Open Page Modal</Button>
       </Section>
       <Divider orientation="left">Loading Modal</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Button onClick={handleOpenLoadingModal}>Open Loading Modal</Button>
       </Section>
       {isOpenModal ? <ModalComponent onClose={() => setIsOpenModal(false)} /> : null}

@@ -26,7 +26,7 @@ export default function UploadPage() {
   return (
     <PageLayout title="<Upload />">
       <Divider orientation="left">Basic Upload</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Upload
           button={
             <Button buttonColor={"primary"} buttonStyle="outline" className="border-dashed">
@@ -37,7 +37,7 @@ export default function UploadPage() {
         />
       </Section>
       <Divider orientation="left">Drag Upload</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Dragger
           multiple={true}
           onChange={handleChange}

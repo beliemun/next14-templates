@@ -5,7 +5,7 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {}
 
 export const Section = ({ className, children, ...rest }: SectionProps) => {
   return (
-    <section className={cn(`w-full p-8`, className)} {...rest}>
+    <section className={cn(`flex flex-wrap w-full p-8 gap-4`, className)} {...rest}>
       {children}
     </section>
   );

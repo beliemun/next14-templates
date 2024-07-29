@@ -44,6 +44,7 @@ export const Tag = ({
       className={cn(
         tagStyles({ tagStyle, tagSize, tagColor }),
         { "pr-2": tagSize, hidden: hide },
+        "select-none",
         className
       )}
       {...rest}

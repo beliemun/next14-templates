@@ -9,7 +9,7 @@ export default function TagPage() {
       {colorList.map((color, index) => (
         <div key={index}>
           <Divider orientation="left">{color.toUpperCase()}</Divider>
-          <Space direction="vertical" gap={8} className="p-4">
+          <Space direction="vertical" gap={8} className="px-8 pb-4">
             <Space direction="horizontal" gap={8}>
               <Tag tagColor={color} tagStyle="outline" tagSize="sm">
                 outline sm

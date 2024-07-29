@@ -71,7 +71,7 @@ export default function SelectPage() {
   return (
     <PageLayout title="<Select />">
       <Divider orientation="left">Size</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Space direction="horizontal" gap={16}>
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="small" />
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="middle" />
@@ -79,7 +79,7 @@ export default function SelectPage() {
         </Space>
       </Section>
       <Divider orientation="left">Variants</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2 ">
+      <Section className="pt-2 ">
         <Space direction="horizontal" gap={16}>
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} loading />
           <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} disabled />
@@ -93,7 +93,7 @@ export default function SelectPage() {
         </Space>
       </Section>
       <Divider orientation="left">Multiple Mode</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Select
           className="max-w-xl w-full"
           options={options2}
@@ -103,7 +103,7 @@ export default function SelectPage() {
         />
       </Section>
       <Divider orientation="left">Tags Mode</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Select
           className="max-w-xl w-full"
           options={options2}
@@ -113,7 +113,7 @@ export default function SelectPage() {
         />
       </Section>
       <Divider orientation="left">Max Count</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Select
           className="max-w-xl w-full"
           options={options2}
@@ -125,7 +125,7 @@ export default function SelectPage() {
         />
       </Section>
       <Divider orientation="left">With Tags</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Select
           className="max-w-xl w-full"
           options={options3}

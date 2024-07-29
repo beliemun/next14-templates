@@ -44,12 +44,19 @@ export const LoadingModal = ({
             "fixed col-center w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto gap-4"
           }
         >
-          <DotLottieReact className="size-32" data={loadingJson} loop autoplay />
-          {message ? (
-            <Text type="base-semibold" style={{ marginTop: -40 }}>
-              {message}
-            </Text>
-          ) : null}
+          <div className="relative">
+            <DotLottieReact
+              className="absolute top-[-100px] left-0 right-0 mx-auto size-32"
+              data={loadingJson}
+              loop
+              autoplay
+            />
+            {message ? (
+              <Text type="base-semibold" color="description">
+                {message}
+              </Text>
+            ) : null}
+          </div>
         </motion.figure>
       ) : null}
     </AnimatePresence>

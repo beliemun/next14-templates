@@ -34,24 +34,24 @@ export default function QrcodePage() {
   return (
     <PageLayout title="<QRCode />">
       <Divider orientation="left">Basic QRCode</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="flex-col pt-2">
         <Input title="Text" value={text} onChange={handleChangeText} style={{ width: 240 }} />
         <QRCode value={text} />
       </Section>
       <Divider orientation="left">Variants</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <QRCode value={text} icon={ICON} iconSize={{ width: 64, height: 64 }} />
         <QRCode value={text} color={colors.primary[500]} />
         <QRCode value={text} color={colors.slate[100]} bgColor={colors.slate[800]} />
       </Section>
       <Divider orientation="left">Status</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <QRCode value={text} status="loading" />
         <QRCode value={text} status="expired" />
         <QRCode value={text} status="scanned" />
       </Section>
       <Divider orientation="left">Download</Divider>
-      <Section id="myqrcode" className="flex flex-col gap-4 pt-2">
+      <Section id="myqrcode" className="flex-col pt-2">
         <QRCode value={text} />
         <Button onClick={downloadQRCode}>Download</Button>
       </Section>

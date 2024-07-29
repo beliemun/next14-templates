@@ -7,7 +7,7 @@ export default function AvatarPage() {
   return (
     <PageLayout title="<Avatar />">
       <Divider orientation="left">Basic Avatar</Divider>
-      <Section className="flex flex-row flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <Card title="Base">
           <Space direction="horizontal" size={16}>
             <Avatar avatarSize="xs" />

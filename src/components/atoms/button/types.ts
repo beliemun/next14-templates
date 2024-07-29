@@ -24,4 +24,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   tooltipStyle?: CSSProperties;
   tooltipPlacement?: TooltipPlacement;
   showCloseButton?: boolean;
+  onClick?: () => void;
 }

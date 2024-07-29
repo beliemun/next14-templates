@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 export default function TimePickerPage() {
   return (
     <PageLayout title="<TimePicker />">
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section>
         <Card title="Size">
           <Space direction="vertical" gap={16}>
             <TimePicker

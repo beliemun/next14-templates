@@ -17,7 +17,7 @@ export default function CheckboxPage() {
 
   return (
     <PageLayout title="<Checkbox />">
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section>
         <Card title={"Variants"}>
           <Space direction="vertical" gap={16}>
             <Space direction="horizontal">

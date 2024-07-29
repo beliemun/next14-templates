@@ -54,11 +54,11 @@ export default function AlertPage() {
   return (
     <PageLayout title="<Alert />">
       <Divider orientation="left">Basic alert</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Button onClick={() => handleShow({ title: "Basic alert" })}>Show Basic Alert</Button>
       </Section>
       <Divider orientation="left">Multiple Buttons</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <Button
           onClick={() =>
             handleShow({
@@ -85,7 +85,7 @@ export default function AlertPage() {
         </Button>
       </Section>
       <Divider orientation="left">Flex Buttons</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <Button
           onClick={() =>
             handleShow({

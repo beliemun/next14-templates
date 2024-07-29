@@ -18,6 +18,7 @@ export const InnerDrawer = () => {
       style={{
         position: "relative",
         maxWidth: 1080,
+        width: "100%",
         height: 480,
         padding: 16,
         overflow: "hidden",
@@ -26,9 +27,7 @@ export const InnerDrawer = () => {
         borderRadius: borderRadiusLG,
       }}
     >
-      <Button className="w-32" onClick={handleOpen}>
-        Open Drawer
-      </Button>
+      <Button onClick={handleOpen}>Open Drawer</Button>
       <Drawer
         title={"Inner Drawer"}
         placement="right"

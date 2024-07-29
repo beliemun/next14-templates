@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Button,
   Checkbox,
   Input,
   Radio,
@@ -11,6 +12,7 @@ import {
 } from "@/components/atoms";
 import { Form, FormItem } from "@/components/molecules";
 import { PageLayout } from "@/components/organisms";
+import { FormEvent, FormEventHandler } from "react";
 
 const radioOptions: RadioOption[] = [
   {
@@ -43,10 +45,17 @@ const selectOptions: SelectOption[] = [
 ];
 
 export default function FormPage() {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
   return (
     <PageLayout title="<Form />">
-      <Section className="flex flex-col flex-wrap gap-4">
-        <Form title="Here is form title" description="Here is a form description">
+      <Section>
+        <Form
+          onSubmit={handleSubmit}
+          title="Here is form title"
+          description="Here is a form description"
+        >
           <FormItem
             label="Label Name"
             tooltipTitle="Please write down here"
@@ -120,6 +129,10 @@ export default function FormPage() {
           >
             <Input.TextArea style={{ minHeight: 100 }} placeholder="placeholder" />
           </FormItem>
+          <div className="flex flex-row-reverse max-w-[640px] gap-4">
+            <Button>Submit</Button>
+            <Button buttonStyle="outline">Cancle</Button>
+          </div>
         </Form>
       </Section>
     </PageLayout>

@@ -6,7 +6,7 @@ import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 export default function SwitchPage() {
   return (
     <PageLayout title="<Switch />">
-      <Section className="flex flex-row flex-wrap gap-4 px-8">
+      <Section>
         <Card title={"Size"}>
           <Space direction="vertical" gap={16}>
             <Switch size="small" defaultChecked />

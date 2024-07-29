@@ -68,12 +68,19 @@ export const PageModal = ({
               style={{ backgroundColor: colorBgBase, borderColor: colorBorder }}
               className="col-center w-[1280px] h-screen gap-2 border-x"
             >
-              <DotLottieReact className="size-32" data={loadingJson} loop autoplay />
-              {loadingMessage ? (
-                <Text type="base-semibold" style={{ marginTop: -40 }}>
-                  {loadingMessage}
-                </Text>
-              ) : null}
+              <div className="relative">
+                <DotLottieReact
+                  className="absolute top-[-100px] left-0 right-0 mx-auto size-32"
+                  data={loadingJson}
+                  loop
+                  autoplay
+                />
+                {loadingMessage ? (
+                  <Text type="base-semibold" color="description">
+                    {loadingMessage}
+                  </Text>
+                ) : null}
+              </div>
             </motion.div>
           ) : (
             <ResizableWapper isFullWidth={isFullWidth} ignoreBackgroundColor>

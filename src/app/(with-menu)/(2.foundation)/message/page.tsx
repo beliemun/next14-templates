@@ -20,7 +20,7 @@ export default function MessagePage() {
   return (
     <PageLayout title="<Message />">
       <Divider orientation="left">Variants</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Space direction="horizontal" gap={16}>
           {contextHolder}
           <Button onClick={handleInfo} buttonColor="cyan">
@@ -38,7 +38,7 @@ export default function MessagePage() {
         </Space>
       </Section>
       <Divider orientation="left">Loading Message</Divider>
-      <Section className="flex flex-col gap-4 pt-2">
+      <Section className="pt-2">
         <Button onClick={hadnleLoading} buttonColor="primary">
           Loading
         </Button>

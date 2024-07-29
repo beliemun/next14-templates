@@ -4,33 +4,49 @@ import { PageLayout } from "@/components/organisms";
 export default function TooltipPage() {
   return (
     <PageLayout title="<Tooltip />">
-      <Section className="flex flex-col gap-4">
-        <Card className="w-full max-w-lg h-64 col-center">
+      <Section>
+        <Card className="max-w-lg">
           <div className="grid grid-cols-3 grid-rows-3 gap-4">
             <Tooltip title="This is Top Left Tooltip" placement="topLeft">
-              <Button buttonSize="sm">Top Left</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Top Left
+              </Button>
             </Tooltip>
             <Tooltip title="This is Top Tooltip" placement="top">
-              <Button buttonSize="sm">Top</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Top
+              </Button>
             </Tooltip>
             <Tooltip title="This is Top Right Tooltip" placement="topRight">
-              <Button buttonSize="sm">Top Right</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Top Right
+              </Button>
             </Tooltip>
             <Tooltip title="This is Left Tooltip" placement="left">
-              <Button buttonSize="sm">Left</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Left
+              </Button>
             </Tooltip>
             <div />
             <Tooltip title="This is Right Tooltip" placement="right">
-              <Button buttonSize="sm">Right</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Right
+              </Button>
             </Tooltip>
             <Tooltip title="This is Bottom Left Tooltip" placement="bottomLeft">
-              <Button buttonSize="sm">Bottom Left</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Bottom Left
+              </Button>
             </Tooltip>
             <Tooltip title="This is Bottom Tooltip" placement="bottom">
-              <Button buttonSize="sm">Bottom</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Bottom
+              </Button>
             </Tooltip>
             <Tooltip title="This is Bottom Left Tooltip" placement="bottomRight">
-              <Button buttonSize="sm">Bottom Right</Button>
+              <Button fullWidth buttonStyle="soft" buttonColor="rose">
+                Bottom Right
+              </Button>
             </Tooltip>
           </div>
         </Card>

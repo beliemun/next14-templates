@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/organisms";
 export default function TitlePage() {
   return (
     <PageLayout title="<Title />">
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section>
         <Card title={"h1"}>
           <div className="flex flex-col">
             <Title type="h1-normal">h1-normal</Title>

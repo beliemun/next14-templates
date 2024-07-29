@@ -36,7 +36,7 @@ const selectAfter = (
 export default async function InputPage() {
   return (
     <PageLayout title="<Input />">
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section>
         <Card title={"Size"}>
           <Space direction="vertical" size={16}>
             <Input placeholder="small" size="small" autoFocus />

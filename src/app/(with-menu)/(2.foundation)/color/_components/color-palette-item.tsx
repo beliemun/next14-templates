@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Text } from "@/components/atoms";
+import { Tag, Text } from "@/components/atoms";
 import { colors, ColorType } from "@/styles";
 import { capitalizeFirstLetter } from "@/shared/utils";
 
@@ -25,7 +25,7 @@ export const ColorPaletteItem = ({ color }: ColorPaletteItemProp) => {
   return (
     <Fragment>
       <div className="col-center w-full h-full">
-        <Text>{capitalizeFirstLetter(color)}</Text>
+        <Tag className="mr-4">{capitalizeFirstLetter(color)}</Tag>
       </div>
       {renderColorCells(color as ColorType)}
     </Fragment>

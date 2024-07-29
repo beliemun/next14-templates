@@ -21,7 +21,7 @@ const radioOptions: RadioOption[] = [
 export default function RadioPage() {
   return (
     <PageLayout title="<Radio />">
-      <Section className="flex flex-row flex-wrap gap-4 px-8">
+      <Section>
         <Card title={"Variants"}>
           <Space direction="horizontal" gap={16}>
             <Radio value={1}>

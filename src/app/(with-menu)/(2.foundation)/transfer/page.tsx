@@ -52,11 +52,11 @@ export default function TransferPage() {
   return (
     <PageLayout title="<Trasfer />">
       <Divider orientation="left">Basic Transfer</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <BasicTransfer />
       </Section>
       <Divider orientation="left">Table Transfer</Divider>
-      <Section className="flex flex-col flex-wrap gap-4 pt-2">
+      <Section className="pt-2">
         <TableTransfer
           dataSource={mockData}
           targetKeys={targetKeys}

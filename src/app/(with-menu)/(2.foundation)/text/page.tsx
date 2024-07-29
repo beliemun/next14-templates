@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/organisms";
 export default function TextPage() {
   return (
     <PageLayout title="<Text />">
-      <Section className="flex flex-row flex-wrap gap-4">
+      <Section>
         <Card title={"sm"} className="w-60">
           <div className="flex flex-col">
             <Text type="sm-light">sm-light</Text>

@@ -11,7 +11,7 @@ export default function ImagePage() {
   return (
     <PageLayout title="<Image />">
       <Divider orientation="left">Basic Image</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <Image
           width={300}
           height={300}
@@ -21,7 +21,7 @@ export default function ImagePage() {
         />
       </Section>
       <Divider orientation="left">Image Group</Divider>
-      <Section className="flex flex-row gap-4 pt-2">
+      <Section className="pt-2">
         <Image.PreviewGroup items={[URL1, URL2, URL3]}>
           <Image
             width={300}
