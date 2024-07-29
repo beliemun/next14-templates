@@ -16,8 +16,8 @@ export const MenuWrapper = ({ children, title, collapsed }: MenuWrapperProps) =>
     <div>
       {collapsed ? (
         <div className="w-full text-center">
-          <Tooltip title={title}>
-            <QuestionCircleOutlined style={{ color: colorTextDisabled, paddingTop: 10 }} />
+          <Tooltip title={title} className="mt-6">
+            <QuestionCircleOutlined style={{ color: colorTextDisabled }} />
           </Tooltip>
         </div>
       ) : (

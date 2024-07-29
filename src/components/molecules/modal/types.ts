@@ -21,5 +21,6 @@ export interface ModalProps {
   footerDirection?: ModalFooterDirection | undefined;
   footerFitable?: boolean | undefined;
   loading?: boolean | undefined;
+  loadingMessage?: string | undefined;
   onClose?: () => void | undefined;
 }

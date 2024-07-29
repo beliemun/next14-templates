@@ -8,6 +8,13 @@ import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { ModalProps } from "./types";
 import { useState } from "react";
+import { loadingJson } from "@/assets/lotties";
+
+import dynamic from "next/dynamic";
+const DotLottieReact = dynamic(
+  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
 
 export const Modal = ({
   title = undefined,
@@ -17,7 +24,8 @@ export const Modal = ({
   footerDirection = "right",
   footerFitable = false,
   loading = false,
-  size = 480,
+  loadingMessage,
+  size = 720,
   onClose,
 }: ModalProps) => {
   const [visible, setVisible] = useState(true);
@@ -50,26 +58,24 @@ export const Modal = ({
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
               style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
-              className={cn(`flex flex-col justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
+              className={cn(`col-center justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
               layoutId="modal-layout"
             >
-              <header className="flex flex-row justify-between items-center">
-                <Skeleton.Button active style={{ width: 180, height: 40 }} />
-                <Button buttonColor="slate" buttonStyle="soft" buttonSize="sm">
-                  <LoadingOutlined style={{ color: colorText, fontSize: 10 }} />
-                </Button>
-              </header>
-              <Skeleton active />
-              <Skeleton active />
-              <footer
-                className={cn(
-                  "flex gap-2",
-                  footerDirection === "left" ? "flex-row" : "flex-row-reverse"
-                )}
-              >
-                <Skeleton.Button active style={{ width: 120, height: 40 }} />
-                <Skeleton.Button active style={{ width: 120, height: 40 }} />
-              </footer>
+              <div className="grid grid-rows-2">
+                <div className="h-24">
+                  <DotLottieReact
+                    className="bottom-[0] left-0 right-0 mx-auto size-32"
+                    data={loadingJson}
+                    loop
+                    autoplay
+                  />
+                </div>
+                {loadingMessage ? (
+                  <Text type="base-semibold" color="description">
+                    {loadingMessage}
+                  </Text>
+                ) : null}
+              </div>
             </motion.div>
           ) : (
             <motion.div

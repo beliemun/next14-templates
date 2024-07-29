@@ -27,6 +27,7 @@ export const ModalComponent = (props: ModalProps) => {
       ]}
       size={720}
       loading={loading}
+      loadingMessage="Here is loading message"
       {...props}
     >
       <BasicTransfer />

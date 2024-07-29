@@ -7,6 +7,7 @@ import { MenuHeader } from "./components/menu-header";
 import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
 import { theme } from "antd";
 import { Layout, Menu } from "@/components/atoms";
+import "./styles.css";
 
 export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
