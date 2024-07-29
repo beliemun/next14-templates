@@ -86,17 +86,12 @@ const Button = (
 
   return (
     <Tooltip title={tooltipTitle} style={tooltipStyle} placement={tooltipPlacement}>
-      {/* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */}
-      <motion.div
-        className={fullWidth ? "flex w-full" : "inline-flex"}
-        variants={btnVariants}
-        {...btnProps}
-      >
+      <motion.div className={cn({ "w-full": fullWidth })} variants={btnVariants} {...btnProps}>
         <motion.button
           ref={ref}
           style={{ ...style }}
           className={cn(
-            "relative row-center overflow-hidden",
+            "relative row-center w-full overflow-hidden",
             buttonStyles({
               buttonRound,
               buttonStyle,
@@ -125,6 +120,51 @@ const Button = (
         </motion.button>
       </motion.div>
     </Tooltip>
+  );
+
+  {
+    /* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */
+  }
+  return (
+    // <Tooltip title={tooltipTitle} style={tooltipStyle} placement={tooltipPlacement}>
+    <motion.div
+      className={fullWidth ? "flex w-full" : "inline-flex"}
+      variants={btnVariants}
+      {...btnProps}
+    >
+      <motion.button
+        ref={ref}
+        style={{ ...style }}
+        className={cn(
+          "relative row-center overflow-hidden",
+          buttonStyles({
+            buttonRound,
+            buttonStyle,
+            buttonSize,
+            buttonColor,
+            fullWidth,
+            disabled,
+            loading,
+          }),
+          className
+        )}
+        disabled={disabled || loading}
+        onClick={handleClick}
+        {...rest}
+      >
+        <motion.div
+          variants={waveVariants}
+          {...waveProps}
+          className={cn(
+            "absolute top-0 left-0 w-full h-full rounded-full z-10 cursor-pointer",
+            waveStyles({ buttonColor, buttonStyle, disabled, loading })
+          )}
+        />
+        {loading ? <LoadingOutlined className="mr-2" /> : null}
+        <div className={cn("select-none")}>{children}</div>
+      </motion.button>
+    </motion.div>
+    // </Tooltip>
   );
 };
 
