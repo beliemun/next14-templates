@@ -8,7 +8,6 @@ import { cn, colors } from "@/styles";
 import { HomeOutlined, MoonFilled, MoonOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { FormEvent, useEffect, useState } from "react";
-1;
 
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
