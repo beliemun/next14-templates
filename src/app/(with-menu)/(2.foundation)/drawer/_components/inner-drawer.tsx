@@ -28,6 +28,7 @@ export const InnerDrawer = () => {
       }}
     >
       <Button onClick={handleOpen}>Open Drawer</Button>
+
       <Drawer
         title={"Inner Drawer"}
         placement="right"
