@@ -58,6 +58,7 @@ export default function TransferPage() {
       <Divider orientation="left">Table Transfer</Divider>
       <Section className="pt-2">
         <TableTransfer
+          className="w-full"
           dataSource={mockData}
           targetKeys={targetKeys}
           disabled={disabled}

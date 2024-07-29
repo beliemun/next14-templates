@@ -1,12 +1,26 @@
+"use client";
+
 import { cn } from "@/styles";
-import { HTMLAttributes, ReactNode } from "react";
+import { MotionProps, Variants, motion } from "framer-motion";
+import { HTMLAttributes } from "react";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {}
 
-export const Section = ({ className, children, ...rest }: SectionProps) => {
+const containerVariants: Variants = {
+  hidden: { opacity: 0, y: 10, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const animationProps = { initial: "hidden", animate: "visible", exit: "hidden" };
+
+export const Section = ({ className, children, ...rest }: SectionProps & MotionProps) => {
   return (
-    <section className={cn(`flex flex-wrap w-full p-8 gap-4`, className)} {...rest}>
+    <motion.section
+      variants={containerVariants}
+      {...animationProps}
+      className={cn(`flex flex-wrap w-full p-8 gap-4`, className)}
+      {...rest}
+    >
       {children}
-    </section>
+    </motion.section>
   );
 };
