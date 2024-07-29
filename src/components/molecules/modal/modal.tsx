@@ -1,20 +1,13 @@
 "use client";
 
-import { Button, Skeleton, Text, Title } from "@/components/atoms";
+import { Button, Loading, Text, Title } from "@/components/atoms";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn } from "@/styles";
-import { CloseOutlined, LoadingOutlined } from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { ModalProps } from "./types";
 import { useState } from "react";
-import { loadingJson } from "@/assets/lotties";
-
-import dynamic from "next/dynamic";
-const DotLottieReact = dynamic(
-  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
-  { ssr: false }
-);
 
 export const Modal = ({
   title = undefined,
@@ -61,21 +54,7 @@ export const Modal = ({
               className={cn(`col-center justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
               layoutId="modal-layout"
             >
-              <div className="grid grid-rows-2">
-                <div className="h-24">
-                  <DotLottieReact
-                    className="bottom-[0] left-0 right-0 mx-auto size-32"
-                    data={loadingJson}
-                    loop
-                    autoplay
-                  />
-                </div>
-                {loadingMessage ? (
-                  <Text type="base-semibold" color="description">
-                    {loadingMessage}
-                  </Text>
-                ) : null}
-              </div>
+              <Loading loadingMessage={loadingMessage} />
             </motion.div>
           ) : (
             <motion.div

@@ -60,9 +60,9 @@ export const PageModalComponent = (props: PageModalProps) => {
       loadingMessage="Here is loading message"
       {...props}
     >
-      <Form title="Here is form title" description="Here is a form description">
+      <Form title="Here is form title" description="Here is a form description" gap={30}>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -70,7 +70,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           <Input placeholder="placeholder" />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -78,7 +78,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           <Input placeholder="placeholder" addonBefore="https://" addonAfter=".com" />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -90,7 +90,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -103,7 +103,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -115,7 +115,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required
@@ -127,7 +127,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
-          label="Label Name"
+          label="Label"
           tooltipTitle="Please write down here"
           extra="Here is extra description"
           required

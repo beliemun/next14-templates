@@ -55,9 +55,10 @@ export default function FormPage() {
           onSubmit={handleSubmit}
           title="Here is form title"
           description="Here is a form description"
+          gap={30}
         >
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -65,7 +66,7 @@ export default function FormPage() {
             <Input placeholder="placeholder" />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -73,7 +74,7 @@ export default function FormPage() {
             <Input placeholder="placeholder" addonBefore="https://" addonAfter=".com" />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -85,7 +86,7 @@ export default function FormPage() {
             />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -98,7 +99,7 @@ export default function FormPage() {
             />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -110,7 +111,7 @@ export default function FormPage() {
             />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required
@@ -122,7 +123,7 @@ export default function FormPage() {
             />
           </FormItem>
           <FormItem
-            label="Label Name"
+            label="Name"
             tooltipTitle="Please write down here"
             extra="Here is extra description"
             required

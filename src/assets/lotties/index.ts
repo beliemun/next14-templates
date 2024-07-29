@@ -1,2 +1,4 @@
-import loadingJson from "./loading.json";
-export { loadingJson };
+import loadingLottie from "./loading.json";
+import signInLottie from "./sign-in.json";
+
+export { loadingLottie, signInLottie };

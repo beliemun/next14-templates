@@ -5,6 +5,15 @@ export default function TextPage() {
   return (
     <PageLayout title="<Text />">
       <Section>
+        <Card title={"xs"} className="w-60">
+          <div className="flex flex-col">
+            <Text type="xs-light">xs-light</Text>
+            <Text type="xs-normal">xs-normal</Text>
+            <Text type="xs-regular">xs-regular</Text>
+            <Text type="xs-semibold">xs-semibold</Text>
+            <Text type="xs-bold">xs-bold</Text>
+          </div>
+        </Card>
         <Card title={"sm"} className="w-60">
           <div className="flex flex-col">
             <Text type="sm-light">sm-light</Text>

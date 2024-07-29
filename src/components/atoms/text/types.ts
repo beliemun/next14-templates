@@ -1,6 +1,11 @@
 export type TextColor = "default" | "description" | "disabled";
 
 export type TextType =
+  | "xs-light"
+  | "xs-normal"
+  | "xs-regular"
+  | "xs-semibold"
+  | "xs-bold"
   | "sm-light"
   | "sm-normal"
   | "sm-regular"
@@ -28,6 +33,11 @@ export type TextType =
   | "2xl-bold";
 
 export const TextStyle: Record<TextType, string> = {
+  "xs-light": "text-xs font-light",
+  "xs-normal": "text-xs font-normal",
+  "xs-regular": "text-xs font-regular",
+  "xs-semibold": "text-xs font-semibold",
+  "xs-bold": "text-xs font-bold",
   "sm-light": "text-sm font-light",
   "sm-normal": "text-sm font-normal",
   "sm-regular": "text-sm font-regular",

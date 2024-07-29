@@ -7,15 +7,8 @@ import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { theme } from "antd";
 import { ResizableWapper } from "@/components/organisms/menu-layout/components";
 import { cn } from "@/styles";
-import { Button, Text, Title } from "@/components/atoms";
+import { Button, Loading, Text, Title } from "@/components/atoms";
 import { CloseOutlined, ExpandAltOutlined, ShrinkOutlined } from "@ant-design/icons";
-import { loadingJson } from "@/assets/lotties";
-
-import dynamic from "next/dynamic";
-const DotLottieReact = dynamic(
-  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
-  { ssr: false }
-);
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -68,19 +61,7 @@ export const PageModal = ({
               style={{ backgroundColor: colorBgBase, borderColor: colorBorder }}
               className="col-center w-[1280px] h-screen gap-2 border-x"
             >
-              <div className="relative">
-                <DotLottieReact
-                  className="absolute top-[-100px] left-0 right-0 mx-auto size-32"
-                  data={loadingJson}
-                  loop
-                  autoplay
-                />
-                {loadingMessage ? (
-                  <Text type="base-semibold" color="description">
-                    {loadingMessage}
-                  </Text>
-                ) : null}
-              </div>
+              <Loading loadingMessage={loadingMessage} />
             </motion.div>
           ) : (
             <ResizableWapper isFullWidth={isFullWidth} ignoreBackgroundColor>

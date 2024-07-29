@@ -11,5 +11,5 @@ export const LoadingModalComponent = ({ ...rest }: LoadingModalProps) => {
     setTimeout(() => setLoading(false), 2000);
   }, []);
 
-  return <LoadingModal message="Here is loading message" loading={loading} {...rest} />;
+  return <LoadingModal loadingMessage="Here is loading message" loading={loading} {...rest} />;
 };

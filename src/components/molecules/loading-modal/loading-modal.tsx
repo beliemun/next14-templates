@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { LoadingModalProps } from "./types";
 import { useEffect, useState } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { Text } from "@/components/atoms";
-import { loadingJson } from "@/assets/lotties";
+import { Loading, Text } from "@/components/atoms";
+import { loadingLottie } from "@/assets/lotties";
 
 // Lottie는 브라우저에서만 실행되는 웹 워커를 사용하기 때문에 클라이언트 사이드에서만 실행되어야 한다.
 import dynamic from "next/dynamic";
@@ -16,7 +16,7 @@ const DotLottieReact = dynamic(
 
 export const LoadingModal = ({
   loading = true,
-  message = undefined,
+  loadingMessage = undefined,
   onClose,
 }: LoadingModalProps) => {
   const [visible, setVisible] = useState(true);
@@ -44,19 +44,7 @@ export const LoadingModal = ({
             "fixed col-center w-full h-full min-h-screen top-0 left-0 bottom-0 right-0 m-auto gap-4"
           }
         >
-          <div className="relative">
-            <DotLottieReact
-              className="absolute top-[-100px] left-0 right-0 mx-auto size-32"
-              data={loadingJson}
-              loop
-              autoplay
-            />
-            {message ? (
-              <Text type="base-semibold" color="description">
-                {message}
-              </Text>
-            ) : null}
-          </div>
+          <Loading loadingMessage={loadingMessage} />
         </motion.figure>
       ) : null}
     </AnimatePresence>

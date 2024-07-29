@@ -1,3 +1,4 @@
+export * from "./animate";
 export * from "./avatar";
 export * from "./button";
 export * from "./card";
@@ -8,6 +9,7 @@ export * from "./divider";
 export * from "./drawer";
 export * from "./image";
 export * from "./input";
+export * from "./loading";
 export * from "./layout";
 export * from "./menu";
 export * from "./message";
