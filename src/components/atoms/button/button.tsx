@@ -47,6 +47,7 @@ const Button = (
     tooltipStyle,
     tooltipPlacement,
     showCloseButton = true,
+    skipAnimation = false,
     onClick,
     ...rest
   }: ButtonProps & MotionProps,
@@ -76,13 +77,21 @@ const Button = (
     onClick?.();
   };
 
-  const btnProps = { initial: "hidden", animate: btnController, exit: "hidden" };
+  const btnProps = {
+    ...(!skipAnimation && { initial: "hidden" }),
+    animate: btnController,
+    exit: "hidden",
+  };
   const waveProps = { initial: "hidden", animate: waveController, exit: "hidden" };
 
   return (
     <Tooltip title={tooltipTitle} style={tooltipStyle} placement={tooltipPlacement}>
       {/* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */}
-      <motion.div className="inline-flex" variants={btnVariants} {...btnProps}>
+      <motion.div
+        className={fullWidth ? "flex w-full" : "inline-flex"}
+        variants={btnVariants}
+        {...btnProps}
+      >
         <motion.button
           ref={ref}
           style={{ ...style }}

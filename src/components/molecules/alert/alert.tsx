@@ -85,11 +85,12 @@ export const Alert = () => {
               >
                 {actions?.map((action, index) => (
                   <Button
-                    className={cn({ "flex-1": footerFitable })}
                     key={index}
                     buttonStyle={action?.style}
                     buttonColor={action?.color}
+                    fullWidth={footerFitable}
                     onClick={action?.onClick ?? onDismiss}
+                    skipAnimation
                   >
                     {action?.lable}
                   </Button>

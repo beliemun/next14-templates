@@ -95,16 +95,16 @@ export const Modal = ({
               {children}
               <footer
                 className={cn(
-                  "flex gap-2",
+                  "flex gap-4",
                   footerDirection === "left" ? "flex-row" : "flex-row-reverse"
                 )}
               >
                 {actions?.map((action, index) => (
                   <Button
-                    className={cn({ "flex-1": footerFitable })}
                     key={index}
                     buttonStyle={action?.style}
                     buttonColor={action?.color}
+                    fullWidth={footerFitable}
                     onClick={action?.onClick ?? handleClose}
                   >
                     {action?.lable}
