@@ -22,10 +22,6 @@ export default function TransferPage() {
     setTargetKeys(nextTargetKeys);
   };
 
-  const toggleDisabled = (checked: boolean) => {
-    setDisabled(checked);
-  };
-
   const columns: TableColumnsType<DataType> = [
     {
       dataIndex: "title",
@@ -53,7 +49,7 @@ export default function TransferPage() {
     <PageLayout title="<Trasfer />">
       <Divider orientation="left">Basic Transfer</Divider>
       <Section className="pt-2">
-        <BasicTransfer />
+        <BasicTransfer className="w-full" />
       </Section>
       <Divider orientation="left">Table Transfer</Divider>
       <Section className="pt-2">

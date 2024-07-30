@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 const gothicA1 = Gothic_A1({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
 
 import { AntdProvider } from "../components/providers/antd-provider";
+import StyledComponentsRegistry from "@/styles/registry";
 
 export const metadata: Metadata = {
   title: "UI Templates for Next 14 - BUNGRIT",
@@ -27,7 +28,9 @@ export default function RootLayout({
         />
       </head>
       <body className={gothicA1.className}>
-        <AntdProvider>{children}</AntdProvider>
+        <StyledComponentsRegistry>
+          <AntdProvider>{children}</AntdProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

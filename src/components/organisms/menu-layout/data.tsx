@@ -38,8 +38,8 @@ export const introduction: MenuItem[] = [
 export const base: MenuItem[] = [
   getItem("Color Pallete", "color", <FormatPainterOutlined />),
   getItem("Typography", "typography", <FontSizeOutlined />, [
-    getItem("Title", "title"),
     getItem("Text", "text"),
+    getItem("Title", "title"),
   ]),
   getItem("Components", "components", <SlidersOutlined />, [
     getItem("Alert ⭐️", "alert"),

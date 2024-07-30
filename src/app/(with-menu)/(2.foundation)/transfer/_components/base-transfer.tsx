@@ -20,7 +20,7 @@ const mockData = Array.from({ length: 20 }).map<RecordType>((_, i) => ({
 
 const initialTargetKeys = mockData.filter(({ key }) => key > 10).map((item) => item.key);
 
-export const BasicTransfer = () => {
+export const BasicTransfer = ({ className }: { className?: string }) => {
   const [targetKeys, setTargetKeys] = useState<TransferProps["targetKeys"]>(initialTargetKeys);
   const [selectedKeys, setSelectedKeys] = useState<TransferProps["targetKeys"]>([]);
 
@@ -48,6 +48,7 @@ export const BasicTransfer = () => {
 
   return (
     <Transfer
+      className={className}
       dataSource={mockData}
       showSearch
       titles={["Source", "Target"]}
@@ -59,7 +60,7 @@ export const BasicTransfer = () => {
       onSearch={onSerach}
       render={(item) => item.title}
       listStyle={{
-        width: 320,
+        width: "100%",
         height: 320,
       }}
     />

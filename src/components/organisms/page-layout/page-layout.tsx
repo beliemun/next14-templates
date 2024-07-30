@@ -1,21 +1,24 @@
 "use client";
 
 import { Title } from "@/components/atoms";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { Layout, theme } from "antd";
+import styled from "styled-components";
 
 export const PageLayout = ({
-  children,
   title,
+  children,
 }: {
+  title?: React.ReactNode | string;
   className?: string | undefined;
   children?: React.ReactNode | undefined;
-  title: React.ReactNode | string;
 }) => {
+  const { isDarkMode } = useDarkModeStore();
   const {
     token: { colorBgBase, colorText, colorBorder },
   } = theme.useToken();
   return (
-    <Layout className={"col-flex"}>
+    <Layout className={"col-flex overflow-hidden"}>
       <Title
         type="h6-semibold"
         style={{ color: colorText, backgroundColor: colorBgBase }}
@@ -30,7 +33,7 @@ export const PageLayout = ({
           minHeight: "calc(100vh - 80px)",
           borderTopWidth: "1px",
           borderColor: colorBorder,
-          overflow: "auto",
+          overflow: "hidden",
         }}
       >
         {children}

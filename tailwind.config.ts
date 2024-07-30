@@ -27,6 +27,16 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        ".scrollbar": {
+          scrollbarWidth: "thin",
+          scrollbarColor: "rgb(30, 30, 30) white",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };
 export default config;

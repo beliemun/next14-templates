@@ -3,6 +3,7 @@
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn } from "@/styles";
 import { theme } from "antd";
+import styled, { css } from "styled-components";
 
 export type LayoutResizeType = "1280px" | "100%";
 
@@ -32,19 +33,65 @@ export const ResizableWapper = ({
       }}
       className={cn("fixed col-center w-full h-full")}
     >
-      <div
+      <ScrollProvider
+        $isDarkMode={isDarkMode}
+        $isFullWidth={isFullWidth}
+        $colorBorder={colorBorder}
         className={cn(
           "w-full h-screen transition-all duration-200 ease-in-out overflow-auto",
           ignoreBackgroundColor ? "border-x" : "shadow-lg"
         )}
-        style={{
-          maxWidth: isFullWidth ? "100%" : "1280px",
-          borderLeft: `1px solid ${colorBorder}`,
-          borderRight: `1px solid ${colorBorder}`,
-        }}
       >
         {children}
-      </div>
+      </ScrollProvider>
     </div>
   );
 };
+
+const ScrollProvider = styled.div<{
+  $isDarkMode: boolean;
+  $isFullWidth: boolean;
+  $colorBorder: string;
+}>`
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #64748b;
+    ${({ $isDarkMode }) =>
+      $isDarkMode
+        ? css`
+            background: #14b8a6;
+          `
+        : css`
+            background: #64748b;
+          `}
+  }
+  &::-webkit-scrollbar-track-piece {
+    ${({ $isDarkMode }) =>
+      $isDarkMode
+        ? css`
+            background: #000;
+          `
+        : css`
+            background: #f1f5f9;
+          `}
+  }
+  width: 100%;
+  overflow: auto;
+  transition: all 0.2s ease-in-out;
+  ${({ $isFullWidth }) =>
+    $isFullWidth
+      ? css`
+          max-width: 100%;
+        `
+      : css`
+          max-width: 1280px;
+        `}
+  ${({ $colorBorder }) => css`
+    border-left: 1px solid ${$colorBorder}
+    border-right: 1px solid ${$colorBorder}
+  `}
+`;

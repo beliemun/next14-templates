@@ -1,7 +1,7 @@
 "use client";
 
 import { signInLottie } from "@/assets/lotties";
-import { Animate, Button, Input, Loading, Title } from "@/components/atoms";
+import { Animate, Button, Input, Loading, Text, Title } from "@/components/atoms";
 import { Form, FormItem } from "@/components/molecules";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn, colors } from "@/styles";
@@ -53,7 +53,9 @@ export default function SingInPage() {
         ) : (
           <Animate delay={0.5}>
             <div className={cn("col-center size-full")}>
-              <Title className="text-center my-4">로그인이 필요해요 😗</Title>
+              <Text className="text-center my-4" type="xl-semibold" color="red">
+                로그인이 필요해요 😗
+              </Text>
               <div className="w-full h-60">
                 <DotLottieReact
                   className="bottom-[0] left-0 right-0 mx-auto size-full"

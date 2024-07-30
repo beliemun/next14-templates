@@ -1,3 +1,5 @@
+export type TitleColor = "primary" | "default" | "description" | "disabled";
+
 export type TitleType =
   | "h1-normal"
   | "h1-regular"

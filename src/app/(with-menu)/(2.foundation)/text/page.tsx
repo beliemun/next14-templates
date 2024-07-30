@@ -50,15 +50,6 @@ export default function TextPage() {
             <Text type="xl-bold">xl-bold</Text>
           </div>
         </Card>
-        <Card title={"2xl"} className="w-60">
-          <div className="flex flex-col text-left">
-            <Text type="2xl-light">xl-light</Text>
-            <Text type="2xl-normal">xl-normal</Text>
-            <Text type="2xl-regular">xl-regular</Text>
-            <Text type="2xl-semibold">xl-semibold</Text>
-            <Text type="2xl-bold">xl-bold</Text>
-          </div>
-        </Card>
       </Section>
     </PageLayout>
   );

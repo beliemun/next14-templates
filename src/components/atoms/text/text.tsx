@@ -1,16 +1,17 @@
 "use client";
 
-import { CSSProperties, forwardRef, LegacyRef, ReactNode } from "react";
+import { CSSProperties, forwardRef, LegacyRef, ReactNode, useEffect, useState } from "react";
 import { TextColor, TextStyle, TextType } from "./types";
-import { cn } from "@/styles";
+import { cn, ColorType } from "@/styles";
 import { theme } from "antd";
+import { textColorStyles } from "./styles";
 
 export interface TextProps {
   children?: ReactNode;
   style?: CSSProperties;
   className?: string;
   type?: TextType;
-  color?: TextColor;
+  color?: TextColor | ColorType;
   onClick?: () => void;
 }
 
@@ -18,22 +19,26 @@ const Text = (
   { children, style, className, type = "base-normal", color = "default", ...rest }: TextProps,
   ref: LegacyRef<HTMLSpanElement>
 ) => {
+  const [textColor, setTextColor] = useState<string>("default");
   const {
     token: { colorText, colorTextDescription, colorTextDisabled },
   } = theme.useToken();
+
+  useEffect(() => {
+    if (color === "default") {
+      setTextColor(colorText);
+    } else if (color === "description") {
+      setTextColor(colorTextDescription);
+    } else if (color === "disabled") {
+      setTextColor(colorTextDisabled);
+    }
+  }, [color, colorText, colorTextDescription, colorTextDisabled]);
+
   return (
     <span
       ref={ref}
-      style={{
-        color:
-          color === "default"
-            ? colorText
-            : color === "description"
-            ? colorTextDescription
-            : colorTextDisabled,
-        ...style,
-      }}
-      className={cn(className, TextStyle[type])}
+      style={{ color: textColor, ...style }}
+      className={cn(TextStyle[type], textColorStyles({ color }), className)}
       {...rest}
     >
       {children}

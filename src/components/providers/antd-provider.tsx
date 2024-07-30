@@ -5,6 +5,7 @@ import { colors } from "@/styles";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider, theme } from "antd";
 import { ReactNode } from "react";
+import styled from "styled-components";
 
 export const AntdProvider = ({ children }: { children: ReactNode }) => {
   const { isDarkMode } = useDarkModeStore();

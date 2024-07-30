@@ -69,7 +69,7 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
         </Layout.Sider>
         <Layout
           className="transition-all duration-300 ease-out"
-          style={{ marginLeft: collapsed ? 80 : 256, overflow: "auto" }}
+          style={{ marginLeft: collapsed ? 80 : 256, overflow: "hidden" }}
         >
           {children}
         </Layout>
