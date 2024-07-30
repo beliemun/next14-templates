@@ -53,7 +53,7 @@ export default function SingInPage() {
         ) : (
           <Animate delay={0.5}>
             <div className={cn("col-center size-full")}>
-              <Text className="text-center my-4" type="xl-semibold" color="red">
+              <Text className="text-center my-4" type="xl-semibold" color="primary">
                 로그인이 필요해요 😗
               </Text>
               <div className="w-full h-60">
