@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  BugOutlined,
   FontSizeOutlined,
   FormatPainterOutlined,
   HistoryOutlined,
@@ -73,6 +74,7 @@ export const pages: MenuItem[] = [
   getItem("Sign Up", "sign-up", <UserAddOutlined />),
   getItem("Members", "members", <TeamOutlined />),
   getItem("Messages", "messages", <MessageOutlined />),
+  getItem("Test", "test", <BugOutlined />),
 ];
 
 export const menu = [

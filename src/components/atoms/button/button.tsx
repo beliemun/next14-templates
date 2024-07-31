@@ -53,16 +53,18 @@ const Button = (
   }: ButtonProps & MotionProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
+  const [isMount, setIsMount] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const btnController = useAnimation();
   const waveController = useAnimation();
 
   useEffect(() => {
+    setIsMount(true);
     btnController.start(btnVariants.visible);
   }, []);
 
   const startAnimation = useCallback(() => {
-    if (disabled || loading || isAnimating) return;
+    if (disabled || loading || isAnimating || !isMount) return;
     setIsAnimating(true);
     waveController
       .start(waveVariants.click)
@@ -86,7 +88,7 @@ const Button = (
 
   return (
     <Tooltip
-      className={fullWidth ? "flex w-full" : "self-start w-min"}
+      className={fullWidth ? "flex w-full" : "self-center w-min"}
       title={tooltipTitle}
       style={tooltipStyle}
       placement={tooltipPlacement}

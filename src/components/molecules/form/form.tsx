@@ -24,7 +24,7 @@ export const Form = ({
 }: FormProps) => {
   return (
     <form style={{ gap, ...style }} className={cn("flex flex-col w-full", className)} {...rest}>
-      <div className={"flex flex-col gap-1 mb-1"}>
+      <div className={"flex flex-col w-full gap-1 mb-1"}>
         <Title type="h6-semibold">{title}</Title>
         <Text type="sm-regular" color="description">
           {description}

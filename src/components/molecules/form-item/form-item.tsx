@@ -27,7 +27,7 @@ export const FormItem = ({
   htmlFor,
   label,
   labelType = "sm-regular",
-  labelWidth = 120,
+  labelWidth = 130,
   direction = "horizontal",
   required,
   maxWidth = 640,
@@ -43,8 +43,12 @@ export const FormItem = ({
       style={{ ...style, maxWidth }}
       className={cn("flex gap-2", direction === "horizontal" ? "flex-row" : "flex-col", className)}
     >
-      <label style={{ width: labelWidth }} className={cn("flex items-center gap-1")} {...rest}>
-        <Text type={labelType} className="overflow-hidden-text" color="description">
+      <label
+        style={{ width: labelWidth }}
+        className={cn("flex w-full items-center gap-1 shrink-0")}
+        {...rest}
+      >
+        <Text type={labelType} className="overflow-label" color="description">
           {label}
         </Text>
         {required ? <Text style={{ color: "red", marginLeft: -3 }}>*</Text> : null}

@@ -4,8 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { LoadingModalProps } from "./types";
 import { useEffect, useState } from "react";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { Loading, Text } from "@/components/atoms";
-import { loadingLottie } from "@/assets/lotties";
+import { Loading } from "@/components/atoms";
 
 // Lottie는 브라우저에서만 실행되는 웹 워커를 사용하기 때문에 클라이언트 사이드에서만 실행되어야 한다.
 import dynamic from "next/dynamic";

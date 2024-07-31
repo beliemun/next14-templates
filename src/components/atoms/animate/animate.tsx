@@ -1,28 +1,32 @@
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
+import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
+import { AnimateProps } from "./types";
+import { animations } from "./animations";
+import { useEffect, useState } from "react";
 
-interface AnimateProps {
-  children?: ReactNode;
-  layoutId?: string;
-  delay?: number;
-}
+const Animate = ({ name, type = "show-up", layoutId, transition, children }: AnimateProps) => {
+  const [isMount, setIsMount] = useState(false);
 
-const Animate = ({ children, layoutId, delay }: AnimateProps) => {
-  const contentsVariants: Variants = {
-    hidden: { opacity: 0, y: 10, transition: { duration: 0.5, ease: "easeOut" } },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut", delay } },
-  };
-  const animationProps = { initial: "hidden", animate: "visible", exit: "exit" };
+  useEffect(() => setIsMount(true), []);
 
-  return (
+  return isMount ? (
     <AnimatePresence>
-      <motion.div variants={contentsVariants} {...animationProps} layoutId={layoutId}>
+      <motion.div
+        key={name}
+        variants={animations[type]}
+        initial={"initial"}
+        animate={{
+          ...animations[type]["animate"],
+          ...(transition && { transition: { ...transition } }),
+        }}
+        exit={"exit"}
+        layoutId={layoutId}
+      >
         {children}
       </motion.div>
     </AnimatePresence>
-  );
+  ) : null;
 };
 
 export default Animate;

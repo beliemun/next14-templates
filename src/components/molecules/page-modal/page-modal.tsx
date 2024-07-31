@@ -108,8 +108,8 @@ export const PageModal = ({
                 </div>
               </header>
               <main
-                style={{ backgroundColor: colorBgBase }}
-                className="flex flex-col w-full h-full p-8 overflow-auto pb-36"
+                style={{ backgroundColor: colorBgBase, height: "calc(100vh - 112px)" }}
+                className="flex flex-col w-full p-8 overflow-auto"
               >
                 <motion.div variants={contentsVariants} {...animationProps}>
                   {children}
