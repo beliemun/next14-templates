@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { DatePicker } from "antd";
 import { ConfigProvider } from "./config-provider";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";

@@ -1,6 +1,8 @@
 import { Button } from "@/components/atoms";
+import { colors } from "@/lib/colors";
+import { cn } from "@/lib/utils";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { cn, colors } from "@/styles";
+
 import {
   ExpandAltOutlined,
   MenuUnfoldOutlined,

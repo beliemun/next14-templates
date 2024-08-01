@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Image as ImageAntd, ImageProps as ImageAntdProps } from "antd";
 
 interface ImageProps extends ImageAntdProps {}

@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Card as CardAntd, CardProps as CardAntdProps } from "antd";
 
 export interface CardProps extends CardAntdProps {}

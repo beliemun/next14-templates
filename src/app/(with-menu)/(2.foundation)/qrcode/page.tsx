@@ -2,7 +2,7 @@
 
 import { Button, Divider, Input, QRCode, Radio, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 import { ChangeEvent, useState } from "react";
 
 const ICON =

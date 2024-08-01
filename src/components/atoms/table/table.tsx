@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Table as TableAntd, TableProps as TableAntdProps } from "antd";
 
 export interface TableProps<RecordType = any> extends TableAntdProps {}

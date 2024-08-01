@@ -4,7 +4,7 @@ import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
 import { AnimateProps } from "./types";
 import { animations } from "./animations";
 import { useEffect, useState } from "react";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 
 const Animate = ({
   style,

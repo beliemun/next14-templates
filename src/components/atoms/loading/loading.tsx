@@ -1,7 +1,7 @@
 import { Lottie } from "@/assets/lotties";
 import { Text } from "../text";
 import { CSSProperties } from "styled-components";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 
 interface LoadingProps {
   style?: CSSProperties;

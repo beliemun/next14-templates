@@ -1,4 +1,4 @@
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 
 export type MemberGenderType = "man" | "woman";
 export type MemberRoleType = "onwer" | "manager" | "guest";

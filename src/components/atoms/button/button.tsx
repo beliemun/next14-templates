@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { ForwardedRef, forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { buttonStyles, waveStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
@@ -65,7 +65,7 @@ const Button = (
   useEffect(() => {
     setIsMount(true);
     btnController.start(btnVariants.visible);
-  }, []);
+  }, [btnController]);
 
   const handleClick = useCallback(() => {
     if (disabled || loading || !isMount) return;
@@ -77,7 +77,7 @@ const Button = (
       .then(() => waveController.start(waveVariants.hidden))
       .then(() => (isAnimatingRef.current = false));
     btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
-  }, [disabled, loading, isMount]);
+  }, [disabled, loading, isMount, onClick, btnController, waveController]);
 
   const btnProps = {
     ...(!skipAnimation && { initial: "hidden" }),

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { TimePicker as TimePickerAntd, TimePickerProps as TimePickerAntdProps } from "antd";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { ConfigProvider } from "./config-provider";

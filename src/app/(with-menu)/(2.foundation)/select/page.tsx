@@ -2,7 +2,7 @@
 
 import { Divider, Section, Select, SelectProps, Space, Tag } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colorList } from "@/styles";
+import { colorList } from "@/lib/colors";
 import { DownOutlined } from "@ant-design/icons";
 import { DefaultOptionType } from "antd/es/select";
 import { useState } from "react";

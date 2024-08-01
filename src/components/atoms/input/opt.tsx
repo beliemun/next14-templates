@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import OTPAntd, { OTPProps as OTPAntdProps, OTPRef } from "antd/es/input/OTP";
 import { ForwardedRef, forwardRef } from "react";
 import { ConfigProvider } from "./config-provider";

@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Transfer as TransferAntd, TransferProps as TransferAntdProps } from "antd";
 import { CSSProperties } from "react";
 import { ConfigProvider } from "./config-provider";

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Tag, Text } from "@/components/atoms";
-import { colors, ColorType } from "@/styles";
+import { colors, ColorType } from "@/lib/colors";
 import { capitalizeFirstLetter } from "@/shared/utils";
 
 interface ColorPaletteItemProp {

@@ -1,4 +1,4 @@
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 import { TextColor } from "./types";
 
 export const textColorStyles = ({ color }: { color: TextColor | ColorType }) => {

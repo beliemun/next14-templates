@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { MotionProps, Variants, motion } from "framer-motion";
 import { HTMLAttributes } from "react";
 

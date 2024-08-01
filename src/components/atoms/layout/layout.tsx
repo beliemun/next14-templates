@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Layout as LayoutAntd, LayoutProps as LayoutAntdProps } from "antd";
 
 interface LayoutProps extends LayoutAntdProps {}

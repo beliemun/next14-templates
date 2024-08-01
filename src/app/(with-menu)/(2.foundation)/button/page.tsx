@@ -1,7 +1,7 @@
 import { Button, Divider, Tooltip } from "@/components/atoms";
 import { buttonTypes } from "@/components/atoms/button/types";
 import { PageLayout } from "@/components/organisms";
-import { colorList } from "@/styles";
+import { colorList } from "@/lib/colors";
 import { HomeOutlined } from "@ant-design/icons";
 
 export default function ButtonPage() {

@@ -2,7 +2,7 @@ import { InputRef, PasswordProps as PasswordAntdProps } from "antd/es/input";
 import { ForwardedRef, forwardRef } from "react";
 import { ConfigProvider } from "./config-provider";
 import PasswordAntd from "antd/es/input/Password";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Text } from "../text";
 import "./styles.css";
 

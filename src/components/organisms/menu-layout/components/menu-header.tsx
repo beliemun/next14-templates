@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Divider, theme } from "antd";
 
 export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {

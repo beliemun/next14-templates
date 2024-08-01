@@ -3,7 +3,7 @@ import { Tooltip, Text } from "@/components/atoms";
 import { TooltipPlacement } from "@/components/atoms/tooltip/types";
 import { TextType } from "@/components/atoms/text/types";
 import { QuestionCircleOutlined } from "@ant-design/icons";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 
 interface FormItemProps
   extends DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {

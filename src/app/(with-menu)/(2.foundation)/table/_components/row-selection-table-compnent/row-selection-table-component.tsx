@@ -3,7 +3,7 @@
 import { Radio, Space, Table } from "@/components/atoms";
 import { TableProps, Text } from "@/components/atoms";
 import { DataType, MemberRoleType } from "./types";
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 import { useState } from "react";
 import { RadioChangeEvent } from "antd";
 

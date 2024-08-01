@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/organisms";
 import { Section } from "@/components/atoms";
-import { colorList } from "@/styles";
 import { ColorPaletteItem } from "./_components/color-palette-item";
+import { colorList } from "@/lib/colors";
 
 export default function ColorPage() {
   return (

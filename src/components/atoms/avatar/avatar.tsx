@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { avatarBadgeProps, avatarIconSize, avatarImageSize, avatarStyles } from "./styles";
 import { UserOutlined } from "@ant-design/icons";
 import Image from "next/image";

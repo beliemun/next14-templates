@@ -2,8 +2,9 @@
 
 import { ReactNode } from "react";
 import { ConfigProvider as ConfigProviderAntd } from "antd";
-import { colors, hexToRGBA } from "@/styles";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
+import { colors } from "@/lib/colors";
+import { hexToRGBA } from "@/lib/utils";
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
   const { isDarkMode } = useDarkModeStore();

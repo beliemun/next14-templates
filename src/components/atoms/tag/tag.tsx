@@ -2,7 +2,8 @@
 
 import { CSSProperties, ReactNode, useState } from "react";
 import { TagSizeType, TagStyleType } from "./types";
-import { cn, ColorType } from "@/styles";
+import { cn } from "@/lib/utils";
+import { ColorType } from "@/lib/colors";
 import { tagStyles } from "./styles";
 
 export interface TagProps {

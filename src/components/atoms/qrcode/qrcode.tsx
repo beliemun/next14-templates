@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { QRCode as QRCodeAntd, QRCodeProps as QRCodeAntdProps } from "antd";
 
 interface QRCodeProps extends QRCodeAntdProps {}

@@ -3,9 +3,9 @@
 import { Message, Table } from "@/components/atoms";
 import { Button, TableProps, Tag, Text } from "@/components/atoms";
 import { DataType, MemberRoleType } from "./types";
-import { ColorType } from "@/styles";
 import { capitalizeFirstLetter } from "@/shared/utils";
 import { useAlertStore } from "@/stores/useAlertStore";
+import { ColorType } from "@/lib/colors";
 
 const columns: TableProps<DataType>["columns"] = [
   {

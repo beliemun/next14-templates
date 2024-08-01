@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Pagination as PaginationAntd, PaginationProps as PaginationAntdProps } from "antd";
 import "./styles.css";
 

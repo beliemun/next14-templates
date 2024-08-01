@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Checkbox } from "antd";
 import { CheckboxGroupProps as CheckboxGroupAntdProps } from "antd/lib/checkbox";
 import "./styles.css";

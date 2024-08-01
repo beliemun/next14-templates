@@ -2,7 +2,8 @@
 
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import { TitleColor, TitleStyle, TitleType } from "./types";
-import { cn, ColorType } from "@/styles";
+import { cn } from "@/lib/utils";
+import { ColorType } from "@/lib/colors";
 import { theme } from "antd";
 import { titleColorStyles } from "./styles";
 

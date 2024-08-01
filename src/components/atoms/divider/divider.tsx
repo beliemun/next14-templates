@@ -1,5 +1,5 @@
 import { capitalizeFirstLetter } from "@/shared/utils";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Divider as DividerAtnd, DividerProps as DividerAntdProps } from "antd";
 
 export interface DividerProps extends DividerAntdProps {}

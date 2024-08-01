@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Switch as SwitchAntd, SwitchProps as SwitchAntdProps } from "antd";
 import "./styles.css";
 

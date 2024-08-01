@@ -1,5 +1,6 @@
-import { cn, ColorType } from "@/styles";
-import { ButtonProps, ButtonRoundType, ButtonSizeType, ButtonStyleType } from "./types";
+import { cn } from "@/lib/utils";
+import { ColorType } from "@/lib/colors";
+import { ButtonProps, ButtonStyleType } from "./types";
 
 export const buttonStyles = ({
   buttonRound,

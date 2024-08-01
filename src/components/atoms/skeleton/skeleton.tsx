@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Skeleton as SkeletonAntd, SkeletonProps as SkeletonAntdProps } from "antd";
 
 interface SkeletonProps extends SkeletonAntdProps {}

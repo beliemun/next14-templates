@@ -1,7 +1,7 @@
 "use client";
 
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { theme } from "antd";
 import styled, { css } from "styled-components";
 

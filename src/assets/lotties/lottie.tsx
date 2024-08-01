@@ -6,7 +6,7 @@ import signInLottie from "./sign-in.json";
 import signUpLottie from "./sign-up.json";
 
 import dynamic from "next/dynamic";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Loading } from "@/components/atoms";
 const DotLottieReact = dynamic(

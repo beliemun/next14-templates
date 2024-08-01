@@ -2,7 +2,7 @@
 
 import { RangePickerProps } from "antd/es/date-picker";
 import { CSSProperties } from "react";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { TimePicker } from "antd";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { ConfigProvider } from "./config-provider";

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { CheckboxOptionType, Radio as RadioAntd, RadioProps as RadioAntdProps } from "antd";
 import "./styles.css";
 

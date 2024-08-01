@@ -1,6 +1,6 @@
 import { Card, Divider, Input, Section, Select, Space, Tooltip } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 import {
   AudioOutlined,
   ExclamationCircleOutlined,

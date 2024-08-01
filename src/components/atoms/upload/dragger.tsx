@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Upload, UploadProps as UploadAntdProps } from "antd";
 import { CSSProperties } from "react";
 

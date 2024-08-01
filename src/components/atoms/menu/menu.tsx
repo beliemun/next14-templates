@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Menu as MenuAntd, MenuProps as MenuAntdProps } from "antd";
 import "./styles.css";
 

@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { DatePicker as DatePickerAntd, DatePickerProps as DatePickerAntdProps } from "antd";
 import { ConfigProvider } from "./config-provider";
 import RangePicker from "./range-picker";

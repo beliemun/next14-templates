@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Tooltip as TooltipAtnd, TooltipProps as TooltipAntdProps } from "antd";
 
 export type TooltipProps = TooltipAntdProps;

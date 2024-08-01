@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Checkbox as CheckboxAntd, CheckboxProps as CheckboxAntdProps } from "antd";
 import "./styles.css";
 import { CheckboxGroup } from "./check-box-group";

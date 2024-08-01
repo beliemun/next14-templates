@@ -3,7 +3,7 @@
 import { Table, Tag } from "@/components/atoms";
 import { TableProps, Text } from "@/components/atoms";
 import { DataType, MemberGenderType, MemberRoleType } from "./types";
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 import { capitalizeFirstLetter } from "@/shared/utils";
 import { useState } from "react";
 

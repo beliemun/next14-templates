@@ -1,10 +1,10 @@
 "use client";
 
 import { Animate, Text } from "@/components/atoms";
-import { cn } from "@/styles";
 import { theme } from "antd";
 import { BottomButtons, SignInExtrForm, SignInForm } from "./_components";
 import { Lottie } from "@/assets/lotties";
+import { cn } from "@/lib/utils";
 
 export default function SingInPage() {
   const {

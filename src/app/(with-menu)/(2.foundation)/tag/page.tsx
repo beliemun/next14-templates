@@ -1,6 +1,6 @@
 import { Divider, Space, Tag } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colorList } from "@/styles";
+import { colorList } from "@/lib/colors";
 import { SyncOutlined } from "@ant-design/icons";
 
 export default function TagPage() {

@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { InputRef } from "antd";
 import SearchAtnd from "antd/es/input/Search";
 import { SearchProps as SearchAntdProps } from "antd/lib/input";

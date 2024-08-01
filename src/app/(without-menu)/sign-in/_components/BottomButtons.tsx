@@ -1,6 +1,6 @@
 import { Button } from "@/components/atoms";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 import { HomeOutlined, MoonFilled, MoonOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { useRouter } from "next/navigation";

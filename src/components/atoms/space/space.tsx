@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Space as SpaceAntd, SpaceProps as SpaceAntdProps } from "antd";
 
 export interface SpaceProps extends SpaceAntdProps {

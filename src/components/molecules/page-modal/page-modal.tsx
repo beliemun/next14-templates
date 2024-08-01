@@ -6,7 +6,7 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { theme } from "antd";
 import { ResizableWapper } from "@/components/organisms/menu-layout/components";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Button, Loading, Text, Title } from "@/components/atoms";
 import { CloseOutlined, ExpandAltOutlined, ShrinkOutlined } from "@ant-design/icons";
 

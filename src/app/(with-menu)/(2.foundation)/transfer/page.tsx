@@ -11,7 +11,7 @@ import {
 } from "./_components";
 import { useState } from "react";
 import { TableColumnsType, TransferProps } from "antd";
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 import { capitalizeFirstLetter } from "@/shared/utils";
 
 export default function TransferPage() {

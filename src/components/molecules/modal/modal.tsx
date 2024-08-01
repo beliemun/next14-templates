@@ -2,7 +2,7 @@
 
 import { Button, Loading, Text, Title } from "@/components/atoms";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { CloseOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";

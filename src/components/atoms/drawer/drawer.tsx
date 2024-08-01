@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Drawer as DrawerAntd, DrawerProps as DrawerAntdProps } from "antd";
 
 export interface DrawerProps extends DrawerAntdProps {}

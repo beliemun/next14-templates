@@ -1,6 +1,6 @@
 import { ColorPicker, Section, Space, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 
 export default function ColoPickerPage() {
   return (

@@ -1,7 +1,7 @@
 import { Select as SelectAntd, SelectProps as SelectAntdProps } from "antd";
 import { DefaultOptionType } from "antd/es/select";
 import { ConfigProvider } from "./config-provider";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import "./styles.css";
 
 export interface SelectProps extends SelectAntdProps {}

@@ -1,4 +1,4 @@
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 import { Input as InputAntd, InputProps as InputAntdProps, InputRef } from "antd";
 import { ForwardedRef, forwardRef, ForwardRefExoticComponent, RefAttributes } from "react";
 import { ConfigProvider } from "./config-provider";

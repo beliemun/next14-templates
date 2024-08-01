@@ -2,7 +2,7 @@
 
 import { Button, Divider, Dragger, Section, Space, Text, Upload } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 import { PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import { message, UploadFile } from "antd";
 import { UploadChangeParam } from "antd/lib/upload";

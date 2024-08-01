@@ -1,5 +1,5 @@
 import { ButtonStyleType } from "@/components/atoms/button/types";
-import { ColorType } from "@/styles";
+import { ColorType } from "@/lib/colors";
 import { ReactNode } from "react";
 
 export interface ModalAction {

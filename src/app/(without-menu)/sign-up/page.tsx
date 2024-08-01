@@ -3,7 +3,7 @@
 import { Animate, Text } from "@/components/atoms";
 import { theme } from "antd";
 import { BottomButtons, SignUpExtrForm, SignUpForm } from "./_components";
-import { cn } from "@/styles";
+import { cn } from "@/lib/utils";
 
 export default function SingUpPage() {
   const {

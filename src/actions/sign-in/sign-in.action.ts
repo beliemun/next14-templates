@@ -1,11 +1,23 @@
 "use server";
 
+import { MIN_LENGTH_PASSWORD, MSG } from "@/lib/constants";
+import { z } from "zod";
+
+const formSchema = z.object({
+  email: z.string().toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
+  password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
+});
+
 const signInAction = async (prevAction: any, formData: FormData) => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  console.log("formData:", formData);
-  return {
-    error: ["비밀번호가 일치하지 않습니다.", "이메일 형식이 아닙니다."],
+  const data = {
+    email: formData.get("email"),
+    password: formData.get("password"),
   };
+  const result = formSchema.safeParse(data);
+  if (result.error) {
+    return result.error.flatten();
+  } else {
+  }
 };
 
 export default signInAction;

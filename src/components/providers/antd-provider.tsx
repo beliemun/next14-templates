@@ -1,7 +1,7 @@
 "use client";
 
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
-import { colors } from "@/styles";
+import { colors } from "@/lib/colors";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider, theme } from "antd";
 import { ReactNode } from "react";
