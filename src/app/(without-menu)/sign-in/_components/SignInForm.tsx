@@ -23,9 +23,8 @@ export const SignInForm = () => {
         />
       </FormItem>
       <FormItem label="비밀번호" required direction="vertical">
-        <Input
+        <Input.Password
           name={"password"}
-          type={"password"}
           size={"large"}
           addonBefore={<LockOutlined />}
           placeholder="여기에 비밀번호 입력"
