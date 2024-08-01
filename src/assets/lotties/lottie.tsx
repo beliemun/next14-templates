@@ -8,9 +8,10 @@ import signUpLottie from "./sign-up.json";
 import dynamic from "next/dynamic";
 import { cn } from "@/styles";
 import { useEffect, useState } from "react";
+import { Loading } from "@/components/atoms";
 const DotLottieReact = dynamic(
   () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
-  { ssr: false }
+  { ssr: false, loading: () => <>Loading..</> }
 );
 
 type LottieName = "loadingLottie" | "signInLottie" | "signUpLottie";
@@ -30,18 +31,21 @@ interface LottieProps {
 
 export const Lottie = ({ style, className, name, size }: LottieProps) => {
   const [isMount, setIsMount] = useState(false);
+
+  // DotLottieReact 오류로 isMount가 있지만, 렌더가 되지 않아도 여전히 문제가 있음.
+  // index.js:1512  Uncaught DOMException: Failed to construct 'ImageData': The source width is zero or not a number.
   useEffect(() => setIsMount(true), []);
 
   return (
     <div style={{ width: size, height: size, ...style }} className={cn(className)}>
-      {isMount && (
+      {isMount ? (
         <DotLottieReact
           className="inset-0 mx-auto size-full"
           data={LottieType[name]}
           loop
           autoplay
         />
-      )}
+      ) : null}
     </div>
   );
 };

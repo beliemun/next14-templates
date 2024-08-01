@@ -30,7 +30,7 @@ export const SignUpForm = () => {
       </FormItem>
       <div className="col-center gap-4 mt-4">
         <Button fullWidth buttonSize="default" skipAnimation>
-          로그인
+          계정 생성
         </Button>
         <div className="row-center gap-2">
           <Text type="sm-regular" color="description">
