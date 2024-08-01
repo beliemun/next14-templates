@@ -30,7 +30,7 @@ const formScheme = z
       .toLowerCase()
       .trim()
       .refine(validateUserName, MSG.CAN_NOT_USE_USERNAME),
-    email: z.string().email(MSG.INVALIED_TPYE_EMAIL),
+    email: z.string().toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
     password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
     confirm_password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
   })
