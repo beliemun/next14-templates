@@ -18,7 +18,7 @@ export default function SingUpPage() {
             border: `1px solid ${colorBorder}`,
             backgroundColor: colorBgContainer,
           }}
-          className="col-center max-w-md w-full rounded-2xl p-8 shadow"
+          className="col-center max-w-lg w-full rounded-2xl p-8 shadow"
         >
           <Animate>
             <div className={cn("col-center size-full")}>

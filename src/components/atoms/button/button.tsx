@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/styles";
-import { ForwardedRef, forwardRef, useCallback, useEffect, useState } from "react";
+import { ForwardedRef, forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { buttonStyles, waveStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
 import { ButtonProps } from "./types";
@@ -55,7 +55,8 @@ const Button = (
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   const [isMount, setIsMount] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  // 에니메이션 종료에 따라 리렌더가 되면 안됨
+  const isAnimatingRef = useRef(false);
   const btnController = useAnimation();
   const waveController = useAnimation();
   const { pending } = useFormStatus();
@@ -66,31 +67,24 @@ const Button = (
     btnController.start(btnVariants.visible);
   }, []);
 
-  useEffect(() => console.log("staticLoading:", staticLoading), [staticLoading]);
-  useEffect(() => console.log("pending:", pending, children), [pending]);
-  useEffect(() => console.log("loading:", loading), [loading]);
-
-  const startAnimation = useCallback(() => {
-    if (disabled || loading || isAnimating || !isMount) return;
-    setIsAnimating(true);
+  const handleClick = useCallback(() => {
+    if (disabled || loading || !isMount) return;
+    onClick?.();
+    isAnimatingRef.current = true;
     waveController
       .start(waveVariants.click)
       .then(() => waveController.start(waveVariants.blur))
       .then(() => waveController.start(waveVariants.hidden))
-      .then(() => setIsAnimating(false));
+      .then(() => (isAnimatingRef.current = false));
     btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
-  }, [disabled, loading, isAnimating, waveController, btnController]);
-
-  const handleClick = () => {
-    startAnimation();
-    onClick?.();
-  };
+  }, [disabled, loading, isMount]);
 
   const btnProps = {
     ...(!skipAnimation && { initial: "hidden" }),
     animate: btnController,
     exit: "hidden",
   };
+
   const waveProps = { initial: "hidden", animate: waveController, exit: "hidden" };
 
   return (
@@ -102,12 +96,11 @@ const Button = (
     >
       {/* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */}
       <motion.div className={cn({ "w-full": fullWidth })} variants={btnVariants} {...btnProps}>
-        <motion.button
+        <button
           ref={ref}
           style={{ ...style }}
           className={cn(
             "relative row-center overflow-hidden",
-            { "pointer-events-none": isAnimating },
             buttonStyles({
               buttonRound,
               buttonStyle,
@@ -133,7 +126,7 @@ const Button = (
           />
           {loading ? <LoadingOutlined className="mr-2" /> : null}
           <div className={cn("select-none min-w-max")}>{children}</div>
-        </motion.button>
+        </button>
       </motion.div>
     </Tooltip>
   );
