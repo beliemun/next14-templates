@@ -28,7 +28,7 @@ export const SignUpForm = () => {
         />
       </FormItem>
       <FormItem label="비밀번호" required>
-        <Input
+        <Input.Password
           name={"password"}
           size={"large"}
           placeholder="비밀번호 입력"
@@ -37,12 +37,13 @@ export const SignUpForm = () => {
         />
       </FormItem>
       <FormItem label="비밀번호 확인" required>
-        <Input
+        <Input.Password
           name={"confirm_password"}
+          type={"password"}
           size={"large"}
           placeholder="비밀번호 다시 입력"
           defaultValue={"1234"}
-          errors={state?.fieldErrors.confirm_passwor}
+          errors={state?.fieldErrors.confirm_password}
         />
       </FormItem>
       <Button fullWidth buttonSize="default" skipAnimation>
