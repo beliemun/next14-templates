@@ -601,7 +601,7 @@ export const buttonStyles = ({
   }
   // Button Loading
   if (loading) {
-    styles.push("pointer-events-none select-none");
+    styles.push("pointer-events-none select-none opacity-50");
   }
   return styles.join(" ");
 };

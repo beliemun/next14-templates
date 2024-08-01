@@ -3,12 +3,12 @@
 import { Animate, Text } from "@/components/atoms";
 import { cn } from "@/styles";
 import { theme } from "antd";
-import { BottomButtons, SignInForm } from "./_components";
+import { BottomButtons, SignInExtrForm, SignInForm } from "./_components";
 import { Lottie } from "@/assets/lotties";
 
 export default function SingInPage() {
   const {
-    token: { colorBgBase, colorBorder, colorBgContainer, sizeMD },
+    token: { colorBgBase, colorBorder, colorBgContainer },
   } = theme.useToken();
 
   return (
@@ -19,7 +19,7 @@ export default function SingInPage() {
             border: `1px solid ${colorBorder}`,
             backgroundColor: colorBgContainer,
           }}
-          className="col-center w-[480px] h-[640px] rounded-2xl p-8 shadow"
+          className="col-center max-w-md w-full  rounded-2xl p-8 shadow"
         >
           <Animate type="show-up">
             <div className={cn("col-center size-full")}>
@@ -30,6 +30,7 @@ export default function SingInPage() {
                 <Lottie name="signInLottie" size={240} />
               </Animate>
               <SignInForm />
+              <SignInExtrForm />
             </div>
           </Animate>
         </div>

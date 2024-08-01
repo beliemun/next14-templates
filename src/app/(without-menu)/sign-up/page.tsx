@@ -1,9 +1,9 @@
 "use client";
 
 import { Animate, Text } from "@/components/atoms";
-import { cn } from "@/styles";
 import { theme } from "antd";
-import { BottomButtons, SignUpForm } from "./_components";
+import { BottomButtons, SignUpExtrForm, SignUpForm } from "./_components";
+import { cn } from "@/styles";
 
 export default function SingUpPage() {
   const {
@@ -18,7 +18,7 @@ export default function SingUpPage() {
             border: `1px solid ${colorBorder}`,
             backgroundColor: colorBgContainer,
           }}
-          className="col-center w-full f-full rounded-2xl p-8 shadow "
+          className="col-center max-w-md w-full rounded-2xl p-8 shadow"
         >
           <Animate>
             <div className={cn("col-center size-full")}>
@@ -26,6 +26,7 @@ export default function SingUpPage() {
                 새로운 계정을 생성합니다 😀
               </Text>
               <SignUpForm />
+              <SignUpExtrForm />
             </div>
           </Animate>
         </div>

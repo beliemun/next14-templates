@@ -7,6 +7,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { ButtonProps } from "./types";
 import { motion, Variants, useAnimation, MotionProps } from "framer-motion";
 import { Tooltip } from "@/components/atoms";
+import { useFormStatus } from "react-dom";
 
 const btnVariants: Variants = {
   hidden: { scale: 0.9, opacity: 0 },
@@ -42,7 +43,7 @@ const Button = (
     buttonColor = "primary",
     fullWidth,
     disabled,
-    loading,
+    loading: staticLoading,
     tooltipTitle,
     tooltipStyle,
     tooltipPlacement,
@@ -57,11 +58,17 @@ const Button = (
   const [isAnimating, setIsAnimating] = useState(false);
   const btnController = useAnimation();
   const waveController = useAnimation();
+  const { pending } = useFormStatus();
+  const loading = pending || staticLoading;
 
   useEffect(() => {
     setIsMount(true);
     btnController.start(btnVariants.visible);
   }, []);
+
+  useEffect(() => console.log("staticLoading:", staticLoading), [staticLoading]);
+  useEffect(() => console.log("pending:", pending, children), [pending]);
+  useEffect(() => console.log("loading:", loading), [loading]);
 
   const startAnimation = useCallback(() => {
     if (disabled || loading || isAnimating || !isMount) return;
