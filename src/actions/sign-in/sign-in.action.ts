@@ -4,8 +4,8 @@ import { MIN_LENGTH_PASSWORD, MSG } from "@/lib/constants";
 import { z } from "zod";
 
 const formSchema = z.object({
-  email: z.string().toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
-  password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
+  email: z.string({ message: MSG.REQUIRED }).toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
+  password: z.string({ message: MSG.REQUIRED }).min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
 });
 
 const signInAction = async (prevAction: any, formData: FormData) => {

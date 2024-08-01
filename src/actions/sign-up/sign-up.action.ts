@@ -12,15 +12,17 @@ import { z } from "zod";
 const formScheme = z
   .object({
     username: z
-      .string()
+      .string({ message: MSG.REQUIRED })
       .min(MIN_LENGTH_USERNAME, MSG.MIN_LENGTH_USERNAME)
       .max(MAX_LENGTH_USERNAME, MSG.MAX_LENGTH_USERNAME)
       .toLowerCase()
       .trim()
       .refine(validateUserName, MSG.CAN_NOT_USE_USERNAME),
-    email: z.string().toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
-    password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
-    confirm_password: z.string().min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
+    email: z.string({ message: MSG.REQUIRED }).toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
+    password: z.string({ message: MSG.REQUIRED }).min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
+    confirm_password: z
+      .string({ message: MSG.REQUIRED })
+      .min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
   })
   .refine(validatePassword, {
     message: MSG.NOT_MATCH_PASSWORD,
