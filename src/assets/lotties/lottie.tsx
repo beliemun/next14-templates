@@ -3,23 +3,20 @@
 import { CSSProperties } from "styled-components";
 import loadingLottie from "./loading.json";
 import signInLottie from "./sign-in.json";
-import signUpLottie from "./sign-up.json";
 
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Loading } from "@/components/atoms";
 const DotLottieReact = dynamic(
   () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
   { ssr: false, loading: () => <>Loading..</> }
 );
 
-type LottieName = "loadingLottie" | "signInLottie" | "signUpLottie";
+type LottieName = "loadingLottie" | "signInLottie";
 
 const LottieType: Record<LottieName, any> = {
   loadingLottie,
   signInLottie,
-  signUpLottie,
 };
 
 interface LottieProps {

@@ -17,6 +17,7 @@ export const SignInForm = () => {
           size={"large"}
           addonBefore={<UserOutlined />}
           placeholder="여기에 아이디를 입력"
+          autoComplete="username"
           defaultValue={"test@test.com"}
           errors={state?.fieldErrors.email}
           autoFocus
@@ -28,7 +29,8 @@ export const SignInForm = () => {
           size={"large"}
           addonBefore={<LockOutlined />}
           placeholder="여기에 비밀번호 입력"
-          defaultValue={"1234"}
+          autoComplete="password"
+          defaultValue={"12345678"}
           errors={state?.fieldErrors.password}
         />
       </FormItem>

@@ -21,7 +21,10 @@ export interface InputComponent
   OTP: ForwardRefExoticComponent<OTPProps & RefAttributes<OTPRef>>;
 }
 
-const Input = ({ style, className, errors, ...rest }: InputProps, ref: ForwardedRef<InputRef>) => {
+const Input = (
+  { style, className, errors, autoComplete, ...rest }: InputProps,
+  ref: ForwardedRef<InputRef>
+) => {
   return (
     <ConfigProvider>
       <InputAntd ref={ref} style={{ ...style }} className={cn(className)} {...rest} />

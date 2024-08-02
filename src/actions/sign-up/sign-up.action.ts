@@ -6,8 +6,16 @@ import {
   MIN_LENGTH_USERNAME,
   MSG,
 } from "@/lib/constants";
-import { validatePassword, validateUserName } from "@/lib/validations";
+import client from "@/lib/prisma";
+import {
+  mustNotExistEmail,
+  mustNotExistUserName,
+  validatePassword,
+  validateUserName,
+} from "@/validations/users";
 import { z } from "zod";
+import bcrypt from "bcrypt";
+import { signUserIn } from "@/lib/session";
 
 const formScheme = z
   .object({
@@ -25,22 +33,40 @@ const formScheme = z
       .min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
   })
   .refine(validatePassword, {
-    message: MSG.NOT_MATCH_PASSWORD,
+    message: MSG.NOT_MATCHED_PASSWORD,
     path: ["confirm_password"],
+  })
+  .refine(mustNotExistUserName, {
+    message: MSG.EXIST_USERNAME,
+    path: ["username"],
+  })
+  .refine(mustNotExistEmail, {
+    message: MSG.USED_EMAIL,
+    path: ["email"],
   });
 
 export const singUpAction = async (prevAction: any, formData: FormData) => {
-  const data = {
+  const origin = {
     username: formData.get("username"),
     email: formData.get("email"),
     password: formData.get("password"),
     confirm_password: formData.get("confirm_password"),
   };
-  const result = formScheme.safeParse(data);
-  if (result.error) {
-    console.log(result.error.flatten());
-    return result.error.flatten();
+  const { error, data } = await formScheme.safeParseAsync(origin);
+  if (error) {
+    return error.flatten();
   } else {
-    return;
+    const hassPassword = await bcrypt.hash(data.password, 12);
+    const user = await client.user.create({
+      data: {
+        username: data.username,
+        email: data.email,
+        password: hassPassword,
+      },
+      select: {
+        id: true,
+      },
+    });
+    signUserIn({ id: user.id, url: "/sign-in?greeting=true" });
   }
 };
