@@ -15,7 +15,6 @@ export const SignUpForm = () => {
           size={"large"}
           placeholder="이름을 입력"
           autoComplete="username"
-          defaultValue={"Brian"}
           errors={state?.fieldErrors.username}
         />
       </FormItem>
@@ -25,7 +24,6 @@ export const SignUpForm = () => {
           size={"large"}
           placeholder="이메일을 입력"
           autoComplete="email"
-          defaultValue={"burngrit@icloud.com"}
           errors={state?.fieldErrors.email}
         />
       </FormItem>
@@ -35,7 +33,6 @@ export const SignUpForm = () => {
           size={"large"}
           placeholder="비밀번호 입력"
           autoComplete="password"
-          defaultValue={"1234"}
           errors={state?.fieldErrors.password}
         />
       </FormItem>
@@ -46,7 +43,6 @@ export const SignUpForm = () => {
           size={"large"}
           placeholder="비밀번호 다시 입력"
           autoComplete="conform_password"
-          defaultValue={"1234"}
           errors={state?.fieldErrors.confirm_password}
         />
       </FormItem>

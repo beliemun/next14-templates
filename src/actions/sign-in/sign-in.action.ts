@@ -13,8 +13,8 @@ const formSchema = z
     email: z.string({ message: MSG.REQUIRED }).toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
     password: z.string({ message: MSG.REQUIRED }).min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
   })
-  .refine(mustExistEmail, { message: MSG.NOT_EXISTED_EMAIL, path: ["email"] })
-  .refine(comparePassword, { message: MSG.WRONG_PASSWORD, path: ["password"] });
+  .superRefine(mustExistEmail)
+  .superRefine(comparePassword);
 
 const signInAction = async (prevAction: any, formData: FormData) => {
   const ogigin = {

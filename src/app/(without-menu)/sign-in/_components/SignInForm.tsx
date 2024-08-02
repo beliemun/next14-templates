@@ -1,7 +1,7 @@
 "use client";
 
 import { signInAction } from "@/actions/sign-in";
-import { Button, Input, Text } from "@/components/atoms";
+import { Button, Input } from "@/components/atoms";
 import { Form, FormItem } from "@/components/molecules";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useFormState } from "react-dom";
@@ -18,7 +18,7 @@ export const SignInForm = () => {
           addonBefore={<UserOutlined />}
           placeholder="여기에 아이디를 입력"
           autoComplete="username"
-          defaultValue={"test@test.com"}
+          defaultValue={"burngrit@icloud.com"}
           errors={state?.fieldErrors.email}
           autoFocus
         />

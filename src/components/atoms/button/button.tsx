@@ -65,7 +65,8 @@ const Button = (
   useEffect(() => {
     setIsMount(true);
     btnController.start(btnVariants.visible);
-  }, [btnController]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleClick = useCallback(() => {
     if (disabled || loading || !isMount) return;

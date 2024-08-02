@@ -11,10 +11,12 @@ export default function IntroductionPage() {
   useEffect(() => {
     (async () => {
       const user = await getUser();
+      console.log(user);
       if (user) {
         messageApi.info(`${user.username}님 환영합니다! 🤗`);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

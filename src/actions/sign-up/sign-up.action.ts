@@ -16,7 +16,9 @@ import {
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import { signUserIn } from "@/lib/session";
+import { redirect } from "next/navigation";
 
+// superRefine은 커스텀 검증만 생략하며, 개별 검증은 적용되지 않는다. (개별 검증의 실행이 superRefine보다 먼저 실행된다.)
 const formScheme = z
   .object({
     username: z
@@ -25,25 +27,16 @@ const formScheme = z
       .max(MAX_LENGTH_USERNAME, MSG.MAX_LENGTH_USERNAME)
       .toLowerCase()
       .trim()
-      .refine(validateUserName, MSG.CAN_NOT_USE_USERNAME),
+      .superRefine(validateUserName),
     email: z.string({ message: MSG.REQUIRED }).toLowerCase().email(MSG.INVALIED_TPYE_EMAIL),
     password: z.string({ message: MSG.REQUIRED }).min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
     confirm_password: z
       .string({ message: MSG.REQUIRED })
       .min(MIN_LENGTH_PASSWORD, MSG.MIN_LENGTH_PASSWORD),
   })
-  .refine(validatePassword, {
-    message: MSG.NOT_MATCHED_PASSWORD,
-    path: ["confirm_password"],
-  })
-  .refine(mustNotExistUserName, {
-    message: MSG.EXIST_USERNAME,
-    path: ["username"],
-  })
-  .refine(mustNotExistEmail, {
-    message: MSG.USED_EMAIL,
-    path: ["email"],
-  });
+  .superRefine(validatePassword)
+  .superRefine(mustNotExistUserName)
+  .superRefine(mustNotExistEmail);
 
 export const singUpAction = async (prevAction: any, formData: FormData) => {
   const origin = {
@@ -67,6 +60,6 @@ export const singUpAction = async (prevAction: any, formData: FormData) => {
         id: true,
       },
     });
-    signUserIn({ id: user.id, url: "/sign-in?greeting=true" });
+    redirect("/sign-in?greeting=true");
   }
 };

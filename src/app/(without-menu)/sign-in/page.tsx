@@ -6,7 +6,6 @@ import { BottomButtons, SignInExtrForm, SignInForm } from "./_components";
 import { Lottie } from "@/assets/lotties";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
-import { useAlertStore } from "@/stores/useAlertStore";
 
 export default function SingInPage({ searchParams }: any) {
   const [meesageApi, contextHolder] = Message.useMessage();
@@ -18,6 +17,7 @@ export default function SingInPage({ searchParams }: any) {
     if (searchParams.greeting) {
       meesageApi.success("계정이 생성되었습니다. 로그인 해주세요.");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export default function SingInPage({ searchParams }: any) {
                 로그인이 필요해요 😗
               </Text>
               <Animate type="fall-down">
-                <Lottie name="signInLottie" size={240} />
+                <Lottie name="signIn" style={{ width: 240, height: 240 }} />
               </Animate>
               <SignInForm />
               <SignInExtrForm />

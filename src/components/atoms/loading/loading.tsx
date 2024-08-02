@@ -12,7 +12,7 @@ interface LoadingProps {
 export const Loading = ({ style, calssName, loadingMessage }: LoadingProps) => {
   return (
     <div style={{ ...style }} className={cn("relative col-center min-w-32", calssName)}>
-      <Lottie name="loadingLottie" size={128} />
+      <Lottie name="loading" style={{ width: 128, height: 128 }} />
       {loadingMessage ? (
         <Text type="base-semibold" color="description">
           {loadingMessage}
