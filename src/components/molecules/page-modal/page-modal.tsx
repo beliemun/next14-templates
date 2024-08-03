@@ -33,7 +33,7 @@ export const PageModal = ({
   const [visible, setVisible] = useState(true);
   const { isFullWidth, setIsFullWidth } = useLayoutStore();
   const { isDarkMode } = useDarkModeStore();
-  const { colorBgBase, colorBorder } = theme.useToken().token;
+  const { colorBgContainer, colorBorder } = theme.useToken().token;
 
   const handleClose = () => {
     setVisible(false);
@@ -58,7 +58,7 @@ export const PageModal = ({
             <motion.div
               variants={containerVariants}
               {...animationProps}
-              style={{ backgroundColor: colorBgBase, borderColor: colorBorder }}
+              style={{ backgroundColor: colorBgContainer, borderColor: colorBorder }}
               className="col-center w-[1280px] h-screen gap-2 border-x"
             >
               <Loading loadingMessage={loadingMessage} />
@@ -66,7 +66,7 @@ export const PageModal = ({
           ) : (
             <ResizableWapper ignoreBackgroundColor>
               <header
-                style={{ backgroundColor: colorBgBase, borderColor: colorBorder }}
+                style={{ backgroundColor: colorBgContainer, borderColor: colorBorder }}
                 className={cn("flex flex-row justify-between items-center h-28 px-8 border-b")}
               >
                 <motion.div variants={contentsVariants} {...animationProps}>
@@ -108,7 +108,7 @@ export const PageModal = ({
                 </div>
               </header>
               <main
-                style={{ backgroundColor: colorBgBase, height: "calc(100vh - 112px)" }}
+                style={{ backgroundColor: colorBgContainer, height: "calc(100vh - 112px)" }}
                 className="flex flex-col w-full p-8 overflow-auto"
               >
                 <motion.div variants={contentsVariants} {...animationProps}>

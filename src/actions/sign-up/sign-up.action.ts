@@ -15,7 +15,6 @@ import {
 } from "@/validations/users";
 import { z } from "zod";
 import bcrypt from "bcrypt";
-import { signUserIn } from "@/lib/session";
 import { redirect } from "next/navigation";
 
 // superRefine은 커스텀 검증만 생략하며, 개별 검증은 적용되지 않는다. (개별 검증의 실행이 superRefine보다 먼저 실행된다.)

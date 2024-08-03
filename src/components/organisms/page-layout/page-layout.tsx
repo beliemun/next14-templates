@@ -12,13 +12,13 @@ export const PageLayout = ({
   children?: React.ReactNode | undefined;
 }) => {
   const {
-    token: { colorBgBase, colorText, colorBorder },
+    token: { colorText, colorBorder, colorBgContainer },
   } = theme.useToken();
   return (
     <Layout className={"col-flex overflow-hidden"}>
       <Title
         type="h6-semibold"
-        style={{ color: colorText, backgroundColor: colorBgBase }}
+        style={{ color: colorText, backgroundColor: colorBgContainer }}
         className="flex flex-row justify-start items-center h-20 p-8"
       >
         {title}
@@ -26,7 +26,7 @@ export const PageLayout = ({
       <Layout
         style={{
           color: colorText,
-          backgroundColor: colorBgBase,
+          backgroundColor: colorBgContainer,
           minHeight: "calc(100vh - 80px)",
           borderTopWidth: "1px",
           borderColor: colorBorder,

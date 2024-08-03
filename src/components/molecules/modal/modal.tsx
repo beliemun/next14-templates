@@ -24,7 +24,7 @@ export const Modal = ({
   const [visible, setVisible] = useState(true);
 
   const { isDarkMode } = useDarkModeStore();
-  const { colorBgBase, boxShadow, colorText } = theme.useToken().token;
+  const { colorBgContainer, boxShadow, colorText } = theme.useToken().token;
 
   const handleClose = () => {
     setVisible(false);
@@ -50,7 +50,7 @@ export const Modal = ({
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
+              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
               className={cn(`col-center justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
               layoutId="modal-layout"
             >
@@ -61,7 +61,7 @@ export const Modal = ({
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
+              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
               className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
               layoutId="modal-layout"
             >

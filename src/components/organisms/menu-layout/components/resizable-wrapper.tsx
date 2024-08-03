@@ -16,7 +16,7 @@ interface ResizableWapperProps {
 
 export const ResizableWapper = ({ children, ignoreBackgroundColor }: ResizableWapperProps) => {
   const {
-    token: { colorBorder },
+    token: { colorBorder, colorBgBase },
   } = theme.useToken();
   const { isDarkMode } = useDarkModeStore();
   const { isFullWidth } = useLayoutStore();
@@ -26,7 +26,7 @@ export const ResizableWapper = ({ children, ignoreBackgroundColor }: ResizableWa
         backgroundColor: ignoreBackgroundColor
           ? "transparent"
           : isDarkMode
-          ? "rgba(30, 30, 30, 0.85)"
+          ? colorBgBase
           : "rgba(240, 240, 240, 0.85)",
       }}
       className={cn("fixed col-center w-full h-full")}
@@ -35,9 +35,9 @@ export const ResizableWapper = ({ children, ignoreBackgroundColor }: ResizableWa
         $isDarkMode={isDarkMode}
         $isFullWidth={isFullWidth}
         $colorBorder={colorBorder}
+        style={{ borderColor: colorBorder }}
         className={cn(
-          "w-full h-screen transition-all duration-200 ease-in-out overflow-auto",
-          ignoreBackgroundColor ? "border-x" : "shadow-lg"
+          "w-full h-screen transition-all duration-200 ease-in-out overflow-auto border-x"
         )}
       >
         {children}
@@ -88,8 +88,4 @@ const ScrollProvider = styled.div<{
       : css`
           max-width: 1280px;
         `}
-  ${({ $colorBorder }) => css`
-    border-left: 1px solid ${$colorBorder}
-    border-right: 1px solid ${$colorBorder}
-  `}
 `;

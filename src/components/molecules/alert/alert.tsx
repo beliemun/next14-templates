@@ -22,7 +22,7 @@ export const Alert = () => {
     onDismiss,
   } = useAlertStore();
   const { isDarkMode } = useDarkModeStore();
-  const { colorBgBase, boxShadow, colorText } = theme.useToken().token;
+  const { colorBgContainer, boxShadow, colorText } = theme.useToken().token;
   return (
     <AnimatePresence>
       {visible ? (
@@ -42,7 +42,7 @@ export const Alert = () => {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
+              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
               className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
             >
               <header className="flex flex-row justify-between items-center">
@@ -66,7 +66,7 @@ export const Alert = () => {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgBase, boxShadow, width: size }}
+              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
               className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
             >
               <header className="flex flex-row justify-between items-center">

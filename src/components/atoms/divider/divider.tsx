@@ -4,9 +4,9 @@ import { Divider as DividerAtnd, DividerProps as DividerAntdProps } from "antd";
 
 export interface DividerProps extends DividerAntdProps {}
 
-export const Divider = ({ className, children, ...rest }: DividerProps) => {
+export const Divider = ({ style, className, children, ...rest }: DividerProps) => {
   return (
-    <DividerAtnd className={cn(className)} {...rest}>
+    <DividerAtnd style={{ paddingTop: 9, ...style }} className={cn(className)} {...rest}>
       {children ? capitalizeFirstLetter(String(children)) : null}
     </DividerAtnd>
   );
