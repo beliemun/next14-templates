@@ -1,5 +1,10 @@
 import { Divider, Pagination, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pagination",
+};
 
 export default function PaginationPage() {
   return (

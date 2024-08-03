@@ -13,8 +13,8 @@ export const turnLeftVariants: Variants = {
 };
 
 export const falldownVariants: Variants = {
-  initial: { opacity: 0, y: -100 },
-  animate: { opacity: 1, y: 10, transition: { type: "spring", stiffness: 300, delay: 0.5 } },
+  initial: { opacity: 0, y: -50 },
+  animate: { opacity: 1, y: 10, transition: { type: "spring", stiffness: 400, delay: 0.3 } },
 };
 
 export const animations: Record<AnimationType, Variants> = {

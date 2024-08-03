@@ -72,12 +72,14 @@ const Button = (
     if (disabled || loading || !isMount) return;
     onClick?.();
     isAnimatingRef.current = true;
+    btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
     waveController
       .start(waveVariants.click)
       .then(() => waveController.start(waveVariants.blur))
       .then(() => waveController.start(waveVariants.hidden))
-      .then(() => (isAnimatingRef.current = false));
-    btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
+      .then(() => {
+        isAnimatingRef.current = false;
+      });
   }, [disabled, loading, isMount, onClick, btnController, waveController]);
 
   const btnProps = {

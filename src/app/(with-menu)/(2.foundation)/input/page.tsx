@@ -1,4 +1,4 @@
-import { Card, Divider, Input, Section, Select, Space, Tooltip } from "@/components/atoms";
+import { Card, Input, Section, Select, Space, Tooltip } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/lib/colors";
 import {
@@ -11,6 +11,7 @@ import {
   SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { Metadata } from "next";
 
 const selectBefore = (
   <Select
@@ -32,6 +33,10 @@ const selectAfter = (
     ]}
   />
 );
+
+export const metadata: Metadata = {
+  title: "Input",
+};
 
 export default async function InputPage() {
   return (

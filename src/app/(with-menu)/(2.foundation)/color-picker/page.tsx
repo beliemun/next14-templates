@@ -1,6 +1,11 @@
 import { ColorPicker, Section, Space, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colors } from "@/lib/colors";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Color Picker",
+};
 
 export default function ColoPickerPage() {
   return (

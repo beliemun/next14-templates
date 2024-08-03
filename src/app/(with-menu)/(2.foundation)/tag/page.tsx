@@ -2,6 +2,11 @@ import { Divider, Space, Tag } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { colorList } from "@/lib/colors";
 import { SyncOutlined } from "@ant-design/icons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tag",
+};
 
 export default function TagPage() {
   return (

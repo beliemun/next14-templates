@@ -3,8 +3,6 @@
 import { CSSProperties } from "styled-components";
 import loading from "./loading.json";
 import signIn from "./sign-in.json";
-
-import { cn } from "@/lib/utils";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 type LottieName = "loading" | "signIn";

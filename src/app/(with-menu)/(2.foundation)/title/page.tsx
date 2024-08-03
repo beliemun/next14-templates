@@ -1,5 +1,10 @@
 import { Card, Section, Title } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Title",
+};
 
 export default function TitlePage() {
   return (

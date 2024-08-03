@@ -1,5 +1,10 @@
 import { Card, Section, Text } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Text",
+};
 
 export default function TextPage() {
   return (

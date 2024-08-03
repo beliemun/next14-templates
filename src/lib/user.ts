@@ -14,7 +14,7 @@ const getUser = async () => {
       return user;
     }
   }
-  notFound();
+  // notFound();
 };
 
 export default getUser;

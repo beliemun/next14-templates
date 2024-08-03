@@ -112,10 +112,7 @@ export const comparePassword = async (
       password: true,
     },
   });
-  console.log(password);
-  console.log(user?.password);
-  const result = await compare(password, user?.password ?? "");
-  console.log(result);
+
   if (!(await compare(password, user?.password ?? ""))) {
     ctx.addIssue({
       code: "custom",

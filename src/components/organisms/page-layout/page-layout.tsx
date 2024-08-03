@@ -1,9 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atoms";
-import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { Layout, theme } from "antd";
-import styled from "styled-components";
 
 export const PageLayout = ({
   title,
@@ -13,7 +11,6 @@ export const PageLayout = ({
   className?: string | undefined;
   children?: React.ReactNode | undefined;
 }) => {
-  const { isDarkMode } = useDarkModeStore();
   const {
     token: { colorBgBase, colorText, colorBorder },
   } = theme.useToken();

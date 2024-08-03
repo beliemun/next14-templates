@@ -1,7 +1,12 @@
 import { Avatar, Card, Divider, Section, Space } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { Metadata } from "next";
 
 const URL = "https://cdn.pixabay.com/photo/2023/09/26/17/32/woman-8277925_1280.jpg";
+
+export const metadata: Metadata = {
+  title: "Avatar",
+};
 
 export default function AvatarPage() {
   return (

@@ -2,6 +2,11 @@ import { PageLayout } from "@/components/organisms";
 import { Section } from "@/components/atoms";
 import { ColorPaletteItem } from "./_components/color-palette-item";
 import { colorList } from "@/lib/colors";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Colors",
+};
 
 export default function ColorPage() {
   return (

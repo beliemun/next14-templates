@@ -1,5 +1,10 @@
 import { Button, Card, Section, Tooltip } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tooltip",
+};
 
 export default function TooltipPage() {
   return (

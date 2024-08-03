@@ -3,6 +3,11 @@ import { buttonTypes } from "@/components/atoms/button/types";
 import { PageLayout } from "@/components/organisms";
 import { colorList } from "@/lib/colors";
 import { HomeOutlined } from "@ant-design/icons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Button",
+};
 
 export default function ButtonPage() {
   return (

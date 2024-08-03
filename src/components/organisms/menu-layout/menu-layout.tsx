@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { menu } from "./data";
 import { MenuHeader } from "./components/menu-header";
@@ -8,13 +8,20 @@ import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
 import { theme } from "antd";
 import { Layout, Menu } from "@/components/atoms";
 import "./styles.css";
+import { User } from "@prisma/client";
+import useUserStore from "@/stores/useUserStore/useUserStore";
 
-export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
+interface MenuLayoutProps {
+  user?: User;
+  children: React.ReactNode;
+}
+
+export const MenuLayout = ({ user, children }: MenuLayoutProps) => {
   const router = useRouter();
   const [selectedKey, setSelectedKey] = useState("introduction");
   const [collapsed, setCollapsed] = useState(false);
   const [isFullWidth, setIsFullWitdh] = useState(false);
-
+  const { setUser } = useUserStore();
   const {
     token: { colorBorder },
   } = theme.useToken();
@@ -27,6 +34,8 @@ export const MenuLayout = ({ children }: { children: React.ReactNode }) => {
     setCollapsed((prev) => !prev);
   };
   const handleResize = () => setIsFullWitdh((prev) => !prev);
+
+  useEffect(() => setUser(user), [user]);
 
   return (
     <Layout>

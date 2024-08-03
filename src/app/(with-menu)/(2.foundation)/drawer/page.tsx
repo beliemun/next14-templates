@@ -1,6 +1,11 @@
 import { Divider, Section } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { BasicDrawer, InnerDrawer } from "./_components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Drawer",
+};
 
 export default function DrawerPage() {
   return (

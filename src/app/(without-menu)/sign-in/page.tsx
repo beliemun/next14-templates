@@ -6,11 +6,13 @@ import { BottomButtons, SignInExtrForm, SignInForm } from "./_components";
 import { Lottie } from "@/assets/lotties";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 
 export default function SingInPage({ searchParams }: any) {
   const [meesageApi, contextHolder] = Message.useMessage();
+  const { isDarkMode } = useDarkModeStore();
   const {
-    token: { colorBgBase, colorBorder, colorBgContainer },
+    token: { colorBgBase, colorBorder, colorBgContainer, colorBgContainerDisabled },
   } = theme.useToken();
 
   useEffect(() => {
@@ -21,7 +23,10 @@ export default function SingInPage({ searchParams }: any) {
   }, []);
 
   return (
-    <div style={{ backgroundColor: colorBgBase }} className="col-center w-full min-h-screen">
+    <div
+      style={{ backgroundColor: isDarkMode ? colorBgBase : colorBgContainerDisabled }}
+      className="col-center w-full min-h-screen"
+    >
       {contextHolder}
       <Animate type="turn-left">
         <div
@@ -29,7 +34,7 @@ export default function SingInPage({ searchParams }: any) {
             border: `1px solid ${colorBorder}`,
             backgroundColor: colorBgContainer,
           }}
-          className="col-center max-w-md w-full  rounded-2xl p-8 shadow"
+          className="col-center max-w-md w-full  rounded-2xl p-8"
         >
           <Animate type="show-up">
             <div className={cn("col-center size-full")}>

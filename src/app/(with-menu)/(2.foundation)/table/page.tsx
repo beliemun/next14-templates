@@ -5,6 +5,12 @@ import {
   FilterTableComponent,
   RowSelectionTableComponent,
 } from "./_components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Table",
+};
+
 export default function TablePage() {
   return (
     <PageLayout title="<Table />">
