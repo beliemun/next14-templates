@@ -4,7 +4,7 @@ import { Layout } from "@/components/atoms";
 import getUser from "@/lib/user";
 import { getSession } from "@/lib/session";
 
-const getCachedGetUser = unstable_cache(getUser, ["get-user"], { tags: ["get-users"] });
+const getCachedGetUser = unstable_cache(getUser, ["get-user"]);
 
 export const MenuLayout = async ({ children }: { children: React.ReactNode }) => {
   const session = await getSession();

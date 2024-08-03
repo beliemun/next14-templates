@@ -10,11 +10,11 @@ import { MenuFooter } from "./menu-footer";
 import { menu } from "../data";
 import { useLayoutStore } from "@/stores/useLayoutStore";
 import { User } from "@prisma/client";
-import { useUserStore } from "@/stores/useUserStore";
+import { useSignedInUserStore } from "@/stores/useSignedInUserStore";
 
 export const Sider = ({ user }: { user: User | null }) => {
   const router = useRouter();
-  const { setUser } = useUserStore();
+  const { signedInUser, setSignedInUser } = useSignedInUserStore();
   const [messageApi, contextHolder] = Message.useMessage();
   const [selectedKey, setSelectedKey] = useState("introduction");
   const { isCollapsed, isFullWidth, setIsCollapsed, setIsFullWidth } = useLayoutStore();
@@ -32,9 +32,13 @@ export const Sider = ({ user }: { user: User | null }) => {
   const handleResize = () => setIsFullWidth(!isFullWidth);
 
   useEffect(() => {
-    setUser(user);
-    if (user) {
-      messageApi.success("로그인 되었습니다");
+    if (user === undefined) {
+      setSignedInUser(user);
+    } else {
+      if (user?.id !== signedInUser?.id) {
+        messageApi.success("로그인 되었습니다");
+        setSignedInUser(user);
+      }
     }
   }, [user]);
 

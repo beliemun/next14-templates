@@ -4,8 +4,18 @@ import { Button, Checkbox, Input, Radio, Select } from "@/components/atoms";
 import { Form, FormItem } from "@/components/molecules";
 import { FormEvent } from "react";
 import { radioOptions, selectOptions } from "./data";
+import { AlertProps, useAlertStore } from "@/stores/useAlertStore";
 
 export const ClientComponents = () => {
+  const { show } = useAlertStore();
+
+  const handleShow = () => {
+    show({
+      title: "Form example",
+      message: "Here is form message",
+    });
+  };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
@@ -90,7 +100,7 @@ export const ClientComponents = () => {
         <Input.TextArea style={{ minHeight: 100 }} placeholder="placeholder" />
       </FormItem>
       <div className="flex flex-row-reverse max-w-[640px] gap-4">
-        <Button>Submit</Button>
+        <Button onClick={handleShow}>Submit</Button>
         <Button buttonStyle="outline">Cancle</Button>
       </div>
     </Form>

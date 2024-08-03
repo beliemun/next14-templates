@@ -1,8 +1,8 @@
 "use client";
 
 import { Modal, ModalProps } from "@/components/molecules";
-import { BasicTransfer } from "../../transfer/_components";
 import { useEffect, useState } from "react";
+import { BasicTransfer } from "../../transfer/_components/base-transfer";
 
 export const ModalComponent = (props: ModalProps) => {
   const [loading, setLoading] = useState(true);
