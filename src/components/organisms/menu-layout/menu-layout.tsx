@@ -1,87 +1,19 @@
-"use client";
+import { unstable_cache } from "next/cache";
+import { Contents, ResizableWapper, Sider } from "./components";
+import { Layout } from "@/components/atoms";
+import getUser from "@/lib/user";
+import { getSession } from "@/lib/session";
 
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { menu } from "./data";
-import { MenuHeader } from "./components/menu-header";
-import { MenuFooter, MenuWrapper, ResizableWapper } from "./components";
-import { theme } from "antd";
-import { Layout, Menu } from "@/components/atoms";
-import "./styles.css";
-import { User } from "@prisma/client";
-import useUserStore from "@/stores/useUserStore/useUserStore";
+const getCachedGetUser = unstable_cache(getUser, ["get-user"], { tags: ["get-users"] });
 
-interface MenuLayoutProps {
-  user?: User;
-  children: React.ReactNode;
-}
-
-export const MenuLayout = ({ user, children }: MenuLayoutProps) => {
-  const router = useRouter();
-  const [selectedKey, setSelectedKey] = useState("introduction");
-  const [collapsed, setCollapsed] = useState(false);
-  const [isFullWidth, setIsFullWitdh] = useState(false);
-  const { setUser } = useUserStore();
-  const {
-    token: { colorBorder },
-  } = theme.useToken();
-
-  const handleClickMenu = ({ key }: { key: string }) => {
-    setSelectedKey(key);
-    router.push(`/${key}`);
-  };
-  const handleCollapse = () => {
-    setCollapsed((prev) => !prev);
-  };
-  const handleResize = () => setIsFullWitdh((prev) => !prev);
-
-  useEffect(() => setUser(user), [user]);
-
+export const MenuLayout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await getSession();
+  const user = await getCachedGetUser(session);
   return (
     <Layout>
-      <ResizableWapper isFullWidth={isFullWidth}>
-        <Layout.Sider
-          className="hide-scrollbar"
-          theme={"light"}
-          collapsible
-          collapsed={collapsed}
-          width={256}
-          style={{
-            overflow: "auto",
-            height: "calc(100vh - 80px)",
-            position: "fixed",
-            paddingBottom: 48,
-            borderRight: `1px solid ${colorBorder}`,
-          }}
-          trigger={null}
-        >
-          <MenuHeader collapsed={collapsed} />
-          {menu.map(({ title, items }, index) => (
-            <MenuWrapper key={index} title={title} collapsed={collapsed}>
-              <Menu
-                theme="light"
-                mode="inline"
-                items={items}
-                defaultSelectedKeys={["alert"]}
-                selectedKeys={[selectedKey]}
-                onClick={handleClickMenu}
-                style={{ border: "none" }}
-              />
-            </MenuWrapper>
-          ))}
-          <MenuFooter
-            collapsed={collapsed}
-            isFullWidth={isFullWidth}
-            onCollapse={handleCollapse}
-            onResize={handleResize}
-          />
-        </Layout.Sider>
-        <Layout
-          className="transition-all duration-300 ease-out"
-          style={{ marginLeft: collapsed ? 80 : 256, overflow: "hidden" }}
-        >
-          {children}
-        </Layout>
+      <ResizableWapper>
+        <Sider user={user} />
+        <Contents>{children}</Contents>
       </ResizableWapper>
     </Layout>
   );

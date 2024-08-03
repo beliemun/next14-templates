@@ -9,6 +9,7 @@ import { ResizableWapper } from "@/components/organisms/menu-layout/components";
 import { cn } from "@/lib/utils";
 import { Button, Loading, Text, Title } from "@/components/atoms";
 import { CloseOutlined, ExpandAltOutlined, ShrinkOutlined } from "@ant-design/icons";
+import { useLayoutStore } from "@/stores/useLayoutStore";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,8 +31,7 @@ export const PageModal = ({
   onClose,
 }: PageModalProps) => {
   const [visible, setVisible] = useState(true);
-  const [isFullWidth, setIsFullWitdh] = useState(false);
-
+  const { isFullWidth, setIsFullWidth } = useLayoutStore();
   const { isDarkMode } = useDarkModeStore();
   const { colorBgBase, colorBorder } = theme.useToken().token;
 
@@ -39,7 +39,7 @@ export const PageModal = ({
     setVisible(false);
     setTimeout(() => onClose?.(), 500);
   };
-  const handleResize = () => setIsFullWitdh((prev) => !prev);
+  const handleResize = () => setIsFullWidth(!isFullWidth);
 
   return (
     <AnimatePresence>
@@ -64,7 +64,7 @@ export const PageModal = ({
               <Loading loadingMessage={loadingMessage} />
             </motion.div>
           ) : (
-            <ResizableWapper isFullWidth={isFullWidth} ignoreBackgroundColor>
+            <ResizableWapper ignoreBackgroundColor>
               <header
                 style={{ backgroundColor: colorBgBase, borderColor: colorBorder }}
                 className={cn("flex flex-row justify-between items-center h-28 px-8 border-b")}

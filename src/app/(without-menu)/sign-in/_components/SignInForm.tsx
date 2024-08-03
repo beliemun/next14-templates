@@ -30,7 +30,7 @@ export const SignInForm = () => {
           addonBefore={<LockOutlined />}
           placeholder="여기에 비밀번호 입력"
           autoComplete="password"
-          defaultValue={"12345678"}
+          defaultValue={"12341234"}
           errors={state?.fieldErrors.password}
         />
       </FormItem>

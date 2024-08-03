@@ -1,11 +1,10 @@
 "use server";
 
-import { notFound } from "next/navigation";
-import { getSession } from "./session";
 import client from "./prisma";
+import { SessionProps } from "./session";
+import { IronSession } from "iron-session";
 
-const getUser = async () => {
-  const session = await getSession();
+const getUser = async (session: IronSession<SessionProps>) => {
   if (session.id) {
     const user = await client.user.findUnique({
       where: { id: session.id },
@@ -14,7 +13,7 @@ const getUser = async () => {
       return user;
     }
   }
-  // notFound();
+  return null;
 };
 
 export default getUser;

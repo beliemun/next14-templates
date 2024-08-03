@@ -4,24 +4,22 @@ import { useDarkModeStore } from "@/stores/useDarkModeStore";
 import { cn } from "@/lib/utils";
 import { theme } from "antd";
 import styled, { css } from "styled-components";
+import { useLayoutStore } from "@/stores/useLayoutStore";
+import "../styles.css";
 
 export type LayoutResizeType = "1280px" | "100%";
 
 interface ResizableWapperProps {
   children: React.ReactNode;
-  isFullWidth: boolean;
   ignoreBackgroundColor?: boolean;
 }
 
-export const ResizableWapper = ({
-  children,
-  isFullWidth,
-  ignoreBackgroundColor,
-}: ResizableWapperProps) => {
+export const ResizableWapper = ({ children, ignoreBackgroundColor }: ResizableWapperProps) => {
   const {
     token: { colorBorder },
   } = theme.useToken();
   const { isDarkMode } = useDarkModeStore();
+  const { isFullWidth } = useLayoutStore();
   return (
     <div
       style={{

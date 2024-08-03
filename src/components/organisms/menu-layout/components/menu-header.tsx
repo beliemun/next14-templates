@@ -2,11 +2,13 @@ import { Button, Message, Text } from "@/components/atoms";
 import { signUserOut } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { useAlertStore } from "@/stores/useAlertStore";
+import { useLayoutStore } from "@/stores/useLayoutStore";
 import { useUserStore } from "@/stores/useUserStore";
 import { Divider, theme } from "antd";
 
-export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
+export const MenuHeader = () => {
   const { user } = useUserStore();
+  const { isCollapsed } = useLayoutStore();
   const { show, onDismiss } = useAlertStore();
   const [messageApi, contextHolder] = Message.useMessage();
   const {
@@ -51,11 +53,12 @@ export const MenuHeader = ({ collapsed }: { collapsed: boolean }) => {
               로그아웃
             </Button>
           </>
-        ) : (
+        ) : null}
+        {!user ? (
           <Text type="sm-normal" color="disabled">
             로그인 정보 없음
           </Text>
-        )}
+        ) : null}
       </div>
       <Divider style={{ marginTop: 0, marginBottom: 10, borderColor: colorBorder }} />
     </div>

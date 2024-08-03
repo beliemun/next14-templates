@@ -5,5 +5,5 @@ export interface UserProps {
 }
 
 export interface UserStore extends UserProps {
-  setUser: (user: User | undefined) => void;
+  setUser: (user: User | null) => void;
 }

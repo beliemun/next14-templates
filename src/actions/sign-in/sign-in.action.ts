@@ -4,6 +4,7 @@ import { MIN_LENGTH_PASSWORD, MSG } from "@/lib/constants";
 import client from "@/lib/prisma";
 import { getSession } from "@/lib/session";
 import { comparePassword, mustExistEmail } from "@/validations/users";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { z } from "zod";
@@ -36,7 +37,8 @@ const signInAction = async (prevAction: any, formData: FormData) => {
     });
     session.id = user!.id;
     session.save();
-    redirect("/");
+    revalidatePath("/introduction");
+    return redirect("/introduction");
   }
 };
 
