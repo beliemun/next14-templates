@@ -30,7 +30,7 @@ export const buttonStyles = ({
           "text-primary-500 bg-white border border-primary-500",
           "active:text-primary-600 active:border-primary-600",
           "hover:border-primary-400 hover:text-primary-400",
-          "dark:bg-black dark:hover:border-primary-400 dark:hover:text-primary-400 dark:actice:border-primary-600 dark:active:text-primary-600"
+          "dark:bg-transparent dark:hover:border-primary-400 dark:hover:text-primary-400 dark:actice:border-primary-600 dark:active:text-primary-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -67,7 +67,7 @@ export const buttonStyles = ({
           "text-slate-500 bg-white border border-slate-500",
           "active:text-slate-600 active:border-slate-600",
           "hover:border-slate-400 hover:text-slate-400",
-          "dark:bg-black dark:hover:border-slate-400 dark:hover:text-slate-400 dark:actice:border-slate-600 dark:active:text-slate-600"
+          "dark:bg-transparent dark:hover:border-slate-400 dark:hover:text-slate-400 dark:actice:border-slate-600 dark:active:text-slate-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -99,7 +99,7 @@ export const buttonStyles = ({
           "text-gray-500 bg-white border border-gray-500",
           "active:text-gray-600 active:border-gray-600",
           "hover:border-gray-400 hover:text-gray-400",
-          "dark:bg-black dark:hover:border-gray-400 dark:hover:text-gray-400 dark:actice:border-gray-600 dark:active:text-gray-600"
+          "dark:bg-transparent dark:hover:border-gray-400 dark:hover:text-gray-400 dark:actice:border-gray-600 dark:active:text-gray-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -131,7 +131,7 @@ export const buttonStyles = ({
           "text-red-500 bg-white border border-red-500",
           "active:text-red-600 active:border-red-600",
           "hover:border-red-400 hover:text-red-400",
-          "dark:bg-black dark:hover:border-red-400 dark:hover:text-red-400 dark:actice:border-red-600 dark:active:text-red-600"
+          "dark:bg-transparent dark:hover:border-red-400 dark:hover:text-red-400 dark:actice:border-red-600 dark:active:text-red-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -168,7 +168,7 @@ export const buttonStyles = ({
           "text-orange-500 bg-white border border-orange-500",
           "active:text-orange-600 active:border-orange-600",
           "hover:border-orange-400 hover:text-orange-400",
-          "dark:bg-black dark:hover:border-orange-400 dark:hover:text-orange-400 dark:actice:border-orange-600 dark:active:text-orange-600"
+          "dark:bg-transparent dark:hover:border-orange-400 dark:hover:text-orange-400 dark:actice:border-orange-600 dark:active:text-orange-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -205,7 +205,7 @@ export const buttonStyles = ({
           "text-yellow-500 bg-white border border-yellow-500",
           "active:text-yellow-600 active:border-yellow-600",
           "hover:border-yellow-400 hover:text-yellow-400",
-          "dark:bg-black dark:hover:border-yellow-400 dark:hover:text-yellow-400 dark:actice:border-yellow-600 dark:active:text-yellow-600"
+          "dark:bg-transparent dark:hover:border-yellow-400 dark:hover:text-yellow-400 dark:actice:border-yellow-600 dark:active:text-yellow-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -237,7 +237,7 @@ export const buttonStyles = ({
           "text-lime-500 bg-white border border-lime-500",
           "active:text-lime-600 active:border-lime-600",
           "hover:border-lime-400 hover:text-lime-400",
-          "dark:bg-black dark:hover:border-lime-400 dark:hover:text-lime-400 dark:actice:border-lime-600 dark:active:text-lime-600"
+          "dark:bg-transparent dark:hover:border-lime-400 dark:hover:text-lime-400 dark:actice:border-lime-600 dark:active:text-lime-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -274,7 +274,7 @@ export const buttonStyles = ({
           "text-green-500 bg-white border border-green-500",
           "active:text-green-600 active:border-green-600",
           "hover:border-green-400 hover:text-green-400",
-          "dark:bg-black dark:hover:border-green-400 dark:hover:text-green-400 dark:actice:border-green-600 dark:active:text-green-600"
+          "dark:bg-transparent dark:hover:border-green-400 dark:hover:text-green-400 dark:actice:border-green-600 dark:active:text-green-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -311,7 +311,7 @@ export const buttonStyles = ({
           "text-emerald-500 bg-white border border-emerald-500",
           "active:text-emerald-600 active:border-emerald-600",
           "hover:border-emerald-400 hover:text-emerald-400",
-          "dark:bg-black dark:hover:border-emerald-400 dark:hover:text-emerald-400 dark:actice:border-emerald-600 dark:active:text-emerald-600"
+          "dark:bg-transparent dark:hover:border-emerald-400 dark:hover:text-emerald-400 dark:actice:border-emerald-600 dark:active:text-emerald-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -343,7 +343,7 @@ export const buttonStyles = ({
           "text-teal-500 bg-white border border-teal-500",
           "active:text-teal-600 active:border-teal-600",
           "hover:border-teal-400 hover:text-teal-400",
-          "dark:bg-black dark:hover:border-teal-400 dark:hover:text-teal-400 dark:actice:border-teal-600 dark:active:text-teal-600"
+          "dark:bg-transparent dark:hover:border-teal-400 dark:hover:text-teal-400 dark:actice:border-teal-600 dark:active:text-teal-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -375,7 +375,7 @@ export const buttonStyles = ({
           "text-cyan-500 bg-white border border-cyan-500",
           "active:text-cyan-600 active:border-cyan-600",
           "hover:border-cyan-400 hover:text-cyan-400",
-          "dark:bg-black dark:hover:border-cyan-400 dark:hover:text-cyan-400 dark:actice:border-cyan-600 dark:active:text-cyan-600"
+          "dark:bg-transparent dark:hover:border-cyan-400 dark:hover:text-cyan-400 dark:actice:border-cyan-600 dark:active:text-cyan-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -407,7 +407,7 @@ export const buttonStyles = ({
           "text-blue-500 bg-white border border-blue-500",
           "active:text-blue-600 active:border-blue-600",
           "hover:border-blue-400 hover:text-blue-400",
-          "dark:bg-black dark:hover:border-blue-400 dark:hover:text-blue-400 dark:actice:border-blue-600 dark:active:text-blue-600"
+          "dark:bg-transparent dark:hover:border-blue-400 dark:hover:text-blue-400 dark:actice:border-blue-600 dark:active:text-blue-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -444,7 +444,7 @@ export const buttonStyles = ({
           "text-violet-500 bg-white border border-violet-500",
           "active:text-violet-600 active:border-violet-600",
           "hover:border-violet-400 hover:text-violet-400",
-          "dark:bg-black dark:hover:border-violet-400 dark:hover:text-violet-400 dark:actice:border-violet-600 dark:active:text-violet-600"
+          "dark:bg-transparent dark:hover:border-violet-400 dark:hover:text-violet-400 dark:actice:border-violet-600 dark:active:text-violet-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -481,7 +481,7 @@ export const buttonStyles = ({
           "text-purple-500 bg-white border border-purple-500",
           "active:text-purple-600 active:border-purple-600",
           "hover:border-purple-400 hover:text-purple-400",
-          "dark:bg-black dark:hover:border-purple-400 dark:hover:text-purple-400 dark:actice:border-purple-600 dark:active:text-purple-600"
+          "dark:bg-transparent dark:hover:border-purple-400 dark:hover:text-purple-400 dark:actice:border-purple-600 dark:active:text-purple-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -513,7 +513,7 @@ export const buttonStyles = ({
           "text-pink-500 bg-white border border-pink-500",
           "active:text-pink-600 active:border-pink-600",
           "hover:border-pink-400 hover:text-pink-400",
-          "dark:bg-black dark:hover:border-pink-400 dark:hover:text-pink-400 dark:actice:border-pink-600 dark:active:text-pink-600"
+          "dark:bg-transparent dark:hover:border-pink-400 dark:hover:text-pink-400 dark:actice:border-pink-600 dark:active:text-pink-600"
         )
       );
     } else if (buttonStyle === "ghost") {
@@ -545,7 +545,7 @@ export const buttonStyles = ({
           "text-rose-500 bg-white border border-rose-500",
           "active:text-rose-600 active:border-rose-600",
           "hover:border-rose-400 hover:text-rose-400",
-          "dark:bg-black dark:hover:border-rose-400 dark:hover:text-rose-400 dark:actice:border-rose-600 dark:active:text-rose-600"
+          "dark:bg-transparent dark:hover:border-rose-400 dark:hover:text-rose-400 dark:actice:border-rose-600 dark:active:text-rose-600"
         )
       );
     } else if (buttonStyle === "ghost") {
