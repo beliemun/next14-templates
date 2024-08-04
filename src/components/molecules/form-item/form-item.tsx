@@ -1,5 +1,5 @@
 import { CSSProperties, DetailedHTMLProps, forwardRef, LabelHTMLAttributes } from "react";
-import { Tooltip, Text } from "@/components/atoms";
+import { Tooltip, Text, Animate } from "@/components/atoms";
 import { TooltipPlacement } from "@/components/atoms/tooltip/types";
 import { TextType } from "@/components/atoms/text/types";
 import { QuestionCircleOutlined } from "@ant-design/icons";

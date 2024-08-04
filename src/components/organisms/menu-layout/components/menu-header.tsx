@@ -1,13 +1,15 @@
-import { Button, Message, Text } from "@/components/atoms";
+import { Animate, Button, Message, Text } from "@/components/atoms";
 import { signUserOut } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { useAlertStore } from "@/stores/useAlertStore";
 import { useLayoutStore } from "@/stores/useLayoutStore";
 import { useSignedInUserStore } from "@/stores/useSignedInUserStore";
-import { LogoutOutlined } from "@ant-design/icons";
+import { LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 import { Divider, theme } from "antd";
+import { useRouter } from "next/navigation";
 
 export const MenuHeader = () => {
+  const router = useRouter();
   const { signedInUser } = useSignedInUserStore();
   const { isCollapsed } = useLayoutStore();
   const { show, onDismiss } = useAlertStore();
@@ -36,6 +38,8 @@ export const MenuHeader = () => {
       ],
     });
   };
+  const handleSignIn = () => router.push("/sign-in");
+  const handleSignUp = () => router.push("/sign-up");
 
   const renderContents = () =>
     isCollapsed ? (
@@ -47,18 +51,23 @@ export const MenuHeader = () => {
             tooltipTitle="로그아웃"
             onClick={handleSignOut}
           >
-            <LogoutOutlined />
+            <LoginOutlined />
           </Button>
         ) : (
-          <Button buttonStyle="ghost" buttonColor="gray" disabled>
-            <LogoutOutlined />
+          <Button
+            buttonStyle="ghost"
+            buttonColor="gray"
+            onClick={handleSignIn}
+            tooltipTitle="로그인"
+          >
+            <LoginOutlined />
           </Button>
         )}
       </>
     ) : (
       <>
         {signedInUser ? (
-          <>
+          <Animate className="gap-2">
             <Text type="sm-semibold" color="primary">
               {`${signedInUser?.username}님, `}
               <Text type="sm-normal">안녕하세요! 🤗</Text>
@@ -66,11 +75,17 @@ export const MenuHeader = () => {
             <Button buttonSize="xs" onClick={handleSignOut}>
               로그아웃
             </Button>
-          </>
+          </Animate>
         ) : (
-          <Text type="sm-normal" color="disabled">
-            로그인 정보 없음
-          </Text>
+          <div className="row-center">
+            <Button buttonSize="xs" onClick={handleSignIn} buttonStyle="outline">
+              로그인
+            </Button>
+            <Divider type="vertical" />
+            <Button buttonSize="xs" onClick={handleSignUp} buttonStyle="outline">
+              회원가입
+            </Button>
+          </div>
         )}
       </>
     );

@@ -32,7 +32,7 @@ export const Sider = ({ user }: { user: User | null }) => {
   const handleResize = () => setIsFullWidth(!isFullWidth);
 
   useEffect(() => {
-    if (user === undefined) {
+    if (user === null) {
       setSignedInUser(user);
     } else {
       if (user?.id !== signedInUser?.id) {

@@ -64,22 +64,32 @@ const Button = (
 
   useEffect(() => {
     setIsMount(true);
-    btnController.start(btnVariants.visible);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (isMount) {
+      btnController.start(btnVariants.visible);
+    }
+  }, [isMount]);
+
   const handleClick = useCallback(() => {
-    if (disabled || loading || !isMount) return;
+    if (disabled || loading || isAnimatingRef.current) return;
     onClick?.();
     isAnimatingRef.current = true;
-    btnController.start(btnVariants.click).then(() => btnController.start(btnVariants.visible));
-    waveController
+    const btnAnimation = btnController.start(btnVariants.click).then(() => {
+      try {
+        // 현재 화면이 unmount 되어 animation.start가 되지 못할 경우 에러 발생하여 try-catch 삽입
+        btnController.start(btnVariants.visible);
+      } catch {}
+    });
+    const waveAnimation = waveController
       .start(waveVariants.click)
       .then(() => waveController.start(waveVariants.blur))
-      .then(() => waveController.start(waveVariants.hidden))
-      .then(() => {
-        isAnimatingRef.current = false;
-      });
+      .then(() => waveController.start(waveVariants.hidden));
+
+    Promise.all([btnAnimation, waveAnimation]).then(() => {
+      isAnimatingRef.current = false;
+    });
   }, [disabled, loading, isMount, onClick, btnController, waveController]);
 
   const btnProps = {
