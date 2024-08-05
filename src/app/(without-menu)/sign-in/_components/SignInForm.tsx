@@ -18,7 +18,7 @@ export const SignInForm = () => {
           addonBefore={<UserOutlined />}
           placeholder="여기에 아이디를 입력"
           autoComplete="username"
-          defaultValue={"burngrit@icloud.com"}
+          defaultValue={""}
           errors={state?.fieldErrors.email}
           autoFocus
         />
@@ -30,7 +30,7 @@ export const SignInForm = () => {
           addonBefore={<LockOutlined />}
           placeholder="여기에 비밀번호 입력"
           autoComplete="password"
-          defaultValue={"12341234"}
+          defaultValue={""}
           errors={state?.fieldErrors.password}
         />
       </FormItem>
