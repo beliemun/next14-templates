@@ -22,8 +22,11 @@ export default function SingUpPage() {
         >
           <Animate>
             <div className={cn("col-center size-full")}>
-              <Text className="text-center my-4" type="xl-semibold" color="primary">
+              <Text className="text-center mt-4" type="xl-semibold" color="primary">
                 새로운 계정을 생성합니다 😀
+              </Text>
+              <Text className="text-center my-2" type="xs-regular" color="gray">
+                (실제 인증을 위해 구현, 그 외 기능은 없음)
               </Text>
               <SignUpForm />
               <SignUpExtrForm />

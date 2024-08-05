@@ -34,7 +34,7 @@ export const SignInForm = () => {
           errors={state?.fieldErrors.password}
         />
       </FormItem>
-      <Button fullWidth buttonSize="default" skipAnimation>
+      <Button className="mt-6" fullWidth buttonSize="default" skipAnimation>
         로그인
       </Button>
     </Form>

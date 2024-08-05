@@ -70,6 +70,7 @@ const Button = (
     if (isMount) {
       btnController.start(btnVariants.visible);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMount]);
 
   const handleClick = useCallback(() => {
@@ -78,7 +79,7 @@ const Button = (
     isAnimatingRef.current = true;
     const btnAnimation = btnController.start(btnVariants.click).then(() => {
       try {
-        // 현재 화면이 unmount 되어 animation.start가 되지 못할 경우 에러 발생하여 try-catch 삽입
+        // 현재 화면이 unmount 되어 animation.start가 되지 못할 경우, 에러가 발생하여 try-catch 삽입
         btnController.start(btnVariants.visible);
       } catch {}
     });
@@ -90,7 +91,7 @@ const Button = (
     Promise.all([btnAnimation, waveAnimation]).then(() => {
       isAnimatingRef.current = false;
     });
-  }, [disabled, loading, isMount, onClick, btnController, waveController]);
+  }, [disabled, loading, onClick, btnController, waveController]);
 
   const btnProps = {
     ...(!skipAnimation && { initial: "hidden" }),
