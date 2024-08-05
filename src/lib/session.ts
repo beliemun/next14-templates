@@ -29,5 +29,5 @@ export const signUserIn = async ({ id, url }: SignInProps) => {
 export const signUserOut = async () => {
   const session = await getSession();
   session.destroy();
-  return redirect("/");
+  return;
 };

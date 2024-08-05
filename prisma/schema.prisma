@@ -8,6 +8,11 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
+enum Role {
+  Admin
+  User
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
@@ -17,4 +22,5 @@ model User {
   email    String? @unique
   password String?
   avatar   String?
+  role     Role    @default(User)
 }

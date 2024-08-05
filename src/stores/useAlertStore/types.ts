@@ -10,6 +10,7 @@ export interface AlertAction {
   style?: ButtonStyleType;
   color?: ColorType;
   onClick?: () => void | undefined;
+  onClickAsync?: () => Promise<void> | undefined;
 }
 
 export interface AlertProps {

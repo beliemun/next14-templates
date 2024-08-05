@@ -1,6 +1,12 @@
 import { PageLayout } from "@/components/organisms";
-import { Divider } from "antd";
+import getMembersAction from "@/actions/members/get-members.action";
+import { MemberList } from "./_components";
 
-export default function MemvbersPage() {
-  return <PageLayout title="Memebers"></PageLayout>;
+export default async function MemvbersPage() {
+  const { members, count } = await getMembersAction(1);
+  return (
+    <PageLayout title="Members">
+      <MemberList members={members} count={count} />
+    </PageLayout>
+  );
 }

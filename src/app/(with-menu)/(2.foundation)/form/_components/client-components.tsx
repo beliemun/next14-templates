@@ -28,7 +28,7 @@ export const ClientComponents = () => {
     >
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -36,7 +36,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -44,7 +44,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -56,7 +56,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -69,7 +69,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -81,7 +81,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
@@ -93,7 +93,7 @@ export const ClientComponents = () => {
       </FormItem>
       <FormItem
         label="Name"
-        tooltipTitle="Please write down here"
+        tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >

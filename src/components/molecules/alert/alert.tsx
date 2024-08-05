@@ -89,7 +89,7 @@ export const Alert = () => {
                     buttonStyle={action?.style}
                     buttonColor={action?.color}
                     fullWidth={footerFitable}
-                    onClick={action?.onClick ?? onDismiss}
+                    onClick={(action?.onClick || action?.onClickAsync) ?? onDismiss}
                     skipAnimation
                   >
                     {action?.lable}

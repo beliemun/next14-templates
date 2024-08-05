@@ -10,7 +10,7 @@ export const SignInExtrForm = () => {
         아이디가 아직 없으신가요?
       </Text>
       <Button onClick={handleClick} buttonSize="default" buttonStyle="ghost" skipAnimation>
-        신규가입 🙂
+        회원가입 🙂
       </Button>
     </div>
   );

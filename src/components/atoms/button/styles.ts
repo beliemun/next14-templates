@@ -604,6 +604,7 @@ export const buttonStyles = ({
   if (loading) {
     styles.push("pointer-events-none select-none opacity-50");
   }
+  styles.push("focus:outline-none");
   return styles.join(" ");
 };
 

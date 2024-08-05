@@ -63,7 +63,7 @@ export const PageModalComponent = (props: PageModalProps) => {
       <Form title="Here is form title" description="Here is a form description" gap={30}>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -71,7 +71,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -79,7 +79,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -91,7 +91,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -104,7 +104,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -116,7 +116,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
@@ -128,7 +128,7 @@ export const PageModalComponent = (props: PageModalProps) => {
         </FormItem>
         <FormItem
           label="Label"
-          tooltipTitle="Please write down here"
+          tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
