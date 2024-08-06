@@ -2,13 +2,14 @@ import { Card, Section, Space, Tag, Text } from "@/components/atoms";
 
 export const Skills = () => {
   return (
-    <Section className="grid grid-cols-3 max-w-7xl pt-2">
+    <div className="grid grid-cols-3 max-w-7xl pt-2 gap-4">
       <Card
         title={
           <Text type="base-semibold" color="primary">
             Languages
           </Text>
         }
+        type="inner"
       >
         <Space wrap>
           <Tag tagColor="primary">Type Script</Tag>
@@ -24,6 +25,7 @@ export const Skills = () => {
             Frontend & Styling
           </Text>
         }
+        type="inner"
       >
         <Space wrap>
           <Tag tagColor="blue">Next.js</Tag>
@@ -43,6 +45,7 @@ export const Skills = () => {
             Backend & Deploy
           </Text>
         }
+        type="inner"
       >
         <Space wrap>
           <Tag tagColor="red">Nest.js</Tag>
@@ -56,6 +59,6 @@ export const Skills = () => {
           <Tag tagColor="red">Cloud Flare</Tag>
         </Space>
       </Card>
-    </Section>
+    </div>
   );
 };

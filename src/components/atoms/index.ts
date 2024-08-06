@@ -25,6 +25,7 @@ export * from "./table";
 export * from "./tag";
 export * from "./text";
 export * from "./time-picker";
+export * from "./timeline";
 export * from "./title";
 export * from "./tooltip";
 export * from "./upload";
