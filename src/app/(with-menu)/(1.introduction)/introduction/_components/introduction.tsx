@@ -28,13 +28,13 @@ export const Introduction = () => {
         />
         <div className="flex flex-col items-start flex-1 pl-8 gap-2 leading-5">
           <PageTitle />
-          <Text>• 안녕하세요, 7년간 기업 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
+          <Text>• 안녕하세요. 7년간 기업 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
           <Text>
             • 사람과 소통을 좋아해서 데이트 및 커뮤니케이션 관련 앱 개발사를 설립, 7년 동안 대표를
             역임했습니다.
           </Text>
           <Text>
-            • 약 20여 개의 모바일 앱 프로젝트를 리드하며 기획부터 UX/UI 디자인, 개발업무까지
+            • 약 20여 개의 모바일 앱 프로젝트를 리드하며 기획부터 UX/UI 디자인, 개발 업무까지
             진행했습니다.
           </Text>
           <Text>
@@ -46,7 +46,7 @@ export const Introduction = () => {
             출시했습니다.
           </Text>
           <Text>
-            • 치의학 PMS, 피부과 SaaS 등 메디컬계 의료 플랫폼 개발의 테크리드를 진행했습니다.
+            • 치의학 PMS, 피부과 SaaS 등 메디컬계 의료 플랫폼 개발의 테크리드를 담당했습니다.
           </Text>
         </div>
       </div>
