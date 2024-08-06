@@ -30,7 +30,7 @@ export const Linkdens = () => {
         />
         <div className="flex flex-col items-start pl-4 gap-2 leading-5">
           <Text type="base-semibold">LINKDENS</Text>
-          <Text>정량광형광기 연동한 이미지 시스템을 제공하는 치과 병원용 PMS</Text>
+          <Text>정량광형광기를 연동한 이미지 시스템을 제공하는 치과 병원용 PMS</Text>
           <div className="mt-2">
             <div
               style={{ borderColor: colorBorder }}
@@ -46,11 +46,10 @@ export const Linkdens = () => {
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">Next.js</Tag>
                   <Tag tagColor="blue">React</Tag>
+                  <Tag tagColor="blue">React Native</Tag>
                   <Tag tagColor="blue">Expo</Tag>
                   <Tag tagColor="blue">Apollo Client</Tag>
                   <Tag tagColor="blue">Tailwind</Tag>
-                  <Tag tagColor="blue">Styled Component</Tag>
-                  <Tag tagColor="blue">Ant Design</Tag>
                   <Tag tagColor="red">Node.js</Tag>
                   <Tag tagColor="red">Prisma</Tag>
                   <Tag tagColor="red">Apollo Server</Tag>
