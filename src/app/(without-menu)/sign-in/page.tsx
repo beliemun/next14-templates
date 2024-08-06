@@ -12,7 +12,7 @@ export default function SingInPage({ searchParams }: any) {
   const [meesageApi, contextHolder] = Message.useMessage();
   const { isDarkMode } = useDarkModeStore();
   const {
-    token: { colorBgBase, colorBorder, colorBgContainer, colorBgContainerDisabled },
+    token: { colorBgBase, colorBorder, colorBgContainer },
   } = theme.useToken();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function SingInPage({ searchParams }: any) {
 
   return (
     <div
-      style={{ backgroundColor: isDarkMode ? colorBgBase : colorBgContainerDisabled }}
+      style={{ backgroundColor: isDarkMode ? colorBgBase : colorBgBase }}
       className="col-center w-full min-h-screen"
     >
       {contextHolder}
@@ -39,10 +39,7 @@ export default function SingInPage({ searchParams }: any) {
           <Animate type="show-up">
             <div className={cn("col-center size-full")}>
               <Text className="text-center mt-4" type="xl-semibold" color="primary">
-                로그인
-              </Text>
-              <Text className="text-center mt-2" type="xs-regular" color="gray">
-                (실제 인증을 위해 구현, 그 외 기능은 없음)
+                회원 로그인
               </Text>
               <Animate type="fall-down">
                 <Lottie name="signIn" style={{ width: 240, height: 240 }} />

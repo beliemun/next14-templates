@@ -15,14 +15,18 @@ export const PageLayout = ({
     token: { colorText, colorBorder, colorBgContainer },
   } = theme.useToken();
   return (
-    <Layout className={"col-flex overflow-hidden"}>
-      <Title
-        type="h6-semibold"
-        style={{ color: colorText, backgroundColor: colorBgContainer }}
-        className="flex flex-row justify-start items-center h-20 p-8"
-      >
-        {title}
-      </Title>
+    <Layout style={{ backgroundColor: colorBgContainer }} className={"col-flex overflow-hidden"}>
+      {typeof title === "string" ? (
+        <Title
+          type="h6-semibold"
+          style={{ color: colorText }}
+          className="flex flex-row justify-start items-center h-20 p-8"
+        >
+          {title}
+        </Title>
+      ) : (
+        <>{title}</>
+      )}
       <Layout
         style={{
           color: colorText,

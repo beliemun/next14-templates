@@ -20,3 +20,7 @@ export const MSG = {
   NOT_MATCHED_PASSWORD: "비밀번호가 서로 일치하지 않습니다.",
   WRONG_PASSWORD: "비밀번호가 일치하지 않습니다.",
 };
+
+export const URL = {
+  CF_IMAGE: "https://imagedelivery.net",
+};

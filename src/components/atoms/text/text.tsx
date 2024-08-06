@@ -22,7 +22,7 @@ const Text = (
 ) => {
   const [textColor, setTextColor] = useState<string>("default");
   const {
-    token: { colorText, colorTextDescription, colorTextDisabled },
+    token: { colorText, colorTextDescription, colorTextDisabled, colorBgBase },
   } = theme.useToken();
 
   useEffect(() => {
@@ -32,6 +32,8 @@ const Text = (
       setTextColor(colorTextDescription);
     } else if (color === "disabled") {
       setTextColor(colorTextDisabled);
+    } else if (color === "invert") {
+      setTextColor(colorBgBase);
     }
   }, [color, colorText, colorTextDescription, colorTextDisabled]);
 

@@ -1,4 +1,4 @@
-export type TextColor = "primary" | "default" | "description" | "disabled";
+export type TextColor = "primary" | "default" | "description" | "disabled" | "invert";
 
 export type TextType =
   | "xs-light"

@@ -32,8 +32,6 @@ function getItem(
 
 export const introduction: MenuItem[] = [
   getItem("Introduction", "introduction", <SmileOutlined />),
-  getItem("History", "history", <HistoryOutlined />),
-  getItem("Skills", "skills", <LaptopOutlined />),
 ];
 
 export const base: MenuItem[] = [
@@ -43,28 +41,28 @@ export const base: MenuItem[] = [
     getItem("Title", "title"),
   ]),
   getItem("Components", "components", <SlidersOutlined />, [
-    getItem("Alert ⭐️", "alert"),
+    getItem("Alert", "alert"),
     getItem("Avatar", "avatar"),
-    getItem("Button ⭐️", "button"),
+    getItem("Button", "button"),
     getItem("Checkbox", "checkbox"),
     getItem("Drawer", "drawer"),
     getItem("Form", "form"),
     getItem("Image", "image"),
     getItem("Input", "input"),
     getItem("Message", "message"),
-    getItem("Modal ⭐️", "modal"),
+    getItem("Modal", "modal"),
     getItem("Pagination", "pagination"),
     getItem("QRCode", "qrcode"),
     getItem("Radio", "radio"),
-    getItem("Select ⭐️", "select"),
+    getItem("Select", "select"),
     getItem("Switch", "switch"),
-    getItem("Table ⭐️", "table"),
+    getItem("Table", "table"),
     getItem("Tag", "tag"),
     getItem("Picker - Color", "color-picker"),
-    getItem("Picker - Time ⭐️", "time-picker"),
-    getItem("Picker - Date ⭐️", "date-picker"),
+    getItem("Picker - Time", "time-picker"),
+    getItem("Picker - Date", "date-picker"),
     getItem("Tooltip", "tooltip"),
-    getItem("Transfer ⭐️", "transfer"),
+    getItem("Transfer", "transfer"),
     getItem("Upload", "upload"),
   ]),
 ];
@@ -73,8 +71,6 @@ export const pages: MenuItem[] = [
   getItem("Sign In", "sign-in", <LoginOutlined />),
   getItem("Sign Up", "sign-up", <UserAddOutlined />),
   getItem("Members", "members", <TeamOutlined />),
-  getItem("Messages", "messages", <MessageOutlined />),
-  getItem("Test", "test", <BugOutlined />),
 ];
 
 export const menu = [
