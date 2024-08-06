@@ -9,7 +9,7 @@ export const Buddymon = () => {
         <Text type="lg-semibold">
           (주)J2YSOFT
           <Divider type="vertical" />
-          사원
+          <Tag tagColor="slate">사원</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2013.01 ~ 2013.11</Text>

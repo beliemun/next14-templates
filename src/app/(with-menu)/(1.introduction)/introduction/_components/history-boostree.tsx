@@ -9,7 +9,7 @@ export const Boostree = () => {
         <Text type="lg-semibold">
           (주)부스트리파트너스
           <Divider type="vertical" />
-          TL<Text>(Tech Leader)</Text>
+          <Tag tagColor="slate">TL(Tech Leader)</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2024.02.01 ~ 2024.04.30</Text>

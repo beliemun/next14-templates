@@ -9,7 +9,7 @@ export const Kf = () => {
         <Text type="lg-semibold">
           (주)한국에서놀자
           <Divider type="vertical" />
-          대표이사
+          <Tag tagColor="slate">대표이사(CEO)</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2013.12 ~ 2020.02</Text>

@@ -9,7 +9,7 @@ export const Linkdens = () => {
         <Text type="lg-semibold">
           (주)아이오바이오
           <Divider type="vertical" />
-          프론트엔드 개발팀장
+          <Tag tagColor="slate">프론트엔드 개발팀장</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2023.02.01 ~ 2024.01.31</Text>

@@ -9,7 +9,7 @@ export const Kimxy = () => {
         <Text type="lg-semibold">
           BURNGRIT(개인사업자)
           <Divider type="vertical" />
-          대표자
+          <Tag tagColor="slate">대표</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2022.01.01 ~ 2023.01.31</Text>
