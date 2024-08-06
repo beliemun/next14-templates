@@ -37,6 +37,7 @@ export const Skills = () => {
           <Tag tagColor="blue">Styled Component</Tag>
           <Tag tagColor="blue">Ant Design</Tag>
           <Tag tagColor="blue">Framer Motion</Tag>
+          <Tag tagColor="blue">Unity 3D</Tag>
         </Space>
       </Card>
       <Card

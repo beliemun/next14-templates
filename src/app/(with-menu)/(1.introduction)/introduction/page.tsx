@@ -1,7 +1,7 @@
 import { Divider, Section, Timeline } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { Metadata } from "next";
-import { Boostree, Introduction, Linkdens, Skills } from "./_components";
+import { Boostree, Buddymon, Introduction, Kf, Kimxy, Linkdens, Skills } from "./_components";
 
 export const metadata: Metadata = {
   title: "Introduction",
@@ -27,6 +27,15 @@ export default function IntroductionPage() {
             },
             {
               children: <Linkdens />,
+            },
+            {
+              children: <Kimxy />,
+            },
+            {
+              children: <Kf />,
+            },
+            {
+              children: <Buddymon />,
             },
           ]}
         />

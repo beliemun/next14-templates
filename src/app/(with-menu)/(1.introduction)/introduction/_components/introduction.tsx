@@ -27,7 +27,7 @@ export const Introduction = () => {
       />
       <div className="flex flex-col items-start flex-1 pl-8 gap-2 leading-5">
         <PageTitle />
-        <Text>• 안녕하세요. 7년간 기업 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
+        <Text>• 안녕하세요. 7년간 기업을 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
         <Text>
           • 사람과 소통을 좋아해서 데이트 및 커뮤니케이션 관련 앱 개발사를 설립, 7년 동안 대표를
           역임했습니다.
