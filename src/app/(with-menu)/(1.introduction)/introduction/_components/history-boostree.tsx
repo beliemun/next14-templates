@@ -1,8 +1,9 @@
 "use client";
 
-import { Divider, Image, Space, Tag, Text } from "@/components/atoms";
+import { Divider, Space, Tag, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
 import { theme } from "antd";
+import Image from "next/image";
 
 export const Boostree = () => {
   const {
