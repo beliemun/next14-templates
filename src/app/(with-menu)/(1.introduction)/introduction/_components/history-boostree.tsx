@@ -1,14 +1,8 @@
-"use client";
-
 import { Divider, Space, Tag, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
-import { theme } from "antd";
 import Image from "next/image";
 
 export const Boostree = () => {
-  const {
-    token: { colorBorder },
-  } = theme.useToken();
   return (
     <div className="max-w-6xl w-full">
       <header>
@@ -32,10 +26,7 @@ export const Boostree = () => {
           <Text type="base-semibold">BOOSTREE</Text>
           <Text>피부과 병원의 오퍼레이팅 사이드와 마케팅 사이드의 자동화를 위한 SaaS </Text>
           <div className="mt-2">
-            <div
-              style={{ borderColor: colorBorder }}
-              className="border border-dashed rounded-lg p-4"
-            >
+            <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 블로그 마케팅 자동화 시스템 개발 총괄</Text>

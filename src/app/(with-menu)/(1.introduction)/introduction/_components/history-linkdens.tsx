@@ -1,14 +1,9 @@
-"use client";
-
 import { Divider, Space, Tag, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
 import { theme } from "antd";
 import Image from "next/image";
 
 export const Linkdens = () => {
-  const {
-    token: { colorBorder },
-  } = theme.useToken();
   return (
     <div className="max-w-6xl w-full">
       <header>
@@ -32,10 +27,7 @@ export const Linkdens = () => {
           <Text type="base-semibold">LINKDENS</Text>
           <Text>정량광형광기를 연동한 이미지 시스템을 제공하는 치과 병원용 PMS</Text>
           <div className="mt-2">
-            <div
-              style={{ borderColor: colorBorder }}
-              className="border border-dashed rounded-lg p-4"
-            >
+            <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 프론트엔드 개발팀 테크 리드</Text>
