@@ -1,7 +1,7 @@
 import { Divider, Section, Timeline } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { Metadata } from "next";
-import { Introduction, Skills } from "./_components";
+import { Boostree, Introduction, Linkdens, Skills } from "./_components";
 
 export const metadata: Metadata = {
   title: "Introduction",
@@ -23,7 +23,10 @@ export default function IntroductionPage() {
         <Timeline
           items={[
             {
-              children: "Timeline Test",
+              children: <Boostree />,
+            },
+            {
+              children: <Linkdens />,
             },
           ]}
         />
