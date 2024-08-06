@@ -50,6 +50,9 @@ export const Skills = () => {
           <Tag tagColor="red">Prisma</Tag>
           <Tag tagColor="red">Type ORM</Tag>
           <Tag tagColor="red">Apollo Server</Tag>
+          <Tag tagColor="red">AWS</Tag>
+          <Tag tagColor="red">Railway</Tag>
+          <Tag tagColor="red">GraphQL</Tag>
         </Space>
       </Card>
     </Section>
