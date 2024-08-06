@@ -19,7 +19,7 @@ const PageTitle = () => {
 export const Introduction = () => {
   return (
     <Section className="pt-2">
-      <div className="flex flex-row max-w-6xl w-full">
+      <div className="flex flex-row max-w-7xl w-full">
         <Image
           alt="avatar"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/3f3e0116-76e9-4306-411e-7844af5bfb00/public`}

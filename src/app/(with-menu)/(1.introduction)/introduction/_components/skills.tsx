@@ -2,7 +2,7 @@ import { Card, Section, Space, Tag, Text } from "@/components/atoms";
 
 export const Skills = () => {
   return (
-    <Section className="grid grid-cols-3 pt-2">
+    <Section className="grid grid-cols-3 max-w-7xl pt-2">
       <Card
         title={
           <Text type="base-semibold" color="primary">
@@ -53,6 +53,7 @@ export const Skills = () => {
           <Tag tagColor="red">AWS</Tag>
           <Tag tagColor="red">Railway</Tag>
           <Tag tagColor="red">GraphQL</Tag>
+          <Tag tagColor="red">Cloud Flare</Tag>
         </Space>
       </Card>
     </Section>
