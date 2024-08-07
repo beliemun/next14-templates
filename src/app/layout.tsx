@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Brian's template",
     default: "Brian's template",
   },
-  description: "Brian's Template made by Next.js 14",
+  description: "Brian's Next.js Template",
   creator: "burngrit",
   openGraph: {
     images: [
