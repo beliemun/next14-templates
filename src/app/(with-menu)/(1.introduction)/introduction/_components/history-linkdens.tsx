@@ -30,7 +30,7 @@ export const Linkdens = () => {
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 프론트엔드 개발팀 테크 리드</Text>
-                <Text>• 정량광형광기를 연동한 치아우식증을 검사하는 이미징 소프트웨어 개발</Text>
+                <Text>• 정량광 형광기를 연동한 치아우식증을 검사하는 이미징 소프트웨어 개발</Text>
                 <Text>• 프로토타입 개발 및 미국 Dallas 현지 시현</Text>
                 <Text>• OpenDental 연동, PMS 개발 및 미국 Dallas 현지 설치 및 운용 테스트</Text>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">

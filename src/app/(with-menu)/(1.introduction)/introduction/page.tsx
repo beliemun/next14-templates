@@ -1,7 +1,16 @@
 import { Divider, Section, Timeline } from "@/components/atoms";
 import { PageLayout } from "@/components/organisms";
 import { Metadata } from "next";
-import { Boostree, Buddymon, Introduction, Kf, Kimxy, Linkdens, Skills } from "./_components";
+import {
+  Boostree,
+  Buddymon,
+  Contact,
+  Introduction,
+  Kf,
+  Kimxy,
+  Linkdens,
+  Skills,
+} from "./_components";
 
 export const metadata: Metadata = {
   title: "Introduction",
@@ -14,6 +23,10 @@ export default function IntroductionPage() {
       <Section className="pt-2">
         <Introduction />
       </Section>
+      <Divider orientation="left">연락</Divider>
+      <Section className="pt-2">
+        <Contact />
+      </Section>
       <Divider orientation="left">기술</Divider>
       <Section className="pt-2">
         <Skills />
@@ -22,21 +35,11 @@ export default function IntroductionPage() {
       <Section className="mt-2">
         <Timeline
           items={[
-            {
-              children: <Boostree />,
-            },
-            {
-              children: <Linkdens />,
-            },
-            {
-              children: <Kimxy />,
-            },
-            {
-              children: <Kf />,
-            },
-            {
-              children: <Buddymon />,
-            },
+            { children: <Boostree /> },
+            { children: <Linkdens /> },
+            { children: <Kimxy /> },
+            { children: <Kf /> },
+            { children: <Buddymon /> },
           ]}
         />
       </Section>

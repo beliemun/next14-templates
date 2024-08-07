@@ -1,5 +1,6 @@
-import { Image, Text } from "@/components/atoms";
+import { Image, Input, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
+import { GithubOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 const PageTitle = () => {
   return (

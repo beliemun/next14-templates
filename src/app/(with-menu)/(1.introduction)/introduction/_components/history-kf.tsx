@@ -1,6 +1,7 @@
 import { Divider, Space, Tag, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
 import Image from "next/image";
+import LineChart from "./line-chart";
 
 export const Kf = () => {
   return (
@@ -9,7 +10,7 @@ export const Kf = () => {
         <Text type="lg-semibold">
           (주)한국에서놀자
           <Divider type="vertical" />
-          <Tag tagColor="slate">대표이사(CEO)</Tag>
+          <Tag tagColor="slate">대표이사</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2013.12 ~ 2020.02</Text>
@@ -37,7 +38,7 @@ export const Kf = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 프로젝트 총괄 기획, UX/UI 디자인, 프론트앤드 개발</Text>
+                <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">React Native</Tag>
@@ -71,7 +72,7 @@ export const Kf = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 프로젝트 총괄 기획, UX/UI 디자인, 프론트앤드 개발</Text>
+                <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">React Native</Tag>
@@ -105,12 +106,13 @@ export const Kf = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 프로젝트 총괄 기획, UX/UI 디자인, 프론트앤드 개발</Text>
+                <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Text>• 사용자 패턴 분석, 비지니스 모델 설계, 노출 최적화, 광고 마케팅</Text>
                 <Text>
                   • 월 매출 30만원에서 1억 2천만원까지 증대(창업 첫달부터 2년간 실제 인앱수익 및
                   타사광고 매출 자료)
                 </Text>
+                <LineChart />
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="blue">Unity 3D</Tag>
                 </Space>
@@ -142,7 +144,7 @@ export const Kf = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 프로젝트 총괄 기획, UX/UI 디자인, 프론트앤드 개발</Text>
+                <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Text>• 사용자 패턴 분석, 비지니스 모델 설계, 노출 최적화, 광고 마케팅</Text>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="blue">Unity 3D</Tag>

@@ -29,8 +29,8 @@ export const Boostree = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 블로그 마케팅 자동화 시스템 개발 총괄</Text>
-                <Text>• 운영 백오피스 개발</Text>
+                <Text>• 마케팅 사이드 블로그 자동화 시스템 개발 총괄</Text>
+                <Text>• 마케팅 사이드 백오피스 개발</Text>
                 <Space direction="horizontal" className="mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="primary">Python</Tag>

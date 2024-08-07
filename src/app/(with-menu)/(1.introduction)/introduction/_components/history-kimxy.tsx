@@ -7,9 +7,9 @@ export const Kimxy = () => {
     <div className="max-w-6xl w-full">
       <header>
         <Text type="lg-semibold">
-          BURNGRIT(개인사업자)
+          BURNGRIT
           <Divider type="vertical" />
-          <Tag tagColor="slate">대표</Tag>
+          <Tag tagColor="slate">개인사업자</Tag>
         </Text>
         <Divider type="vertical" />
         <Text color="description">2022.01.01 ~ 2023.01.31</Text>
