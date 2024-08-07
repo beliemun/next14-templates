@@ -12,7 +12,7 @@ export const Boostree = () => {
           <Tag tagColor="slate">TL(Tech Leader)</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2024.02.01 ~ 2024.04.30</Text>
+        <Text color="description">2024.02 ~ 2024.04</Text>
       </header>
       <div className="flex flex-row mx-4 mt-8 mb-12">
         <Image

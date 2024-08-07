@@ -12,7 +12,7 @@ export const Kimxy = () => {
           <Tag tagColor="slate">개인사업자</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2022.01.01 ~ 2023.01.31</Text>
+        <Text color="description">2022.01 ~ 2023.01</Text>
       </header>
       <div className="flex flex-row mx-4 mt-8 mb-12">
         <Image
