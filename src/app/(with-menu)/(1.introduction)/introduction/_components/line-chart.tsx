@@ -5,12 +5,18 @@ import { Line } from "@nivo/line";
 import { Ads, Apple, InterestGoogle, MacaronGoogle, Total } from "./data";
 import useGetHTMLDivSize from "@/hooks/useGetHTMLDivSize";
 import { cn } from "@/lib/utils";
+import { theme } from "antd";
+import { useDarkModeStore } from "@/stores/useDarkModeStore";
 
 interface LineChardProps {
   className?: string;
 }
 
 const LineChart = ({ className }: LineChardProps) => {
+  const {
+    token: { colorText },
+  } = theme.useToken();
+  const { isDarkMode } = useDarkModeStore();
   const { size, ref } = useGetHTMLDivSize();
   const data = [
     {
@@ -75,6 +81,13 @@ const LineChart = ({ className }: LineChardProps) => {
             symbolBorderColor: "rgba(0, 0, 0, .5)",
           },
         ]}
+        theme={{
+          text: { color: colorText },
+          axis: { ticks: { text: { fill: colorText } } },
+          legends: { text: { fill: colorText } },
+          labels: { text: { fill: colorText } },
+        }}
+        enablePoints={!isDarkMode}
       />
     </div>
   );

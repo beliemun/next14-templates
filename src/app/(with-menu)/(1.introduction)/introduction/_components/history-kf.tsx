@@ -39,6 +39,9 @@ export const Kf = () => {
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">React Native</Tag>
@@ -73,6 +76,9 @@ export const Kf = () => {
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">React Native</Tag>
@@ -113,6 +119,9 @@ export const Kf = () => {
                   타사광고 매출 자료)
                 </Text>
                 <LineChart />
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="blue">Unity 3D</Tag>
                 </Space>
@@ -146,6 +155,9 @@ export const Kf = () => {
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Text>• 사용자 패턴 분석, 비지니스 모델 설계, 노출 최적화, 광고 마케팅</Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="blue">Unity 3D</Tag>
                 </Space>

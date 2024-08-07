@@ -43,6 +43,9 @@ export const Kimxy = () => {
                   • 디자인(Sketch), 앱(ReactNative, Expo) 관리자(React), 백엔드(Node.js, Prisma),
                   배포(Railway, AWS)
                 </Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">React</Tag>

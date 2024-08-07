@@ -6,13 +6,22 @@ const gothicA1 = Gothic_A1({ subsets: ["latin"], weight: ["300", "400", "500", "
 
 import { AntdProvider } from "../components/providers/antd-provider";
 import StyledComponentsRegistry from "@/lib/registry";
+import { URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Brian's template",
     default: "Brian's template",
   },
-  description: "Custom Template made by Next.js 14",
+  description: "Brian's Template made by Next.js 14",
+  creator: "burngrit",
+  openGraph: {
+    images: [
+      {
+        url: `${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/3f3e0116-76e9-4306-411e-7844af5bfb00/public`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

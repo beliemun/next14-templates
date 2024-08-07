@@ -31,6 +31,9 @@ export const Boostree = () => {
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 마케팅 사이드 블로그 자동화 시스템 개발 총괄</Text>
                 <Text>• 마케팅 사이드 백오피스 개발</Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" className="mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="primary">Python</Tag>

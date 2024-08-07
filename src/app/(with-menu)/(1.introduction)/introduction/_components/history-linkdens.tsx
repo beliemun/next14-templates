@@ -33,6 +33,9 @@ export const Linkdens = () => {
                 <Text>• 정량광 형광기를 연동한 치아우식증을 검사하는 이미징 소프트웨어 개발</Text>
                 <Text>• 프로토타입 개발 및 미국 Dallas 현지 시현</Text>
                 <Text>• OpenDental 연동, PMS 개발 및 미국 Dallas 현지 설치 및 운용 테스트</Text>
+                <Tag tagStyle="soft" className="mt-4">
+                  적용 기술
+                </Tag>
                 <Space direction="horizontal" wrap className="max-w-3xl mt-2">
                   <Tag tagColor="primary">Type Script</Tag>
                   <Tag tagColor="blue">Next.js</Tag>
