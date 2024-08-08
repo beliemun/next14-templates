@@ -12,7 +12,7 @@ export const Buddymon = () => {
           <Tag tagColor="slate">사원</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2013.01 ~ 2013.11</Text>
+        <Text color="description">2013.01~2013.11(11개월)</Text>
       </header>
       <div className="flex flex-row mx-4 mt-8 mb-12">
         <div className="self-start w-[60px] h-[60px] shrink-0 rounded-lg border bg-slate-100" />

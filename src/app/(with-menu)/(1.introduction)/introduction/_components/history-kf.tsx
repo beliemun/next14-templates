@@ -13,7 +13,7 @@ export const Kf = () => {
           <Tag tagColor="slate">대표이사</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2013.12 ~ 2020.02</Text>
+        <Text color="description">2013.12~2020.02(7년 2개월)</Text>
       </header>
       {/* 친구 */}
       <div className="flex flex-row mx-4 mt-8 mb-12">
@@ -115,8 +115,11 @@ export const Kf = () => {
                 <Text>• 프로젝트 총괄, 기획 및 UX/UI 디자인, 프론트앤드 개발</Text>
                 <Text>• 사용자 패턴 분석, 비지니스 모델 설계, 노출 최적화, 광고 마케팅</Text>
                 <Text>
-                  • 월 매출 30만원에서 1억 2천만원까지 증대(창업 첫달부터 2년간 실제 인앱수익 및
+                  • 월 매출 30만원에서 1억 2천만원까지 성장(창업 첫달부터 2년간 실제 인앱수익 및
                   타사광고 매출 자료)
+                </Text>
+                <Text>
+                  • 대표 서비스 3개는 100만 이상 다운로드, 외부투자 없이 7년 동안 총 매출 약 30억원
                 </Text>
                 <LineChart />
                 <Tag tagStyle="soft" className="mt-4">

@@ -94,8 +94,11 @@ export const MenuHeader = () => {
     <div className={cn("col-center")}>
       {contextHolder}
       <div
-        className={cn("col-center size-full rounded-full transition-all duration-200 gap-2")}
-        style={{ borderColor: colorBorder, height: 80 }}
+        className={cn(
+          "col-center size-full rounded-full transition-all duration-200 gap-2",
+          "h-12 xs:h-20"
+        )}
+        style={{ borderColor: colorBorder }}
       >
         {renderContents()}
       </div>

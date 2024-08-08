@@ -11,6 +11,7 @@ import {
   ShrinkOutlined,
 } from "@ant-design/icons";
 import { theme } from "antd";
+import { useEffect, useState } from "react";
 
 interface MenuFooter {
   isFullWidth: boolean;
@@ -34,7 +35,7 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
     <div
       className={cn(
         `fixed bottom-0 transition-all duration-200 ease-in-out`,
-        collapsed ? "col-center w-20 h-44" : "row-center w-64 h-20"
+        collapsed ? "col-center w-12 h-36 xs:w-20 " : "row-center w-64 h-20"
       )}
       style={{
         backgroundColor: colorBgContainer,

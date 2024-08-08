@@ -12,7 +12,7 @@ export const Boostree = () => {
           <Tag tagColor="slate">TL(Tech Leader)</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2024.02 ~ 2024.04</Text>
+        <Text color="description">2024.02~2024.04(3개월)</Text>
       </header>
       <div className="flex flex-row mx-4 mt-8 mb-12">
         <Image
@@ -29,7 +29,7 @@ export const Boostree = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 마케팅 사이드 블로그 자동화 시스템 개발 총괄</Text>
+                <Text>• 마케팅 자동화 시스템 개발 총괄</Text>
                 <Text>• 마케팅 사이드 백오피스 개발</Text>
                 <Tag tagStyle="soft" className="mt-4">
                   적용 기술

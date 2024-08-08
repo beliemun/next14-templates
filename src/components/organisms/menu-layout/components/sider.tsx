@@ -18,6 +18,7 @@ export const Sider = ({ user }: { user: User | null }) => {
   const [messageApi, contextHolder] = Message.useMessage();
   const [selectedKey, setSelectedKey] = useState("introduction");
   const { isCollapsed, isFullWidth, setIsCollapsed, setIsFullWidth } = useLayoutStore();
+  const [collapsedWidth, setCollapsedWidth] = useState(48);
   const {
     token: { colorBorder },
   } = theme.useToken();
@@ -43,6 +44,18 @@ export const Sider = ({ user }: { user: User | null }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
+  useEffect(() => {
+    const updateCollapsedWidth = () => {
+      window.innerWidth < 480 ? setCollapsedWidth(48) : setCollapsedWidth(80);
+      window.innerWidth < 800 ? setIsCollapsed(true) : setIsCollapsed(false);
+    };
+    window.addEventListener("resize", updateCollapsedWidth);
+    updateCollapsedWidth();
+
+    return () => window.removeEventListener("resize", updateCollapsedWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Layout.Sider
       className="hide-scrollbar"
@@ -50,11 +63,12 @@ export const Sider = ({ user }: { user: User | null }) => {
       collapsible
       collapsed={isCollapsed}
       width={256}
+      collapsedWidth={collapsedWidth}
       style={{
         overflow: "auto",
         height: "calc(100vh - 80px)",
         position: "fixed",
-        paddingBottom: 48,
+        paddingBottom: 32,
         borderRight: `1px solid ${colorBorder}`,
       }}
       trigger={null}

@@ -12,7 +12,7 @@ export const Kimxy = () => {
           <Tag tagColor="slate">개인사업자</Tag>
         </Text>
         <Divider type="vertical" />
-        <Text color="description">2022.01 ~ 2023.01</Text>
+        <Text color="description">2021.02~2023.01(2년)</Text>
       </header>
       <div className="flex flex-row mx-4 mt-8 mb-12">
         <Image
@@ -36,11 +36,9 @@ export const Kimxy = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
+                <Text>• 1인 전체 개발(기획, 디자인, 프론트엔드, 백엔드, 배포, 운영)</Text>
                 <Text>
-                  • 1년 3개월 독학 후, 1인 개발(기획, 디자인, 프론트엔드, 백엔드, 배포, 운영)
-                </Text>
-                <Text>
-                  • 디자인(Sketch), 앱(ReactNative, Expo) 관리자(React), 백엔드(Node.js, Prisma),
+                  • 디자인(Sketch), 앱(ReactNative, Expo) 관리자웹(React), 백엔드(Node.js, Prisma),
                   배포(Railway, AWS)
                 </Text>
                 <Tag tagStyle="soft" className="mt-4">
