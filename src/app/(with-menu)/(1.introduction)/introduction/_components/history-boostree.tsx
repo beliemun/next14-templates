@@ -5,16 +5,14 @@ import Image from "next/image";
 export const Boostree = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header>
-        <Text type="lg-semibold">
-          (주)부스트리파트너스
-          <Divider type="vertical" />
-          <Tag tagColor="slate">TL(Tech Leader)</Tag>
-        </Text>
-        <Divider type="vertical" />
+      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
+        <Text type="lg-semibold">(주)부스트리파트너스</Text>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+        <Tag tagColor="slate">TL(Tech Leader)</Tag>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
         <Text color="description">2024.02~2024.04(3개월)</Text>
       </header>
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/775b25ed-a460-409a-c8a7-e07243345500/avatar`}
@@ -31,19 +29,21 @@ export const Boostree = () => {
                 <Tag tagStyle="soft">주요 업무</Tag>
                 <Text>• 마케팅 자동화 시스템 개발 총괄</Text>
                 <Text>• 마케팅 사이드 백오피스 개발</Text>
-                <Tag tagStyle="soft" className="mt-4">
-                  적용 기술
-                </Tag>
-                <Space direction="horizontal" className="mt-2">
-                  <Tag tagColor="primary">Type Script</Tag>
-                  <Tag tagColor="primary">Python</Tag>
-                  <Tag tagColor="blue">Next.js</Tag>
-                  <Tag tagColor="blue">React</Tag>
-                  <Tag tagColor="blue">Tailwind</Tag>
-                  <Tag tagColor="blue">Styled Component</Tag>
-                  <Tag tagColor="blue">Ant Design</Tag>
-                  <Tag tagColor="blue">Framer Motion</Tag>
-                </Space>
+                <div className="hidden md:flex flex-col">
+                  <Tag tagStyle="soft" className="mt-4 hidden sm:flex self-start">
+                    적용 기술
+                  </Tag>
+                  <Space direction="horizontal" className="flex flex-wrap mt-2">
+                    <Tag tagColor="primary">Type Script</Tag>
+                    <Tag tagColor="primary">Python</Tag>
+                    <Tag tagColor="blue">Next.js</Tag>
+                    <Tag tagColor="blue">React</Tag>
+                    <Tag tagColor="blue">Tailwind</Tag>
+                    <Tag tagColor="blue">Styled Component</Tag>
+                    <Tag tagColor="blue">Ant Design</Tag>
+                    <Tag tagColor="blue">Framer Motion</Tag>
+                  </Space>
+                </div>
               </Space>
             </div>
           </div>

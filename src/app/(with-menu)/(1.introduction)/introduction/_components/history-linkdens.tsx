@@ -5,16 +5,14 @@ import Image from "next/image";
 export const Linkdens = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header>
-        <Text type="lg-semibold">
-          (주)아이오바이오
-          <Divider type="vertical" />
-          <Tag tagColor="slate">프론트엔드 개발팀 팀장</Tag>
-        </Text>
-        <Divider type="vertical" />
+      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
+        <Text type="lg-semibold">(주)아이오바이오</Text>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+        <Tag tagColor="slate">프론트엔드 개발팀 팀장</Tag>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
         <Text color="description">2023.02~2024.01(1년)</Text>
       </header>
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/de494b15-f5bb-450f-c067-cedd3905ee00/avatar`}

@@ -1,16 +1,16 @@
-import { Image, Input, Text } from "@/components/atoms";
+import { Image, Text } from "@/components/atoms";
 import { URL } from "@/lib/constants";
-import { GithubOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { cn } from "@/lib/utils";
 
 const PageTitle = () => {
   return (
     <div className="flex items-center mb-2">
-      <div className="inline-block pl-3 pr-2.5 py-1 bg-primary-500 rounded-tl-xl rounded-br-xl rounded-tr-sm rounded-bl-sm">
-        <Text type="xl-semibold" color="invert">
+      <div className="inline-block px-2 py-1 bg-primary-500 rounded-tl-lg rounded-br-lg rounded-tr-sm rounded-bl-sm">
+        <Text type="lg-semibold" color="invert">
           완성해내는
         </Text>
       </div>
-      <Text type="xl-semibold" className="ml-2">
+      <Text type="lg-semibold" className="ml-2">
         개발자, 김진환입니다.
       </Text>
     </div>
@@ -19,14 +19,16 @@ const PageTitle = () => {
 
 export const Introduction = () => {
   return (
-    <div className="flex flex-row max-w-7xl w-full">
-      <Image
-        alt="avatar"
-        src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/3f3e0116-76e9-4306-411e-7844af5bfb00/public`}
-        style={{ width: 240, height: 240, borderRadius: "80px 10px" }}
-        className="shrink-0"
-      />
-      <div className="flex flex-col items-start flex-1 pl-8 gap-2 leading-5">
+    <div className="flex flex-col lg:flex-row items-center max-w-7xl w-full">
+      <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-60 lg:h-60 shrink-0 mb-4 sm:mb-6 lg:mb-0 transition-all">
+        <Image
+          src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/3f3e0116-76e9-4306-411e-7844af5bfb00/public`}
+          // style={{ borderRadius: "80px 10px" }}
+          className={cn("size-full rounded-full")}
+          alt="avatar"
+        />
+      </div>
+      <div className="flex flex-col items-start flex-1 lg:pl-8 gap-3 xl:gap-2">
         <PageTitle />
         <Text>• 안녕하세요. 7년간 기업을 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
         <Text>

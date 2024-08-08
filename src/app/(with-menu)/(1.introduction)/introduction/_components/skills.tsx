@@ -1,8 +1,8 @@
-import { Card, Section, Space, Tag, Text } from "@/components/atoms";
+import { Card, Space, Tag, Text } from "@/components/atoms";
 
 export const Skills = () => {
   return (
-    <div className="grid grid-cols-3 max-w-7xl pt-2 gap-4">
+    <div className="grid grid-row-3 lg:grid-cols-3 max-w-7xl pt-2 gap-4">
       <Card
         title={
           <Text type="base-semibold" color="primary">

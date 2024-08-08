@@ -6,7 +6,7 @@ export interface DividerProps extends DividerAntdProps {}
 
 export const Divider = ({ style, className, children, ...rest }: DividerProps) => {
   return (
-    <DividerAtnd style={{ paddingTop: 9, ...style }} className={cn(className)} {...rest}>
+    <DividerAtnd style={{ ...style }} className={cn(className)} {...rest}>
       {children ? capitalizeFirstLetter(String(children)) : null}
     </DividerAtnd>
   );

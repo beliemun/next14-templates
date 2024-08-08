@@ -6,17 +6,15 @@ import LineChart from "./line-chart";
 export const Kf = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header>
-        <Text type="lg-semibold">
-          (주)한국에서놀자
-          <Divider type="vertical" />
-          <Tag tagColor="slate">대표이사</Tag>
-        </Text>
-        <Divider type="vertical" />
+      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
+        <Text type="lg-semibold">(주)한국에서놀자</Text>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+        <Tag tagColor="slate">대표이사</Tag>
+        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
         <Text color="description">2013.12~2020.02(7년 2개월)</Text>
       </header>
       {/* 친구 */}
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/9ff39e50-df49-4108-5cf8-01849d02c800/avatar`}
@@ -32,7 +30,7 @@ export const Kf = () => {
             src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/731d2a95-2f56-4313-0f7d-7f74ffeccb00/public`}
             width={802}
             height={512}
-            className="self-start shrink-0 rounded-lg my-2"
+            className="hidden md:flex self-start shrink-0 rounded-lg my-2"
           />
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
@@ -53,7 +51,7 @@ export const Kf = () => {
         </div>
       </div>
       {/* 한국 친구 */}
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/a44b1aa8-9ca1-4685-c573-f4567cb44e00/avatar`}
@@ -69,7 +67,7 @@ export const Kf = () => {
             src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/e39bdfc3-847b-4434-97ab-1d15d50b5c00/public`}
             width={802}
             height={512}
-            className="self-start shrink-0 rounded-lg my-2"
+            className="hidden md:flex self-start shrink-0 rounded-lg my-2"
           />
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
@@ -90,7 +88,7 @@ export const Kf = () => {
         </div>
       </div>
       {/* 마카롱 */}
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/89901950-2cd0-4960-011c-eb062fe1c500/avatar`}
@@ -106,7 +104,7 @@ export const Kf = () => {
             src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/a453c52a-0df4-40ed-cc17-3a5b99b0e700/public`}
             width={802}
             height={512}
-            className="self-start shrink-0 rounded-lg my-2"
+            className="hidden md:flex self-start shrink-0 rounded-lg my-2"
           />
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
@@ -134,7 +132,7 @@ export const Kf = () => {
         </div>
       </div>
       {/* 관심있어요 */}
-      <div className="flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/0a7e6ab8-349e-46de-8ebd-b053ca69e500/avatar`}
@@ -150,7 +148,7 @@ export const Kf = () => {
             src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/ceccd410-08fd-4b59-1cb5-ce80b438ef00/public`}
             width={802}
             height={512}
-            className="self-start shrink-0 rounded-lg my-2"
+            className="hidden md:flex self-start shrink-0 rounded-lg my-2"
           />
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">

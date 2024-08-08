@@ -17,7 +17,7 @@ export const Section = ({ className, children, ...rest }: SectionProps & MotionP
     <motion.section
       variants={containerVariants}
       {...animationProps}
-      className={cn(`flex flex-wrap w-full p-8 gap-4`, className)}
+      className={cn(`flex flex-wrap w-full p-4 lg:p-8 gap-4`, className)}
       {...rest}
     >
       {children}
