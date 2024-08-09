@@ -1,8 +1,11 @@
 import { PageLayout } from "@/components/organisms";
 import { Section } from "@/components/atoms";
-import { ColorPaletteItem } from "./_components/color-palette-item";
+import { ColorPaletteItems } from "./_components/color-palette-item";
 import { colorList } from "@/lib/colors";
 import { Metadata } from "next";
+import { color } from "framer-motion";
+import { Divider } from "antd";
+import { capitalizeFirstLetter } from "@/shared/utils";
 
 export const metadata: Metadata = {
   title: "Colors",
@@ -11,13 +14,12 @@ export const metadata: Metadata = {
 export default function ColorPage() {
   return (
     <PageLayout title="Colors">
-      <Section>
-        <div className="grid grid-cols-12 w-full max-w-4xl gap-y-8">
-          {colorList.map((color, key) => (
-            <ColorPaletteItem color={color} key={key} />
-          ))}
-        </div>
-      </Section>
+      {colorList.map((color, key) => (
+        <>
+          <Divider orientation="left">{capitalizeFirstLetter(color)}</Divider>
+          <ColorPaletteItems color={color} key={`#2_${color}_${key}`} />
+        </>
+      ))}
     </PageLayout>
   );
 }
