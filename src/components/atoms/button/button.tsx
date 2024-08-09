@@ -114,7 +114,7 @@ const Button = (
           ref={ref}
           style={{ ...style }}
           className={cn(
-            "relative row-center overflow-hidden",
+            "relative row-center overflow-hidden shrink-0",
             buttonStyles({
               buttonRound,
               buttonStyle,
