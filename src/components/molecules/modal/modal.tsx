@@ -68,7 +68,7 @@ export const Modal = ({
                 width: isSmallMode ? undefined : size,
               }}
               className={cn(
-                `col-center justify-between min-h-[480px] gap-6 p-6 transition-all`,
+                `col-center justify-between min-h-[480px] gap-6 p-6`,
                 isSmallMode ? "w-full min-h-[320px] rounded-none" : "rounded-xl"
               )}
               layoutId="modal-layout"
