@@ -30,7 +30,7 @@ export const MenuFooter = ({
 }: MenuFooter) => {
   const { isDarkMode, setDarkMode } = useDarkModeStore();
   const {
-    token: { colorBgContainer, colorBorder, sizeMD },
+    token: { colorBgContainer, colorBorder, sizeMD, sizeSM },
   } = theme.useToken();
 
   const handleDarkMode = () => {
@@ -98,9 +98,11 @@ export const MenuFooter = ({
           onClick={handleDarkMode}
         >
           {isDarkMode ? (
-            <MoonFilled style={{ fontSize: sizeMD, color: colors.primary[500] }} />
+            <MoonFilled
+              style={{ fontSize: isSmallMode ? sizeSM : sizeMD, color: colors.primary[500] }}
+            />
           ) : (
-            <MoonOutlined style={{ fontSize: sizeMD }} />
+            <MoonFilled style={{ fontSize: isSmallMode ? sizeSM : sizeMD }} />
           )}
         </Button>
       </div>

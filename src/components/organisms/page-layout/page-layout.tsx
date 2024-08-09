@@ -12,14 +12,14 @@ export const PageLayout = ({
   className?: string | undefined;
   children?: React.ReactNode | undefined;
 }) => {
-  const [isXsSize, setIsXsSize] = useState(false);
+  const [isSmallMode, setIsSmallMode] = useState(false);
   const {
     token: { colorText, colorBorder, colorBgContainer },
   } = theme.useToken();
 
   useEffect(() => {
     const updateCollapsedWidth = () => {
-      setIsXsSize(window.innerWidth < 480);
+      setIsSmallMode(window.innerWidth < 480);
     };
     window.addEventListener("resize", updateCollapsedWidth);
     updateCollapsedWidth();
@@ -32,7 +32,7 @@ export const PageLayout = ({
     <Layout style={{ backgroundColor: colorBgContainer }} className={"col-flex overflow-hidden"}>
       {typeof title === "string" ? (
         <>
-          {isXsSize ? (
+          {isSmallMode ? (
             <Text
               type="xl-semibold"
               style={{ color: colorText }}
@@ -57,7 +57,7 @@ export const PageLayout = ({
         style={{
           color: colorText,
           backgroundColor: colorBgContainer,
-          minHeight: "calc(100vh - 80px)",
+          minHeight: `calc(100vh - ${isSmallMode ? 48 : 80}px)`,
           borderTopWidth: "1px",
           borderColor: colorBorder,
           overflow: "hidden",
