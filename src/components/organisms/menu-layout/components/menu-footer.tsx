@@ -14,13 +14,20 @@ import { theme } from "antd";
 import { useEffect, useState } from "react";
 
 interface MenuFooter {
-  isFullWidth: boolean;
   collapsed: boolean;
+  isFullWidth: boolean;
+  isSmallMode: boolean;
   onResize: () => void;
   onCollapse: () => void;
 }
 
-export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: MenuFooter) => {
+export const MenuFooter = ({
+  collapsed,
+  isFullWidth,
+  isSmallMode,
+  onResize,
+  onCollapse,
+}: MenuFooter) => {
   const { isDarkMode, setDarkMode } = useDarkModeStore();
   const {
     token: { colorBgContainer, colorBorder, sizeMD },
@@ -35,7 +42,8 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
     <div
       className={cn(
         `fixed bottom-0 transition-all duration-200 ease-in-out`,
-        collapsed ? "col-center w-12 h-36 xs:w-20 " : "row-center w-64 h-20"
+        collapsed ? "col-center w-12 h-36 xs:w-20" : "row-center w-64 h-20",
+        { "h-20": isSmallMode && collapsed }
       )}
       style={{
         backgroundColor: colorBgContainer,
@@ -44,37 +52,41 @@ export const MenuFooter = ({ collapsed, isFullWidth, onResize, onCollapse }: Men
       }}
     >
       <div className={cn(collapsed ? "col-center" : "row-center")}>
-        <Button
-          buttonSize="sm"
-          buttonColor="gray"
-          buttonStyle="ghost"
-          tooltipTitle={collapsed ? "메뉴확장" : "메뉴축소"}
-          tooltipPlacement={collapsed ? "right" : "top"}
-          onClick={onCollapse}
-        >
-          <MenuUnfoldOutlined
-            style={{
-              fontSize: sizeMD,
-              transform: collapsed ? "rotate(0deg)" : "rotate(180deg)",
-              transition: "all 0.2s ease-in-out",
-            }}
-          />
-        </Button>
-        <Button
-          buttonSize="sm"
-          buttonColor="gray"
-          buttonStyle="ghost"
-          tooltipTitle={isFullWidth ? "화면축소" : "화면확장"}
-          tooltipStyle={{ visibility: collapsed ? "hidden" : "visible" }}
-          tooltipPlacement={collapsed ? "right" : "top"}
-          onClick={onResize}
-        >
-          {isFullWidth ? (
-            <ShrinkOutlined style={{ fontSize: sizeMD }} />
-          ) : (
-            <ExpandAltOutlined style={{ fontSize: sizeMD }} />
-          )}
-        </Button>
+        {isSmallMode ? null : (
+          <>
+            <Button
+              buttonSize="sm"
+              buttonColor="gray"
+              buttonStyle="ghost"
+              tooltipTitle={collapsed ? "메뉴확장" : "메뉴축소"}
+              tooltipPlacement={collapsed ? "right" : "top"}
+              onClick={onCollapse}
+            >
+              <MenuUnfoldOutlined
+                style={{
+                  fontSize: sizeMD,
+                  transform: collapsed ? "rotate(0deg)" : "rotate(180deg)",
+                  transition: "all 0.2s ease-in-out",
+                }}
+              />
+            </Button>
+            <Button
+              buttonSize="sm"
+              buttonColor="gray"
+              buttonStyle="ghost"
+              tooltipTitle={isFullWidth ? "화면축소" : "화면확장"}
+              tooltipStyle={{ visibility: collapsed ? "hidden" : "visible" }}
+              tooltipPlacement={collapsed ? "right" : "top"}
+              onClick={onResize}
+            >
+              {isFullWidth ? (
+                <ShrinkOutlined style={{ fontSize: sizeMD }} />
+              ) : (
+                <ExpandAltOutlined style={{ fontSize: sizeMD }} />
+              )}
+            </Button>
+          </>
+        )}
 
         <Button
           buttonSize="sm"

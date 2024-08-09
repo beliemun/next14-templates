@@ -18,6 +18,7 @@ export const Sider = ({ user }: { user: User | null }) => {
   const [messageApi, contextHolder] = Message.useMessage();
   const [selectedKey, setSelectedKey] = useState("introduction");
   const { isCollapsed, isFullWidth, setIsCollapsed, setIsFullWidth } = useLayoutStore();
+  const [isSmallMode, setIsSmallMode] = useState(false);
   const [collapsedWidth, setCollapsedWidth] = useState(48);
   const {
     token: { colorBorder },
@@ -56,6 +57,10 @@ export const Sider = ({ user }: { user: User | null }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    window.innerWidth < 800 ? setIsSmallMode(true) : setIsSmallMode(false);
+  }, [isCollapsed]);
+
   return (
     <Layout.Sider
       className="hide-scrollbar"
@@ -66,7 +71,7 @@ export const Sider = ({ user }: { user: User | null }) => {
       collapsedWidth={collapsedWidth}
       style={{
         overflow: "auto",
-        height: "calc(100vh - 80px)",
+        height: `calc(100vh - ${isSmallMode ? 40 : 80}px)`,
         position: "fixed",
         paddingBottom: 32,
         borderRight: `1px solid ${colorBorder}`,
@@ -91,6 +96,7 @@ export const Sider = ({ user }: { user: User | null }) => {
       <MenuFooter
         collapsed={isCollapsed}
         isFullWidth={isFullWidth}
+        isSmallMode={isSmallMode}
         onCollapse={handleCollapse}
         onResize={handleResize}
       />

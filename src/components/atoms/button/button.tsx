@@ -139,7 +139,7 @@ const Button = (
             )}
           />
           {loading ? <LoadingOutlined className="mr-2" /> : null}
-          <div className={cn("select-none min-w-max")}>{children}</div>
+          <div className={cn("select-none whitespace-nowrap")}>{children}</div>
         </button>
       </motion.div>
     </Tooltip>
