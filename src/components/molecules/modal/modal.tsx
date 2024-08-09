@@ -7,7 +7,7 @@ import { CloseOutlined } from "@ant-design/icons";
 import { theme } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { ModalProps } from "./types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Modal = ({
   title = undefined,
@@ -22,6 +22,7 @@ export const Modal = ({
   onClose,
 }: ModalProps) => {
   const [visible, setVisible] = useState(true);
+  const [isSmallMode, setIsSmallMode] = useState(false);
 
   const { isDarkMode } = useDarkModeStore();
   const { colorBgContainer, boxShadow, colorText } = theme.useToken().token;
@@ -30,6 +31,17 @@ export const Modal = ({
     setVisible(false);
     setTimeout(() => onClose?.(), 500);
   };
+
+  useEffect(() => {
+    const updateCollapsedWidth = () => {
+      window.innerWidth < size ? setIsSmallMode(true) : setIsSmallMode(false);
+    };
+    window.addEventListener("resize", updateCollapsedWidth);
+    updateCollapsedWidth();
+
+    return () => window.removeEventListener("resize", updateCollapsedWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <AnimatePresence>
@@ -50,8 +62,15 @@ export const Modal = ({
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
-              className={cn(`col-center justify-between min-h-[480px] gap-6 p-6 rounded-xl `)}
+              style={{
+                backgroundColor: colorBgContainer,
+                boxShadow,
+                width: isSmallMode ? undefined : size,
+              }}
+              className={cn(
+                `col-center justify-between min-h-[480px] gap-6 p-6 transition-all`,
+                isSmallMode ? "w-full min-h-[320px] rounded-none" : "rounded-xl"
+              )}
               layoutId="modal-layout"
             >
               <Loading loadingMessage={loadingMessage} />
@@ -61,8 +80,15 @@ export const Modal = ({
               initial={{ scale: 0.8 }}
               animate={{ scale: 1, transition: { type: "spring", bounce: 0.5, duration: 0.5 } }}
               exit={{ scale: 1, translateY: 20, transition: { type: "just" } }}
-              style={{ backgroundColor: colorBgContainer, boxShadow, width: size }}
-              className={cn(`flex flex-col`, "gap-6 p-6 rounded-xl")}
+              style={{
+                backgroundColor: colorBgContainer,
+                boxShadow,
+                width: isSmallMode ? undefined : size,
+              }}
+              className={cn(
+                `flex flex-col gap-6 p-6`,
+                isSmallMode ? "w-full rounded-none" : "rounded-xl"
+              )}
               layoutId="modal-layout"
             >
               <header className="flex flex-row justify-between items-center">
