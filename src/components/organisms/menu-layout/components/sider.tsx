@@ -71,7 +71,7 @@ export const Sider = ({ user }: { user: User | null }) => {
       collapsedWidth={collapsedWidth}
       style={{
         overflow: "auto",
-        height: `calc(100vh - ${isSmallMode ? 40 : 80}px)`,
+        height: `calc(100vh - ${isSmallMode ? 48 : 80}px)`,
         position: "fixed",
         paddingBottom: 32,
         borderRight: `1px solid ${colorBorder}`,
