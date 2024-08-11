@@ -3,6 +3,7 @@
 import { Checkbox, Input, Radio, RadioOption, Select, SelectOption } from "@/components/atoms";
 import { Form, FormItem, PageModal } from "@/components/molecules";
 import { PageModalProps } from "@/components/molecules/page-modal/types";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 const radioOptions: RadioOption[] = [
@@ -37,9 +38,21 @@ const selectOptions: SelectOption[] = [
 
 export const PageModalComponent = (props: PageModalProps) => {
   const [loading, setLoading] = useState(true);
+  const [isSmallMode, setIsSmallMode] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  useEffect(() => {
+    const updateCollapsedWidth = () => {
+      window.innerWidth < 600 ? setIsSmallMode(true) : setIsSmallMode(false);
+    };
+    window.addEventListener("resize", updateCollapsedWidth);
+    updateCollapsedWidth();
+
+    return () => window.removeEventListener("resize", updateCollapsedWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -62,6 +75,7 @@ export const PageModalComponent = (props: PageModalProps) => {
     >
       <Form title="Here is form title" description="Here is a form description" gap={30}>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
@@ -70,6 +84,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           <Input placeholder="placeholder" />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
@@ -78,6 +93,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           <Input placeholder="placeholder" addonBefore="https://" addonAfter=".com" />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
@@ -90,6 +106,7 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
@@ -103,30 +120,33 @@ export const PageModalComponent = (props: PageModalProps) => {
           />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
           <Radio.Group
-            className="w-full space-x-5"
+            className={cn("flex flex-col xs:flex-row gap-2")}
             defaultValue={selectOptions[0].value}
             options={radioOptions}
           />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"
           required
         >
           <Checkbox.Group
-            className="w-full space-x-5"
+            className={cn("flex flex-col xs:flex-row gap-2")}
             defaultValue={[selectOptions[0].value]}
             options={radioOptions}
           />
         </FormItem>
         <FormItem
+          direction={isSmallMode ? "vertical" : "horizontal"}
           label="Label"
           tooltipTitle="Here is tooltip title"
           extra="Here is extra description"

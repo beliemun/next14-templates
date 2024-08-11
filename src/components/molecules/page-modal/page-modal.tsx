@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PageModalProps } from "./types";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useDarkModeStore } from "@/stores/useDarkModeStore";
@@ -21,6 +21,22 @@ const contentsVariants: Variants = {
 };
 const animationProps = { initial: "hidden", animate: "visible", exit: "hidden" };
 
+type SizeType = {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+};
+
+const SIZE: SizeType = {
+  xs: 480,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+};
+
 export const PageModal = ({
   title = undefined,
   description = undefined,
@@ -31,6 +47,7 @@ export const PageModal = ({
   onClose,
 }: PageModalProps) => {
   const [visible, setVisible] = useState(true);
+  const [sizeType, setSizeType] = useState<keyof SizeType>("xs");
   const { isFullWidth, setIsFullWidth } = useLayoutStore();
   const { isDarkMode } = useDarkModeStore();
   const { colorBgContainer, colorBorder } = theme.useToken().token;
@@ -40,6 +57,31 @@ export const PageModal = ({
     setTimeout(() => onClose?.(), 500);
   };
   const handleResize = () => setIsFullWidth(!isFullWidth);
+
+  useEffect(() => {
+    const updateCollapsedWidth = () => {
+      if (window.innerWidth < SIZE.xs) {
+        setSizeType("xs");
+      } else if (window.innerWidth < SIZE.sm) {
+        setSizeType("sm");
+      } else if (window.innerWidth < SIZE.md) {
+        setSizeType("md");
+      } else if (window.innerWidth < SIZE.lg) {
+        setSizeType("lg");
+      } else {
+        setSizeType("xl");
+      }
+    };
+    window.addEventListener("resize", updateCollapsedWidth);
+    updateCollapsedWidth();
+
+    return () => window.removeEventListener("resize", updateCollapsedWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    console.log(sizeType);
+  }, [sizeType]);
 
   return (
     <AnimatePresence>
@@ -67,48 +109,66 @@ export const PageModal = ({
             <ResizableWapper ignoreBackgroundColor>
               <header
                 style={{ backgroundColor: colorBgContainer, borderColor: colorBorder }}
-                className={cn("flex flex-row justify-between items-center h-28 px-8 border-b")}
+                className={cn(
+                  "flex flex-row items-center border-b p-4 gap-3 h-28",
+                  "md:h-24"
+                  // "md:flex-row md:justify-between md:items-center md:px-8"
+                )}
               >
-                <motion.div variants={contentsVariants} {...animationProps}>
-                  <Title type="h5-semibold">{title}</Title>
-                  <Text color="description">{description}</Text>
+                <motion.div
+                  className="w-full pl-0 md:pl-4"
+                  variants={contentsVariants}
+                  {...animationProps}
+                >
+                  <Title className="whitespace-nowrap overflow-hidden text-ellipsis">{title}</Title>
+                  <Text color="description" className="overflow-label">
+                    {description}
+                  </Text>
                 </motion.div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-col-reverse md:flex-row gap-4">
                   <div className="flex flex-row-reverse gap-4">
                     {actions?.map((action, index) => (
                       <Button
                         key={index}
-                        className="min-w-32"
                         buttonStyle={action?.style}
                         buttonColor={action?.color}
+                        buttonSize={sizeType === "xl" || sizeType === "lg" ? "sm" : "xs"}
                         onClick={action?.onClick ?? handleClose}
                       >
                         {action?.lable}
                       </Button>
                     ))}
                   </div>
-                  <Button
-                    buttonSize="sm"
-                    buttonColor="gray"
-                    buttonStyle="soft"
-                    tooltipTitle={isFullWidth ? "화면축소" : "화면확장"}
-                    onClick={handleResize}
-                  >
-                    {isFullWidth ? <ShrinkOutlined /> : <ExpandAltOutlined />}
-                  </Button>
-                  <Button
-                    buttonSize="sm"
-                    buttonColor="gray"
-                    buttonStyle="soft"
-                    tooltipTitle={"닫기"}
-                    onClick={handleClose}
-                  >
-                    <CloseOutlined />
-                  </Button>
+                  <div className="flex flex-row-reverse gap-4">
+                    <Button
+                      buttonSize="sm"
+                      buttonColor="gray"
+                      buttonStyle="soft"
+                      tooltipTitle={"닫기"}
+                      onClick={handleClose}
+                    >
+                      <CloseOutlined />
+                    </Button>
+                    <Button
+                      buttonSize="sm"
+                      buttonColor="gray"
+                      buttonStyle="soft"
+                      tooltipTitle={isFullWidth ? "화면축소" : "화면확장"}
+                      onClick={handleResize}
+                    >
+                      {isFullWidth ? <ShrinkOutlined /> : <ExpandAltOutlined />}
+                    </Button>
+                  </div>
                 </div>
               </header>
               <main
-                style={{ backgroundColor: colorBgContainer, height: "calc(100vh - 112px)" }}
+                style={{
+                  backgroundColor: colorBgContainer,
+                  height:
+                    sizeType === "xl" || sizeType === "lg"
+                      ? "calc(100vh - 96px)"
+                      : "calc(100vh - 112px)",
+                }}
                 className="flex flex-col w-full p-8 overflow-auto"
               >
                 <motion.div variants={contentsVariants} {...animationProps}>
