@@ -20,7 +20,11 @@ export const ClientComponents = () => {
         </Space>
       </Card>
       <Card title={"Radio Group"}>
-        <Radio.Group className="space-x-4" options={radioOptions} defaultValue={radioOptions[0]} />
+        <Radio.Group
+          className="whitespace-nowrap"
+          options={radioOptions}
+          defaultValue={radioOptions[0]}
+        />
       </Card>
     </Section>
   );

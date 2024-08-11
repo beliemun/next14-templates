@@ -40,25 +40,16 @@ export const ClientComponents = () => {
     <>
       <Divider orientation="left">Size</Divider>
       <Section className="pt-2">
-        <Space direction="horizontal" gap={16}>
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="small" />
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="middle" />
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="large" />
-        </Space>
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="small" />
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="middle" />
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} size="large" />
       </Section>
       <Divider orientation="left">Variants</Divider>
       <Section className="pt-2 ">
-        <Space direction="horizontal" gap={16}>
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} loading />
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} disabled />
-          <Select
-            style={{ width: 120 }}
-            options={options1}
-            defaultValue={"brain"}
-            status="warning"
-          />
-          <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} status="error" />
-        </Space>
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} loading />
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} disabled />
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} status="warning" />
+        <Select style={{ width: 120 }} options={options1} defaultValue={"brain"} status="error" />
       </Section>
       <Divider orientation="left">Multiple Mode</Divider>
       <Section className="pt-2">

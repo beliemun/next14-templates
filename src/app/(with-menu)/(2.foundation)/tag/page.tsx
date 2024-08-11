@@ -15,7 +15,7 @@ export default function TagPage() {
         <div key={index}>
           <Divider orientation="left">{color.toUpperCase()}</Divider>
           <Space direction="vertical" gap={8} className="px-8 pb-4">
-            <Space direction="horizontal" gap={8}>
+            <div className="flex flex-row flex-wrap gap-2">
               <Tag tagColor={color} tagStyle="outline" tagSize="sm">
                 outline sm
               </Tag>
@@ -28,8 +28,8 @@ export default function TagPage() {
               <Tag tagColor={color} tagStyle="solid" tagSize="sm">
                 solid sm
               </Tag>
-            </Space>
-            <Space direction="horizontal" gap={4}>
+            </div>
+            <div className="flex flex-row flex-wrap gap-1">
               <Tag tagColor={color} tagStyle="outline" tagSize="default">
                 outline default
               </Tag>
@@ -47,7 +47,7 @@ export default function TagPage() {
               <Tag tagColor={color} tagStyle="solid" tagSize="default">
                 solid default
               </Tag>
-            </Space>
+            </div>
           </Space>
         </div>
       ))}
