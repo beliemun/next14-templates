@@ -2,11 +2,13 @@
 
 import { Button, Checkbox, Input, Radio, Select } from "@/components/atoms";
 import { Form, FormItem } from "@/components/molecules";
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { radioOptions, selectOptions } from "./data";
-import { AlertProps, useAlertStore } from "@/stores/useAlertStore";
+import { useAlertStore } from "@/stores/useAlertStore";
+import { cn } from "@/lib/utils";
 
 export const ClientComponents = () => {
+  const [isSmallMode, setIsSmallMode] = useState(false);
   const { show } = useAlertStore();
 
   const handleShow = () => {
@@ -19,6 +21,18 @@ export const ClientComponents = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    const updateCollapsedWidth = () => {
+      window.innerWidth < 600 ? setIsSmallMode(true) : setIsSmallMode(false);
+    };
+    window.addEventListener("resize", updateCollapsedWidth);
+    updateCollapsedWidth();
+
+    return () => window.removeEventListener("resize", updateCollapsedWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Form
       onSubmit={handleSubmit}
@@ -27,6 +41,7 @@ export const ClientComponents = () => {
       gap={30}
     >
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
@@ -35,6 +50,7 @@ export const ClientComponents = () => {
         <Input placeholder="placeholder" />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
@@ -43,6 +59,7 @@ export const ClientComponents = () => {
         <Input placeholder="placeholder" addonBefore="https://" addonAfter=".com" />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
@@ -55,6 +72,7 @@ export const ClientComponents = () => {
         />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
@@ -68,30 +86,33 @@ export const ClientComponents = () => {
         />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
         <Radio.Group
-          className="w-full space-x-5"
+          className={cn("flex flex-col xs:flex-row gap-2")}
           defaultValue={selectOptions[0].value}
           options={radioOptions}
         />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"
         required
       >
         <Checkbox.Group
-          className="w-full space-x-5"
+          className={cn("flex flex-col xs:flex-row gap-2")}
           defaultValue={[selectOptions[0].value]}
           options={radioOptions}
         />
       </FormItem>
       <FormItem
+        direction={isSmallMode ? "vertical" : "horizontal"}
         label="Name"
         tooltipTitle="Here is tooltip title"
         extra="Here is extra description"

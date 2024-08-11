@@ -14,17 +14,21 @@ export const ColorPaletteItems = ({ color }: ColorPaletteItemProp) => {
         <div className="col-center shrink-0 mt-2" key={key}>
           <div
             style={{ backgroundColor: value }}
-            className="size-10 md:size-12 rounded-full mb-2"
+            className="size-7 xs:size-10 xs:rounded-lg mb-2"
           />
-          <Text type="sm-semibold">{key}</Text>
-          <Text type="xs-light">{value}</Text>
+          <Text type="sm-semibold" className="hidden xs:inline-block">
+            {key}
+          </Text>
+          <Text type="xs-light" className="hidden xs:inline-block">
+            {value}
+          </Text>
         </div>
       );
     }
     return colorComponents;
   };
   return (
-    <div className="flex flex-row flex-wrap gap-1 sm:gap-2 px-2 sm:px-4">
+    <div className="flex flex-row xs:flex-wrap gap-0 xs:gap-2 px-4">
       {renderColorCells(color as ColorType)}
     </div>
   );

@@ -17,7 +17,7 @@ export default function ButtonPage() {
           <Divider orientation="left">{color.toUpperCase()}</Divider>
           <div className="flex flex-col gap-2 pb-6">
             {buttonTypes.map((type, index) => (
-              <div className="flex flex-row gap-2 px-8 py-2" key={`${type}_${index}`}>
+              <div className="flex flex-row flex-wrap gap-2 px-8 py-2" key={`${type}_${index}`}>
                 <Button buttonSize="xs" buttonColor={color} buttonStyle={type}>
                   xs {type}
                 </Button>
