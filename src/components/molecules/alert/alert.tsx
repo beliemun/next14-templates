@@ -31,7 +31,6 @@ export const Alert = () => {
     };
     window.addEventListener("resize", updateCollapsedWidth);
     updateCollapsedWidth();
-
     return () => window.removeEventListener("resize", updateCollapsedWidth);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
