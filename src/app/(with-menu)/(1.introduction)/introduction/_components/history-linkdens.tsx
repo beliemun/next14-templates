@@ -27,10 +27,13 @@ export const Linkdens = () => {
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 프론트엔드 개발팀 테크 리드</Text>
-                <Text>• 정량광 형광기를 연동한 치아우식증을 검사하는 이미징 소프트웨어 개발</Text>
-                <Text>• 프로토타입 개발 및 미국 Dallas 현지 시현</Text>
-                <Text>• OpenDental 연동, PMS 개발 및 미국 Dallas 현지 설치 및 운용 테스트</Text>
+                <Text>• 치과 병원용 PMS 웹, 환자용 모바일 앱 개발.</Text>
+                <Text>
+                  • 자체 개발 정량광 형광기를 연동한 치아우식증 검사용 이미징 소프트웨어 개발.
+                </Text>
+                <Text>
+                  • 미국 Dallas에서 현지 치과 병원들을 대상으로 PMS 및 모바일 앱 시현 및 테스트.
+                </Text>
                 <Tag tagStyle="soft" className="mt-4">
                   적용 기술
                 </Tag>

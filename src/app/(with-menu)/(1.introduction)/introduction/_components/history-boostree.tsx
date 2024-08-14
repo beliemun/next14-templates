@@ -22,13 +22,15 @@ export const Boostree = () => {
         />
         <div className="flex flex-col items-start pl-4 gap-2 leading-5">
           <Text type="base-semibold">BOOSTREE</Text>
-          <Text>피부과 병원의 오퍼레이팅 사이드와 마케팅 사이드의 자동화를 위한 SaaS </Text>
+          <Text>피부과 병원의 오퍼레이팅 사이드와 마케팅 사이드의 자동화를 위한 SaaS 플랫폼</Text>
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">
                 <Tag tagStyle="soft">주요 업무</Tag>
-                <Text>• 마케팅 자동화 시스템 개발 총괄</Text>
-                <Text>• 마케팅 사이드 백오피스 개발</Text>
+                <Text>• 피부과 병원용 CRM 개발 중 마케팅 자동화 사이드 개발 총괄</Text>
+                <Text>
+                  • 병원이 사용하는 웹과 서비스 운용에 필요한 BOS(Back-office service) 개발
+                </Text>
                 <div className="hidden md:flex flex-col">
                   <Tag tagStyle="soft" className="mt-4 hidden sm:flex self-start">
                     적용 기술

@@ -5,6 +5,7 @@ import {
   Boostree,
   Buddymon,
   Contact,
+  DownloadButton,
   Introduction,
   Kf,
   Kimxy,
@@ -43,6 +44,7 @@ export default function IntroductionPage() {
           ]}
         />
       </Section>
+      <DownloadButton />
     </PageLayout>
   );
 }

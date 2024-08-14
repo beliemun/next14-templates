@@ -7,3 +7,4 @@ export * from "./history-kimxy";
 export * from "./history-kf";
 export * from "./history-buddymon";
 export * from "./line-chart";
+export * from "./download-button";
