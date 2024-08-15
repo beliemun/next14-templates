@@ -1,10 +1,11 @@
 "use client";
 
+const URL = "https://drive.google.com/uc?export=download&id=15uBefeQLhTjXKov9s-ed9IJUgDDkqXIQ";
+
 import { Animate, Button } from "@/components/atoms";
 export const DownloadButton = () => {
   const handleClick = () => {
-    window.location.href =
-      "https://drive.google.com/uc?export=download&id=15uBefeQLhTjXKov9s-ed9IJUgDDkqXIQ";
+    window.location.href = URL;
   };
 
   return (
