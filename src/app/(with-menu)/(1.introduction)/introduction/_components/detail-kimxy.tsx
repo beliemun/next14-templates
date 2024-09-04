@@ -5,14 +5,17 @@ import Image from "next/image";
 export const Kimxy = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
-        <Text type="lg-semibold">BURNGRIT</Text>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Tag tagColor="slate">개인사업자</Tag>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Text color="description">2021.02~2023.01(2년)</Text>
+      <header className="flex flex-col items-start flex-wrap gap-3">
+        <Text color="description">2021.03~2023.01(1년 11개월)</Text>
+        <div className="flex flex-col xs:flex-row items-center">
+          <Text type="lg-semibold">BURNGRIT</Text>
+          <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+          <Tag tagColor="slate" className="self-start">
+            개인사업자
+          </Tag>
+        </div>
       </header>
-      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-3 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/12a88cea-7406-4651-6285-5c1f248e8a00/avatar`}

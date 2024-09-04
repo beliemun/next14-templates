@@ -6,15 +6,18 @@ import LineChart from "./line-chart";
 export const Kf = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
-        <Text type="lg-semibold">(주)한국에서놀자</Text>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Tag tagColor="slate">대표이사</Tag>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Text color="description">2013.12~2020.02(7년 2개월)</Text>
+      <header className="flex flex-col items-start flex-wrap gap-3">
+        <Text color="description">2013.12~2020.02(7년 3개월)</Text>
+        <div className="flex flex-col xs:flex-row items-center">
+          <Text type="lg-semibold">(주)한국에서놀자</Text>
+          <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+          <Tag tagColor="slate" className="self-start">
+            대표이사
+          </Tag>
+        </div>
       </header>
       {/* 친구 */}
-      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-3 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/9ff39e50-df49-4108-5cf8-01849d02c800/avatar`}

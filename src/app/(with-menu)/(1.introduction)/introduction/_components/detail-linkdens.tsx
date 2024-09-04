@@ -5,14 +5,19 @@ import Image from "next/image";
 export const Linkdens = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
-        <Text type="lg-semibold">(주)아이오바이오</Text>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Tag tagColor="slate">프론트엔드 개발팀 팀장</Tag>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Text color="description">2023.02~2024.01(1년)</Text>
+      <header className="flex flex-col items-start flex-wrap gap-3">
+        <Text color="description" type="sm-regular">
+          2023.02~2024.01(1년)
+        </Text>
+        <div className="flex flex-col xs:flex-row items-center">
+          <Text type="lg-semibold">(주)아이오바이오</Text>
+          <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+          <Tag tagColor="slate" className="self-start">
+            프론트엔드 개발팀장
+          </Tag>
+        </div>
       </header>
-      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-3 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/de494b15-f5bb-450f-c067-cedd3905ee00/avatar`}
@@ -22,7 +27,7 @@ export const Linkdens = () => {
         />
         <div className="flex flex-col items-start pl-4 gap-2 leading-5">
           <Text type="base-semibold">LINKDENS</Text>
-          <Text>정량광형광기를 연동한 이미지 시스템을 제공하는 치과 병원용 PMS</Text>
+          <Text>정량광형광기를 연동한 이미지 시스템을 제공하는 치과 병원용 PMS 개발</Text>
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">

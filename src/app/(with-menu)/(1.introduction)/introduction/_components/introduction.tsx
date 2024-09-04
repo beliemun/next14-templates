@@ -20,7 +20,7 @@ const PageTitle = () => {
 export const Introduction = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center max-w-7xl w-full">
-      <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-60 lg:h-60 shrink-0 mb-4 sm:mb-6 lg:mb-0 transition-all">
+      <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 shrink-0 mb-4 sm:mb-6 lg:mb-0 transition-all">
         <Image
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/3f3e0116-76e9-4306-411e-7844af5bfb00/public`}
           // style={{ borderRadius: "80px 10px" }}
@@ -28,19 +28,11 @@ export const Introduction = () => {
           alt="avatar"
         />
       </div>
-      <div className="flex flex-col items-start flex-1 lg:pl-8 gap-3 xl:gap-2">
+      <div className="flex flex-col items-start flex-1 lg:pl-8 gap-2">
         <PageTitle />
-        <Text>• 안녕하세요. 7년간 기업을 경영했고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
+        <Text>• 7년간 모바일 앱 개발사의 대표였고, 현재는 웹/앱 풀스택 개발자입니다.</Text>
         <Text>
-          • 사람과 소통을 좋아해서 데이트 및 커뮤니케이션 관련 앱 개발사를 설립, 7년 동안 대표를
-          역임했습니다.
-        </Text>
-        <Text>
-          • 약 20여 개의 모바일 앱 프로젝트를 리드하며 기획부터 UX/UI 디자인, 개발 업무까지
-          진행했습니다.
-        </Text>
-        <Text>
-          • 대표 서비스 3개는 100만 이상 다운로드, 외부투자 없이 7년 동안 약 30억원의 매출을
+          • 약 20여 개의 모바일 앱 프로젝트를 총괄, 외부투자 없이 7년 동안 약 30억원의 매출을
           기록했습니다.
         </Text>
         <Text>

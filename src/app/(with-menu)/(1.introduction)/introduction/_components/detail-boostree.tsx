@@ -5,14 +5,19 @@ import Image from "next/image";
 export const Boostree = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
-        <Text type="lg-semibold">(주)부스트리파트너스</Text>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Tag tagColor="slate">TL(Tech Leader)</Tag>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Text color="description">2024.02~2024.04(3개월)</Text>
+      <header className="flex flex-col items-start flex-wrap gap-3">
+        <Text color="description" type="sm-regular">
+          2024.02~2024.04(3개월)
+        </Text>
+        <div className="flex flex-col xs:flex-row items-center">
+          <Text type="lg-semibold">(주)부스트리파트너스</Text>
+          <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+          <Tag tagColor="slate" className="self-start">
+            TL(Tech Leader)
+          </Tag>
+        </div>
       </header>
-      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-3 mb-12">
         <Image
           alt="app-icon"
           src={`${URL.CF_IMAGE}/${process.env.CF_ACCOUNT_HASH}/775b25ed-a460-409a-c8a7-e07243345500/avatar`}
@@ -22,7 +27,7 @@ export const Boostree = () => {
         />
         <div className="flex flex-col items-start pl-4 gap-2 leading-5">
           <Text type="base-semibold">BOOSTREE</Text>
-          <Text>피부과 병원의 오퍼레이팅 사이드와 마케팅 사이드의 자동화를 위한 SaaS 플랫폼</Text>
+          <Text>피부과 병원의 오퍼레이팅 사이드와 마케팅 사이드의 자동화를 위한 SaaS 개발</Text>
           <div className="mt-2">
             <div className="border border-dashed rounded-lg p-4">
               <Space direction="vertical">

@@ -5,14 +5,17 @@ import Image from "next/image";
 export const Buddymon = () => {
   return (
     <div className="max-w-6xl w-full">
-      <header className="flex flex-col xs:flex-row items-start xs:items-center flex-wrap">
-        <Text type="lg-semibold">(주)J2YSOFT</Text>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
-        <Tag tagColor="slate">사원</Tag>
-        <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+      <header className="flex flex-col items-start flex-wrap gap-3">
         <Text color="description">2013.01~2013.11(11개월)</Text>
+        <div className="flex flex-col xs:flex-row items-center">
+          <Text type="lg-semibold">(주)J2YSOFT</Text>
+          <Divider type="vertical" className="opacity-0 xs:opacity-100" />
+          <Tag tagColor="slate" className="self-start">
+            사원
+          </Tag>
+        </div>
       </header>
-      <div className="hidden xs:flex flex-row mx-4 mt-8 mb-12">
+      <div className="hidden xs:flex flex-row mx-4 mt-3 mb-12">
         <div className="self-start w-[60px] h-[60px] shrink-0 rounded-lg border bg-slate-100" />
         <div className="flex flex-col items-start pl-4 gap-2 leading-5">
           <Text type="base-semibold">버디몬</Text>
