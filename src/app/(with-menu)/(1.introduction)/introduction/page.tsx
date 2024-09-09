@@ -37,7 +37,6 @@ export default function IntroductionPage() {
       <Section className="pt-2">
         <KeyAchievements />
       </Section>
-
       <Divider orientation="left">세부 경력 사항</Divider>
       <Section className="mt-2">
         <Timeline
