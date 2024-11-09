@@ -1,7 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ForwardedRef, forwardRef, useCallback, useEffect, useRef, useState } from "react";
+import {
+  ForwardedRef,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { buttonStyles, waveStyles } from "./styles";
 import { LoadingOutlined } from "@ant-design/icons";
 import { ButtonProps } from "./types";
@@ -87,7 +94,6 @@ const Button = (
       .start(waveVariants.click)
       .then(() => waveController.start(waveVariants.blur))
       .then(() => waveController.start(waveVariants.hidden));
-
     Promise.all([btnAnimation, waveAnimation]).then(() => {
       isAnimatingRef.current = false;
     });
@@ -99,7 +105,11 @@ const Button = (
     exit: "hidden",
   };
 
-  const waveProps = { initial: "hidden", animate: waveController, exit: "hidden" };
+  const waveProps = {
+    initial: "hidden",
+    animate: waveController,
+    exit: "hidden",
+  };
 
   return (
     <Tooltip
@@ -109,7 +119,11 @@ const Button = (
       placement={tooltipPlacement}
     >
       {/* CSS 스타일이 적용된 엘리먼트에 에니메이션을 적용하면 부하가 심하기 때문에 버튼과 분리해야 함 */}
-      <motion.div className={cn({ "w-full": fullWidth })} variants={btnVariants} {...btnProps}>
+      <motion.div
+        className={cn({ "w-full": fullWidth })}
+        variants={btnVariants}
+        {...btnProps}
+      >
         <button
           ref={ref}
           style={{ ...style }}

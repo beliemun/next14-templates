@@ -1,6 +1,13 @@
 "use client";
 
-import { CSSProperties, forwardRef, LegacyRef, ReactNode, useEffect, useState } from "react";
+import {
+  CSSProperties,
+  forwardRef,
+  LegacyRef,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 import { TextColor, TextStyle, TextType } from "./types";
 import { cn } from "@/lib/utils";
 import { ColorType } from "@/lib/colors";
@@ -17,7 +24,14 @@ export interface TextProps {
 }
 
 const Text = (
-  { children, style, className, type = "base-normal", color = "default", ...rest }: TextProps,
+  {
+    children,
+    style,
+    className,
+    type = "base-normal",
+    color = "default",
+    ...rest
+  }: TextProps,
   ref: LegacyRef<HTMLSpanElement>
 ) => {
   const [textColor, setTextColor] = useState<string>("default");
@@ -35,7 +49,7 @@ const Text = (
     } else if (color === "invert") {
       setTextColor(colorBgBase);
     }
-  }, [color, colorText, colorTextDescription, colorTextDisabled]);
+  }, [color, colorText, colorTextDescription, colorTextDisabled, colorBgBase]);
 
   return (
     <span

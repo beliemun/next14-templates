@@ -74,10 +74,10 @@ export const pages: MenuItem[] = [
 ];
 
 export const menu = [
-  {
-    title: "About me",
-    items: introduction,
-  },
+  // {
+  //   title: "About me",
+  //   items: introduction,
+  // },
   {
     title: "Foundation",
     items: base,
